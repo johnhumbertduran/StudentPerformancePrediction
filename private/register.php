@@ -18,6 +18,48 @@ include("../bins/header.php");
 
 $lastname = $firstname = $middlename = $course = $year = $username = $password = $confirm_password = "";
 
+if (isset($_POST['submit'])) {
+  
+  if (!empty($_POST['lastname'])) {
+    $lastname = $_POST['lastname'];
+  }
+  
+  if (!empty($_POST['firstname'])) {
+    $firstname = $_POST['firstname'];
+  }
+  
+  if (!empty($_POST['middlename'])) {
+    $middlename = $_POST['middlename'];
+  }
+  
+  if (!empty($_POST['course'])) {
+    $course = $_POST['course'];
+  }
+  
+  if (!empty($_POST['year'])) {
+    $year = $_POST['year'];
+  }
+  
+  if (!empty($_POST['uname'])) {
+    $username = $_POST['uname'];
+  }
+  
+  if (!empty($_POST['initial_password'])) {
+    $password = $_POST['initial_password'];
+  }
+  
+  if (!empty($_POST['confirm_password'])) {
+    $confirm_password = $_POST['confirm_password'];
+  }
+
+  if($lastname && $firstname && $middlename && $course && $year && $username && $password && $confirm_password){
+
+    echo "hays";
+    
+  }
+
+}
+
 ?>
     <!-- <tr><th colspan="4"><center> <h1>Registration Form</h1> </center></th></tr> -->
 
@@ -47,14 +89,14 @@ $lastname = $firstname = $middlename = $course = $year = $username = $password =
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="course">Course:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $course; ?>" name="course" class="err" id="course" placeholder="First Name" autocomplete="off" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $course; ?>" name="course" class="err" id="course" placeholder="Course" autocomplete="off" required></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="year">Year:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $year; ?>" name="year" class="err" id="year" placeholder="Middle Name" autocomplete="off" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $year; ?>" name="year" class="err" id="year" placeholder="Year" autocomplete="off" required></td>
     </tr>
     </div>
 
