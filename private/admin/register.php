@@ -1,5 +1,6 @@
 <?php
 include("../../bins/header.php");
+include("../bins/connections.php");
 // include("bins/nav.php");
 // include("piechart.php");
 ?>
@@ -45,6 +46,7 @@ if (isset($_POST['submit'])) {
   
   if (!empty($_POST['uname'])) {
     $username = $_POST['uname'];
+    // $session_user = $username;
   }
   
   if (!empty($_POST['initial_password'])) {
@@ -96,6 +98,43 @@ if (isset($_POST['submit'])) {
                 $result = "should have 4 numbers";
                 include("../bins/year_warning.php");
                 include("../bins/year_warningColor.php");
+              }else{
+                if(strlen($username) <= 7){
+                  $err = "Username";
+                  $result = "should have atleast 8 characters";
+                  include("../bins/username_warning.php");
+                  include("../bins/username_warningColor.php");
+                }else{
+                  if(strlen($password) <= 7){
+                    $err = "Password";
+                    $result = "should have atleast 8 characters";
+                    include("../bins/password_warning.php");
+                    include("../bins/password_warningColor.php");
+                  }else{
+                    if(strlen($confirm_password) <= 7){
+                      $err = "Confirm Password";
+                      $result = "should have atleast 8 characters";
+                      include("../bins/confirm_password_warning.php");
+                      include("../bins/confirm_password_warningColor.php");
+                    }else{
+                      if($confirm_password != $password){
+                        $err = "Confirm Password";
+                        $result = "should match the password";
+                        include("../bins/password_warning.php");
+                        include("../bins  /password_warningColor.php");
+                      }else{
+                        // $_SESSION["username"] = $session_user;
+
+                        mysqli_query($connections, "INSERT INTO _user_tbl_ (lastname,firstname,middlename,
+                        course,year,username,password,account_type)
+                        VALUES ('$lastname','$firstname','$middlename','$course',
+                        '$year','$username','$password','2')");
+
+                        header('Location: ?');
+                      }
+                    }
+                  }
+                }
               }
             }
           }
