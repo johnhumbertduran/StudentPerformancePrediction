@@ -29,7 +29,7 @@ if(isset($_SESSION["username"])){
 ?>
 
 <center>
-<h1 class="py-3 text-info px-1">Student Performance System</h1>
+<h1 class="py-3 text-info px-1">Student Performance</h1>
 </center>
 
 
@@ -39,7 +39,18 @@ include("../bins/admin_nav.php");
 ?>
 <br>
 
+<div class="input-group col-sm-6">
+<input class="form-control mr-sm-2" type="text" placeholder="Course Name...">
+<input class="form-control mr-sm-2" type="text" placeholder="Semester...">
+<div class="input-group-append">
+<button class="btn btn-success">View Charts</button>
+</div>
+</div>
 
+
+<table border="1">
+    <thead><tr><td>Student ID</td><td>Student Name</td></tr></thead>
+</table>
 <?php
 include("../../bins/footer.php");
 ?>

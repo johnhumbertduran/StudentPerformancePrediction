@@ -1,0 +1,11 @@
+
+
+.nav-item{
+    border: 1.5px solid transparent;
+}
+
+
+.nav-item:hover{
+    border: 1.5px solid white;
+    border-radius: 6px;
+}
