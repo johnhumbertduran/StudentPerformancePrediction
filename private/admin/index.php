@@ -1,3 +1,5 @@
+
+
 <?php
 session_start();
 
@@ -33,7 +35,12 @@ if(isset($_SESSION["username"])){
 </center>
 
 
-
+<style>
+.home_active{
+  border: 1.5px solid white;
+  border-radius: 6px;
+}
+</style>
 <?php
 include("../bins/admin_nav.php");
 ?>

@@ -33,6 +33,12 @@ if(isset($_SESSION["username"])){
 </center>
 
 
+<style>
+.student_performance_active{
+  border: 1.5px solid white;
+  border-radius: 6px;
+}
+</style>
 
 <?php
 include("../bins/admin_nav.php");
@@ -47,10 +53,16 @@ include("../bins/admin_nav.php");
 </div>
 </div>
 
-
-<table border="1">
-    <thead><tr><td>Student ID</td><td>Student Name</td></tr></thead>
+<br>
+<div class="table-responsive">
+<table border="1" class="table table-hover">
+    <thead>
+    <tr><th class="px-3"></th><th class="px-3 text-center bg-success" colspan="27">Preliminary Period</th><th class="px-3 text-center" colspan="29">Midterm</th><th class="px-3 text-center" colspan="28">Prefinal Period</th><th class="px-3 text-center" colspan="29">Final Period</th></tr>
+    <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th><th class="px-5 text-center bg-success" colspan="12">Formative Assessment</th><th class="px-5 text-center bg-success" colspan="5">Outpout</th><th class="px-5 text-center bg-success" colspan="5">Performance&nbsp;Project</th><th class="px-5 text-cente bg-success" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center bg-success " colspan="2">Prelim&nbsp;Grade</th><th class="px-5 text-center" colspan="12">Formative Assessment</th><th class="px-5 text-center" colspan="5">Outpout</th><th class="px-5 text-center" colspan="5">Performance</th><th class="px-5 text-center" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center">2nd&nbsp;Quarter</th><th class="px-5 text-center" colspan="2">Midterm&nbsp;Grade</th><th class="px-5 text-center">Remarks</th><th class="px-5 text-center" colspan="12">Formative Assessment</th><th class="px-5 text-center" colspan="5">Outpout</th><th class="px-5 text-center" colspan="5">Performance</th><th class="px-5 text-center" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center">3rd&nbsp;Quarter</th><th class="px-5 text-center" colspan="2">Prefinal&nbsp;Grade</th><th class="px-5 text-center" colspan="12">Formative Assessment</th><th class="px-5 text-center" colspan="5">Outpout</th><th class="px-5 text-center" colspan="5">Performance</th><th class="px-5 text-center" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center">4th&nbsp;Quarter</th><th class="px-5 text-center" colspan="2">Final&nbsp;Grade</th><th class="px-5 text-center">Remarks</th></tr>
+    <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th><th class="bg-success">10</th><th class="bg-success">10</th><th class="bg-success">10</th><th class="bg-success">10</th><th class="bg-success">10</th><th class="bg-success">10</th><th class="bg-success">10</th><th class="bg-success">10</th><th class="bg-success">10</th><th class="bg-success">10</th><th class="bg-success">100</th><th class="bg-success">60</th><th class="bg-success">20</th><th class="bg-success">20</th><th class="bg-success">40</th><th class="bg-success">60</th><th class="bg-success">0.40</th><th class="bg-success">20</th><th class="bg-success">20</th><t class="bg-success"h>40</th><th class="bg-success">60</th><th class="bg-success">0.40</th><th class="bg-success">30</th><th class="bg-success">60</th><th class="bg-success">0.20</th><th></th><th></th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>100</th><th>60</th><th>20</th><th>20</th><th>40</th><th>60</th><th>0.40</th><th>20</th><th>20</th><th>40</th><th>60</th><th>0.40</th><th>30</th><th>60</th><th>0.20</th><th></th><th></th><th></th><th></th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>100</th><th>60</th><th>20</th><th>20</th><th>40</th><th>60</th><th>0.40</th><th>20</th><th>20</th><th>40</th><th>60</th><th>0.40</th><th>30</th><th>60</th><th>0.20</th><th></th><th></th><th></th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>10</th><th>100</th><th>60</th><th>20</th><th>20</th><th>40</th><th>60</th><th>0.40</th><th>20</th><th>20</th><th>40</th><th>60</th><th>0.40</th><th>30</th><th>60</th><th>0.20</th><th></th><th></th><th></th><th></th></tr>
+    </thead>
 </table>
+</div>
 <?php
-include("../../bins/footer.php");
+include("../../bins/footer_non_fixed.php");
 ?>

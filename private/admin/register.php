@@ -1,8 +1,56 @@
+
 <?php
-include("../../bins/header.php");
+// include("../../bins/header.php");
+// include("../bins/connections.php");
+// // include("bins/nav.php");
+// // include("piechart.php");
+?>
+
+<?php
+session_start();
+
 include("../bins/connections.php");
-// include("bins/nav.php");
-// include("piechart.php");
+include("../../bins/header.php");
+
+
+if(isset($_SESSION["username"])){
+
+    $session_user = $_SESSION["username"];
+  
+    $query_info = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE username='$session_user'");
+    $my_info = mysqli_fetch_assoc($query_info);
+    $account_type = $my_info["account_type"];
+    
+    if($account_type != 1){
+    
+        header('Location: ../../forbidden');
+    
+    }
+  
+  }else{
+    
+    header('Location: ../../');
+  
+  }
+
+
+?>
+
+
+<center>
+<h1 class="py-3 text-info px-1">Register</h1>
+</center>
+
+
+<style>
+.register_active{
+  border: 1.5px solid white;
+  border-radius: 6px;
+}
+</style>
+
+<?php
+include("../bins/admin_nav.php");
 ?>
 
 <center>
@@ -11,7 +59,6 @@ include("../bins/connections.php");
 <br>
 <div class="container w-50">
 
-<h2><font color="red">Username Error Message</font></h2>
 
 <div class="card">
   <div class="card-header bg-primary text-light"><h3>Register User</h3></div>
