@@ -1,5 +1,3 @@
-
-
 <?php
 session_start();
 
@@ -31,25 +29,18 @@ if(isset($_SESSION["username"])){
 ?>
 
 <center>
-<h1 class="py-3 text-info px-1">Student Performance System</h1>
+<h1 class="py-3 text-info px-1">Input Grades</h1>
 </center>
 
 
 <style>
-.home_active{
+.input_grade{
   border: 1.5px solid white;
   border-radius: 6px;
 }
 </style>
+
 <?php
 include("../bins/admin_nav.php");
 ?>
 <br>
-
-<center>
-<h1 class="py-3 text-info px-1"><font color="red">Student ID sa Register</font></h1>
-</center>
-
-<?php
-include("../../bins/footer.php");
-?>

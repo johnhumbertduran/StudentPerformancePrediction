@@ -27,8 +27,8 @@
       <li class="nav-item register_active">
         <a class="nav-link pl-2" href="register">Register</a>
       </li>    
-      <li class="nav-item">
-        <a class="nav-link pl-2" href="#">Input Grade</a>
+      <li class="nav-item input_grade">
+        <a class="nav-link pl-2" href="inputgrade">Input Grade</a>
       </li>    
       <li class="nav-item">
         <a class="nav-link pl-2" href="logout.php">Log Out</a>

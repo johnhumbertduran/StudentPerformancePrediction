@@ -200,6 +200,13 @@ if (isset($_POST['submit'])) {
 
     <div class="form-group">
     <tr>
+    <td class="label"><b><label for="lastname">Student ID:</label></b></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $lastname; ?>" name="lastname" class="warningColor" id="lastname" autocomplete="off" disabled></td>
+    </tr>
+    </div>
+
+    <div class="form-group">
+    <tr>
     <td class="label"><b><label for="lastname">Last Name:</label></b></td>
     <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $lastname; ?>" name="lastname" class="warningColor" id="lastname" placeholder="Last Name" autocomplete="off" required></td>
     </tr>
