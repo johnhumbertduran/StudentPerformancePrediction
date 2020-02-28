@@ -47,7 +47,7 @@ include("../bins/admin_nav.php");
 <br>
 
 <center>
-<h1 class="py-3 text-info px-1"><font color="red">Student ID sa Register</font></h1>
+<!-- <h1 class="py-3 text-info px-1"><font color="red">Student ID sa Register</font></h1> -->
 </center>
 
 <?php

@@ -69,7 +69,31 @@ include("../bins/admin_nav.php");
 
 $lastname = $firstname = $middlename = $course = $year = $username = $password = $confirm_password = "";
 
+$product_no = "20200000";
+
+
+
+
+$check_product_no = mysqli_query($connections, "SELECT product_no FROM _user_tbl_ ORDER BY product_no DESC LIMIT 1 ");
+while($get_product_no = mysqli_fetch_assoc($check_product_no)){
+
+    $db_product_number = $get_product_no["product_no"];
+    $product_no = $db_product_number;
+
+
+if($db_product_number >= $product_no){
+
+    $product_no += 1;
+    
+}
+
 if (isset($_POST['submit'])) {
+
+  if(empty($_POST["product_no"])){
+
+  }else{
+      $product_no = $_POST["product_no"];
+  }
   
   if (!empty($_POST['lastname'])) {
     $lastname = $_POST['lastname'];
@@ -104,7 +128,7 @@ if (isset($_POST['submit'])) {
     $confirm_password = $_POST['confirm_password'];
   }
 
-  if($lastname && $firstname && $middlename && $course && $year && $username && $password && $confirm_password){
+  if($product_no && $lastname && $firstname && $middlename && $course && $year && $username && $password && $confirm_password){
 
     if(!preg_match("/^[a-zA-Z. ]*$/", $lastname)){
       $err = "Last Name";
@@ -172,9 +196,9 @@ if (isset($_POST['submit'])) {
                       }else{
                         // $_SESSION["username"] = $session_user;
 
-                        mysqli_query($connections, "INSERT INTO _user_tbl_ (lastname,firstname,middlename,
+                        mysqli_query($connections, "INSERT INTO _user_tbl_ (product_no,lastname,firstname,middlename,
                         course,year,username,password,account_type)
-                        VALUES ('$lastname','$firstname','$middlename','$course',
+                        VALUES ('$product_no','$lastname','$firstname','$middlename','$course',
                         '$year','$username','$password','2')");
 
                         header('Location: ?');
@@ -192,6 +216,7 @@ if (isset($_POST['submit'])) {
   }
 
 }
+}
 
 ?>
     <!-- <tr><th colspan="4"><center> <h1>Registration Form</h1> </center></th></tr> -->
@@ -201,7 +226,7 @@ if (isset($_POST['submit'])) {
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="lastname">Student ID:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $lastname; ?>" name="lastname" class="warningColor" id="lastname" autocomplete="off" disabled></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $product_no; ?>" name="lastname" class="warningColor" id="lastname" autocomplete="off" disabled></td>
     </tr>
     </div>
 
