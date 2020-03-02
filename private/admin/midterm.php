@@ -45,12 +45,16 @@ $student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE accoun
 
 while($row_student = mysqli_fetch_assoc($student_qry)){
 
-  $product_no = $row_student["product_no"];
+  $student_no = $row_student["student_no"];
   $lastname = $row_student["lastname"];
   $firstname = $row_student["firstname"];
   $middlename = $row_student["middlename"];
   
   $fullname = $firstname . " " . $middlename[0] . ". " . $lastname;
+
+$prelim_qry = mysqli_query($connections, "SELECT * FROM prelim");
+$row_prelim = mysqli_fetch_assoc($prelim_qry);
+$prelim_grade = $row_prelim["prelim_grade"];
 
 
     // ####################______Midterm Formulas______####################
@@ -119,7 +123,7 @@ while($row_student = mysqli_fetch_assoc($student_qry)){
   ?>
 
   <tr>
-  <td><?php echo $product_no; ?></td>
+  <td><?php echo $student_no; ?></td>
   <td><?php echo $fullname; ?></td>
   <td><a href="#"><?php echo $midterm_formative_assessment_1; ?></a></td> 
   <td><a href="#"><?php echo $midterm_formative_assessment_2; ?></a></td> 

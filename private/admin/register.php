@@ -69,30 +69,30 @@ include("../bins/admin_nav.php");
 
 $lastname = $firstname = $middlename = $course = $year = $username = $password = $confirm_password = "";
 
-$product_no = "20200000";
+$student_no = "20200000";
 
 
 
 
-$check_product_no = mysqli_query($connections, "SELECT product_no FROM _user_tbl_ ORDER BY product_no DESC LIMIT 1 ");
-while($get_product_no = mysqli_fetch_assoc($check_product_no)){
+$check_student_no = mysqli_query($connections, "SELECT student_no FROM _user_tbl_ ORDER BY student_no DESC LIMIT 1 ");
+while($get_student_no = mysqli_fetch_assoc($check_student_no)){
 
-    $db_product_number = $get_product_no["product_no"];
-    $product_no = $db_product_number;
+    $db_student_number = $get_student_no["student_no"];
+    $student_no = $db_student_number;
 
 
-if($db_product_number >= $product_no){
+if($db_student_number >= $student_no){
 
-    $product_no += 1;
+    $student_no += 1;
     
 }
 
 if (isset($_POST['submit'])) {
 
-  if(empty($_POST["product_no"])){
+  if(empty($_POST["student_no"])){
 
   }else{
-      $product_no = $_POST["product_no"];
+      $student_no = $_POST["student_no"];
   }
   
   if (!empty($_POST['lastname'])) {
@@ -128,7 +128,7 @@ if (isset($_POST['submit'])) {
     $confirm_password = $_POST['confirm_password'];
   }
 
-  if($product_no && $lastname && $firstname && $middlename && $course && $year && $username && $password && $confirm_password){
+  if($student_no && $lastname && $firstname && $middlename && $course && $year && $username && $password && $confirm_password){
 
     if(!preg_match("/^[a-zA-Z. ]*$/", $lastname)){
       $err = "Last Name";
@@ -196,10 +196,63 @@ if (isset($_POST['submit'])) {
                       }else{
                         // $_SESSION["username"] = $session_user;
 
-                        mysqli_query($connections, "INSERT INTO _user_tbl_ (product_no,lastname,firstname,middlename,
+                        mysqli_query($connections, "INSERT INTO _user_tbl_ (student_no,lastname,firstname,middlename,
                         course,year,username,password,account_type)
-                        VALUES ('$product_no','$lastname','$firstname','$middlename','$course',
+                        VALUES ('$student_no','$lastname','$firstname','$middlename','$course',
                         '$year','$username','$password','2')");
+
+$fullname = $firstname . " " . $middlename[0] . ". " . $lastname;
+
+mysqli_query($connections, "INSERT INTO prelim (student_no,student_name,prelim_formative_assessment_1,
+prelim_formative_assessment_2,prelim_formative_assessment_3,prelim_formative_assessment_4,prelim_formative_assessment_5,
+prelim_formative_assessment_6,prelim_formative_assessment_7,prelim_formative_assessment_8,prelim_formative_assessment_9,
+prelim_formative_assessment_10,prelim_formative_assessment_total_score,prelim_formative_assessment_base,
+prelim_output_1,prelim_output_2,prelim_output_total_score,prelim_output_base,prelim_output_weight,
+prelim_performance_1,prelim_performance_2,prelim_performance_total_score,prelim_performance_base,
+prelim_performance_weight,prelim_written_test,prelim_written_test_base,prelim_written_test_weight,
+prelim_grade,prelim_grade_equivalent)
+VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0',
+'0','0','0','0','0','0')");
+
+
+mysqli_query($connections, "INSERT INTO midterm (student_no,student_name,midterm_formative_assessment_1,
+midterm_formative_assessment_2,midterm_formative_assessment_3,midterm_formative_assessment_4,midterm_formative_assessment_5,
+midterm_formative_assessment_6,midterm_formative_assessment_7,midterm_formative_assessment_8,midterm_formative_assessment_9,
+midterm_formative_assessment_10,midterm_formative_assessment_total_score,midterm_formative_assessment_base,
+midterm_output_1,midterm_output_2,midterm_output_total_score,midterm_output_base,midterm_output_weight,
+midterm_performance_1,midterm_performance_2,midterm_performance_total_score,midterm_performance_base,
+midterm_performance_weight,midterm_written_test,midterm_written_test_base,midterm_written_test_weight,
+midterm_2nd_quarter,midterm_grade,midterm_grade_equivalent,midterm_remarks)
+VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0',
+'0','0','0','0','0','0')");
+
+
+mysqli_query($connections, "INSERT INTO prefinal (student_no,student_name,prefinal_formative_assessment_1,
+prefinal_formative_assessment_2,prefinal_formative_assessment_3,prefinal_formative_assessment_4,prefinal_formative_assessment_5,
+prefinal_formative_assessment_6,prefinal_formative_assessment_7,prefinal_formative_assessment_8,prefinal_formative_assessment_9,
+prefinal_formative_assessment_10,prefinal_formative_assessment_total_score,prefinal_formative_assessment_base,
+prefinal_output_1,prefinal_output_2,prefinal_output_total_score,prefinal_output_base,prefinal_output_weight,
+prefinal_performance_1,prefinal_performance_2,prefinal_performance_total_score,prefinal_performance_base,
+prefinal_performance_weight,prefinal_written_test,prefinal_written_test_base,prefinal_written_test_weight,
+prefinal_3rd_quarter,prefinal_grade,prefinal_grade_equivalent)
+VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0',
+'0','0','0','0','0')");
+
+
+
+
+mysqli_query($connections, "INSERT INTO final (student_no,student_name,final_formative_assessment_1,
+final_formative_assessment_2,final_formative_assessment_3,final_formative_assessment_4,final_formative_assessment_5,
+final_formative_assessment_6,final_formative_assessment_7,final_formative_assessment_8,final_formative_assessment_9,
+final_formative_assessment_10,final_formative_assessment_total_score,final_formative_assessment_base,
+final_output_1,final_output_2,final_output_total_score,final_output_base,final_output_weight,
+final_performance_1,final_performance_2,final_performance_total_score,final_performance_base,
+final_performance_weight,final_written_test,final_written_test_base,final_written_test_weight,
+final_4th_quarter,final_grade,final_grade_equivalent,final_grade_remarks)
+VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0',
+'0','0','0','0','0','0')");
+
+
 
                         header('Location: ?');
                       }
@@ -226,7 +279,7 @@ if (isset($_POST['submit'])) {
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="lastname">Student ID:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $product_no; ?>" name="lastname" class="warningColor" id="lastname" autocomplete="off" disabled></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $student_no; ?>" name="lastname" class="warningColor" id="lastname" autocomplete="off" disabled></td>
     </tr>
     </div>
 

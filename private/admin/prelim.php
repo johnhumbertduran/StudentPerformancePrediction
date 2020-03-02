@@ -40,7 +40,7 @@ $student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE accoun
 
 while($row_student = mysqli_fetch_assoc($student_qry)){
 
-  $product_no = $row_student["product_no"];
+  $student_no = $row_student["student_no"];
   $lastname = $row_student["lastname"];
   $firstname = $row_student["firstname"];
   $middlename = $row_student["middlename"];
@@ -109,7 +109,7 @@ while($row_student = mysqli_fetch_assoc($student_qry)){
 ?>
 
 <tr>
-<td><?php echo $product_no; ?></td>
+<td><?php echo $student_no; ?></td>
 <td><?php echo $fullname; ?></td>
 <td><a href="#"><?php echo $prelim_formative_assessment_1; ?></a></td> 
 <td><a href="#"><?php echo $prelim_formative_assessment_2; ?></a></td> 

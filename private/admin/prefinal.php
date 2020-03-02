@@ -44,12 +44,16 @@ $student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE accoun
 
 while($row_student = mysqli_fetch_assoc($student_qry)){
 
-  $product_no = $row_student["product_no"];
+  $student_no = $row_student["student_no"];
   $lastname = $row_student["lastname"];
   $firstname = $row_student["firstname"];
   $middlename = $row_student["middlename"];
   
   $fullname = $firstname . " " . $middlename[0] . ". " . $lastname;
+
+$midterm_qry = mysqli_query($connections, "SELECT * FROM midterm");
+$row_midterm = mysqli_fetch_assoc($midterm_qry);
+$midterm_grade = $row_midterm["midterm_grade"];
 
 
     // ####################______Prefinal Formulas______####################
@@ -73,39 +77,39 @@ while($row_student = mysqli_fetch_assoc($student_qry)){
     $prefinal_grade = $midterm_grade * 0.3 + $prefinal_3rd_quarter * 0.7;
   
     switch (true) {
-      //   case ($prelim_grade <= 74.4):
-      //       $prelim_grade_equivalent = "5";
+      //   case ($prefinal_grade <= 74.4):
+      //       $prefinal_grade_equivalent = "5";
       //       break;
-        case ($prelim_grade >= 74.5 && $prelim_grade <= 76.4):
-            $prelim_grade_equivalent = "3";
+        case ($prefinal_grade >= 74.5 && $prefinal_grade <= 76.4):
+            $prefinal_grade_equivalent = "3";
             break;
-        case ($prelim_grade >= 76.5 && $prelim_grade <= 79.4):
-            $prelim_grade_equivalent = "2.75";
+        case ($prefinal_grade >= 76.5 && $prefinal_grade <= 79.4):
+            $prefinal_grade_equivalent = "2.75";
             break;
-        case ($prelim_grade >= 79.5 && $prelim_grade <= 82.4):
-            $prelim_grade_equivalent = "2.5";
+        case ($prefinal_grade >= 79.5 && $prefinal_grade <= 82.4):
+            $prefinal_grade_equivalent = "2.5";
             break;
-        case ($prelim_grade >= 82.5 && $prelim_grade <= 85.4):
-            $prelim_grade_equivalent = "2.25";
+        case ($prefinal_grade >= 82.5 && $prefinal_grade <= 85.4):
+            $prefinal_grade_equivalent = "2.25";
             break;
-        case ($prelim_grade >= 85.5 && $prelim_grade <= 88.4):
-            $prelim_grade_equivalent = "2";
+        case ($prefinal_grade >= 85.5 && $prefinal_grade <= 88.4):
+            $prefinal_grade_equivalent = "2";
             break;
-        case ($prelim_grade >= 88.5 && $prelim_grade <= 91.4):
-            $prelim_grade_equivalent = "1.75";
+        case ($prefinal_grade >= 88.5 && $prefinal_grade <= 91.4):
+            $prefinal_grade_equivalent = "1.75";
             break;
-        case ($prelim_grade >= 91.5 && $prelim_grade <= 94.4):
-            $prelim_grade_equivalent = "1.5";
+        case ($prefinal_grade >= 91.5 && $prefinal_grade <= 94.4):
+            $prefinal_grade_equivalent = "1.5";
             break;
-        case ($prelim_grade >= 94.5 && $prelim_grade <= 97.4):
-            $prelim_grade_equivalent = "1.25";
+        case ($prefinal_grade >= 94.5 && $prefinal_grade <= 97.4):
+            $prefinal_grade_equivalent = "1.25";
             break;
-        case ($prelim_grade >= 97.5 && $prelim_grade <= 100):
-            $prelim_grade_equivalent = "1";
+        case ($prefinal_grade >= 97.5 && $prefinal_grade <= 100):
+            $prefinal_grade_equivalent = "1";
             break;
   
         default:
-            $prelim_grade_equivalent = "5";
+            $prefinal_grade_equivalent = "5";
     }
   
 
@@ -113,7 +117,7 @@ while($row_student = mysqli_fetch_assoc($student_qry)){
 ?>
 
 <tr>
-<td><?php echo $product_no; ?></td>
+<td><?php echo $student_no; ?></td>
 <td><?php echo $fullname; ?></td>
 
 <td><a href="#"><?php echo $prefinal_formative_assessment_1; ?></a></td> 

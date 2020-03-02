@@ -61,6 +61,7 @@ include("../bins/admin_nav.php");
 
 <?php
 
+if(isset($_GET['redir'])){
 if($_GET['redir'] == "prelim"){
     include("prelim.php");
 }
@@ -77,9 +78,18 @@ if($_GET['redir'] == "final"){
     include("final.php");
 }
 
+}
 
 ?>
 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <?php
 include("../../bins/footer_non_fixed.php");

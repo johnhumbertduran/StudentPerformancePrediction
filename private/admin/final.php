@@ -10,7 +10,7 @@ $final_formative_assessment_9 = $final_formative_assessment_10 =
 $final_formative_assessment_total_score = $final_formative_assessment_base =
 $final_output_1 = $final_output_2 =
 $final_output_total_score = $final_output_base =
-$final_weight = $final_performance_1 =
+$final_output_weight = $final_performance_1 =
 $final_performance_2 = $final_performance_total_score =
 $final_performance_base = $final_performance_weight =
 $final_written_test = $final_written_test_base =
@@ -44,12 +44,16 @@ $student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE accoun
 
 while($row_student = mysqli_fetch_assoc($student_qry)){
 
-  $product_no = $row_student["product_no"];
+  $student_no = $row_student["student_no"];
   $lastname = $row_student["lastname"];
   $firstname = $row_student["firstname"];
   $middlename = $row_student["middlename"];
   
   $fullname = $firstname . " " . $middlename[0] . ". " . $lastname;
+
+$prefinal_qry = mysqli_query($connections, "SELECT * FROM prefinal");
+$row_prefinal = mysqli_fetch_assoc($prefinal_qry);
+$prefinal_grade = $row_prefinal["prefinal_grade"];
 
 
     // ####################______Final Formulas______####################
@@ -70,7 +74,7 @@ while($row_student = mysqli_fetch_assoc($student_qry)){
     $final_written_test_base = $final_written_test / 30 * 40 + 60;
     $final_written_test_weight = $final_written_test_base * 0.20;
     $final_4th_quarter = $final_output_weight + $final_performance_weight + $final_written_test_weight;
-    $final_grade = $prefinal_3rd_quarter * 0.3 + $final_4th_quarter * 0.7;
+    $final_grade = $prefinal_grade * 0.3 + $final_4th_quarter * 0.7;
 
 
     switch (true) {
@@ -116,7 +120,7 @@ while($row_student = mysqli_fetch_assoc($student_qry)){
 ?>
 
 <tr>
-<td><?php echo $product_no; ?></td>
+<td><?php echo $student_no; ?></td>
 <td><?php echo $fullname; ?></td>
 
 <td><a href="#"><?php echo $final_formative_assessment_1; ?></a></td> 
@@ -135,7 +139,7 @@ while($row_student = mysqli_fetch_assoc($student_qry)){
 <td><a href="#"><?php echo $final_output_2; ?></a></td> 
 <td><a href="#"><?php echo $final_output_total_score; ?></a></td> 
 <td><a href="#"><?php echo $final_output_base; ?></a></td> 
-<td><a href="#"><?php echo $final_weight; ?></a></td> 
+<td><a href="#"><?php echo $final_output_weight; ?></a></td> 
 <td><a href="#"><?php echo $final_performance_1; ?></a></td> 
 <td><a href="#"><?php echo $final_performance_2; ?></a></td> 
 <td><a href="#"><?php echo $final_performance_total_score; ?></a></td> 
