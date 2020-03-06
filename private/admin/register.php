@@ -203,54 +203,77 @@ if (isset($_POST['submit'])) {
 
 $fullname = $firstname . " " . $middlename[0] . ". " . $lastname;
 
-mysqli_query($connections, "INSERT INTO prelim (student_no,student_name,prelim_formative_assessment_1,
-prelim_formative_assessment_2,prelim_formative_assessment_3,prelim_formative_assessment_4,prelim_formative_assessment_5,
-prelim_formative_assessment_6,prelim_formative_assessment_7,prelim_formative_assessment_8,prelim_formative_assessment_9,
-prelim_formative_assessment_10,prelim_formative_assessment_total_score,prelim_formative_assessment_base,
+mysqli_query($connections, "INSERT INTO prelim1 (student_no,student_name,
 prelim_output_1,prelim_output_2,prelim_output_total_score,prelim_output_base,prelim_output_weight,
 prelim_performance_1,prelim_performance_2,prelim_performance_total_score,prelim_performance_base,
 prelim_performance_weight,prelim_written_test,prelim_written_test_base,prelim_written_test_weight,
-prelim_grade,prelim_grade_equivalent)
-VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0',
-'0','0','0','0','0','0')");
+prelim_grade,prelim_grade_equivalent,semester)
+VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0',
+'0','0','0','0','0','0','1')");
+
+mysqli_query($connections, "INSERT INTO prelim2 (student_no,student_name,
+prelim_output_1,prelim_output_2,prelim_output_total_score,prelim_output_base,prelim_output_weight,
+prelim_performance_1,prelim_performance_2,prelim_performance_total_score,prelim_performance_base,
+prelim_performance_weight,prelim_written_test,prelim_written_test_base,prelim_written_test_weight,
+prelim_grade,prelim_grade_equivalent,semester)
+VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0',
+'0','0','0','0','0','0','2')");
 
 
-mysqli_query($connections, "INSERT INTO midterm (student_no,student_name,midterm_formative_assessment_1,
-midterm_formative_assessment_2,midterm_formative_assessment_3,midterm_formative_assessment_4,midterm_formative_assessment_5,
-midterm_formative_assessment_6,midterm_formative_assessment_7,midterm_formative_assessment_8,midterm_formative_assessment_9,
-midterm_formative_assessment_10,midterm_formative_assessment_total_score,midterm_formative_assessment_base,
+mysqli_query($connections, "INSERT INTO midterm1 (student_no,student_name,
 midterm_output_1,midterm_output_2,midterm_output_total_score,midterm_output_base,midterm_output_weight,
 midterm_performance_1,midterm_performance_2,midterm_performance_total_score,midterm_performance_base,
 midterm_performance_weight,midterm_written_test,midterm_written_test_base,midterm_written_test_weight,
-midterm_2nd_quarter,midterm_grade,midterm_grade_equivalent,midterm_remarks)
-VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0',
-'0','0','0','0','0','0')");
+midterm_2nd_quarter,midterm_grade,midterm_grade_equivalent,midterm_remarks,semester)
+VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0',
+'0','0','0','0','0','0','1')");
 
 
-mysqli_query($connections, "INSERT INTO prefinal (student_no,student_name,prefinal_formative_assessment_1,
-prefinal_formative_assessment_2,prefinal_formative_assessment_3,prefinal_formative_assessment_4,prefinal_formative_assessment_5,
-prefinal_formative_assessment_6,prefinal_formative_assessment_7,prefinal_formative_assessment_8,prefinal_formative_assessment_9,
-prefinal_formative_assessment_10,prefinal_formative_assessment_total_score,prefinal_formative_assessment_base,
+mysqli_query($connections, "INSERT INTO midterm2 (student_no,student_name,
+midterm_output_1,midterm_output_2,midterm_output_total_score,midterm_output_base,midterm_output_weight,
+midterm_performance_1,midterm_performance_2,midterm_performance_total_score,midterm_performance_base,
+midterm_performance_weight,midterm_written_test,midterm_written_test_base,midterm_written_test_weight,
+midterm_2nd_quarter,midterm_grade,midterm_grade_equivalent,midterm_remarks,semester)
+VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0',
+'0','0','0','0','0','0','2')");
+
+
+mysqli_query($connections, "INSERT INTO prefinal1 (student_no,student_name,
 prefinal_output_1,prefinal_output_2,prefinal_output_total_score,prefinal_output_base,prefinal_output_weight,
 prefinal_performance_1,prefinal_performance_2,prefinal_performance_total_score,prefinal_performance_base,
 prefinal_performance_weight,prefinal_written_test,prefinal_written_test_base,prefinal_written_test_weight,
-prefinal_3rd_quarter,prefinal_grade,prefinal_grade_equivalent)
-VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0',
-'0','0','0','0','0')");
+prefinal_3rd_quarter,prefinal_grade,prefinal_grade_equivalent,semester)
+VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0',
+'0','0','0','0','0','1')");
+
+
+mysqli_query($connections, "INSERT INTO prefinal2 (student_no,student_name,
+prefinal_output_1,prefinal_output_2,prefinal_output_total_score,prefinal_output_base,prefinal_output_weight,
+prefinal_performance_1,prefinal_performance_2,prefinal_performance_total_score,prefinal_performance_base,
+prefinal_performance_weight,prefinal_written_test,prefinal_written_test_base,prefinal_written_test_weight,
+prefinal_3rd_quarter,prefinal_grade,prefinal_grade_equivalent,semester)
+VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0',
+'0','0','0','0','0','2')");
 
 
 
 
-mysqli_query($connections, "INSERT INTO final (student_no,student_name,final_formative_assessment_1,
-final_formative_assessment_2,final_formative_assessment_3,final_formative_assessment_4,final_formative_assessment_5,
-final_formative_assessment_6,final_formative_assessment_7,final_formative_assessment_8,final_formative_assessment_9,
-final_formative_assessment_10,final_formative_assessment_total_score,final_formative_assessment_base,
+mysqli_query($connections, "INSERT INTO final1 (student_no,student_name,
 final_output_1,final_output_2,final_output_total_score,final_output_base,final_output_weight,
 final_performance_1,final_performance_2,final_performance_total_score,final_performance_base,
 final_performance_weight,final_written_test,final_written_test_base,final_written_test_weight,
-final_4th_quarter,final_grade,final_grade_equivalent,final_grade_remarks)
-VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0',
-'0','0','0','0','0','0')");
+final_4th_quarter,final_grade,final_grade_equivalent,final_grade_remarks,semester)
+VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0',
+'0','0','0','0','0','0','1')");
+
+
+mysqli_query($connections, "INSERT INTO final2 (student_no,student_name,
+final_output_1,final_output_2,final_output_total_score,final_output_base,final_output_weight,
+final_performance_1,final_performance_2,final_performance_total_score,final_performance_base,
+final_performance_weight,final_written_test,final_written_test_base,final_written_test_weight,
+final_4th_quarter,final_grade,final_grade_equivalent,final_grade_remarks,semester)
+VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0',
+'0','0','0','0','0','0','2')");
 
 
 
