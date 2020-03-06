@@ -130,21 +130,21 @@ if (isset($_POST['submit'])) {
 
   if($student_no && $lastname && $firstname && $middlename && $course && $year && $username && $password && $confirm_password){
 
-    if(!preg_match("/^[a-zA-Z. ]*$/", $lastname)){
+    if(!preg_match("/^[a-zA-Z.ñÑ ]*$/", $lastname)){
       $err = "Last Name";
       $result = "should not have numbers or symbols.";
       include("../bins/lastname_warning.php");
       include("../bins/lastname_warningColor.php"); 
       // echo '<script>alert("Letters only!")</script>';
     }else{
-      if(!preg_match("/^[a-zA-Z. ]*$/", $firstname)){
+      if(!preg_match("/^[a-zA-Z.ñÑ ]*$/", $firstname)){
         $err = "First Name";
         $result = "should not have numbers or symbols.";
         include("../bins/firstname_warning.php");
         include("../bins/firstname_warningColor.php");  
         // echo '<script>alert("No numbers allowed!")</script>';
       }else{
-        if(!preg_match("/^[a-zA-Z. ]*$/", $middlename)){
+        if(!preg_match("/^[a-zA-Z.ñÑ ]*$/", $middlename)){
           $err = "Middle Name";
           $result = "should not have numbers or symbols.";
           include("../bins/middlename_warning.php");
@@ -191,8 +191,8 @@ if (isset($_POST['submit'])) {
                       if($confirm_password != $password){
                         $err = "Confirm Password";
                         $result = "should match the password";
-                        include("../bins/password_warning.php");
-                        include("../bins  /password_warningColor.php");
+                        include("../bins/confirm_password_warning.php");
+                        include("../bins/confirm_password_warningColor.php");
                       }else{
                         // $_SESSION["username"] = $session_user;
 
@@ -301,8 +301,8 @@ VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0',
 
     <div class="form-group">
     <tr>
-    <td class="label"><b><label for="lastname">Student ID:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $student_no; ?>" name="lastname" class="warningColor" id="lastname" autocomplete="off" disabled></td>
+    <td class="label"><b><label for="student_no">Student ID:</label></b></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $student_no; ?>" name="student_no" class="warningColor" id="student_no" autocomplete="off" disabled></td>
     </tr>
     </div>
 

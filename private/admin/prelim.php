@@ -16,6 +16,44 @@ $prelim_written_test = $prelim_written_test_base =
 $prelim_written_test_weight = $prelim_grade =
 $prelim_grade_equivalent = "0";
 
+
+
+if(isset($_GET["redir"])){
+
+  if($_GET["redir"] == "select_grading"){
+    $grade_period = "";
+  }else{
+    $grade_period = $_GET["redir"];
+  }
+
+  // switch (true) {
+  //     // case ($_GET["redir"] == "select_grading"):
+  //     //     $grade_period = "";
+  //     //     break;
+  //     case ($_GET["redir"] == "prelim"):
+  //         $grade_period = "prelim";
+  //         break;
+  //     case ($_GET["redir"] == "midterm"):
+  //         $grade_period = "midterm";
+  //         break;
+  //     case ($_GET["redir"] == "prefinal"):
+  //         $grade_period = "prefinal";
+  //         break;
+  //     case ($_GET["redir"] == "final"):
+  //         $grade_period = "final";
+  //         break;
+
+  //     default:
+  //         $grade_period = "5";
+  // }
+
+  
+
+}else{
+  $grade_period = "prelim";
+}
+
+
 if(isset($_GET["_y"])){
 
   if($_GET["_y"] == "select_year"){
@@ -30,6 +68,46 @@ if(isset($_GET["_y"])){
 }
 
 
+if(isset($_GET["_c"])){
+
+  if($_GET["_c"] == "select_course"){
+    $course = "";
+  }else{
+    $course = $_GET["_c"];
+  }
+
+  
+}else{
+  $course = "BSCS";
+}
+
+
+if(isset($_GET["_s"])){
+
+  if($_GET["_s"] == "select_subject"){
+    $subject = "";
+  }else{
+    $subject = $_GET["_s"];
+  }
+
+  
+}else{
+  $subject = "BSCS";
+}
+
+// Select Semester here Kara nag tapos
+if(isset($_GET["_s"])){
+
+  if($_GET["_s"] == "select_subject"){
+    $subject = "";
+  }else{
+    $subject = $_GET["_s"];
+  }
+
+  
+}else{
+  $subject = "BSCS";
+}
 
 
 
@@ -52,6 +130,8 @@ if(isset($_GET["_y"])){
 <?php
 
 if($year == ""){
+
+}else if ($grade_period == ""){
 
 }else{
   $student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE account_type='2' AND year=$year");

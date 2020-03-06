@@ -1,12 +1,12 @@
 <?php
 
 
-$midterm_formative_assessment_1 = $midterm_formative_assessment_2 =
-$midterm_formative_assessment_3 = $midterm_formative_assessment_4 =
-$midterm_formative_assessment_5 = $midterm_formative_assessment_6 =
-$midterm_formative_assessment_7 = $midterm_formative_assessment_8 =
-$midterm_formative_assessment_9 = $midterm_formative_assessment_10 =
-$midterm_formative_assessment_total_score = $midterm_formative_assessment_base =
+// $midterm_formative_assessment_1 = $midterm_formative_assessment_2 =
+// $midterm_formative_assessment_3 = $midterm_formative_assessment_4 =
+// $midterm_formative_assessment_5 = $midterm_formative_assessment_6 =
+// $midterm_formative_assessment_7 = $midterm_formative_assessment_8 =
+// $midterm_formative_assessment_9 = $midterm_formative_assessment_10 =
+// $midterm_formative_assessment_total_score = $midterm_formative_assessment_base =
 $midterm_output_1 = $midterm_output_2 =
 $midterm_output_total_score = $midterm_output_base =
 $midterm_output_weight = $midterm_performance_1 =
@@ -27,13 +27,13 @@ $midterm_remarks = "";
 <div class="table-responsive">
 <table border="1" class="table table-hover">
     <thead>
-    <tr><th class="px-3" colspan="2"></th><th class="px-3 text-center bg-primary text-white" colspan="29">Midterm</th></tr><!-- Midterm Here -->
+    <tr><th class="px-3" colspan="2"></th><th class="px-3 text-center bg-primary text-white" colspan="17">Midterm</th></tr><!-- Midterm Here -->
 
     <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th>
-    <th class="px-5 text-center bg-primary text-white" colspan="12">Formative Assessment</th><th class="px-5 text-center bg-primary text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-primary text-white" colspan="5">Performance</th><th class="px-5 text-center bg-primary text-white" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center bg-primary text-white">2nd&nbsp;Quarter</th><th class="px-5 text-center bg-primary text-white" colspan="2">Midterm&nbsp;Grade</th><th class="px-5 text-center bg-primary text-white">Remarks</th></tr><!-- Midterm Here -->
+    <!-- <th class="px-5 text-center bg-primary text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-primary text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-primary text-white" colspan="5">Performance</th><th class="px-5 text-center bg-primary text-white" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center bg-primary text-white">2nd&nbsp;Quarter</th><th class="px-5 text-center bg-primary text-white" colspan="2">Midterm&nbsp;Grade</th><th class="px-5 text-center bg-primary text-white">Remarks</th></tr><!-- Midterm Here -->
 
     <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th>
-    <th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">100</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">30</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.20</th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th></tr><!-- Midterm Here -->
+    <!-- <th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">100</th><th class="bg-primary text-white">60</th> --><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">30</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.20</th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th></tr><!-- Midterm Here -->
     </thead>
 
     <tbody>
@@ -58,14 +58,14 @@ $prelim_grade = $row_prelim["prelim_grade"];
 
 
     // ####################______Midterm Formulas______####################
-    $midterm_formative_assessment_total_score =
-    $midterm_formative_assessment_1 + $midterm_formative_assessment_2 +
-    $midterm_formative_assessment_3 + $midterm_formative_assessment_4 +
-    $midterm_formative_assessment_5 + $midterm_formative_assessment_6 +
-    $midterm_formative_assessment_7 + $midterm_formative_assessment_8 +
-    $midterm_formative_assessment_9 + $midterm_formative_assessment_10;
+    // $midterm_formative_assessment_total_score =
+    // $midterm_formative_assessment_1 + $midterm_formative_assessment_2 +
+    // $midterm_formative_assessment_3 + $midterm_formative_assessment_4 +
+    // $midterm_formative_assessment_5 + $midterm_formative_assessment_6 +
+    // $midterm_formative_assessment_7 + $midterm_formative_assessment_8 +
+    // $midterm_formative_assessment_9 + $midterm_formative_assessment_10;
 
-    $midterm_formative_assessment_base = $midterm_formative_assessment_total_score / 100 * 40 + 60;
+    // $midterm_formative_assessment_base = $midterm_formative_assessment_total_score / 100 * 40 + 60;
     $midterm_output_total_score = $midterm_output_1 + $midterm_output_2;
     $midterm_output_base = $midterm_output_total_score / 40 * 40 + 60;
     $midterm_output_weight = $midterm_output_base * 0.40;
@@ -125,7 +125,7 @@ $prelim_grade = $row_prelim["prelim_grade"];
   <tr>
   <td><?php echo $student_no; ?></td>
   <td><?php echo $fullname; ?></td>
-  <td><a href="#"><?php echo $midterm_formative_assessment_1; ?></a></td> 
+  <!-- <td><a href="#"><?php echo $midterm_formative_assessment_1; ?></a></td> 
   <td><a href="#"><?php echo $midterm_formative_assessment_2; ?></a></td> 
   <td><a href="#"><?php echo $midterm_formative_assessment_3; ?></a></td> 
   <td><a href="#"><?php echo $midterm_formative_assessment_4; ?></a></td> 
@@ -136,7 +136,7 @@ $prelim_grade = $row_prelim["prelim_grade"];
   <td><a href="#"><?php echo $midterm_formative_assessment_9; ?></a></td> 
   <td><a href="#"><?php echo $midterm_formative_assessment_10; ?></a></td> 
   <td><a href="#"><?php echo $midterm_formative_assessment_total_score; ?></a></td> 
-  <td><a href="#"><?php echo $midterm_formative_assessment_base; ?></a></td> 
+  <td><a href="#"><?php echo $midterm_formative_assessment_base; ?></a></td>  -->
   <td><a href="#"><?php echo $midterm_output_1; ?></a></td> 
   <td><a href="#"><?php echo $midterm_output_2; ?></a></td> 
   <td><a href="#"><?php echo $midterm_output_total_score; ?></a></td> 

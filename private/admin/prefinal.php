@@ -1,12 +1,12 @@
 <?php
 
 
-$prefinal_formative_assessment_1 = $prefinal_formative_assessment_2 =
-$prefinal_formative_assessment_3 = $prefinal_formative_assessment_4 =
-$prefinal_formative_assessment_5 = $prefinal_formative_assessment_6 =
-$prefinal_formative_assessment_7 = $prefinal_formative_assessment_8 =
-$prefinal_formative_assessment_9 = $prefinal_formative_assessment_10 =
-$prefinal_formative_assessment_total_score = $prefinal_formative_assessment_base =
+// $prefinal_formative_assessment_1 = $prefinal_formative_assessment_2 =
+// $prefinal_formative_assessment_3 = $prefinal_formative_assessment_4 =
+// $prefinal_formative_assessment_5 = $prefinal_formative_assessment_6 =
+// $prefinal_formative_assessment_7 = $prefinal_formative_assessment_8 =
+// $prefinal_formative_assessment_9 = $prefinal_formative_assessment_10 =
+// $prefinal_formative_assessment_total_score = $prefinal_formative_assessment_base =
 $prefinal_output_1 = $prefinal_output_2 =
 $prefinal_output_total_score = $prefinal_output_base =
 $prefinal_output_weight = $prefinal_performance_1 =
@@ -26,13 +26,13 @@ $prefinal_grade = $prefinal_grade_equivalent = "0";
 <table border="1" class="table table-hover">
     <thead>
     <tr><th class="px-3" colspan="2"></th>
-    <th class="px-3 text-center bg-danger text-white" colspan="28">Prefinal Period</th></tr><!-- Prefinal Here -->
+    <th class="px-3 text-center bg-danger text-white" colspan="16">Prefinal Period</th></tr><!-- Prefinal Here -->
 
     <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th>
-    <th class="px-5 text-center bg-danger text-white" colspan="12">Formative Assessment</th><th class="px-5 text-center bg-danger text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-danger text-white" colspan="5">Performance</th><th class="px-5 text-center bg-danger text-white" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center bg-danger text-white">3rd&nbsp;Quarter</th><th class="px-5 text-center bg-danger text-white" colspan="2">Prefinal&nbsp;Grade</th></tr><!-- Prefinal Here -->
+    <!-- <th class="px-5 text-center bg-danger text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-danger text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-danger text-white" colspan="5">Performance</th><th class="px-5 text-center bg-danger text-white" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center bg-danger text-white">3rd&nbsp;Quarter</th><th class="px-5 text-center bg-danger text-white" colspan="2">Prefinal&nbsp;Grade</th></tr><!-- Prefinal Here -->
 
     <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th>
-    <th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">100</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">40</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.40</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">40</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.40</th><th class="bg-danger text-white">30</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.20</th><th class="bg-danger text-white"></th><th class="bg-danger text-white"></th><th class="bg-danger text-white"></th></tr><!-- Prefinal Here -->
+    <!-- <th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">100</th><th class="bg-danger text-white">60</th> --><th class="bg-danger text-white">20</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">40</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.40</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">40</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.40</th><th class="bg-danger text-white">30</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.20</th><th class="bg-danger text-white"></th><th class="bg-danger text-white"></th><th class="bg-danger text-white"></th></tr><!-- Prefinal Here -->
     </thead>
 
     <tbody>
@@ -57,14 +57,14 @@ $midterm_grade = $row_midterm["midterm_grade"];
 
 
     // ####################______Prefinal Formulas______####################
-    $prefinal_formative_assessment_total_score =
-    $prefinal_formative_assessment_1 + $prefinal_formative_assessment_2 +
-    $prefinal_formative_assessment_3 + $prefinal_formative_assessment_4 +
-    $prefinal_formative_assessment_5 + $prefinal_formative_assessment_6 +
-    $prefinal_formative_assessment_7 + $prefinal_formative_assessment_8 +
-    $prefinal_formative_assessment_9 + $prefinal_formative_assessment_10;
+    // $prefinal_formative_assessment_total_score =
+    // $prefinal_formative_assessment_1 + $prefinal_formative_assessment_2 +
+    // $prefinal_formative_assessment_3 + $prefinal_formative_assessment_4 +
+    // $prefinal_formative_assessment_5 + $prefinal_formative_assessment_6 +
+    // $prefinal_formative_assessment_7 + $prefinal_formative_assessment_8 +
+    // $prefinal_formative_assessment_9 + $prefinal_formative_assessment_10;
   
-    $prefinal_formative_assessment_base = $prefinal_formative_assessment_total_score / 100 * 40 + 60;
+    // $prefinal_formative_assessment_base = $prefinal_formative_assessment_total_score / 100 * 40 + 60;
     $prefinal_output_total_score = $prefinal_output_1 + $prefinal_output_2;
     $prefinal_output_base = $prefinal_output_total_score / 40 * 40 + 60;
     $prefinal_output_weight = $prefinal_output_base * 0.40;
@@ -120,7 +120,7 @@ $midterm_grade = $row_midterm["midterm_grade"];
 <td><?php echo $student_no; ?></td>
 <td><?php echo $fullname; ?></td>
 
-<td><a href="#"><?php echo $prefinal_formative_assessment_1; ?></a></td> 
+<!-- <td><a href="#"><?php echo $prefinal_formative_assessment_1; ?></a></td> 
 <td><a href="#"><?php echo $prefinal_formative_assessment_2; ?></a></td> 
 <td><a href="#"><?php echo $prefinal_formative_assessment_3; ?></a></td> 
 <td><a href="#"><?php echo $prefinal_formative_assessment_4; ?></a></td> 
@@ -131,7 +131,7 @@ $midterm_grade = $row_midterm["midterm_grade"];
 <td><a href="#"><?php echo $prefinal_formative_assessment_9; ?></a></td> 
 <td><a href="#"><?php echo $prefinal_formative_assessment_10; ?></a></td> 
 <td><a href="#"><?php echo $prefinal_formative_assessment_total_score; ?></a></td> 
-<td><a href="#"><?php echo $prefinal_formative_assessment_base; ?></a></td> 
+<td><a href="#"><?php echo $prefinal_formative_assessment_base; ?></a></td>  -->
 <td><a href="#"><?php echo $prefinal_output_1; ?></a></td> 
 <td><a href="#"><?php echo $prefinal_output_2; ?></a></td> 
 <td><a href="#"><?php echo $prefinal_output_total_score; ?></a></td> 
