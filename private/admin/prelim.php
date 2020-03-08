@@ -50,7 +50,7 @@ if(isset($_GET["redir"])){
   
 
 }else{
-  $grade_period = "prelim";
+  $grade_period = "";
 }
 
 
@@ -64,7 +64,7 @@ if(isset($_GET["_y"])){
 
   
 }else{
-  $year = "2020";
+  $year = "";
 }
 
 
@@ -74,39 +74,41 @@ if(isset($_GET["_c"])){
     $course = "";
   }else{
     $course = $_GET["_c"];
+    echo $course;
   }
 
   
 }else{
-  $course = "BSCS";
+  $course = "";
 }
 
 
-if(isset($_GET["_s"])){
+// if(isset($_GET["_s"])){
 
-  if($_GET["_s"] == "select_subject"){
-    $subject = "";
-  }else{
-    $subject = $_GET["_s"];
-  }
+//   if($_GET["_s"] == "select_subject"){
+//     $subject = "";
+//   }else{
+//     $subject = $_GET["_s"];
+//   }
 
   
-}else{
-  $subject = "BSCS";
-}
+// }else{
+//   $subject = "";
+// }
 
 // Select Semester here Kara nag tapos
-if(isset($_GET["_s"])){
+if(isset($_GET["_s_e_"])){
 
-  if($_GET["_s"] == "select_subject"){
-    $subject = "";
+  if($_GET["_s_e_"] == "select_semester"){
+    $semester = "";
   }else{
-    $subject = $_GET["_s"];
+    $semester = $_GET["_s_e_"];
+    echo $semester;
   }
 
   
 }else{
-  $subject = "BSCS";
+  $semester = "";
 }
 
 
@@ -129,15 +131,80 @@ if(isset($_GET["_s"])){
 
 <?php
 
-if($year == ""){
+// if($grade_period == ""){
 
-}else if ($grade_period == ""){
+// }else if ($year == ""){
 
-}else{
-  $student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE account_type='2' AND year=$year");
+// }else if ($course == ""){
+
+// }else if ($subject == ""){
+
+// }else if ($semester == ""){
+
+// }else{
+
+  if($grade_period == "prelim"){
+    if(isset($_GET["_y"])){
+      if($year == $_GET["_y"]){
+        if(isset($_GET["_c"])){
+          if($course == $_GET["_c"]){
+            // if(isset($_GET["_s"])){
+            //   if($subject == $_GET["_s"]){
+                if(isset($_GET["_s_e_"])){
+                  if($semester == $_GET["_s_e_"]){
+      // $student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE year=$year AND account_type='2' ");
+      // echo $_GET["_y"];
+    // echo"<script>alert('hay');</script>";
+                    $grade_period = $grade_period . $semester[3];
+                    // echo $grade_period;
+                    $get_student_no = mysqli_query($connections, "SELECT * FROM $grade_period");
+                    $fetch_student_no = mysqli_fetch_assoc($get_student_no);
+                    $student_no = $fetch_student_no["student_no"];
+                    $fullname = $fetch_student_no["student_name"];
+
+                    $student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE course='$course' AND year='$year' AND account_type='2'");
+                    $grading_period = mysqli_query($connections, "SELECT * FROM _user_tbl_,$grade_period WHERE student_name=$fullname AND _user_tbl_.course='$course' ");
+
+                    prelim_query($student_qry,$grading_period);
+                  }
+                }
+            //   }
+            // }
+          }
+        }
+      }
+    }
+  }
+
+  // if($grade_period == "prelim" && $semester == "sem1"){
+  //   // echo"<script>alert('hay');</script>";
+  //   $grade_student_no = "prelim1.student_no";
+  // }elseif($grade_period == "prelim" && $semester == "sem2"){
+  //   $grade_student_no = "prelim2.student_no";
+  // }elseif($grade_period == "midterm" && $semester == "sem1"){
+  //   $grade_student_no = "midterm1.student_no";
+  // }elseif($grade_period == "midterm" && $semester == "sem2"){
+  //   $grade_student_no = "midterm2.student_no";
+  // }elseif($grade_period == "prefinal" && $semester == "sem1"){
+  //   $grade_student_no = "prefinal1.student_no";
+  // }elseif($grade_period == "prefinal" && $semester == "sem2"){
+  //   $grade_student_no = "prefinal2.student_no";
+  // }elseif($grade_period == "final" && $semester == "sem1"){
+  //   $grade_student_no = "final1.student_no";
+  // }elseif($grade_period == "final" && $semester == "sem2"){
+  //   $grade_student_no = "final2.student_no";
+  // }
+
+  // echo $grade_student_no;
+
+  // $student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE year=$course AND account_type='2' ");
 
 
 // $row_prelim = mysqli_fetch_assoc($prelim_qry);
+
+// }
+
+function prelim_query($student_qry,$grading_period){
 
 while($row_student = mysqli_fetch_assoc($student_qry)){
 
@@ -147,9 +214,9 @@ while($row_student = mysqli_fetch_assoc($student_qry)){
   $middlename = $row_student["middlename"];
   
   $fullname = $firstname . " " . $middlename[0] . ". " . $lastname;
-  $prelim_qry = mysqli_query($connections, "SELECT * FROM prelim WHERE student_no=$student_no");
+  // $prelim_qry = mysqli_query($connections, "SELECT * FROM prelim1 WHERE student_no=$student_no");
 
-  $row_prelim = mysqli_fetch_assoc($prelim_qry);
+  $row_prelim = mysqli_fetch_assoc($grading_period);
   // $prelim_formative_assessment_1 = $row_prelim["prelim_formative_assessment_1"];
   // $prelim_formative_assessment_2 = $row_prelim["prelim_formative_assessment_2"];
   // $prelim_formative_assessment_3 = $row_prelim["prelim_formative_assessment_3"];
@@ -160,8 +227,8 @@ while($row_student = mysqli_fetch_assoc($student_qry)){
   // $prelim_formative_assessment_8 = $row_prelim["prelim_formative_assessment_8"];
   // $prelim_formative_assessment_9 = $row_prelim["prelim_formative_assessment_9"];
   // $prelim_formative_assessment_10 = $row_prelim["prelim_formative_assessment_10"];
-  $prelim_formative_assessment_total_score = $row_prelim["prelim_formative_assessment_total_score"];
-  $prelim_formative_assessment_base = $row_prelim["prelim_formative_assessment_base"];
+  // $prelim_formative_assessment_total_score = $row_prelim["prelim_formative_assessment_total_score"];
+  // $prelim_formative_assessment_base = $row_prelim["prelim_formative_assessment_base"];
   $prelim_output_1 = $row_prelim["prelim_output_1"];
   $prelim_output_2 = $row_prelim["prelim_output_2"];
   $prelim_output_total_score = $row_prelim["prelim_output_total_score"];
@@ -240,7 +307,9 @@ while($row_student = mysqli_fetch_assoc($student_qry)){
 
   $a1 = substr(str_shuffle($permitted_chars), 0, 5);
 
-
+  $year = $_GET["_y"];
+  $course = $_GET["_c"];
+  $semester = $_GET["_s_e_"];
   
 ?>
 
@@ -259,7 +328,7 @@ while($row_student = mysqli_fetch_assoc($student_qry)){
 <td><a href="?redir=prelim&a10=<?php echo $student_no; ?>"><?php echo $prelim_formative_assessment_10; ?></a></td> 
 <td><a href="?redir=prelim&pfats=<?php echo $student_no; ?>"><?php echo $prelim_formative_assessment_total_score; ?></a></td> 
 <td><a href="?redir=prelim&pfab=<?php echo $student_no; ?>"><?php echo $prelim_formative_assessment_base; ?></a></td>  -->
-<td><a href="?redir=prelim&po1=<?php echo $student_no; ?>"><?php echo $prelim_output_1; ?></a></td> 
+<td><a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po1=<?php echo $student_no; ?>"><?php echo $prelim_output_1 .''.$course; ?></a></td> 
 <td><a href="?redir=prelim&po2=<?php echo $student_no; ?>"><?php echo $prelim_output_2; ?></a></td> 
 <td><a href="?redir=prelim&pots=<?php echo $student_no; ?>"><?php echo $prelim_output_total_score; ?></a></td> 
 <td><a href="?redir=prelim&pob=<?php echo $student_no; ?>"><?php echo $prelim_output_base; ?></a></td> 
@@ -347,6 +416,11 @@ while($row_student = mysqli_fetch_assoc($student_qry)){
 ?>
 </div>
 
+<input type="text" value="<?php echo $_GET["redir"]; ?>" id="grade_period">
+<input type="text" value="<?php echo $_GET["_y"]; ?>" id="year">
+<input type="text" value="<?php echo $_GET["_c"]; ?>" id="course">
+<input type="text" value="<?php echo $_GET["_s_e_"]; ?>" id="semester">
+
 <script>
 
 // var black_cover = document.getElementById("myModal");
@@ -360,12 +434,24 @@ while($row_student = mysqli_fetch_assoc($student_qry)){
 
 // check if mabuoe du class ni body then reload the page using location.reload();
 
+    // grading = document.getElementById("grade_period").value;
+    // year = document.getElementById("year").value;
+    // course = document.getElementById("course").value;
+    // semester = document.getElementById("semester").value;
 
+  var grading = document.getElementById("grade_period").value;
+  var year = document.getElementById("year");
+  var selected_year = year.value;
+  var course = document.getElementById("course");
+  var selected_course = course.value;
+  var semester = document.getElementById("semester");
+  var selected_semester = semester.value;
 
     function relocate(){
-      window.location.href = "studentperformance?redir=prelim";
+      window.location.href = "studentperformance?redir="+grading+"&_y="+selected_year+"&_c="+selected_course+"&_s_e_="+selected_semester;
       // alert("hay");
     }
+
 
     get_black = document.getElementById("black1");
     

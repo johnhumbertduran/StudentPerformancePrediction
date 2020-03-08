@@ -7,31 +7,36 @@ window.location.href = "studentperformance?redir=prelim&&a1="+a1;
 
 <?php
 
-if(isset($_GET["a1"])){
-    $student_no = $_GET["a1"];
-}elseif(isset($_GET["a2"])) {
-    $student_no = $_GET["a2"];
-}elseif(isset($_GET["a3"])) {
-    $student_no = $_GET["a3"];
-}elseif(isset($_GET["a4"])) {
-    $student_no = $_GET["a4"];
-}elseif(isset($_GET["a5"])) {
-    $student_no = $_GET["a5"];
-}elseif(isset($_GET["a6"])) {
-    $student_no = $_GET["a6"];
-}elseif(isset($_GET["a7"])) {
-    $student_no = $_GET["a7"];
-}elseif(isset($_GET["a8"])) {
-    $student_no = $_GET["a8"];
-}elseif(isset($_GET["a9"])) {
-    $student_no = $_GET["a9"];
-}elseif(isset($_GET["a10"])) {
-    $student_no = $_GET["a10"];
-}elseif(isset($_GET["pfats"])) {
-    $student_no = $_GET["pfats"];
-}elseif(isset($_GET["pfab"])) {
-    $student_no = $_GET["pfab"];
-}elseif(isset($_GET["po1"])) {
+// if(isset($_GET["a1"])){
+//     $student_no = $_GET["a1"];
+// }elseif(isset($_GET["a2"])) {
+//     $student_no = $_GET["a2"];
+// }elseif(isset($_GET["a3"])) {
+//     $student_no = $_GET["a3"];
+// }elseif(isset($_GET["a4"])) {
+//     $student_no = $_GET["a4"];
+// }elseif(isset($_GET["a5"])) {
+//     $student_no = $_GET["a5"];
+// }elseif(isset($_GET["a6"])) {
+//     $student_no = $_GET["a6"];
+// }elseif(isset($_GET["a7"])) {
+//     $student_no = $_GET["a7"];
+// }elseif(isset($_GET["a8"])) {
+//     $student_no = $_GET["a8"];
+// }elseif(isset($_GET["a9"])) {
+//     $student_no = $_GET["a9"];
+// }elseif(isset($_GET["a10"])) {
+//     $student_no = $_GET["a10"];
+// }elseif(isset($_GET["pfats"])) {
+//     $student_no = $_GET["pfats"];
+// }elseif(isset($_GET["pfab"])) {
+//     $student_no = $_GET["pfab"];
+/* }else */if(isset($_GET["po1"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["po1"];
 }elseif(isset($_GET["po2"])) {
     $student_no = $_GET["po2"];
@@ -63,36 +68,36 @@ if(isset($_GET["a1"])){
     $student_no = $_GET["pge"];
 }
 
-$student_record = mysqli_query($connections, "SELECT * FROM prelim WHERE student_no=$student_no");
+$student_record = mysqli_query($connections, "SELECT * FROM $grading WHERE student_no=$student_no");
 $row_student = mysqli_fetch_assoc($student_record);
 
 $student_name = $row_student["student_name"];
 
-if(isset($_GET["a1"])){
-    $grade = $row_student["prelim_formative_assessment_1"];
-}elseif(isset($_GET["a2"])) {
-    $grade = $row_student["prelim_formative_assessment_2"];
-}elseif(isset($_GET["a3"])) {
-    $grade = $row_student["prelim_formative_assessment_3"];
-}elseif(isset($_GET["a4"])) {
-    $grade = $row_student["prelim_formative_assessment_4"];
-}elseif(isset($_GET["a5"])) {
-    $grade = $row_student["prelim_formative_assessment_5"];
-}elseif(isset($_GET["a6"])) {
-    $grade = $row_student["prelim_formative_assessment_6"];
-}elseif(isset($_GET["a7"])) {
-    $grade = $row_student["prelim_formative_assessment_7"];
-}elseif(isset($_GET["a8"])) {
-    $grade = $row_student["prelim_formative_assessment_8"];
-}elseif(isset($_GET["a9"])) {
-    $grade = $row_student["prelim_formative_assessment_9"];
-}elseif(isset($_GET["a10"])) {
-    $grade = $row_student["prelim_formative_assessment_10"];
-}elseif(isset($_GET["pfats"])) {
-    $grade = $row_student["prelim_formative_assessment_total_score"];
-}elseif(isset($_GET["pfab"])) {
-    $grade = $row_student["prelim_formative_assessment_base"];
-}elseif(isset($_GET["po1"])) {
+// if(isset($_GET["a1"])){
+//     $grade = $row_student["prelim_formative_assessment_1"];
+// }elseif(isset($_GET["a2"])) {
+//     $grade = $row_student["prelim_formative_assessment_2"];
+// }elseif(isset($_GET["a3"])) {
+//     $grade = $row_student["prelim_formative_assessment_3"];
+// }elseif(isset($_GET["a4"])) {
+//     $grade = $row_student["prelim_formative_assessment_4"];
+// }elseif(isset($_GET["a5"])) {
+//     $grade = $row_student["prelim_formative_assessment_5"];
+// }elseif(isset($_GET["a6"])) {
+//     $grade = $row_student["prelim_formative_assessment_6"];
+// }elseif(isset($_GET["a7"])) {
+//     $grade = $row_student["prelim_formative_assessment_7"];
+// }elseif(isset($_GET["a8"])) {
+//     $grade = $row_student["prelim_formative_assessment_8"];
+// }elseif(isset($_GET["a9"])) {
+//     $grade = $row_student["prelim_formative_assessment_9"];
+// }elseif(isset($_GET["a10"])) {
+//     $grade = $row_student["prelim_formative_assessment_10"];
+// }elseif(isset($_GET["pfats"])) {
+//     $grade = $row_student["prelim_formative_assessment_total_score"];
+// }elseif(isset($_GET["pfab"])) {
+//     $grade = $row_student["prelim_formative_assessment_base"];
+/* }else */if(isset($_GET["po1"])) {
     $grade = $row_student["prelim_output_1"];
 }elseif(isset($_GET["po2"])) {
     $grade = $row_student["prelim_output_2"];
@@ -129,46 +134,46 @@ switch (true) {
     //   case ($prelim_grade <= 74.4):
     //       $grade_name = "5";
     //       break;
-      case (!empty($_GET["a1"])):
-          $grade_name = "prelim_formative_assessment_1";
-          $grade_number = "Quiz 1";
-          break;
-      case (!empty($_GET["a2"])):
-          $grade_name = "prelim_formative_assessment_2";
-          $grade_number = "Quiz 2";
-          break;
-      case (!empty($_GET["a3"])):
-          $grade_name = "prelim_formative_assessment_3";
-          $grade_number = "Quiz 3";
-          break;
-      case (!empty($_GET["a4"])):
-          $grade_name = "prelim_formative_assessment_4";
-          $grade_number = "Quiz 4";
-          break;
-      case (!empty($_GET["a5"])):
-          $grade_name = "prelim_formative_assessment_5";
-          $grade_number = "Quiz 5";
-          break;
-      case (!empty($_GET["a6"])):
-          $grade_name = "prelim_formative_assessment_6";
-          $grade_number = "Quiz 6";
-          break;
-      case (!empty($_GET["a7"])):
-          $grade_name = "prelim_formative_assessment_7";
-          $grade_number = "Quiz 7";
-          break;
-      case (!empty($_GET["a8"])):
-          $grade_name = "prelim_formative_assessment_8";
-          $grade_number = "Quiz 8";
-          break;
-      case (!empty($_GET["a9"])):
-          $grade_name = "prelim_formative_assessment_9";
-          $grade_number = "Quiz 9";
-          break;
-      case (!empty($_GET["a10"])):
-          $grade_name = "prelim_formative_assessment_10";
-          $grade_number = "Quiz 10";
-          break;
+    //   case (!empty($_GET["a1"])):
+    //       $grade_name = "prelim_formative_assessment_1";
+    //       $grade_number = "Quiz 1";
+    //       break;
+    //   case (!empty($_GET["a2"])):
+    //       $grade_name = "prelim_formative_assessment_2";
+    //       $grade_number = "Quiz 2";
+    //       break;
+    //   case (!empty($_GET["a3"])):
+    //       $grade_name = "prelim_formative_assessment_3";
+    //       $grade_number = "Quiz 3";
+    //       break;
+    //   case (!empty($_GET["a4"])):
+    //       $grade_name = "prelim_formative_assessment_4";
+    //       $grade_number = "Quiz 4";
+    //       break;
+    //   case (!empty($_GET["a5"])):
+    //       $grade_name = "prelim_formative_assessment_5";
+    //       $grade_number = "Quiz 5";
+    //       break;
+    //   case (!empty($_GET["a6"])):
+    //       $grade_name = "prelim_formative_assessment_6";
+    //       $grade_number = "Quiz 6";
+    //       break;
+    //   case (!empty($_GET["a7"])):
+    //       $grade_name = "prelim_formative_assessment_7";
+    //       $grade_number = "Quiz 7";
+    //       break;
+    //   case (!empty($_GET["a8"])):
+    //       $grade_name = "prelim_formative_assessment_8";
+    //       $grade_number = "Quiz 8";
+    //       break;
+    //   case (!empty($_GET["a9"])):
+    //       $grade_name = "prelim_formative_assessment_9";
+    //       $grade_number = "Quiz 9";
+    //       break;
+    //   case (!empty($_GET["a10"])):
+    //       $grade_name = "prelim_formative_assessment_10";
+    //       $grade_number = "Quiz 10";
+    //       break;
     //   case (!empty($_GET["pfats"])):
     //       $grade_name = "";
     //       $grade_number = "";
@@ -247,10 +252,10 @@ switch (true) {
         //   echo "<script>alert('ahy');</script>";
         $grade = $_POST["grade_input"];
 
-        mysqli_query($connections, "UPDATE prelim SET $grade_name = '$grade'
+        mysqli_query($connections, "UPDATE $grading SET $grade_name='$grade'
         WHERE student_no=$student_no");
         
-        echo "<script>window.location.href='?redir=prelim'</script>";
+        echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
 
       }
   }
@@ -264,7 +269,7 @@ switch (true) {
 <div class="card col-sm-5 mx-auto p-3">
 <button type="button" class="close ml-auto bg-info rounded-circle px-1" id="black1">&times;</button>
 <p></p>
- <?php echo $student_name; ?>
+ <h2><?php echo $student_name; ?></h2>
   <div class="card-header bg-info">
   <font color="white"> <?php echo $grade_number; ?> </font>
   </div>

@@ -67,7 +67,10 @@ include("../bins/admin_nav.php");
     <table border="0" width="100%">
 <?php
 
-$lastname = $firstname = $middlename = $course = $year = $username = $password = $confirm_password = "";
+$lastname = $firstname = $middlename = $username = "";
+$course = "BSIT";
+$year = "2012";
+$password = $confirm_password = "password123";
 
 $student_no = "20200000";
 
@@ -130,7 +133,7 @@ if (isset($_POST['submit'])) {
 
   if($student_no && $lastname && $firstname && $middlename && $course && $year && $username && $password && $confirm_password){
 
-    if(!preg_match("/^[a-zA-Z.ñÑ ]*$/", $lastname)){
+    if(!preg_match("/^[a-zA-Z.ñÑ\- ]*$/", $lastname)){
       $err = "Last Name";
       $result = "should not have numbers or symbols.";
       include("../bins/lastname_warning.php");
@@ -298,7 +301,7 @@ VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0',
     <!-- <tr><th colspan="4"><center> <h1>Registration Form</h1> </center></th></tr> -->
 
     <tr><td colspan="4"><hr></td></tr>
-
+<p>dash sa input butangan dahil sa validation</p>
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="student_no">Student ID:</label></b></td>
@@ -309,7 +312,7 @@ VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0',
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="lastname">Last Name:</label></b></td>
-    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $lastname; ?>" name="lastname" class="warningColor" id="lastname" placeholder="Last Name" autocomplete="off" required></td>
+    <td colspan="3"><input class="form-control txt_input" type="text" value="<?php echo $lastname; ?>" name="lastname" class="warningColor" id="lastname" placeholder="Last Name" autocomplete="off" autofocus required></td>
     </tr>
     </div>
 

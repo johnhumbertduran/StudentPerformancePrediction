@@ -85,17 +85,17 @@ include("../bins/admin_nav.php");
   <option value="BSCS" <?php if(isset($_GET['_c'])){ if($_GET['_c'] == "BSCS"){ echo "selected"; }}?> >BSCS</option>
 </select>
 
-<select class="form-control col-2 ml-2 pt-1 pb-2 d-inline <?php if(!isset($_GET['_c'])){ echo "bg-secondary"; }else{ if($_GET['_c'] == "select_course"){ echo "bg-secondary"; }else{ echo "bg-info"; }}?> text-white" <?php if(!isset($_GET['_c'])){ echo "disabled"; }else{ if($_GET['_c'] == "select_course"){ echo "disabled"; }}?> id="subject" onchange="subject()">
+<!-- <select class="form-control col-2 ml-2 pt-1 pb-2 d-inline <?php /* if(!isset($_GET['_c'])){ echo "bg-secondary"; }else{ if($_GET['_c'] == "select_course"){ echo "bg-secondary"; }else{ echo "bg-info"; }} */?> text-white" <?php /* if(!isset($_GET['_c'])){ echo "disabled"; }else{ if($_GET['_c'] == "select_course"){ echo "disabled"; }} */?> id="subject" onchange="subject()">
   <option value="select_subject">Select Subject</option>
-  <option value="application_programming1" <?php if(isset($_GET['_s'])){ if($_GET['_s'] == "application_programming1"){ echo "selected"; }}?> >Application Programming 1</option>
-  <option value="application_programming2" <?php if(isset($_GET['_s'])){ if($_GET['_s'] == "application_programming2"){ echo "selected"; }}?> >Application Programming 2</option>
-</select>
+  <option value="application_programming1" <?php /* if(isset($_GET['_s'])){ if($_GET['_s'] == "application_programming1"){ echo "selected"; }} */?> >Application Programming 1</option>
+  <option value="application_programming2" <?php /* if(isset($_GET['_s'])){ if($_GET['_s'] == "application_programming2"){ echo "selected"; }} */?> >Application Programming 2</option>
+</select> -->
 
 
-<select class="form-control col-2 ml-2 pt-1 pb-2 d-inline <?php if(!isset($_GET['_s'])){ echo "bg-secondary"; }else{ if($_GET['_s'] == "select_subject"){ echo "bg-secondary"; }else{ echo "bg-info"; }}?> text-white" <?php if(!isset($_GET['_s'])){ echo "disabled"; }else{ if($_GET['_s'] == "select_subject"){ echo "disabled"; }}?> id="semester" onchange="semester()">
+<select class="form-control col-2 ml-2 pt-1 pb-2 d-inline <?php if(!isset($_GET['_c'])){ echo "bg-secondary"; }else{ if($_GET['_c'] == "select_semester"){ echo "bg-secondary"; }else{ echo "bg-info"; }}?> text-white" <?php if(!isset($_GET['_c'])){ echo "disabled"; }else{ if($_GET['_c'] == "select_semester"){ echo "disabled"; }}?> id="semester" onchange="semester()">
   <option value="select_semester">Select Semester</option>
-  <option value="sem1">1st Semester</option>
-  <option value="sem2">2nd Semester</option>
+  <option value="sem1" <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1"){ echo "selected"; }}?>>1st Semester</option>
+  <option value="sem2" <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem2"){ echo "selected"; }}?>>2nd Semester</option>
 </select>
 
 </div>
@@ -142,14 +142,20 @@ function grade_period(){
 }
 
 function year(){
-  var e = document.getElementById("year");
-  var selected_year = e.options[e.selectedIndex].value;
+  var grading = document.getElementById("grade_period");
+  var selected_grading = grading.options[grading.selectedIndex].value;
 
-  window.location.href = "?redir=prelim&_y="+selected_year;
+  var year = document.getElementById("year");
+  var selected_year = year.options[year.selectedIndex].value;
+
+  window.location.href = "?redir="+selected_grading+"&_y="+selected_year;
   // alert("hay");
 }
 
 function course(){
+  var grading = document.getElementById("grade_period");
+  var selected_grading = grading.options[grading.selectedIndex].value;
+  
   var year = document.getElementById("year");
   var selected_year = year.options[year.selectedIndex].value;
 
@@ -158,32 +164,46 @@ function course(){
   
   // var selected_semester = f.options[f.selectedIndex].value;
 
-  window.location.href = "?redir=prelim&_y="+selected_year+"&_c="+selected_course;
+  window.location.href = "?redir="+selected_grading+"&_y="+selected_year+"&_c="+selected_course;
   // alert("hay");
 }
 
-function subject(){
-  var year = document.getElementById("year");
-  var selected_year = year.options[year.selectedIndex].value;
+// function subject(){
+//   var grading = document.getElementById("grade_period");
+//   var selected_grading = grading.options[grading.selectedIndex].value;
 
-  var course = document.getElementById("course");
-  var selected_course = course.options[course.selectedIndex].value;
+//   var year = document.getElementById("year");
+//   var selected_year = year.options[year.selectedIndex].value;
 
-  var subject = document.getElementById("subject");
-  var selected_subject = subject.options[subject.selectedIndex].value;
+//   var course = document.getElementById("course");
+//   var selected_course = course.options[course.selectedIndex].value;
+
+//   var subject = document.getElementById("subject");
+//   var selected_subject = subject.options[subject.selectedIndex].value;
   
-  // var selected_semester = f.options[f.selectedIndex].value;
+//   // var selected_semester = f.options[f.selectedIndex].value;
 
-  window.location.href = "?redir=prelim&_y="+selected_year+"&_c="+selected_course+"&_s="+selected_subject;
-  // alert("hay");
-}
+//   window.location.href = "?redir="+selected_grading+"&_y="+selected_year+"&_c="+selected_course+"&_s="+selected_subject;
+//   // alert("hay");
+// }
 
 function semester(){
-  var selected_year = document.getElementById("year").selected;
-  var f = document.getElementById("semester").selected;
-  // var selected_semester = f.options[f.selectedIndex].value;
+  var grading = document.getElementById("grade_period");
+  var selected_grading = grading.options[grading.selectedIndex].value;
+  
+  var year = document.getElementById("year");
+  var selected_year = year.options[year.selectedIndex].value;
 
-  window.location.href = "?redir=prelim&_y="+selected_year+"_s="+selected_semester;
+  var course = document.getElementById("course");
+  var selected_course = course.options[course.selectedIndex].value;
+
+  // var subject = document.getElementById("subject");
+  // var selected_subject = subject.options[subject.selectedIndex].value;
+
+  var semester = document.getElementById("semester");
+  var selected_semester = semester.options[semester.selectedIndex].value;
+
+  window.location.href = "?redir="+selected_grading+"&_y="+selected_year+"&_c="+selected_course+/* "&_s="+selected_subject+ */"&_s_e_="+selected_semester;
   // alert("hay");
 }
 </script>
