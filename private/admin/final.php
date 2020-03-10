@@ -19,6 +19,66 @@ $final_grade = $final_grade_equivalent = "0";
 $final_grade_remarks ="";
 
 
+
+if(isset($_GET["redir"])){
+
+    if($_GET["redir"] == "select_grading"){
+      $grade_period = "";
+    }else{
+      $grade_period = $_GET["redir"];
+    }
+
+    }else{
+        $grade_period = "";
+ }
+
+
+ if(isset($_GET["_y"])){
+
+    if($_GET["_y"] == "select_year"){
+      $year = "";
+    }else{
+      $year = $_GET["_y"];
+    }
+  
+    
+  }else{
+    $year = "";
+  }
+  
+  
+
+if(isset($_GET["_c"])){
+
+    if($_GET["_c"] == "select_course"){
+      $course = "";
+    }else{
+      $course = $_GET["_c"];
+      echo $course;
+    }
+  
+    
+  }else{
+    $course = "";
+  }
+  
+  if(isset($_GET["_s_e_"])){
+
+    if($_GET["_s_e_"] == "select_semester"){
+      $semester = "";
+    }else{
+      $semester = $_GET["_s_e_"];
+      echo $semester;
+    }
+  
+    
+  }else{
+    $semester = "";
+  }
+  
+  
+  
+
 ?>
 
 <br>
@@ -39,21 +99,60 @@ $final_grade_remarks ="";
 
 <?php
 
-$student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE account_type='2'");
+if($grade_period == "final"){
+    if(isset($_GET["_y"])){
+      if($year == $_GET["_y"]){
+        if(isset($_GET["_c"])){
+          if($course == $_GET["_c"]){
+              if(isset($_GET["_s_e_"])){
+                  if($semester == $_GET["_s_e_"]){
+
+                  $grade_period = $grade_period . $semester[3];
+                  $semester_no = $semester[3];
+                  $semester_no = "prefinal$semester_no"; 
 
 
-while($row_student = mysqli_fetch_assoc($student_qry)){
-
-  $student_no = $row_student["student_no"];
-  $lastname = $row_student["lastname"];
-  $firstname = $row_student["firstname"];
-  $middlename = $row_student["middlename"];
+                  $grading_period = mysqli_query($connections, "SELECT * FROM $grade_period WHERE course='$course' AND year='$year' ");
+                  $prefinal_qry = mysqli_query($connections, "SELECT * FROM $semester_no");
+                    
+                  midterm_query($grading_period,$prefinal_qry);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   
-  $fullname = $firstname . " " . $middlename[0] . ". " . $lastname;
 
-$prefinal_qry = mysqli_query($connections, "SELECT * FROM prefinal");
+
+
+function midterm_query($grading_period,$prefinal_qry){
+while($row_student = mysqli_fetch_assoc($grading_period)){
+
+    
+    
+$student_no = $row_student["student_no"];
 $row_prefinal = mysqli_fetch_assoc($prefinal_qry);
+$fullname = $row_student["student_name"];
+$final_output_1 = $row_student["final_output_1"];
+$final_output_2 = $row_student["final_output_2"];
+$final_output_total_score = $row_student["final_output_total_score"];
+$final_output_base = $row_student["final_output_base"];
+$final_output_weight = $row_student["final_output_weight"];
+$final_performance_1 = $row_student["final_performance_1"];
+$final_performance_2 = $row_student["final_performance_2"];
+$final_performance_total_score = $row_student["final_performance_total_score"];
+$final_performance_base = $row_student["final_performance_base"];
+$final_performance_weight = $row_student["final_performance_weight"];
+$final_written_test = $row_student["final_written_test"];
+$final_written_test_base = $row_student["final_written_test_base"];
+$final_written_test_weight = $row_student["final_written_test_weight"];
+$final_grade = $row_student["final_grade"];
+$final_grade_equivalent = $row_student["final_grade_equivalent"];
+
 $prefinal_grade = $row_prefinal["prefinal_grade"];
+
 
 
     // ####################______Final Formulas______####################
@@ -116,6 +215,10 @@ $prefinal_grade = $row_prefinal["prefinal_grade"];
     $final_grade_remarks = "Failed";
   }
 
+  
+  $year = $_GET["_y"];
+  $course = $_GET["_c"];
+  $semester = $_GET["_s_e_"];
 
 ?>
 
@@ -123,39 +226,105 @@ $prefinal_grade = $row_prefinal["prefinal_grade"];
 <td><?php echo $student_no; ?></td>
 <td><?php echo $fullname; ?></td>
 
-<!-- <td><a href="#"><?php echo $final_formative_assessment_1; ?></a></td> 
-<td><a href="#"><?php echo $final_formative_assessment_2; ?></a></td> 
-<td><a href="#"><?php echo $final_formative_assessment_3; ?></a></td> 
-<td><a href="#"><?php echo $final_formative_assessment_4; ?></a></td> 
-<td><a href="#"><?php echo $final_formative_assessment_5; ?></a></td> 
-<td><a href="#"><?php echo $final_formative_assessment_6; ?></a></td> 
-<td><a href="#"><?php echo $final_formative_assessment_7; ?></a></td> 
-<td><a href="#"><?php echo $final_formative_assessment_8; ?></a></td> 
-<td><a href="#"><?php echo $final_formative_assessment_9; ?></a></td> 
-<td><a href="#"><?php echo $final_formative_assessment_10; ?></a></td> 
-<td><a href="#"><?php echo $final_formative_assessment_total_score; ?></a></td> 
-<td><a href="#"><?php echo $final_formative_assessment_base; ?></a></td>  -->
-<td><a href="#"><?php echo $final_output_1; ?></a></td> 
-<td><a href="#"><?php echo $final_output_2; ?></a></td> 
-<td><a href="#"><?php echo $final_output_total_score; ?></a></td> 
-<td><a href="#"><?php echo $final_output_base; ?></a></td> 
-<td><a href="#"><?php echo $final_output_weight; ?></a></td> 
-<td><a href="#"><?php echo $final_performance_1; ?></a></td> 
-<td><a href="#"><?php echo $final_performance_2; ?></a></td> 
-<td><a href="#"><?php echo $final_performance_total_score; ?></a></td> 
-<td><a href="#"><?php echo $final_performance_base; ?></a></td> 
-<td><a href="#"><?php echo $final_performance_weight; ?></a></td> 
-<td><a href="#"><?php echo $final_written_test; ?></a></td> 
-<td><a href="#"><?php echo $final_written_test_base; ?></a></td> 
-<td><a href="#"><?php echo $final_written_test_weight; ?></a></td> 
-<td><a href="#"><?php echo $final_4th_quarter; ?></a></td> 
-<td><a href="#"><?php echo $final_grade; ?></a></td> 
-<td><a href="#"><?php echo $final_grade_equivalent; ?></a></td> 
-<td><a href="#"><?php echo $final_grade_remarks; ?></a></td> 
+<!-- <td><a href="#"><?php /* echo $final_formative_assessment_1; */ ?></a></td> 
+<td><a href="#"><?php /* echo $final_formative_assessment_2; */ ?></a></td> 
+<td><a href="#"><?php /* echo $final_formative_assessment_3; */ ?></a></td> 
+<td><a href="#"><?php /* echo $final_formative_assessment_4; */ ?></a></td> 
+<td><a href="#"><?php /* echo $final_formative_assessment_5; */ ?></a></td> 
+<td><a href="#"><?php /* echo $final_formative_assessment_6; */ ?></a></td> 
+<td><a href="#"><?php /* echo $final_formative_assessment_7; */ ?></a></td> 
+<td><a href="#"><?php /* echo $final_formative_assessment_8; */ ?></a></td> 
+<td><a href="#"><?php /* echo $final_formative_assessment_9; */ ?></a></td> 
+<td><a href="#"><?php /* echo $final_formative_assessment_10; */ ?></a></td> 
+<td><a href="#"><?php /* echo $final_formative_assessment_total_score; */ ?></a></td> 
+<td><a href="#"><?php /* echo $final_formative_assessment_base; */ ?></a></td>  -->
+<td><a href="?redir=final&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po1=<?php echo $student_no; ?>"><?php echo $final_output_1; ?></a></td> 
+<td><a href="?redir=final&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po2=<?php echo $student_no; ?>"><?php echo $final_output_2; ?></a></td> 
+<td><a class="text-danger"><?php echo $final_output_total_score; ?></a></td> 
+<td><a class="text-danger"><?php echo $final_output_base; ?></a></td> 
+<td><a class="text-danger"><?php echo $final_output_weight; ?></a></td> 
+<td><a href="?redir=final&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp1=<?php echo $student_no; ?>"><?php echo $final_performance_1; ?></a></td> 
+<td><a href="?redir=final&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp2=<?php echo $student_no; ?>"><?php echo $final_performance_2; ?></a></td> 
+<td><a class="text-danger"><?php echo $final_performance_total_score; ?></a></td> 
+<td><a class="text-danger"><?php echo $final_performance_base; ?></a></td> 
+<td><a class="text-danger"><?php echo $final_performance_weight; ?></a></td> 
+<td><a href="?redir=final&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pwt=<?php echo $student_no; ?>"><?php echo $final_written_test; ?></a></td> 
+<td><a class="text-danger"><?php echo number_format((float)$final_written_test_base,2,".",""); ?></a></td> 
+<td><a class="text-danger"><?php echo number_format((float)$final_written_test_weight,2,".",""); ?></a></td> 
+<td><a class="text-danger"><?php echo number_format((float)$final_4th_quarter,2,".",""); ?></a></td> 
+<td><a class="text-danger"><?php echo number_format((float)$final_grade,2,".",""); ?></a></td> 
+<td><a class="text-danger"><?php echo $final_grade_equivalent; ?></a></td> 
+<td><a class="text-danger"><?php echo $final_grade_remarks; ?></a></td> 
 </tr>
 
 <?php
 }
+}
 ?>
 </table>
 </div>
+
+
+<div class="fixed-top">
+
+<?php
+ if(isset($_GET["po1"])){
+  include("redir.php");
+}elseif(isset($_GET["po2"])){
+  include("redir.php");
+}elseif(isset($_GET["pots"])){
+  include("redir.php");
+}elseif(isset($_GET["pob"])){
+  include("redir.php");
+}elseif(isset($_GET["pow"])){
+  include("redir.php");
+}elseif(isset($_GET["pp1"])){
+  include("redir.php");
+}elseif(isset($_GET["pp2"])){
+  include("redir.php");
+}elseif(isset($_GET["ppts"])){
+  include("redir.php");
+}elseif(isset($_GET["ppb"])){
+  include("redir.php");
+}elseif(isset($_GET["ppw"])){
+  include("redir.php");
+}elseif(isset($_GET["pwt"])){
+  include("redir.php");
+}elseif(isset($_GET["pwtb"])){
+  include("redir.php");
+}elseif(isset($_GET["pwtw"])){
+  include("redir.php");
+}elseif(isset($_GET["pg"])){
+  include("redir.php");
+}elseif(isset($_GET["pge"])){
+  include("redir.php");
+}
+?>
+</div>
+
+<input type="text" value="<?php echo $_GET["redir"]; ?>" id="grade_period">
+<input type="text" value="<?php echo $_GET["_y"]; ?>" id="year">
+<input type="text" value="<?php echo $_GET["_c"]; ?>" id="course">
+<input type="text" value="<?php echo $_GET["_s_e_"]; ?>" id="semester">
+
+<script>
+
+  var grading = document.getElementById("grade_period").value;
+  var year = document.getElementById("year");
+  var selected_year = year.value;
+  var course = document.getElementById("course");
+  var selected_course = course.value;
+  var semester = document.getElementById("semester");
+  var selected_semester = semester.value;
+
+    function relocate(){
+      window.location.href = "studentperformance?redir="+grading+"&_y="+selected_year+"&_c="+selected_course+"&_s_e_="+selected_semester;
+      // alert("hay");
+    }
+
+
+    get_black = document.getElementById("black1");
+    
+    get_black.addEventListener("click", relocate);
+
+</script>

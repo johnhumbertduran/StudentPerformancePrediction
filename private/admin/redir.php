@@ -31,6 +31,15 @@ window.location.href = "studentperformance?redir=prelim&&a1="+a1;
 //     $student_no = $_GET["pfats"];
 // }elseif(isset($_GET["pfab"])) {
 //     $student_no = $_GET["pfab"];
+
+function get_url_data(){
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+}
+
 /* }else */if(isset($_GET["po1"])) {
     $grading_period = $_GET["redir"];
     $grading = $_GET["redir"].$_GET["_s_e_"][3];
@@ -39,32 +48,102 @@ window.location.href = "studentperformance?redir=prelim&&a1="+a1;
     $semester = $_GET["_s_e_"];
     $student_no = $_GET["po1"];
 }elseif(isset($_GET["po2"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["po2"];
 }elseif(isset($_GET["pots"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["pots"];
 }elseif(isset($_GET["pob"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["pob"];
 }elseif(isset($_GET["pow"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["pow"];
 }elseif(isset($_GET["pp1"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["pp1"];
 }elseif(isset($_GET["pp2"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["pp2"];
 }elseif(isset($_GET["ppts"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["ppts"];
 }elseif(isset($_GET["ppb"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["ppb"];
 }elseif(isset($_GET["ppw"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["ppw"];
 }elseif(isset($_GET["pwt"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["pwt"];
 }elseif(isset($_GET["pwtb"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["pwtb"];
 }elseif(isset($_GET["pwtw"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["pwtw"];
 }elseif(isset($_GET["pg"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["pg"];
 }elseif(isset($_GET["pge"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
     $student_no = $_GET["pge"];
 }
 
@@ -98,35 +177,115 @@ $student_name = $row_student["student_name"];
 // }elseif(isset($_GET["pfab"])) {
 //     $grade = $row_student["prelim_formative_assessment_base"];
 /* }else */if(isset($_GET["po1"])) {
-    $grade = $row_student["prelim_output_1"];
+
+    if($_GET["redir"] == "prelim"){
+        $grade = $row_student["prelim_output_1"];
+    }
+
+    if($_GET["redir"] == "midterm"){
+        $grade = $row_student["midterm_output_1"];
+    }
+
+    if($_GET["redir"] == "prefinal"){
+        $grade = $row_student["prefinal_output_1"];
+    }
+
+    if($_GET["redir"] == "final"){
+        $grade = $row_student["final_output_1"];
+    }
+
 }elseif(isset($_GET["po2"])) {
+    
+    if($_GET["redir"] == "prelim"){
     $grade = $row_student["prelim_output_2"];
-}elseif(isset($_GET["pots"])) {
-    $grade = $row_student["prelim_output_total_score"];
-}elseif(isset($_GET["pob"])) {
-    $grade = $row_student["prelim_output_base"];
-}elseif(isset($_GET["pow"])) {
-    $grade = $row_student["prelim_output_weight"];
+    }
+
+    if($_GET["redir"] == "midterm"){
+    $grade = $row_student["midterm_output_2"];
+    }
+
+    if($_GET["redir"] == "prefinal"){
+    $grade = $row_student["prefinal_output_2"];
+    }
+
+    if($_GET["redir"] == "final"){
+    $grade = $row_student["final_output_2"];
+    }
+
+// }elseif(isset($_GET["pots"])) {
+//     $grade = $row_student["prelim_output_total_score"];
+// }elseif(isset($_GET["pob"])) {
+//     $grade = $row_student["prelim_output_base"];
+// }elseif(isset($_GET["pow"])) {
+//     $grade = $row_student["prelim_output_weight"];
 }elseif(isset($_GET["pp1"])) {
+
+    if($_GET["redir"] == "prelim"){
     $grade = $row_student["prelim_performance_1"];
+    }
+
+    if($_GET["redir"] == "midterm"){
+    $grade = $row_student["midterm_performance_1"];
+    }
+
+    if($_GET["redir"] == "prefinal"){
+    $grade = $row_student["prefinal_performance_1"];
+    }
+
+    if($_GET["redir"] == "final"){
+    $grade = $row_student["final_performance_1"];
+    }
+
 }elseif(isset($_GET["pp2"])) {
+
+    if($_GET["redir"] == "prelim"){
     $grade = $row_student["prelim_performance_2"];
-}elseif(isset($_GET["ppts"])) {
-    $grade = $row_student["prelim_performance_total_score"];
-}elseif(isset($_GET["ppb"])) {
-    $grade = $row_student["prelim_performance_base"];
-}elseif(isset($_GET["ppw"])) {
-    $grade = $row_student["prelim_performance_weight"];
+    }
+
+    if($_GET["redir"] == "midterm"){
+    $grade = $row_student["midterm_performance_2"];
+    }
+
+    if($_GET["redir"] == "prefinal"){
+    $grade = $row_student["prefinal_performance_2"];
+    }
+
+    if($_GET["redir"] == "final"){
+    $grade = $row_student["final_performance_2"];
+    }
+
+// }elseif(isset($_GET["ppts"])) {
+//     $grade = $row_student["prelim_performance_total_score"];
+// }elseif(isset($_GET["ppb"])) {
+//     $grade = $row_student["prelim_performance_base"];
+// }elseif(isset($_GET["ppw"])) {
+    // $grade = $row_student["prelim_performance_weight"];
 }elseif(isset($_GET["pwt"])) {
+
+    if($_GET["redir"] == "prelim"){
     $grade = $row_student["prelim_written_test"];
-}elseif(isset($_GET["pwtb"])) {
-    $grade = $row_student["prelim_written_test_base"];
-}elseif(isset($_GET["pwtw"])) {
-    $grade = $row_student["prelim_written_test_weight"];
-}elseif(isset($_GET["pg"])) {
-    $grade = $row_student["prelim_grade"];
-}elseif(isset($_GET["pge"])) {
-    $grade = $row_student["prelim_grade_equivalent"];
+    }
+
+    if($_GET["redir"] == "midterm"){
+    $grade = $row_student["midterm_written_test"];
+    }
+
+    if($_GET["redir"] == "prefinal"){
+    $grade = $row_student["prefinal_written_test"];
+    }
+
+    if($_GET["redir"] == "final"){
+    $grade = $row_student["final_written_test"];
+    }
+
+// }elseif(isset($_GET["pwtb"])) {
+//     $grade = $row_student["prelim_written_test_base"];
+// }elseif(isset($_GET["pwtw"])) {
+//     $grade = $row_student["prelim_written_test_weight"];
+// }elseif(isset($_GET["pg"])) {
+//     $grade = $row_student["prelim_grade"];
+// }elseif(isset($_GET["pge"])) {
+//     $grade = $row_student["prelim_grade_equivalent"];
 }
 
 
@@ -183,33 +342,114 @@ switch (true) {
     //       $grade_number = "";
     //       break;
       case (!empty($_GET["po1"])):
-          $grade_name = "prelim_output_1";
-          $grade_number = "Prelim output 1";
+        if($_GET["redir"] == "prelim"){
+            $grade_name = "prelim_output_1";
+            $grade_number = "Prelim output 1";
+        }
+
+        if($_GET["redir"] == "midterm"){
+            $grade_name = "midterm_output_1";
+            $grade_number = "Midterm output 1";
+        }
+
+        if($_GET["redir"] == "prefinal"){
+            $grade_name = "prefinal_output_1";
+            $grade_number = "Prefinal output 1";
+        }
+
+        if($_GET["redir"] == "final"){
+            $grade_name = "final_output_1";
+            $grade_number = "Final output 1";
+        }
+
           break;
       case (!empty($_GET["po2"])):
+        if($_GET["redir"] == "prelim"){
           $grade_name = "prelim_output_2";
           $grade_number = "Prelim output 2";
           break;
-      case (!empty($_GET["pots"])):
-          $grade_name = "";
-          $grade_number = "";
+        }
+        
+        if($_GET["redir"] == "midterm"){
+          $grade_name = "midterm_output_2";
+          $grade_number = "Midterm output 2";
           break;
-      case (!empty($_GET["pob"])):
-          $grade_name = "";
-          $grade_number = "";
+        }
+        
+        if($_GET["redir"] == "prefinal"){
+          $grade_name = "prefinal_output_2";
+          $grade_number = "Prefinal output 2";
           break;
-      case (!empty($_GET["pow"])):
-          $grade_name = "";
-          $grade_number = "";
+        }
+        
+        if($_GET["redir"] == "final"){
+          $grade_name = "final_output_2";
+          $grade_number = "Final output 2";
           break;
+        }
+
+    //   case (!empty($_GET["pots"])):
+    //       $grade_name = "";
+    //       $grade_number = "";
+    //       break;
+    //   case (!empty($_GET["pob"])):
+    //       $grade_name = "";
+    //       $grade_number = "";
+    //       break;
+    //   case (!empty($_GET["pow"])):
+    //       $grade_name = "";
+    //       $grade_number = "";
+    //       break;
       case (!empty($_GET["pp1"])):
+        if($_GET["redir"] == "prelim"){
           $grade_name = "prelim_performance_1";
           $grade_number = "Prelim Performance 1";
           break;
+        }
+        
+        if($_GET["redir"] == "midterm"){
+          $grade_name = "midterm_performance_1";
+          $grade_number = "Midterm Performance 1";
+          break;
+        }
+        
+        if($_GET["redir"] == "prefinal"){
+          $grade_name = "prefinal_performance_1";
+          $grade_number = "Prefinal Performance 1";
+          break;
+        }
+        
+        if($_GET["redir"] == "final"){
+          $grade_name = "final_performance_1";
+          $grade_number = "Final Performance 1";
+          break;
+        }
+
       case (!empty($_GET["pp2"])):
+        if($_GET["redir"] == "prelim"){
           $grade_name = "prelim_performance_2";
           $grade_number = "Prelim Performance 2";
           break;
+        }
+        
+        if($_GET["redir"] == "midterm"){
+          $grade_name = "midterm_performance_2";
+          $grade_number = "Midterm Performance 2";
+          break;
+        }
+        
+        if($_GET["redir"] == "prefinal"){
+          $grade_name = "prefinal_performance_2";
+          $grade_number = "Prefinal Performance 2";
+          break;
+        }
+        
+        if($_GET["redir"] == "final"){
+          $grade_name = "final_performance_2";
+          $grade_number = "final Performance 2";
+          break;
+        }
+        
     //   case (!empty($_GET["ppts"])):
     //       $grade_name = "";
     //       $grade_number = "";
@@ -223,9 +463,30 @@ switch (true) {
     //       $grade_number = "";
     //       break;
       case (!empty($_GET["pwt"])):
+        if($_GET["redir"] == "prelim"){
           $grade_name = "prelim_written_test";
           $grade_number = "Prelim Written Test";
           break;
+        }
+        
+        if($_GET["redir"] == "midterm"){
+          $grade_name = "midterm_written_test";
+          $grade_number = "Midterm Written Test";
+          break;
+        }
+        
+        if($_GET["redir"] == "prefinal"){
+          $grade_name = "prefinal_written_test";
+          $grade_number = "Prefinal Written Test";
+          break;
+        }
+        
+        if($_GET["redir"] == "final"){
+          $grade_name = "final_written_test";
+          $grade_number = "Final Written Test";
+          break;
+        }
+
     //   case (!empty($_GET["pwtb"])):
     //       $grade_name = "";
     //       $grade_number = "";
@@ -276,7 +537,7 @@ switch (true) {
 
   <div class="card-body">
   <form method="POST">
-  <input type="text" name="grade_input" value="<?php echo $grade; ?>" class="col-2 text-center" id="grade">
+  <input type="text" name="grade_input" value="<?php echo $grade; ?>" class="col-2 text-center" id="grade" autofocus>
   
   </div>
   

@@ -157,15 +157,15 @@ if(isset($_GET["_s_e_"])){
     // echo"<script>alert('hay');</script>";
                     $grade_period = $grade_period . $semester[3];
                     // echo $grade_period;
-                    // $get_student_no = mysqli_query($connections, "SELECT * FROM $grade_period");
-                    // $fetch_student_no = mysqli_fetch_assoc($get_student_no);
-                    // $student_no = $fetch_student_no["student_no"];
-                    // $fullname = $fetch_student_no["student_name"];
+                    $get_student_no = mysqli_query($connections, "SELECT * FROM $grade_period");
+                    $fetch_student_no = mysqli_fetch_assoc($get_student_no);
+                    $student_no = $fetch_student_no["student_no"];
+                    $fullname = $fetch_student_no["student_name"];
 
-                    // $student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE course='$course' AND year='$year' AND account_type='2'");
-                    $grading_period = mysqli_query($connections, "SELECT * FROM $grade_period WHERE course='$course' AND year='$year' ");
+                    $student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE course='$course' AND year='$year' AND account_type='2'");
+                    $grading_period = mysqli_query($connections, "SELECT * FROM _user_tbl_,$grade_period WHERE student_name=$fullname AND _user_tbl_.course='$course' ");
 
-                    prelim_query($grading_period);
+                    prelim_query($student_qry,$grading_period);
                   }
                 }
             //   }
@@ -175,7 +175,6 @@ if(isset($_GET["_s_e_"])){
       }
     }
   }
-  
 
   // if($grade_period == "prelim" && $semester == "sem1"){
   //   // echo"<script>alert('hay');</script>";
@@ -205,19 +204,19 @@ if(isset($_GET["_s_e_"])){
 
 // }
 
-function prelim_query($grading_period){
+function prelim_query($student_qry,$grading_period){
 
-while($row_prelim = mysqli_fetch_assoc($grading_period)){
-  // $row_student = mysqli_fetch_assoc($student_qry);
-  // $student_no = $row_student["student_no"];
-  // $lastname = $row_student["lastname"];
-  // $firstname = $row_student["firstname"];
-  // $middlename = $row_student["middlename"];
+while($row_student = mysqli_fetch_assoc($student_qry)){
+
+  $student_no = $row_student["student_no"];
+  $lastname = $row_student["lastname"];
+  $firstname = $row_student["firstname"];
+  $middlename = $row_student["middlename"];
   
-  // $fullname = $firstname . " " . $middlename[0] . ". " . $lastname;
+  $fullname = $firstname . " " . $middlename[0] . ". " . $lastname;
   // $prelim_qry = mysqli_query($connections, "SELECT * FROM prelim1 WHERE student_no=$student_no");
 
-  // $row_prelim = mysqli_fetch_assoc($grading_period);
+  $row_prelim = mysqli_fetch_assoc($grading_period);
   // $prelim_formative_assessment_1 = $row_prelim["prelim_formative_assessment_1"];
   // $prelim_formative_assessment_2 = $row_prelim["prelim_formative_assessment_2"];
   // $prelim_formative_assessment_3 = $row_prelim["prelim_formative_assessment_3"];
@@ -230,8 +229,6 @@ while($row_prelim = mysqli_fetch_assoc($grading_period)){
   // $prelim_formative_assessment_10 = $row_prelim["prelim_formative_assessment_10"];
   // $prelim_formative_assessment_total_score = $row_prelim["prelim_formative_assessment_total_score"];
   // $prelim_formative_assessment_base = $row_prelim["prelim_formative_assessment_base"];
-  $student_no = $row_prelim["student_no"];
-  $fullname = $row_prelim["student_name"];
   $prelim_output_1 = $row_prelim["prelim_output_1"];
   $prelim_output_2 = $row_prelim["prelim_output_2"];
   $prelim_output_total_score = $row_prelim["prelim_output_total_score"];
@@ -331,21 +328,21 @@ while($row_prelim = mysqli_fetch_assoc($grading_period)){
 <td><a href="?redir=prelim&a10=<?php echo $student_no; ?>"><?php echo $prelim_formative_assessment_10; ?></a></td> 
 <td><a href="?redir=prelim&pfats=<?php echo $student_no; ?>"><?php echo $prelim_formative_assessment_total_score; ?></a></td> 
 <td><a href="?redir=prelim&pfab=<?php echo $student_no; ?>"><?php echo $prelim_formative_assessment_base; ?></a></td>  -->
-<td><center><a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po1=<?php echo $student_no; ?>"><?php echo $prelim_output_1; ?></a></center></td> 
-<td><center><a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po2=<?php echo $student_no; ?>"><?php echo $prelim_output_2; ?></a></center></td> 
-<td><center><a class="text-danger"><?php echo $prelim_output_total_score; ?></a></center></td> 
-<td><center><a class="text-danger"><?php echo $prelim_output_base; ?></a></center></td> 
-<td><center><a class="text-danger"><?php echo $prelim_output_weight; ?></a></center></td> 
-<td><center><a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp1=<?php echo $student_no; ?>"><?php echo $prelim_performance_1; ?></a></center></td> 
-<td><center><a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp2=<?php echo $student_no; ?>"><?php echo $prelim_performance_2; ?></a></center></td> 
-<td><center><a class="text-danger"><?php echo $prelim_performance_total_score; ?></a></center></td> 
-<td><center><a class="text-danger"><?php echo $prelim_performance_base; ?></a></center></td> 
-<td><center><a class="text-danger"><?php echo $prelim_performance_weight; ?></a></center></td> 
-<td><center><a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pwt=<?php echo $student_no; ?>"><?php echo $prelim_written_test; ?></a></center></td> 
-<td><center><a class="text-danger"><?php echo number_format((float)$prelim_written_test_base,2,".",""); ?></a></center></td> 
-<td><center><a class="text-danger"><?php echo number_format((float)$prelim_written_test_weight,2,".",""); ?></a></center></td> 
-<td><center><a class="text-danger"><?php echo number_format((float)$prelim_grade,2,".",""); ?></a></center></td> 
-<td><center><a class="text-danger"><?php echo $prelim_grade_equivalent; ?></a></center></td>
+<td><a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po1=<?php echo $student_no; ?>"><?php echo $prelim_output_1 .''.$course; ?></a></td> 
+<td><a href="?redir=prelim&po2=<?php echo $student_no; ?>"><?php echo $prelim_output_2; ?></a></td> 
+<td><a href="?redir=prelim&pots=<?php echo $student_no; ?>"><?php echo $prelim_output_total_score; ?></a></td> 
+<td><a href="?redir=prelim&pob=<?php echo $student_no; ?>"><?php echo $prelim_output_base; ?></a></td> 
+<td><a href="?redir=prelim&pow=<?php echo $student_no; ?>"><?php echo $prelim_output_weight; ?></a></td> 
+<td><a href="?redir=prelim&pp1=<?php echo $student_no; ?>"><?php echo $prelim_performance_1; ?></a></td> 
+<td><a href="?redir=prelim&pp2=<?php echo $student_no; ?>"><?php echo $prelim_performance_2; ?></a></td> 
+<td><a href="?redir=prelim&ppts=<?php echo $student_no; ?>"><?php echo $prelim_performance_total_score; ?></a></td> 
+<td><a href="?redir=prelim&ppb=<?php echo $student_no; ?>"><?php echo $prelim_performance_base; ?></a></td> 
+<td><a href="?redir=prelim&ppw=<?php echo $student_no; ?>"><?php echo $prelim_performance_weight; ?></a></td> 
+<td><a href="?redir=prelim&pwt=<?php echo $student_no; ?>"><?php echo $prelim_written_test; ?></a></td> 
+<td><a href="?redir=prelim&pwtb=<?php echo $student_no; ?>"><?php echo number_format((float)$prelim_written_test_base,2,".",""); ?></a></td> 
+<td><a href="?redir=prelim&pwtw=<?php echo $student_no; ?>"><?php echo number_format((float)$prelim_written_test_weight,2,".",""); ?></a></td> 
+<td><a href="?redir=prelim&pg=<?php echo $student_no; ?>"><?php echo number_format((float)$prelim_grade,2,".",""); ?></a></td> 
+<td><a href="?redir=prelim&pge=<?php echo $student_no; ?>"><?php echo $prelim_grade_equivalent; ?></a></td>
 </tr>
 
 
