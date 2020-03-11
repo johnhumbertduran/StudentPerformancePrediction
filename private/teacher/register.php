@@ -21,7 +21,7 @@ if(isset($_SESSION["username"])){
     $my_info = mysqli_fetch_assoc($query_info);
     $account_type = $my_info["account_type"];
     
-    if($account_type != 1){
+    if($account_type != 3){
     
         header('Location: ../../forbidden');
     
@@ -61,15 +61,14 @@ include("../bins/admin_nav.php");
 
 
 <div class="card">
-  <div class="card-header bg-primary text-light"><h3>Register Teacher</h3></div>
+  <div class="card-header bg-primary text-light"><h3>Register User</h3></div>
   <div class="card-body">
   <form method="POST">
     <table border="0" width="100%">
 <?php
 
 $lastname = $firstname = $middlename = $username = $course =
-$year = $password = $confirm_password = "";
-
+$year =  $password = $confirm_password = "";
 // $lastname = $firstname = $middlename = $username = "";
 // $course = "BSIT";
 // $year = "2012";
@@ -143,14 +142,14 @@ if (isset($_POST['submit'])) {
       include("../bins/lastname_warningColor.php"); 
       // echo '<script>alert("Letters only!")</script>';
     }else{
-      if(!preg_match("/^[a-zA-Z.ñÑ ]*$/", $firstname)){
+      if(!preg_match("/^[a-zA-Z.ñÑ\- ]*$/", $firstname)){
         $err = "First Name";
         $result = "should not have numbers or symbols.";
         include("../bins/firstname_warning.php");
         include("../bins/firstname_warningColor.php");  
         // echo '<script>alert("No numbers allowed!")</script>';
       }else{
-        if(!preg_match("/^[a-zA-Z.ñÑ ]*$/", $middlename)){
+        if(!preg_match("/^[a-zA-Z.ñÑ\- ]*$/", $middlename)){
           $err = "Middle Name";
           $result = "should not have numbers or symbols.";
           include("../bins/middlename_warning.php");

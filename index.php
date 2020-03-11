@@ -24,6 +24,10 @@ if(isset($_SESSION["username"])){
     
         header('Location: private/user');
 
+    }elseif($account_type == 3){
+    
+        header('Location: private/teacher');
+
     }
 
 }
@@ -116,7 +120,21 @@ if(isset($_POST["log_me_in"])){
                   echo"<script>alert('Your Password is incorrect!');</script>";
               
               }   
-          }   
+      }elseif ($account_type == "3") {
+
+          if ($db_pass == $session_pass) {
+
+              $_SESSION["username"] = $session_user;
+              
+              header('Location: private/teacher');
+
+              }else{
+              
+                  $session_pass = "";
+                  echo"<script>alert('Your Password is incorrect!');</script>";
+              
+              }   
+    }   
           
       }else{
 

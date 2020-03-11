@@ -52,7 +52,7 @@ if(isset($_GET["_c"])){
       $course = "";
     }else{
       $course = $_GET["_c"];
-      // echo $course;
+      echo $course;
     }
   
     
@@ -66,7 +66,7 @@ if(isset($_GET["_c"])){
       $semester = "";
     }else{
       $semester = $_GET["_s_e_"];
-      // echo $semester;
+      echo $semester;
     }
   
     
@@ -82,7 +82,7 @@ if(isset($_GET["_c"])){
 
 
 <br>
-<div class="table-responsive mt-3">
+<div class="table-responsive">
 <table border="1" class="table table-hover">
     <thead>
     <tr><th class="px-3" colspan="2"></th>
@@ -300,10 +300,10 @@ while($row_student = mysqli_fetch_assoc($grading_period)){
 ?>
 </div>
 
-<input type="hidden" value="<?php echo $_GET["redir"]; ?>" id="grade_period">
-<input type="hidden" value="<?php echo $_GET["_y"]; ?>" id="year">
-<input type="hidden" value="<?php echo $_GET["_c"]; ?>" id="course">
-<input type="hidden" value="<?php echo $_GET["_s_e_"]; ?>" id="semester">
+<input type="text" value="<?php echo $_GET["redir"]; ?>" id="grade_period">
+<input type="text" value="<?php echo $_GET["_y"]; ?>" id="year">
+<input type="text" value="<?php echo $_GET["_c"]; ?>" id="course">
+<input type="text" value="<?php echo $_GET["_s_e_"]; ?>" id="semester">
 
 <script>
 
