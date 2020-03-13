@@ -3,6 +3,7 @@
 session_start();
 
 include("../bins/connections.php");
+include("../../bins/header.php");
 
 if(isset($_SESSION["username"])){
 
@@ -27,4 +28,12 @@ if(isset($_SESSION["username"])){
 ?>
 
 
-<a href="logout.php">Log Out</a>
+
+<center>
+<h1 class="py-3 text-info px-1">My Account</h1>
+</center>
+
+<?php
+include('../bins/student_nav.php');
+?>
+<!-- <a href="logout.php">Log Out</a> -->

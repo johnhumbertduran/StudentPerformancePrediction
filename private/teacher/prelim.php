@@ -74,7 +74,7 @@ if(isset($_GET["_c"])){
     $course = "";
   }else{
     $course = $_GET["_c"];
-    echo $course;
+    // echo $course;
   }
 
   
@@ -103,7 +103,7 @@ if(isset($_GET["_s_e_"])){
     $semester = "";
   }else{
     $semester = $_GET["_s_e_"];
-    echo $semester;
+    // echo $semester;
   }
 
   
@@ -344,8 +344,8 @@ while($row_prelim = mysqli_fetch_assoc($grading_period)){
 <td><center><a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pwt=<?php echo $student_no; ?>"><?php echo $prelim_written_test; ?></a></center></td> 
 <td><center><a class="text-danger"><?php echo number_format((float)$prelim_written_test_base,2,".",""); ?></a></center></td> 
 <td><center><a class="text-danger"><?php echo number_format((float)$prelim_written_test_weight,2,".",""); ?></a></center></td> 
-<td><center><a class="text-danger"><?php echo number_format((float)$prelim_grade,2,".",""); ?></a></center></td> 
-<td><center><a class="text-danger"><?php echo $prelim_grade_equivalent; ?></a></center></td>
+<td><center><a class="<?php if($prelim_grade >= '74.5'){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$prelim_grade,2,".",""); ?></a></center></td> 
+<td><center><a class="<?php if($prelim_grade >= '74.5'){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $prelim_grade_equivalent; ?></a></center></td>
 </tr>
 
 
@@ -419,10 +419,10 @@ while($row_prelim = mysqli_fetch_assoc($grading_period)){
 ?>
 </div>
 
-<input type="text" value="<?php echo $_GET["redir"]; ?>" id="grade_period">
-<input type="text" value="<?php echo $_GET["_y"]; ?>" id="year">
-<input type="text" value="<?php echo $_GET["_c"]; ?>" id="course">
-<input type="text" value="<?php echo $_GET["_s_e_"]; ?>" id="semester">
+<input type="hidden" value="<?php echo $_GET["redir"]; ?>" id="grade_period">
+<input type="hidden" value="<?php echo $_GET["_y"]; ?>" id="year">
+<input type="hidden" value="<?php echo $_GET["_c"]; ?>" id="course">
+<input type="hidden" value="<?php echo $_GET["_s_e_"]; ?>" id="semester">
 
 <script>
 

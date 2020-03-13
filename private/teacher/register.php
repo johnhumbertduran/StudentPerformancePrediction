@@ -61,7 +61,7 @@ include("../bins/admin_nav.php");
 
 
 <div class="card">
-  <div class="card-header bg-primary text-light"><h3>Register User</h3></div>
+  <div class="card-header bg-primary text-light"><h3>Register Student</h3></div>
   <div class="card-body">
   <form method="POST">
     <table border="0" width="100%">

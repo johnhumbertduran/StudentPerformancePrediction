@@ -1,5 +1,10 @@
-<?php
+<style>
+.text-primary{
+  cursor:pointer;
+}
+</style>
 
+<?php
 
 
 // $prelim_formative_assessment_1 = $prelim_formative_assessment_2 =
@@ -344,8 +349,8 @@ while($row_prelim = mysqli_fetch_assoc($grading_period)){
 <td><center><a class="text-primary"><?php echo $prelim_written_test; ?></a></center></td> 
 <td><center><a class="text-primary"><?php echo number_format((float)$prelim_written_test_base,2,".",""); ?></a></center></td> 
 <td><center><a class="text-primary"><?php echo number_format((float)$prelim_written_test_weight,2,".",""); ?></a></center></td> 
-<td><center><a class="text-primary"><?php echo number_format((float)$prelim_grade,2,".",""); ?></a></center></td> 
-<td><center><a class="text-primary"><?php echo $prelim_grade_equivalent; ?></a></center></td>
+<td><center><a class="<?php if($prelim_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$prelim_grade,2,".",""); ?></a></center></td> 
+<td><center><a class="<?php if($prelim_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $prelim_grade_equivalent; ?></a></center></td>
 </tr>
 
 

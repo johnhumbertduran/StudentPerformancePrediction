@@ -13,10 +13,10 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item home_active">
-        <a class="nav-link pl-2" href="../admin">Home</a>
+        <a class="nav-link pl-2" href="../user">Home</a>
       </li>
       <li class="nav-item student_performance_active">
-        <a class="nav-link pl-2" href="studentperformance">Student Performance</a>
+        <a class="nav-link pl-2" href="#">My grades</a>
       </li>
       <li class="nav-item">
         <a class="nav-link pl-2" href="#">Prediction</a>
@@ -24,9 +24,9 @@
       <li class="nav-item">
         <a class="nav-link pl-2" href="#">View Charts</a>
       </li>    
-      <li class="nav-item register_active">
+      <!-- <li class="nav-item register_active">
         <a class="nav-link pl-2" href="register">Register</a>
-      </li>    
+      </li>     -->
       <!-- <li class="nav-item input_grade">
         <a class="nav-link pl-2" href="inputgrade">Input Grade</a>
       </li>     -->

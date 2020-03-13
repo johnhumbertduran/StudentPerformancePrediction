@@ -1,5 +1,9 @@
+<style>
+.text-primary{
+  cursor:pointer;
+}
+</style>
 <?php
-
 
 // $midterm_formative_assessment_1 = $midterm_formative_assessment_2 =
 // $midterm_formative_assessment_3 = $midterm_formative_assessment_4 =
@@ -81,6 +85,7 @@ if(isset($_GET["_c"])){
 
 
 
+<br>
 <div class="table-responsive mt-3">
 <table border="1" class="table table-hover">
     <thead>
@@ -110,10 +115,10 @@ if($grade_period == "midterm"){
       // echo $_GET["_y"];
     // echo"<script>alert('hay');</script>";
                     $grade_period = $grade_period . $semester[3];
-                    $semester_no = $semester[3];
-                    $semester_no = "prelim$semester_no"; 
+                    // $semester_no = $semester[3];
+                    $prelim = "prelim$semester[3]"; 
 
-                    // echo $grade_period;
+                    // echo $prelim;
                     // $get_student_no = mysqli_query($connections, "SELECT * FROM $grade_period");
                     // $fetch_student_no = mysqli_fetch_assoc($get_student_no);
                     // $student_no = $fetch_student_no["student_no"];
@@ -121,8 +126,11 @@ if($grade_period == "midterm"){
 
                     // $student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE course='$course' AND year='$year' AND account_type='2'");
                     $grading_period = mysqli_query($connections, "SELECT * FROM $grade_period WHERE course='$course' AND year='$year' ");
-                    $prelim_qry = mysqli_query($connections, "SELECT * FROM $semester_no");
-                    
+                    $prelim_qry = mysqli_query($connections, "SELECT * FROM $prelim WHERE course='$course' AND year='$year' ");
+                    // $row_prelim = mysqli_fetch_assoc($prelim_qry);
+
+
+
                     prelim_query($grading_period,$prelim_qry);
                   }
                 }
@@ -144,8 +152,8 @@ while($row_student = mysqli_fetch_assoc($grading_period)){
 //   $lastname = $row_student["lastname"];
 //   $firstname = $row_student["firstname"];
 //   $middlename = $row_student["middlename"];
-  $row_prelim = mysqli_fetch_assoc($prelim_qry);
   $fullname = $row_student["student_name"];
+  $row_prelim = mysqli_fetch_assoc($prelim_qry);
   $midterm_output_1 = $row_student["midterm_output_1"];
   $midterm_output_2 = $row_student["midterm_output_2"];
   $midterm_output_total_score = $row_student["midterm_output_total_score"];
@@ -165,7 +173,26 @@ while($row_student = mysqli_fetch_assoc($grading_period)){
   $midterm_remarks = $row_student["midterm_remarks"];
   
 
-$prelim_grade = $row_prelim["prelim_grade"];
+$prelim_output_1 = $row_prelim['prelim_output_1'];
+$prelim_output_2 = $row_prelim['prelim_output_2'];
+$prelim_performance_1 = $row_prelim['prelim_performance_1'];
+$prelim_performance_2 = $row_prelim['prelim_performance_2'];
+$prelim_written_test = $row_prelim['prelim_written_test'];
+
+$prelim_output_total_score = $prelim_output_1 + $prelim_output_2;
+$prelim_performance_total_score = $prelim_performance_1 + $prelim_performance_2;
+
+$prelim_output_base = $prelim_output_total_score / 40 * 40 + 60;
+$prelim_performance_base = $prelim_performance_total_score / 40 * 40 + 60;
+$prelim_written_test_base =  $prelim_written_test / 30 * 40 + 60;
+
+$prelim_output_weight = $prelim_output_base * 0.40;
+$prelim_performance_weight = $prelim_performance_base * 0.40;
+$prelim_written_test_weight = $prelim_written_test_base * 0.20;
+
+$prelim_grade = $prelim_output_weight + $prelim_performance_weight + $prelim_written_test_weight;
+// echo $prelim_grade;
+// $prelim_grade = $row_prelim["prelim_grade"];
 
 
     // ####################______Midterm Formulas______####################
@@ -222,7 +249,7 @@ $prelim_grade = $row_prelim["prelim_grade"];
           $midterm_grade_equivalent = "5";
   }
 
-  if($midterm_grade_equivalent >= 74.5){
+  if($midterm_grade >= 74.5){
     $midterm_remarks = "Passed";
   }else{
     $midterm_remarks = "Failed";
@@ -251,23 +278,23 @@ $prelim_grade = $row_prelim["prelim_grade"];
   <td><a href="#"><?php /* echo $midterm_formative_assessment_10; */ ?></a></td> 
   <td><a href="#"><?php /* echo $midterm_formative_assessment_total_score; */ ?></a></td> 
   <td><a href="#"><?php /* echo $midterm_formative_assessment_base; */ ?></a></td>  -->
-  <td><a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po1=<?php echo $student_no; ?>"><?php echo $midterm_output_1; ?></a></td> 
-  <td><a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po2=<?php echo $student_no; ?>"><?php echo $midterm_output_2; ?></a></td> 
-  <td><a class="text-danger"><?php echo $midterm_output_total_score; ?></a></td> 
-  <td><a class="text-danger"><?php echo $midterm_output_base; ?></a></td> 
-  <td><a class="text-danger"><?php echo $midterm_output_weight; ?></a></td> 
-  <td><a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp1=<?php echo $student_no; ?>"><?php echo $midterm_performance_1; ?></a></td> 
-  <td><a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp2=<?php echo $student_no; ?>"><?php echo $midterm_performance_2; ?></a></td> 
-  <td><a class="text-danger"><?php echo $midterm_performance_total_score; ?></a></td> 
-  <td><a class="text-danger"><?php echo $midterm_performance_base; ?></a></td> 
-  <td><a class="text-danger"><?php echo $midterm_performance_weight; ?></a></td> 
-  <td><a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pwt=<?php echo $student_no; ?>"><?php echo $midterm_written_test; ?></a></td> 
-  <td><a class="text-danger"><?php echo number_format((float)$midterm_written_test_base,2,".",""); ?></a></td> 
-  <td><a class="text-danger"><?php echo number_format((float)$midterm_written_test_weight,2,".",""); ?></a></td> 
-  <td><a class="text-danger"><?php echo number_format((float)$midterm_2nd_quarter,2,".",""); ?></a></td> 
-  <td><a class="text-danger"><?php echo number_format((float)$midterm_grade,2,".",""); ?></a></td> 
-  <td><a class="text-danger"><?php echo $midterm_grade_equivalent; ?></a></td> 
-  <td><a class="text-danger"><?php echo $midterm_remarks; ?></a></td> 
+  <td><a class="text-primary"><?php echo $midterm_output_1; ?></a></td> 
+  <td><a class="text-primary"><?php echo $midterm_output_2; ?></a></td> 
+  <td><a class="text-primary"><?php echo $midterm_output_total_score; ?></a></td> 
+  <td><a class="text-primary"><?php echo $midterm_output_base; ?></a></td> 
+  <td><a class="text-primary"><?php echo $midterm_output_weight; ?></a></td> 
+  <td><a class="text-primary"><?php echo $midterm_performance_1; ?></a></td> 
+  <td><a class="text-primary"><?php echo $midterm_performance_2; ?></a></td> 
+  <td><a class="text-primary"><?php echo $midterm_performance_total_score; ?></a></td> 
+  <td><a class="text-primary"><?php echo $midterm_performance_base; ?></a></td> 
+  <td><a class="text-primary"><?php echo $midterm_performance_weight; ?></a></td> 
+  <td><a class="text-primary"><?php echo $midterm_written_test; ?></a></td> 
+  <td><a class="text-primary"><?php echo number_format((float)$midterm_written_test_base,2,".",""); ?></a></td> 
+  <td><a class="text-primary"><?php echo number_format((float)$midterm_written_test_weight,2,".",""); ?></a></td> 
+  <td><a class="text-primary"><?php echo number_format((float)$midterm_2nd_quarter,2,".",""); ?></a></td> 
+  <td><a class="<?php if($midterm_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$midterm_grade,2,".",""); ?></a></td> 
+  <td><a class="<?php if($midterm_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $midterm_grade_equivalent; ?></a></td> 
+  <td><a class="<?php if($midterm_remarks == "Failed"){ echo "text-danger";}else{echo "text-success";} ?>"><?php echo $midterm_remarks; ?></a></td> 
   
   </tr>
 

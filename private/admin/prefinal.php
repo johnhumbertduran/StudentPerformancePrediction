@@ -1,5 +1,10 @@
-<?php
+<style>
+.text-primary{
+  cursor:pointer;
+}
+</style>
 
+<?php
 
 // $prefinal_formative_assessment_1 = $prefinal_formative_assessment_2 =
 // $prefinal_formative_assessment_3 = $prefinal_formative_assessment_4 =
@@ -110,13 +115,15 @@ if($grade_period == "prefinal"){
 
                   $grade_period = $grade_period . $semester[3];
                   $semester_no = $semester[3];
-                  $semester_no = "midterm$semester_no"; 
+                  $midterm_no = "midterm$semester_no"; 
+                  $prelim_no = "prelim$semester_no"; 
 
 
                   $grading_period = mysqli_query($connections, "SELECT * FROM $grade_period WHERE course='$course' AND year='$year' ");
-                  $midterm_qry = mysqli_query($connections, "SELECT * FROM $semester_no");
+                  $midterm_qry = mysqli_query($connections, "SELECT * FROM $midterm_no WHERE course='$course' AND year='$year' ");
+                  $prelim_qry = mysqli_query($connections, "SELECT * FROM $prelim_no WHERE course='$course' AND year='$year' ");
                     
-                  midterm_query($grading_period,$midterm_qry);
+                  prefinal_query($grading_period,$midterm_qry,$prelim_qry);
               }
             }
           }
@@ -128,12 +135,13 @@ if($grade_period == "prefinal"){
 
 
 
-function midterm_query($grading_period,$midterm_qry){
+function prefinal_query($grading_period,$midterm_qry,$prelim_qry){
 while($row_student = mysqli_fetch_assoc($grading_period)){
 
     
-  $student_no = $row_student["student_no"];
   $row_midterm = mysqli_fetch_assoc($midterm_qry);
+  $row_prelim = mysqli_fetch_assoc($prelim_qry);
+  $student_no = $row_student["student_no"];
   $fullname = $row_student["student_name"];
   $prefinal_output_1 = $row_student["prefinal_output_1"];
   $prefinal_output_2 = $row_student["prefinal_output_2"];
@@ -151,8 +159,52 @@ while($row_student = mysqli_fetch_assoc($grading_period)){
   $prefinal_grade = $row_student["prefinal_grade"];
   $prefinal_grade_equivalent = $row_student["prefinal_grade_equivalent"];
   
-  $midterm_grade = $row_midterm["midterm_grade"];
+  $midterm_output_1 = $row_midterm["midterm_output_1"];
+  $midterm_output_2 = $row_midterm["midterm_output_2"];
+  $midterm_performance_1 = $row_midterm["midterm_performance_1"];
+  $midterm_performance_2 = $row_midterm["midterm_performance_2"];
+  $midterm_written_test = $row_midterm["midterm_written_test"];
 
+  $midterm_output_total_score = $midterm_output_1 + $midterm_output_2;
+  $midterm_output_base = $midterm_output_total_score / 40 * 40 + 60;
+  
+  
+  $midterm_performance_total_score = $midterm_performance_1 + $midterm_performance_2;
+  $midterm_performance_base = $midterm_performance_total_score / 40 * 40 + 60;
+  $midterm_written_test_base = $midterm_written_test / 30 * 40 + 60;
+
+  $midterm_output_weight = $midterm_output_base * 0.40;
+  $midterm_performance_weight = $midterm_performance_base * 0.40;
+  $midterm_written_test_weight = $midterm_written_test_base * 0.20;
+  $midterm_2nd_quarter = $midterm_output_weight + $midterm_performance_weight + $midterm_written_test_weight;
+  
+  // $midterm_output_weight = $midterm_output_base * 0.40;
+  // $midterm_performance_weight = $midterm_performance_base * 0.40;
+  // $midterm_written_test_weight = $midterm_written_test_base * 0.20;
+  
+
+  $prelim_output_1 = $row_prelim['prelim_output_1'];
+  $prelim_output_2 = $row_prelim['prelim_output_2'];
+  $prelim_performance_1 = $row_prelim['prelim_performance_1'];
+  $prelim_performance_2 = $row_prelim['prelim_performance_2'];
+  $prelim_written_test = $row_prelim['prelim_written_test'];
+
+  $prelim_output_total_score = $prelim_output_1 + $prelim_output_2;
+  $prelim_performance_total_score = $prelim_performance_1 + $prelim_performance_2;
+
+  $prelim_output_base = $prelim_output_total_score / 40 * 40 + 60;
+  $prelim_performance_base = $prelim_performance_total_score / 40 * 40 + 60;
+  $prelim_written_test_base =  $prelim_written_test / 30 * 40 + 60;
+
+  $prelim_output_weight = $prelim_output_base * 0.40;
+  $prelim_performance_weight = $prelim_performance_base * 0.40;
+  $prelim_written_test_weight = $prelim_written_test_base * 0.20;
+
+  $prelim_grade = $prelim_output_weight + $prelim_performance_weight + $prelim_written_test_weight;
+
+
+  $midterm_grade = $prelim_grade * 0.3 + $midterm_2nd_quarter * 0.7;
+// echo $prelim_grade;
 // $midterm_qry = mysqli_query($connections, "SELECT * FROM midterm");
 // $row_midterm = mysqli_fetch_assoc($midterm_qry);
 // $midterm_grade = $row_midterm["midterm_grade"];
@@ -237,22 +289,22 @@ while($row_student = mysqli_fetch_assoc($grading_period)){
 <td><a href="#"><?php /* echo $prefinal_formative_assessment_10; */ ?></a></td> 
 <td><a href="#"><?php /* echo $prefinal_formative_assessment_total_score; */ ?></a></td> 
 <td><a href="#"><?php /* echo $prefinal_formative_assessment_base; */ ?></a></td>  -->
-<td><a href="?redir=prefinal&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po1=<?php echo $student_no; ?>"><?php echo $prefinal_output_1; ?></a></td> 
-<td><a href="?redir=prefinal&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po2=<?php echo $student_no; ?>"><?php echo $prefinal_output_2; ?></a></td> 
-<td><a class="text-danger"><?php echo $prefinal_output_total_score; ?></a></td> 
-<td><a class="text-danger"><?php echo $prefinal_output_base; ?></a></td> 
-<td><a class="text-danger"><?php echo $prefinal_output_weight; ?></a></td> 
-<td><a href="?redir=prefinal&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp1=<?php echo $student_no; ?>"><?php echo $prefinal_performance_1; ?></a></td> 
-<td><a href="?redir=prefinal&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp2=<?php echo $student_no; ?>"><?php echo $prefinal_performance_2; ?></a></td> 
-<td><a class="text-danger"><?php echo $prefinal_performance_total_score; ?></a></td> 
-<td><a class="text-danger"><?php echo $prefinal_performance_base; ?></a></td> 
-<td><a class="text-danger"><?php echo $prefinal_performance_weight; ?></a></td> 
-<td><a href="?redir=prefinal&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pwt=<?php echo $student_no; ?>"><?php echo $prefinal_written_test; ?></a></td> 
-<td><a class="text-danger"><?php echo number_format((float)$prefinal_written_test_base,2,".",""); ?></a></td> 
-<td><a class="text-danger"><?php echo number_format((float)$prefinal_written_test_weight,2,".",""); ?></a></td> 
-<td><a class="text-danger"><?php echo number_format((float)$prefinal_3rd_quarter,2,".",""); ?></a></td> 
-<td><a class="text-danger"><?php echo number_format((float)$prefinal_grade,2,".",""); ?></a></td> 
-<td><a class="text-danger"><?php echo $prefinal_grade_equivalent; ?></a></td> 
+<td><a class="text-primary"><?php echo $prefinal_output_1; ?></a></td> 
+<td><a class="text-primary"><?php echo $prefinal_output_2; ?></a></td> 
+<td><a class="text-primary"><?php echo $prefinal_output_total_score; ?></a></td> 
+<td><a class="text-primary"><?php echo $prefinal_output_base; ?></a></td> 
+<td><a class="text-primary"><?php echo $prefinal_output_weight; ?></a></td> 
+<td><a class="text-primary"><?php echo $prefinal_performance_1; ?></a></td> 
+<td><a class="text-primary"><?php echo $prefinal_performance_2; ?></a></td> 
+<td><a class="text-primary"><?php echo $prefinal_performance_total_score; ?></a></td> 
+<td><a class="text-primary"><?php echo $prefinal_performance_base; ?></a></td> 
+<td><a class="text-primary"><?php echo $prefinal_performance_weight; ?></a></td> 
+<td><a class="text-primary"><?php echo $prefinal_written_test; ?></a></td> 
+<td><a class="text-primary"><?php echo number_format((float)$prefinal_written_test_base,2,".",""); ?></a></td> 
+<td><a class="text-primary"><?php echo number_format((float)$prefinal_written_test_weight,2,".",""); ?></a></td> 
+<td><a class="text-primary"><?php echo number_format((float)$prefinal_3rd_quarter,2,".",""); ?></a></td> 
+<td><a class="<?php if($prefinal_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$prefinal_grade,2,".",""); ?></a></td> 
+<td><a class="<?php if($prefinal_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $prefinal_grade_equivalent; ?></a></td> 
 </tr>
 
 <?php
