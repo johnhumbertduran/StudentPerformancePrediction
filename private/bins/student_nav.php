@@ -15,8 +15,8 @@
       <li class="nav-item home_active">
         <a class="nav-link pl-2" href="../user">Home</a>
       </li>
-      <li class="nav-item student_performance_active">
-        <a class="nav-link pl-2" href="#">My grades</a>
+      <li class="nav-item my_grades_active">
+        <a class="nav-link pl-2" href="mygrades">My grades</a>
       </li>
       <li class="nav-item">
         <a class="nav-link pl-2" href="#">Prediction</a>
