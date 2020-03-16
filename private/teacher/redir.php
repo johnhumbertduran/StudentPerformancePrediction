@@ -537,7 +537,7 @@ switch (true) {
 
   <div class="card-body">
   <form method="POST">
-  <input type="text" name="grade_input" value="<?php echo $grade; ?>" class="col-2 text-center" id="grade" autofocus>
+  <input type="text" name="grade_input" value="<?php echo $grade; ?>" class="col-2 text-center" id="grade">
   
   </div>
   
