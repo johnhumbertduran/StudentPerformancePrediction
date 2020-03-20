@@ -376,8 +376,8 @@ if(prelim.innerHTML != 0 & midterm.innerHTML != 0 & prefinal.innerHTML == 0 & fi
   // final.innerHTML = b;
 
   // var prefinal_final;
-  // var new_prefinal;
-  // var new_final;
+  var new_prefinal;
+  var new_final;
   // var overall_average;
 
   var grade_array =[];
@@ -1169,133 +1169,186 @@ if(prelim.innerHTML != 0 & midterm.innerHTML != 0 & prefinal.innerHTML == 0 & fi
 if(((prelim_midterm+_75_75)/4 >= selected_average) & (prelim_midterm+_75_75)/4 <= parseInt(selected_average) + 1){
   // alert(selected_average);
   grade_array.push(_75_75);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 75;
+  // alert(_75_75.valueOf());
+  // alert(grade_array);
   // alert((prelim_midterm+_75_77)/4);
 }
 
 if(((prelim_midterm+_75_76)/4 >= selected_average) & (prelim_midterm+_75_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_76);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_77)/4 >= selected_average) & (prelim_midterm+_75_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_77);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_78)/4 >= selected_average) & (prelim_midterm+_75_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_78);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_79)/4 >= selected_average) & (prelim_midterm+_75_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_79);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 79; 
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_80)/4 >= selected_average) & (prelim_midterm+_75_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_80);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_81)/4 >= selected_average) & (prelim_midterm+_75_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_81);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_82)/4 >= selected_average) & (prelim_midterm+_75_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_82);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_83)/4 >= selected_average) & (prelim_midterm+_75_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_83);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_84)/4 >= selected_average) & (prelim_midterm+_75_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_84);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_85)/4 >= selected_average) & (prelim_midterm+_75_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_85);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_86)/4 >= selected_average) & (prelim_midterm+_75_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_86);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_87)/4 >= selected_average) & (prelim_midterm+_75_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_87);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_88)/4 >= selected_average) & (prelim_midterm+_75_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_88);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_89)/4 >= selected_average) & (prelim_midterm+_75_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_89);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_90)/4 >= selected_average) & (prelim_midterm+_75_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_90);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_91)/4 >= selected_average) & (prelim_midterm+_75_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_91);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_92)/4 >= selected_average) & (prelim_midterm+_75_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_92);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_93)/4 >= selected_average) & (prelim_midterm+_75_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_93);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_94)/4 >= selected_average) & (prelim_midterm+_75_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_94);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 94; 
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_95)/4 >= selected_average) & (prelim_midterm+_75_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_95);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_96)/4 >= selected_average) & (prelim_midterm+_75_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_96);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_97)/4 >= selected_average) & (prelim_midterm+_75_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_97);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_98)/4 >= selected_average) & (prelim_midterm+_75_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_98);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_99)/4 >= selected_average) & (prelim_midterm+_75_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_99);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_75_100)/4 >= selected_average) & (prelim_midterm+_75_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_75_100);
-  alert(grade_array);
+  new_prefinal = 75;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -1303,132 +1356,184 @@ if(((prelim_midterm+_75_100)/4 >= selected_average) & (prelim_midterm+_75_100)/4
 
 if(((prelim_midterm+_76_75)/4 >= selected_average) & (prelim_midterm+_76_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_75);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_76)/4 >= selected_average) & (prelim_midterm+_76_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_76);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_77)/4 >= selected_average) & (prelim_midterm+_76_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_77);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_78)/4 >= selected_average) & (prelim_midterm+_76_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_78);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_79)/4 >= selected_average) & (prelim_midterm+_76_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_79);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_80)/4 >= selected_average) & (prelim_midterm+_76_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_80);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_81)/4 >= selected_average) & (prelim_midterm+_76_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_81);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_82)/4 >= selected_average) & (prelim_midterm+_76_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_82);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_83)/4 >= selected_average) & (prelim_midterm+_76_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_83);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_84)/4 >= selected_average) & (prelim_midterm+_76_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_84);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_85)/4 >= selected_average) & (prelim_midterm+_76_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_85);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_86)/4 >= selected_average) & (prelim_midterm+_76_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_86);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_87)/4 >= selected_average) & (prelim_midterm+_76_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_87);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_88)/4 >= selected_average) & (prelim_midterm+_76_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_88);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_89)/4 >= selected_average) & (prelim_midterm+_76_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_89);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_90)/4 >= selected_average) & (prelim_midterm+_76_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_90);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_91)/4 >= selected_average) & (prelim_midterm+_76_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_91);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_92)/4 >= selected_average) & (prelim_midterm+_76_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_92);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_93)/4 >= selected_average) & (prelim_midterm+_76_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_93);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_94)/4 >= selected_average) & (prelim_midterm+_76_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_94);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_95)/4 >= selected_average) & (prelim_midterm+_76_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_95);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_96)/4 >= selected_average) & (prelim_midterm+_76_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_96);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_97)/4 >= selected_average) & (prelim_midterm+_76_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_97);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_98)/4 >= selected_average) & (prelim_midterm+_76_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_98);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_99)/4 >= selected_average) & (prelim_midterm+_76_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_99);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_76_100)/4 >= selected_average) & (prelim_midterm+_76_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_76_100);
-  alert(grade_array);
+  new_prefinal = 76;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -1437,132 +1542,184 @@ if(((prelim_midterm+_76_100)/4 >= selected_average) & (prelim_midterm+_76_100)/4
 
 if(((prelim_midterm+_77_75)/4 >= selected_average) & (prelim_midterm+_77_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_75);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_76)/4 >= selected_average) & (prelim_midterm+_77_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_76);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_77)/4 >= selected_average) & (prelim_midterm+_77_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_77);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_78)/4 >= selected_average) & (prelim_midterm+_77_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_78);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_79)/4 >= selected_average) & (prelim_midterm+_77_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_79);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_80)/4 >= selected_average) & (prelim_midterm+_77_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_80);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_81)/4 >= selected_average) & (prelim_midterm+_77_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_81);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_82)/4 >= selected_average) & (prelim_midterm+_77_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_82);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_83)/4 >= selected_average) & (prelim_midterm+_77_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_83);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_84)/4 >= selected_average) & (prelim_midterm+_77_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_84);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_85)/4 >= selected_average) & (prelim_midterm+_77_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_85);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_86)/4 >= selected_average) & (prelim_midterm+_77_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_86);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_87)/4 >= selected_average) & (prelim_midterm+_77_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_87);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_88)/4 >= selected_average) & (prelim_midterm+_77_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_88);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_89)/4 >= selected_average) & (prelim_midterm+_77_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_89);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_90)/4 >= selected_average) & (prelim_midterm+_77_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_90);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_91)/4 >= selected_average) & (prelim_midterm+_77_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_91);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_92)/4 >= selected_average) & (prelim_midterm+_77_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_92);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_93)/4 >= selected_average) & (prelim_midterm+_77_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_93);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_94)/4 >= selected_average) & (prelim_midterm+_77_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_94);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_95)/4 >= selected_average) & (prelim_midterm+_77_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_95);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_96)/4 >= selected_average) & (prelim_midterm+_77_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_96);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_97)/4 >= selected_average) & (prelim_midterm+_77_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_97);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_98)/4 >= selected_average) & (prelim_midterm+_77_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_98);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_99)/4 >= selected_average) & (prelim_midterm+_77_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_99);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_77_100)/4 >= selected_average) & (prelim_midterm+_77_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_77_100);
-  alert(grade_array);
+  new_prefinal = 77;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -1570,132 +1727,184 @@ if(((prelim_midterm+_77_100)/4 >= selected_average) & (prelim_midterm+_77_100)/4
 
 if(((prelim_midterm+_78_75)/4 >= selected_average) & (prelim_midterm+_78_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_75);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_76)/4 >= selected_average) & (prelim_midterm+_78_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_76);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_77)/4 >= selected_average) & (prelim_midterm+_78_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_77);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_78)/4 >= selected_average) & (prelim_midterm+_78_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_78);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_79)/4 >= selected_average) & (prelim_midterm+_78_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_79);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_80)/4 >= selected_average) & (prelim_midterm+_78_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_80);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_81)/4 >= selected_average) & (prelim_midterm+_78_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_81);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_82)/4 >= selected_average) & (prelim_midterm+_78_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_82);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_83)/4 >= selected_average) & (prelim_midterm+_78_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_83);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_84)/4 >= selected_average) & (prelim_midterm+_78_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_84);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_85)/4 >= selected_average) & (prelim_midterm+_78_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_85);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_86)/4 >= selected_average) & (prelim_midterm+_78_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_86);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_87)/4 >= selected_average) & (prelim_midterm+_78_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_87);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_88)/4 >= selected_average) & (prelim_midterm+_78_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_88);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_89)/4 >= selected_average) & (prelim_midterm+_78_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_89);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_90)/4 >= selected_average) & (prelim_midterm+_78_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_90);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_91)/4 >= selected_average) & (prelim_midterm+_78_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_91);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_92)/4 >= selected_average) & (prelim_midterm+_78_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_92);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_93)/4 >= selected_average) & (prelim_midterm+_78_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_93);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_94)/4 >= selected_average) & (prelim_midterm+_78_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_94);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_95)/4 >= selected_average) & (prelim_midterm+_78_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_95);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_96)/4 >= selected_average) & (prelim_midterm+_78_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_96);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_97)/4 >= selected_average) & (prelim_midterm+_78_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_97);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_98)/4 >= selected_average) & (prelim_midterm+_78_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_98);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_99)/4 >= selected_average) & (prelim_midterm+_78_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_99);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_78_100)/4 >= selected_average) & (prelim_midterm+_78_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_78_100);
-  alert(grade_array);
+  new_prefinal = 78;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -1703,132 +1912,184 @@ if(((prelim_midterm+_78_100)/4 >= selected_average) & (prelim_midterm+_78_100)/4
 
 if(((prelim_midterm+_79_75)/4 >= selected_average) & (prelim_midterm+_79_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_75);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_76)/4 >= selected_average) & (prelim_midterm+_79_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_76);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_77)/4 >= selected_average) & (prelim_midterm+_79_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_77);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_78)/4 >= selected_average) & (prelim_midterm+_79_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_78);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_79)/4 >= selected_average) & (prelim_midterm+_79_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_79);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_80)/4 >= selected_average) & (prelim_midterm+_79_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_80);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_81)/4 >= selected_average) & (prelim_midterm+_79_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_81);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_82)/4 >= selected_average) & (prelim_midterm+_79_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_82);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_83)/4 >= selected_average) & (prelim_midterm+_79_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_83);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_84)/4 >= selected_average) & (prelim_midterm+_79_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_84);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_85)/4 >= selected_average) & (prelim_midterm+_79_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_85);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_86)/4 >= selected_average) & (prelim_midterm+_79_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_86);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_87)/4 >= selected_average) & (prelim_midterm+_79_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_87);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_88)/4 >= selected_average) & (prelim_midterm+_79_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_88);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_89)/4 >= selected_average) & (prelim_midterm+_79_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_89);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_90)/4 >= selected_average) & (prelim_midterm+_79_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_90);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_91)/4 >= selected_average) & (prelim_midterm+_79_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_91);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_92)/4 >= selected_average) & (prelim_midterm+_79_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_92);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_93)/4 >= selected_average) & (prelim_midterm+_79_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_93);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_94)/4 >= selected_average) & (prelim_midterm+_79_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_94);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_95)/4 >= selected_average) & (prelim_midterm+_79_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_95);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_96)/4 >= selected_average) & (prelim_midterm+_79_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_96);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_97)/4 >= selected_average) & (prelim_midterm+_79_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_97);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_98)/4 >= selected_average) & (prelim_midterm+_79_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_98);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_99)/4 >= selected_average) & (prelim_midterm+_79_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_99);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_79_100)/4 >= selected_average) & (prelim_midterm+_79_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_79_100);
-  alert(grade_array);
+  new_prefinal = 79;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -1836,132 +2097,184 @@ if(((prelim_midterm+_79_100)/4 >= selected_average) & (prelim_midterm+_79_100)/4
 
 if(((prelim_midterm+_80_75)/4 >= selected_average) & (prelim_midterm+_80_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_75);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_76)/4 >= selected_average) & (prelim_midterm+_80_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_76);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_77)/4 >= selected_average) & (prelim_midterm+_80_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_77);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_78)/4 >= selected_average) & (prelim_midterm+_80_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_78);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_79)/4 >= selected_average) & (prelim_midterm+_80_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_79);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_80)/4 >= selected_average) & (prelim_midterm+_80_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_80);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_81)/4 >= selected_average) & (prelim_midterm+_80_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_81);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_82)/4 >= selected_average) & (prelim_midterm+_80_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_82);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_83)/4 >= selected_average) & (prelim_midterm+_80_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_83);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_84)/4 >= selected_average) & (prelim_midterm+_80_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_84);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_85)/4 >= selected_average) & (prelim_midterm+_80_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_85);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_86)/4 >= selected_average) & (prelim_midterm+_80_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_86);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_87)/4 >= selected_average) & (prelim_midterm+_80_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_87);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_88)/4 >= selected_average) & (prelim_midterm+_80_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_88);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_89)/4 >= selected_average) & (prelim_midterm+_80_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_89);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_90)/4 >= selected_average) & (prelim_midterm+_80_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_90);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_91)/4 >= selected_average) & (prelim_midterm+_80_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_91);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_92)/4 >= selected_average) & (prelim_midterm+_80_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_92);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_93)/4 >= selected_average) & (prelim_midterm+_80_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_93);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_94)/4 >= selected_average) & (prelim_midterm+_80_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_94);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_95)/4 >= selected_average) & (prelim_midterm+_80_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_95);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_96)/4 >= selected_average) & (prelim_midterm+_80_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_96);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_97)/4 >= selected_average) & (prelim_midterm+_80_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_97);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_98)/4 >= selected_average) & (prelim_midterm+_80_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_98);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_99)/4 >= selected_average) & (prelim_midterm+_80_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_99);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_80_100)/4 >= selected_average) & (prelim_midterm+_80_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_80_100);
-  alert(grade_array);
+  new_prefinal = 80;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -1969,132 +2282,184 @@ if(((prelim_midterm+_80_100)/4 >= selected_average) & (prelim_midterm+_80_100)/4
 
 if(((prelim_midterm+_81_75)/4 >= selected_average) & (prelim_midterm+_81_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_75);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_76)/4 >= selected_average) & (prelim_midterm+_81_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_76);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_77)/4 >= selected_average) & (prelim_midterm+_81_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_77);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_78)/4 >= selected_average) & (prelim_midterm+_81_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_78);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_79)/4 >= selected_average) & (prelim_midterm+_81_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_79);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_80)/4 >= selected_average) & (prelim_midterm+_81_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_80);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_81)/4 >= selected_average) & (prelim_midterm+_81_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_81);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_82)/4 >= selected_average) & (prelim_midterm+_81_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_82);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_83)/4 >= selected_average) & (prelim_midterm+_81_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_83);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_84)/4 >= selected_average) & (prelim_midterm+_81_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_84);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_85)/4 >= selected_average) & (prelim_midterm+_81_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_85);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_86)/4 >= selected_average) & (prelim_midterm+_81_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_86);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_87)/4 >= selected_average) & (prelim_midterm+_81_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_87);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_88)/4 >= selected_average) & (prelim_midterm+_81_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_88);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_89)/4 >= selected_average) & (prelim_midterm+_81_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_89);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_90)/4 >= selected_average) & (prelim_midterm+_81_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_90);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_91)/4 >= selected_average) & (prelim_midterm+_81_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_91);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_92)/4 >= selected_average) & (prelim_midterm+_81_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_92);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 92
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_93)/4 >= selected_average) & (prelim_midterm+_81_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_93);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_94)/4 >= selected_average) & (prelim_midterm+_81_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_94);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_95)/4 >= selected_average) & (prelim_midterm+_81_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_95);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_96)/4 >= selected_average) & (prelim_midterm+_81_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_96);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_97)/4 >= selected_average) & (prelim_midterm+_81_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_97);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_98)/4 >= selected_average) & (prelim_midterm+_81_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_98);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_99)/4 >= selected_average) & (prelim_midterm+_81_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_99);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_81_100)/4 >= selected_average) & (prelim_midterm+_81_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_81_100);
-  alert(grade_array);
+  new_prefinal = 81;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -2102,132 +2467,184 @@ if(((prelim_midterm+_81_100)/4 >= selected_average) & (prelim_midterm+_81_100)/4
 
 if(((prelim_midterm+_82_75)/4 >= selected_average) & (prelim_midterm+_82_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_75);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_76)/4 >= selected_average) & (prelim_midterm+_82_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_76);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_77)/4 >= selected_average) & (prelim_midterm+_82_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_77);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_78)/4 >= selected_average) & (prelim_midterm+_82_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_78);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_79)/4 >= selected_average) & (prelim_midterm+_82_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_79);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_80)/4 >= selected_average) & (prelim_midterm+_82_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_80);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_81)/4 >= selected_average) & (prelim_midterm+_82_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_81);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_82)/4 >= selected_average) & (prelim_midterm+_82_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_82);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_83)/4 >= selected_average) & (prelim_midterm+_82_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_83);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_84)/4 >= selected_average) & (prelim_midterm+_82_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_84);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_85)/4 >= selected_average) & (prelim_midterm+_82_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_85);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_86)/4 >= selected_average) & (prelim_midterm+_82_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_86);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_87)/4 >= selected_average) & (prelim_midterm+_82_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_87);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_88)/4 >= selected_average) & (prelim_midterm+_82_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_88);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_89)/4 >= selected_average) & (prelim_midterm+_82_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_89);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_90)/4 >= selected_average) & (prelim_midterm+_82_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_90);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_91)/4 >= selected_average) & (prelim_midterm+_82_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_91);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_92)/4 >= selected_average) & (prelim_midterm+_82_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_92);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_93)/4 >= selected_average) & (prelim_midterm+_82_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_93);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_94)/4 >= selected_average) & (prelim_midterm+_82_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_94);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_95)/4 >= selected_average) & (prelim_midterm+_82_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_95);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_96)/4 >= selected_average) & (prelim_midterm+_82_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_96);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_97)/4 >= selected_average) & (prelim_midterm+_82_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_97);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_98)/4 >= selected_average) & (prelim_midterm+_82_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_98);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_99)/4 >= selected_average) & (prelim_midterm+_82_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_99);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_82_100)/4 >= selected_average) & (prelim_midterm+_82_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_82_100);
-  alert(grade_array);
+  new_prefinal = 82;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -2235,132 +2652,184 @@ if(((prelim_midterm+_82_100)/4 >= selected_average) & (prelim_midterm+_82_100)/4
 
 if(((prelim_midterm+_83_75)/4 >= selected_average) & (prelim_midterm+_83_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_75);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_76)/4 >= selected_average) & (prelim_midterm+_83_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_76);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_77)/4 >= selected_average) & (prelim_midterm+_83_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_77);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_78)/4 >= selected_average) & (prelim_midterm+_83_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_78);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_79)/4 >= selected_average) & (prelim_midterm+_83_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_79);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_80)/4 >= selected_average) & (prelim_midterm+_83_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_80);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_81)/4 >= selected_average) & (prelim_midterm+_83_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_81);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_82)/4 >= selected_average) & (prelim_midterm+_83_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_82);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_83)/4 >= selected_average) & (prelim_midterm+_83_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_83);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_84)/4 >= selected_average) & (prelim_midterm+_83_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_84);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_85)/4 >= selected_average) & (prelim_midterm+_83_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_85);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_86)/4 >= selected_average) & (prelim_midterm+_83_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_86);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_87)/4 >= selected_average) & (prelim_midterm+_83_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_87);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_88)/4 >= selected_average) & (prelim_midterm+_83_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_88);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_89)/4 >= selected_average) & (prelim_midterm+_83_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_89);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_90)/4 >= selected_average) & (prelim_midterm+_83_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_90);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_91)/4 >= selected_average) & (prelim_midterm+_83_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_91);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_92)/4 >= selected_average) & (prelim_midterm+_83_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_92);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_93)/4 >= selected_average) & (prelim_midterm+_83_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_93);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_94)/4 >= selected_average) & (prelim_midterm+_83_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_94);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_95)/4 >= selected_average) & (prelim_midterm+_83_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_95);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_96)/4 >= selected_average) & (prelim_midterm+_83_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_96);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_97)/4 >= selected_average) & (prelim_midterm+_83_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_97);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_98)/4 >= selected_average) & (prelim_midterm+_83_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_98);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_99)/4 >= selected_average) & (prelim_midterm+_83_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_99);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_83_100)/4 >= selected_average) & (prelim_midterm+_83_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_83_100);
-  alert(grade_array);
+  new_prefinal = 83;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -2368,132 +2837,184 @@ if(((prelim_midterm+_83_100)/4 >= selected_average) & (prelim_midterm+_83_100)/4
 
 if(((prelim_midterm+_84_75)/4 >= selected_average) & (prelim_midterm+_84_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_75);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_76)/4 >= selected_average) & (prelim_midterm+_84_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_76);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_77)/4 >= selected_average) & (prelim_midterm+_84_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_77);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_78)/4 >= selected_average) & (prelim_midterm+_84_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_78);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_79)/4 >= selected_average) & (prelim_midterm+_84_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_79);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_80)/4 >= selected_average) & (prelim_midterm+_84_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_80);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_81)/4 >= selected_average) & (prelim_midterm+_84_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_81);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_82)/4 >= selected_average) & (prelim_midterm+_84_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_82);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_83)/4 >= selected_average) & (prelim_midterm+_84_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_83);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_84)/4 >= selected_average) & (prelim_midterm+_84_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_84);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_85)/4 >= selected_average) & (prelim_midterm+_84_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_85);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_86)/4 >= selected_average) & (prelim_midterm+_84_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_86);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_87)/4 >= selected_average) & (prelim_midterm+_84_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_87);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_88)/4 >= selected_average) & (prelim_midterm+_84_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_88);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_89)/4 >= selected_average) & (prelim_midterm+_84_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_89);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_90)/4 >= selected_average) & (prelim_midterm+_84_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_90);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_91)/4 >= selected_average) & (prelim_midterm+_84_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_91);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_92)/4 >= selected_average) & (prelim_midterm+_84_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_92);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_93)/4 >= selected_average) & (prelim_midterm+_84_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_93);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_94)/4 >= selected_average) & (prelim_midterm+_84_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_94);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_95)/4 >= selected_average) & (prelim_midterm+_84_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_95);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_96)/4 >= selected_average) & (prelim_midterm+_84_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_96);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_97)/4 >= selected_average) & (prelim_midterm+_84_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_97);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_98)/4 >= selected_average) & (prelim_midterm+_84_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_98);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_99)/4 >= selected_average) & (prelim_midterm+_84_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_99);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_84_100)/4 >= selected_average) & (prelim_midterm+_84_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_84_100);
-  alert(grade_array);
+  new_prefinal = 84;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -2501,132 +3022,184 @@ if(((prelim_midterm+_84_100)/4 >= selected_average) & (prelim_midterm+_84_100)/4
 
 if(((prelim_midterm+_85_75)/4 >= selected_average) & (prelim_midterm+_85_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_75);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_76)/4 >= selected_average) & (prelim_midterm+_85_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_76);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_77)/4 >= selected_average) & (prelim_midterm+_85_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_77);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_78)/4 >= selected_average) & (prelim_midterm+_85_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_78);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_79)/4 >= selected_average) & (prelim_midterm+_85_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_79);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_80)/4 >= selected_average) & (prelim_midterm+_85_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_80);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_81)/4 >= selected_average) & (prelim_midterm+_85_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_81);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_82)/4 >= selected_average) & (prelim_midterm+_85_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_82);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_83)/4 >= selected_average) & (prelim_midterm+_85_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_83);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_84)/4 >= selected_average) & (prelim_midterm+_85_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_84);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_85)/4 >= selected_average) & (prelim_midterm+_85_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_85);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_86)/4 >= selected_average) & (prelim_midterm+_85_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_86);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_87)/4 >= selected_average) & (prelim_midterm+_85_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_87);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_88)/4 >= selected_average) & (prelim_midterm+_85_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_88);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_89)/4 >= selected_average) & (prelim_midterm+_85_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_89);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_90)/4 >= selected_average) & (prelim_midterm+_85_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_90);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_91)/4 >= selected_average) & (prelim_midterm+_85_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_91);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_92)/4 >= selected_average) & (prelim_midterm+_85_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_92);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_93)/4 >= selected_average) & (prelim_midterm+_85_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_93);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_94)/4 >= selected_average) & (prelim_midterm+_85_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_94);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_95)/4 >= selected_average) & (prelim_midterm+_85_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_95);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_96)/4 >= selected_average) & (prelim_midterm+_85_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_96);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_97)/4 >= selected_average) & (prelim_midterm+_85_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_97);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_98)/4 >= selected_average) & (prelim_midterm+_85_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_98);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_99)/4 >= selected_average) & (prelim_midterm+_85_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_99);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_85_100)/4 >= selected_average) & (prelim_midterm+_85_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_85_100);
-  alert(grade_array);
+  new_prefinal = 85;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -2634,132 +3207,184 @@ if(((prelim_midterm+_85_100)/4 >= selected_average) & (prelim_midterm+_85_100)/4
 
 if(((prelim_midterm+_86_75)/4 >= selected_average) & (prelim_midterm+_86_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_75);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_76)/4 >= selected_average) & (prelim_midterm+_86_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_76);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_77)/4 >= selected_average) & (prelim_midterm+_86_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_77);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_78)/4 >= selected_average) & (prelim_midterm+_86_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_78);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_79)/4 >= selected_average) & (prelim_midterm+_86_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_79);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_80)/4 >= selected_average) & (prelim_midterm+_86_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_80);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_81)/4 >= selected_average) & (prelim_midterm+_86_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_81);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_82)/4 >= selected_average) & (prelim_midterm+_86_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_82);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_83)/4 >= selected_average) & (prelim_midterm+_86_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_83);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_84)/4 >= selected_average) & (prelim_midterm+_86_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_84);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_85)/4 >= selected_average) & (prelim_midterm+_86_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_85);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_86)/4 >= selected_average) & (prelim_midterm+_86_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_86);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_87)/4 >= selected_average) & (prelim_midterm+_86_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_87);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_88)/4 >= selected_average) & (prelim_midterm+_86_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_88);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_89)/4 >= selected_average) & (prelim_midterm+_86_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_89);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_90)/4 >= selected_average) & (prelim_midterm+_86_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_90);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_91)/4 >= selected_average) & (prelim_midterm+_86_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_91);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_92)/4 >= selected_average) & (prelim_midterm+_86_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_92);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_93)/4 >= selected_average) & (prelim_midterm+_86_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_93);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_94)/4 >= selected_average) & (prelim_midterm+_86_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_94);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_95)/4 >= selected_average) & (prelim_midterm+_86_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_95);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_96)/4 >= selected_average) & (prelim_midterm+_86_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_96);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_97)/4 >= selected_average) & (prelim_midterm+_86_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_97);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_98)/4 >= selected_average) & (prelim_midterm+_86_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_98);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_99)/4 >= selected_average) & (prelim_midterm+_86_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_99);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_86_100)/4 >= selected_average) & (prelim_midterm+_86_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_86_100);
-  alert(grade_array);
+  new_prefinal = 86;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -2767,132 +3392,184 @@ if(((prelim_midterm+_86_100)/4 >= selected_average) & (prelim_midterm+_86_100)/4
 
 if(((prelim_midterm+_87_75)/4 >= selected_average) & (prelim_midterm+_87_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_75);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_76)/4 >= selected_average) & (prelim_midterm+_87_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_76);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_77)/4 >= selected_average) & (prelim_midterm+_87_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_77);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_78)/4 >= selected_average) & (prelim_midterm+_87_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_78);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_79)/4 >= selected_average) & (prelim_midterm+_87_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_79);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_80)/4 >= selected_average) & (prelim_midterm+_87_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_80);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_81)/4 >= selected_average) & (prelim_midterm+_87_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_81);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_82)/4 >= selected_average) & (prelim_midterm+_87_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_82);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_83)/4 >= selected_average) & (prelim_midterm+_87_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_83);
-  alert(grade_array);
+  // alert(grade_array);
+  new_prefinal = 87;
+  new_final = 83;
 }
 
 if(((prelim_midterm+_87_84)/4 >= selected_average) & (prelim_midterm+_87_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_84);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_85)/4 >= selected_average) & (prelim_midterm+_87_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_85);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_86)/4 >= selected_average) & (prelim_midterm+_87_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_86);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_87)/4 >= selected_average) & (prelim_midterm+_87_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_87);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_88)/4 >= selected_average) & (prelim_midterm+_87_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_88);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_89)/4 >= selected_average) & (prelim_midterm+_87_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_89);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_90)/4 >= selected_average) & (prelim_midterm+_87_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_90);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_91)/4 >= selected_average) & (prelim_midterm+_87_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_91);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_92)/4 >= selected_average) & (prelim_midterm+_87_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_92);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_93)/4 >= selected_average) & (prelim_midterm+_87_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_93);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_94)/4 >= selected_average) & (prelim_midterm+_87_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_94);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_95)/4 >= selected_average) & (prelim_midterm+_87_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_95);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_96)/4 >= selected_average) & (prelim_midterm+_87_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_96);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_97)/4 >= selected_average) & (prelim_midterm+_87_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_97);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_98)/4 >= selected_average) & (prelim_midterm+_87_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_98);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_99)/4 >= selected_average) & (prelim_midterm+_87_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_99);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_87_100)/4 >= selected_average) & (prelim_midterm+_87_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_87_100);
-  alert(grade_array);
+  new_prefinal = 87;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -2900,132 +3577,184 @@ if(((prelim_midterm+_87_100)/4 >= selected_average) & (prelim_midterm+_87_100)/4
 
 if(((prelim_midterm+_88_75)/4 >= selected_average) & (prelim_midterm+_88_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_75);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_76)/4 >= selected_average) & (prelim_midterm+_88_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_76);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_77)/4 >= selected_average) & (prelim_midterm+_88_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_77);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_78)/4 >= selected_average) & (prelim_midterm+_88_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_78);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_79)/4 >= selected_average) & (prelim_midterm+_88_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_79);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_80)/4 >= selected_average) & (prelim_midterm+_88_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_80);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_81)/4 >= selected_average) & (prelim_midterm+_88_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_81);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_82)/4 >= selected_average) & (prelim_midterm+_88_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_82);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_83)/4 >= selected_average) & (prelim_midterm+_88_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_83);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_84)/4 >= selected_average) & (prelim_midterm+_88_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_84);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_85)/4 >= selected_average) & (prelim_midterm+_88_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_85);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_86)/4 >= selected_average) & (prelim_midterm+_88_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_86);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_87)/4 >= selected_average) & (prelim_midterm+_88_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_87);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_88)/4 >= selected_average) & (prelim_midterm+_88_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_88);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_89)/4 >= selected_average) & (prelim_midterm+_88_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_89);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_90)/4 >= selected_average) & (prelim_midterm+_88_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_90);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_91)/4 >= selected_average) & (prelim_midterm+_88_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_91);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_92)/4 >= selected_average) & (prelim_midterm+_88_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_92);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_93)/4 >= selected_average) & (prelim_midterm+_88_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_93);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_94)/4 >= selected_average) & (prelim_midterm+_88_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_94);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_95)/4 >= selected_average) & (prelim_midterm+_88_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_95);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_96)/4 >= selected_average) & (prelim_midterm+_88_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_96);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_97)/4 >= selected_average) & (prelim_midterm+_88_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_97);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_98)/4 >= selected_average) & (prelim_midterm+_88_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_98);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_99)/4 >= selected_average) & (prelim_midterm+_88_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_99);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_88_100)/4 >= selected_average) & (prelim_midterm+_88_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_88_100);
-  alert(grade_array);
+  new_prefinal = 88;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -3033,137 +3762,184 @@ if(((prelim_midterm+_88_100)/4 >= selected_average) & (prelim_midterm+_88_100)/4
 
 if(((prelim_midterm+_89_75)/4 >= selected_average) & (prelim_midterm+_89_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_75);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_76)/4 >= selected_average) & (prelim_midterm+_89_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_76);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_77)/4 >= selected_average) & (prelim_midterm+_89_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_77);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_78)/4 >= selected_average) & (prelim_midterm+_89_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_78);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_79)/4 >= selected_average) & (prelim_midterm+_89_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_79);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_80)/4 >= selected_average) & (prelim_midterm+_89_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_80);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_81)/4 >= selected_average) & (prelim_midterm+_89_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_81);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_82)/4 >= selected_average) & (prelim_midterm+_89_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_82);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_83)/4 >= selected_average) & (prelim_midterm+_89_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_83);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_84)/4 >= selected_average) & (prelim_midterm+_89_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_84);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_85)/4 >= selected_average) & (prelim_midterm+_89_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_85);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_86)/4 >= selected_average) & (prelim_midterm+_89_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_86);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_87)/4 >= selected_average) & (prelim_midterm+_89_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_87);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_88)/4 >= selected_average) & (prelim_midterm+_89_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_88);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_89)/4 >= selected_average) & (prelim_midterm+_89_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_89);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_90)/4 >= selected_average) & (prelim_midterm+_89_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_90);
-  alert(grade_array);
-}
-
-if(((prelim_midterm+_89_90)/4 >= selected_average) & (prelim_midterm+_89_90)/4 <= parseInt(selected_average) + 1){
-  grade_array.push(_89_90);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_91)/4 >= selected_average) & (prelim_midterm+_89_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_91);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_92)/4 >= selected_average) & (prelim_midterm+_89_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_92);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_93)/4 >= selected_average) & (prelim_midterm+_89_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_93);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_94)/4 >= selected_average) & (prelim_midterm+_89_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_94);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_95)/4 >= selected_average) & (prelim_midterm+_89_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_95);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_96)/4 >= selected_average) & (prelim_midterm+_89_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_96);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_97)/4 >= selected_average) & (prelim_midterm+_89_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_97);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_98)/4 >= selected_average) & (prelim_midterm+_89_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_98);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_99)/4 >= selected_average) & (prelim_midterm+_89_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_99);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_89_100)/4 >= selected_average) & (prelim_midterm+_89_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_89_100);
-  alert(grade_array);
+  new_prefinal = 89;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -3171,132 +3947,184 @@ if(((prelim_midterm+_89_100)/4 >= selected_average) & (prelim_midterm+_89_100)/4
 
 if(((prelim_midterm+_90_75)/4 >= selected_average) & (prelim_midterm+_90_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_75);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_76)/4 >= selected_average) & (prelim_midterm+_90_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_76);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_77)/4 >= selected_average) & (prelim_midterm+_90_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_77);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_78)/4 >= selected_average) & (prelim_midterm+_90_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_78);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_79)/4 >= selected_average) & (prelim_midterm+_90_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_79);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_80)/4 >= selected_average) & (prelim_midterm+_90_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_80);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_81)/4 >= selected_average) & (prelim_midterm+_90_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_81);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_82)/4 >= selected_average) & (prelim_midterm+_90_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_82);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_83)/4 >= selected_average) & (prelim_midterm+_90_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_83);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_84)/4 >= selected_average) & (prelim_midterm+_90_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_84);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_85)/4 >= selected_average) & (prelim_midterm+_90_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_85);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_86)/4 >= selected_average) & (prelim_midterm+_90_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_86);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_87)/4 >= selected_average) & (prelim_midterm+_90_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_87);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_88)/4 >= selected_average) & (prelim_midterm+_90_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_88);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_89)/4 >= selected_average) & (prelim_midterm+_90_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_89);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_90)/4 >= selected_average) & (prelim_midterm+_90_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_90);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_91)/4 >= selected_average) & (prelim_midterm+_90_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_91);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_92)/4 >= selected_average) & (prelim_midterm+_90_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_92);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_93)/4 >= selected_average) & (prelim_midterm+_90_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_93);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_94)/4 >= selected_average) & (prelim_midterm+_90_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_94);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_95)/4 >= selected_average) & (prelim_midterm+_90_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_95);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_96)/4 >= selected_average) & (prelim_midterm+_90_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_96);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_97)/4 >= selected_average) & (prelim_midterm+_90_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_97);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_98)/4 >= selected_average) & (prelim_midterm+_90_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_98);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_99)/4 >= selected_average) & (prelim_midterm+_90_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_99);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_90_100)/4 >= selected_average) & (prelim_midterm+_90_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_90_100);
-  alert(grade_array);
+  new_prefinal = 90;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -3304,132 +4132,184 @@ if(((prelim_midterm+_90_100)/4 >= selected_average) & (prelim_midterm+_90_100)/4
 
 if(((prelim_midterm+_91_75)/4 >= selected_average) & (prelim_midterm+_91_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_75);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_76)/4 >= selected_average) & (prelim_midterm+_91_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_76);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_77)/4 >= selected_average) & (prelim_midterm+_91_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_77);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_78)/4 >= selected_average) & (prelim_midterm+_91_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_78);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_79)/4 >= selected_average) & (prelim_midterm+_91_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_79);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_80)/4 >= selected_average) & (prelim_midterm+_91_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_80);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_81)/4 >= selected_average) & (prelim_midterm+_91_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_81);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_82)/4 >= selected_average) & (prelim_midterm+_91_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_82);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_83)/4 >= selected_average) & (prelim_midterm+_91_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_83);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_84)/4 >= selected_average) & (prelim_midterm+_91_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_84);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_85)/4 >= selected_average) & (prelim_midterm+_91_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_85);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_86)/4 >= selected_average) & (prelim_midterm+_91_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_86);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_87)/4 >= selected_average) & (prelim_midterm+_91_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_87);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_88)/4 >= selected_average) & (prelim_midterm+_91_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_88);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_89)/4 >= selected_average) & (prelim_midterm+_91_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_89);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_90)/4 >= selected_average) & (prelim_midterm+_91_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_90);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_91)/4 >= selected_average) & (prelim_midterm+_91_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_91);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_92)/4 >= selected_average) & (prelim_midterm+_91_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_92);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_93)/4 >= selected_average) & (prelim_midterm+_91_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_93);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_94)/4 >= selected_average) & (prelim_midterm+_91_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_94);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_95)/4 >= selected_average) & (prelim_midterm+_91_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_95);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_96)/4 >= selected_average) & (prelim_midterm+_91_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_96);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_97)/4 >= selected_average) & (prelim_midterm+_91_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_97);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_98)/4 >= selected_average) & (prelim_midterm+_91_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_98);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_99)/4 >= selected_average) & (prelim_midterm+_91_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_99);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_91_100)/4 >= selected_average) & (prelim_midterm+_91_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_91_100);
-  alert(grade_array);
+  new_prefinal = 91;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -3437,132 +4317,184 @@ if(((prelim_midterm+_91_100)/4 >= selected_average) & (prelim_midterm+_91_100)/4
 
 if(((prelim_midterm+_92_75)/4 >= selected_average) & (prelim_midterm+_92_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_75);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_76)/4 >= selected_average) & (prelim_midterm+_92_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_76);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_77)/4 >= selected_average) & (prelim_midterm+_92_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_77);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_78)/4 >= selected_average) & (prelim_midterm+_92_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_78);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_79)/4 >= selected_average) & (prelim_midterm+_92_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_79);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_80)/4 >= selected_average) & (prelim_midterm+_92_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_80);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_81)/4 >= selected_average) & (prelim_midterm+_92_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_81);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_82)/4 >= selected_average) & (prelim_midterm+_92_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_82);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_83)/4 >= selected_average) & (prelim_midterm+_92_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_83);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_84)/4 >= selected_average) & (prelim_midterm+_92_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_84);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_85)/4 >= selected_average) & (prelim_midterm+_92_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_85);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_86)/4 >= selected_average) & (prelim_midterm+_92_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_86);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_87)/4 >= selected_average) & (prelim_midterm+_92_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_87);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_88)/4 >= selected_average) & (prelim_midterm+_92_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_88);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_89)/4 >= selected_average) & (prelim_midterm+_92_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_89);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_90)/4 >= selected_average) & (prelim_midterm+_92_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_90);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_91)/4 >= selected_average) & (prelim_midterm+_92_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_91);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_92)/4 >= selected_average) & (prelim_midterm+_92_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_92);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_93)/4 >= selected_average) & (prelim_midterm+_92_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_93);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_94)/4 >= selected_average) & (prelim_midterm+_92_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_94);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_95)/4 >= selected_average) & (prelim_midterm+_92_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_95);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_96)/4 >= selected_average) & (prelim_midterm+_92_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_96);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_97)/4 >= selected_average) & (prelim_midterm+_92_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_97);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_98)/4 >= selected_average) & (prelim_midterm+_92_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_98);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_99)/4 >= selected_average) & (prelim_midterm+_92_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_99);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_92_100)/4 >= selected_average) & (prelim_midterm+_92_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_92_100);
-  alert(grade_array);
+  new_prefinal = 92;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -3570,132 +4502,184 @@ if(((prelim_midterm+_92_100)/4 >= selected_average) & (prelim_midterm+_92_100)/4
 
 if(((prelim_midterm+_93_75)/4 >= selected_average) & (prelim_midterm+_93_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_75);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_76)/4 >= selected_average) & (prelim_midterm+_93_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_76);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_77)/4 >= selected_average) & (prelim_midterm+_93_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_77);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_78)/4 >= selected_average) & (prelim_midterm+_93_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_78);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_79)/4 >= selected_average) & (prelim_midterm+_93_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_79);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_80)/4 >= selected_average) & (prelim_midterm+_93_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_80);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_81)/4 >= selected_average) & (prelim_midterm+_93_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_81);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_82)/4 >= selected_average) & (prelim_midterm+_93_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_82);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_83)/4 >= selected_average) & (prelim_midterm+_93_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_83);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_84)/4 >= selected_average) & (prelim_midterm+_93_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_84);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_85)/4 >= selected_average) & (prelim_midterm+_93_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_85);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_86)/4 >= selected_average) & (prelim_midterm+_93_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_86);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_87)/4 >= selected_average) & (prelim_midterm+_93_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_87);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_88)/4 >= selected_average) & (prelim_midterm+_93_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_88);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_89)/4 >= selected_average) & (prelim_midterm+_93_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_89);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_90)/4 >= selected_average) & (prelim_midterm+_93_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_90);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_91)/4 >= selected_average) & (prelim_midterm+_93_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_91);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_92)/4 >= selected_average) & (prelim_midterm+_93_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_92);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_93)/4 >= selected_average) & (prelim_midterm+_93_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_93);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_94)/4 >= selected_average) & (prelim_midterm+_93_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_94);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_95)/4 >= selected_average) & (prelim_midterm+_93_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_95);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_96)/4 >= selected_average) & (prelim_midterm+_93_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_96);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_97)/4 >= selected_average) & (prelim_midterm+_93_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_97);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_98)/4 >= selected_average) & (prelim_midterm+_93_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_98);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_99)/4 >= selected_average) & (prelim_midterm+_93_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_99);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_93_100)/4 >= selected_average) & (prelim_midterm+_93_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_93_100);
-  alert(grade_array);
+  new_prefinal = 93;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -3703,132 +4687,184 @@ if(((prelim_midterm+_93_100)/4 >= selected_average) & (prelim_midterm+_93_100)/4
 
 if(((prelim_midterm+_94_75)/4 >= selected_average) & (prelim_midterm+_94_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_75);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_76)/4 >= selected_average) & (prelim_midterm+_94_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_76);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_77)/4 >= selected_average) & (prelim_midterm+_94_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_77);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_78)/4 >= selected_average) & (prelim_midterm+_94_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_78);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_79)/4 >= selected_average) & (prelim_midterm+_94_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_79);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_80)/4 >= selected_average) & (prelim_midterm+_94_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_80);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_81)/4 >= selected_average) & (prelim_midterm+_94_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_81);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_82)/4 >= selected_average) & (prelim_midterm+_94_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_82);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_83)/4 >= selected_average) & (prelim_midterm+_94_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_83);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_84)/4 >= selected_average) & (prelim_midterm+_94_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_84);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_85)/4 >= selected_average) & (prelim_midterm+_94_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_85);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_86)/4 >= selected_average) & (prelim_midterm+_94_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_86);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_87)/4 >= selected_average) & (prelim_midterm+_94_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_87);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_88)/4 >= selected_average) & (prelim_midterm+_94_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_88);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_89)/4 >= selected_average) & (prelim_midterm+_94_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_89);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_90)/4 >= selected_average) & (prelim_midterm+_94_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_90);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_91)/4 >= selected_average) & (prelim_midterm+_94_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_91);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_92)/4 >= selected_average) & (prelim_midterm+_94_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_92);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_93)/4 >= selected_average) & (prelim_midterm+_94_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_93);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_94)/4 >= selected_average) & (prelim_midterm+_94_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_94);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_95)/4 >= selected_average) & (prelim_midterm+_94_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_95);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 95
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_96)/4 >= selected_average) & (prelim_midterm+_94_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_96);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_97)/4 >= selected_average) & (prelim_midterm+_94_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_97);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_98)/4 >= selected_average) & (prelim_midterm+_94_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_98);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_99)/4 >= selected_average) & (prelim_midterm+_94_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_99);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_94_100)/4 >= selected_average) & (prelim_midterm+_94_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_94_100);
-  alert(grade_array);
+  new_prefinal = 94;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -3836,132 +4872,184 @@ if(((prelim_midterm+_94_100)/4 >= selected_average) & (prelim_midterm+_94_100)/4
 
 if(((prelim_midterm+_95_75)/4 >= selected_average) & (prelim_midterm+_95_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_75);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_76)/4 >= selected_average) & (prelim_midterm+_95_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_76);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_77)/4 >= selected_average) & (prelim_midterm+_95_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_77);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_78)/4 >= selected_average) & (prelim_midterm+_95_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_78);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_79)/4 >= selected_average) & (prelim_midterm+_95_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_79);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_80)/4 >= selected_average) & (prelim_midterm+_95_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_80);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_81)/4 >= selected_average) & (prelim_midterm+_95_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_81);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_82)/4 >= selected_average) & (prelim_midterm+_95_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_82);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_83)/4 >= selected_average) & (prelim_midterm+_95_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_83);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_84)/4 >= selected_average) & (prelim_midterm+_95_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_84);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_85)/4 >= selected_average) & (prelim_midterm+_95_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_85);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_86)/4 >= selected_average) & (prelim_midterm+_95_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_86);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_87)/4 >= selected_average) & (prelim_midterm+_95_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_87);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_88)/4 >= selected_average) & (prelim_midterm+_95_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_88);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_89)/4 >= selected_average) & (prelim_midterm+_95_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_89);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_90)/4 >= selected_average) & (prelim_midterm+_95_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_90);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_91)/4 >= selected_average) & (prelim_midterm+_95_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_91);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_92)/4 >= selected_average) & (prelim_midterm+_95_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_92);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_93)/4 >= selected_average) & (prelim_midterm+_95_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_93);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_94)/4 >= selected_average) & (prelim_midterm+_95_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_94);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_95)/4 >= selected_average) & (prelim_midterm+_95_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_95);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_96)/4 >= selected_average) & (prelim_midterm+_95_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_96);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_97)/4 >= selected_average) & (prelim_midterm+_95_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_97);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_98)/4 >= selected_average) & (prelim_midterm+_95_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_98);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_99)/4 >= selected_average) & (prelim_midterm+_95_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_99);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_95_100)/4 >= selected_average) & (prelim_midterm+_95_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_95_100);
-  alert(grade_array);
+  new_prefinal = 95;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -3969,132 +5057,184 @@ if(((prelim_midterm+_95_100)/4 >= selected_average) & (prelim_midterm+_95_100)/4
 
 if(((prelim_midterm+_96_75)/4 >= selected_average) & (prelim_midterm+_96_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_75);
-  alert(grade_array);
+    new_prefinal = 96;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_76)/4 >= selected_average) & (prelim_midterm+_96_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_76);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_77)/4 >= selected_average) & (prelim_midterm+_96_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_77);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_78)/4 >= selected_average) & (prelim_midterm+_96_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_78);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_79)/4 >= selected_average) & (prelim_midterm+_96_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_79);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_80)/4 >= selected_average) & (prelim_midterm+_96_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_80);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_81)/4 >= selected_average) & (prelim_midterm+_96_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_81);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_82)/4 >= selected_average) & (prelim_midterm+_96_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_82);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_83)/4 >= selected_average) & (prelim_midterm+_96_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_83);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_84)/4 >= selected_average) & (prelim_midterm+_96_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_84);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_85)/4 >= selected_average) & (prelim_midterm+_96_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_85);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_86)/4 >= selected_average) & (prelim_midterm+_96_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_86);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_87)/4 >= selected_average) & (prelim_midterm+_96_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_87);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_88)/4 >= selected_average) & (prelim_midterm+_96_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_88);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_89)/4 >= selected_average) & (prelim_midterm+_96_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_89);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_90)/4 >= selected_average) & (prelim_midterm+_96_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_90);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_91)/4 >= selected_average) & (prelim_midterm+_96_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_91);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_92)/4 >= selected_average) & (prelim_midterm+_96_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_92);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_93)/4 >= selected_average) & (prelim_midterm+_96_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_93);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_94)/4 >= selected_average) & (prelim_midterm+_96_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_94);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_95)/4 >= selected_average) & (prelim_midterm+_96_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_95);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_96)/4 >= selected_average) & (prelim_midterm+_96_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_96);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_97)/4 >= selected_average) & (prelim_midterm+_96_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_97);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_98)/4 >= selected_average) & (prelim_midterm+_96_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_98);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_99)/4 >= selected_average) & (prelim_midterm+_96_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_99);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_96_100)/4 >= selected_average) & (prelim_midterm+_96_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_96_100);
-  alert(grade_array);
+  new_prefinal = 96;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -4102,132 +5242,184 @@ if(((prelim_midterm+_96_100)/4 >= selected_average) & (prelim_midterm+_96_100)/4
 
 if(((prelim_midterm+_97_75)/4 >= selected_average) & (prelim_midterm+_97_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_75);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_76)/4 >= selected_average) & (prelim_midterm+_97_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_76);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_77)/4 >= selected_average) & (prelim_midterm+_97_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_77);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_78)/4 >= selected_average) & (prelim_midterm+_97_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_78);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_79)/4 >= selected_average) & (prelim_midterm+_97_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_79);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_80)/4 >= selected_average) & (prelim_midterm+_97_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_80);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_81)/4 >= selected_average) & (prelim_midterm+_97_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_81);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_82)/4 >= selected_average) & (prelim_midterm+_97_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_82);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_83)/4 >= selected_average) & (prelim_midterm+_97_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_83);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_84)/4 >= selected_average) & (prelim_midterm+_97_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_84);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_85)/4 >= selected_average) & (prelim_midterm+_97_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_85);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_86)/4 >= selected_average) & (prelim_midterm+_97_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_86);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_87)/4 >= selected_average) & (prelim_midterm+_97_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_87);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_88)/4 >= selected_average) & (prelim_midterm+_97_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_88);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_89)/4 >= selected_average) & (prelim_midterm+_97_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_89);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_90)/4 >= selected_average) & (prelim_midterm+_97_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_90);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_91)/4 >= selected_average) & (prelim_midterm+_97_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_91);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_92)/4 >= selected_average) & (prelim_midterm+_97_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_92);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_93)/4 >= selected_average) & (prelim_midterm+_97_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_93);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_94)/4 >= selected_average) & (prelim_midterm+_97_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_94);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_95)/4 >= selected_average) & (prelim_midterm+_97_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_95);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_96)/4 >= selected_average) & (prelim_midterm+_97_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_96);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_97)/4 >= selected_average) & (prelim_midterm+_97_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_97);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_98)/4 >= selected_average) & (prelim_midterm+_97_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_98);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_99)/4 >= selected_average) & (prelim_midterm+_97_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_99);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_97_100)/4 >= selected_average) & (prelim_midterm+_97_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_97_100);
-  alert(grade_array);
+  new_prefinal = 97;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -4235,132 +5427,184 @@ if(((prelim_midterm+_97_100)/4 >= selected_average) & (prelim_midterm+_97_100)/4
 
 if(((prelim_midterm+_98_75)/4 >= selected_average) & (prelim_midterm+_98_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_75);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_76)/4 >= selected_average) & (prelim_midterm+_98_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_76);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_77)/4 >= selected_average) & (prelim_midterm+_98_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_77);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_78)/4 >= selected_average) & (prelim_midterm+_98_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_78);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_79)/4 >= selected_average) & (prelim_midterm+_98_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_79);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_80)/4 >= selected_average) & (prelim_midterm+_98_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_80);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_81)/4 >= selected_average) & (prelim_midterm+_98_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_81);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_82)/4 >= selected_average) & (prelim_midterm+_98_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_82);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_83)/4 >= selected_average) & (prelim_midterm+_98_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_83);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_84)/4 >= selected_average) & (prelim_midterm+_98_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_84);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_85)/4 >= selected_average) & (prelim_midterm+_98_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_85);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_86)/4 >= selected_average) & (prelim_midterm+_98_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_86);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_87)/4 >= selected_average) & (prelim_midterm+_98_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_87);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_88)/4 >= selected_average) & (prelim_midterm+_98_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_88);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_89)/4 >= selected_average) & (prelim_midterm+_98_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_89);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_90)/4 >= selected_average) & (prelim_midterm+_98_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_90);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_91)/4 >= selected_average) & (prelim_midterm+_98_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_91);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_92)/4 >= selected_average) & (prelim_midterm+_98_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_92);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_93)/4 >= selected_average) & (prelim_midterm+_98_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_93);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_94)/4 >= selected_average) & (prelim_midterm+_98_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_94);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_95)/4 >= selected_average) & (prelim_midterm+_98_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_95);
-  alert(grade_array);
+    new_prefinal = 98;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_96)/4 >= selected_average) & (prelim_midterm+_98_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_96);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_97)/4 >= selected_average) & (prelim_midterm+_98_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_97);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_98)/4 >= selected_average) & (prelim_midterm+_98_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_98);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_99)/4 >= selected_average) & (prelim_midterm+_98_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_99);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_98_100)/4 >= selected_average) & (prelim_midterm+_98_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_98_100);
-  alert(grade_array);
+  new_prefinal = 98;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -4368,132 +5612,184 @@ if(((prelim_midterm+_98_100)/4 >= selected_average) & (prelim_midterm+_98_100)/4
 
 if(((prelim_midterm+_99_75)/4 >= selected_average) & (prelim_midterm+_99_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_75);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_76)/4 >= selected_average) & (prelim_midterm+_99_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_76);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_77)/4 >= selected_average) & (prelim_midterm+_99_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_77);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_78)/4 >= selected_average) & (prelim_midterm+_99_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_78);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_79)/4 >= selected_average) & (prelim_midterm+_99_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_79);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_80)/4 >= selected_average) & (prelim_midterm+_99_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_80);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_81)/4 >= selected_average) & (prelim_midterm+_99_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_81);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_82)/4 >= selected_average) & (prelim_midterm+_99_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_82);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_83)/4 >= selected_average) & (prelim_midterm+_99_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_83);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_84)/4 >= selected_average) & (prelim_midterm+_99_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_84);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_85)/4 >= selected_average) & (prelim_midterm+_99_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_85);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_86)/4 >= selected_average) & (prelim_midterm+_99_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_86);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_87)/4 >= selected_average) & (prelim_midterm+_99_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_87);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_88)/4 >= selected_average) & (prelim_midterm+_99_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_88);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_89)/4 >= selected_average) & (prelim_midterm+_99_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_89);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_90)/4 >= selected_average) & (prelim_midterm+_99_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_90);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_91)/4 >= selected_average) & (prelim_midterm+_99_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_91);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_92)/4 >= selected_average) & (prelim_midterm+_99_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_92);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_93)/4 >= selected_average) & (prelim_midterm+_99_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_93);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_94)/4 >= selected_average) & (prelim_midterm+_99_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_94);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_95)/4 >= selected_average) & (prelim_midterm+_99_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_95);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_96)/4 >= selected_average) & (prelim_midterm+_99_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_96);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_97)/4 >= selected_average) & (prelim_midterm+_99_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_97);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_98)/4 >= selected_average) & (prelim_midterm+_99_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_98);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_99)/4 >= selected_average) & (prelim_midterm+_99_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_99_99);
-  alert(grade_array);
+  new_prefinal = 99;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_99_100)/4 >= selected_average) & (prelim_midterm+_99_100)/4 <= parseInt(selected_average) + 1){
-  grade_array.push(_98_85);
-  alert(grade_array);
+  grade_array.push(_99_100);
+  new_prefinal = 99;
+  new_final = 100;
+  // alert(grade_array);
 }
 
 
@@ -4501,133 +5797,220 @@ if(((prelim_midterm+_99_100)/4 >= selected_average) & (prelim_midterm+_99_100)/4
 
 if(((prelim_midterm+_100_75)/4 >= selected_average) & (prelim_midterm+_100_75)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_75);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 75;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_76)/4 >= selected_average) & (prelim_midterm+_100_76)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_76);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 76;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_77)/4 >= selected_average) & (prelim_midterm+_100_77)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_77);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 77;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_78)/4 >= selected_average) & (prelim_midterm+_100_78)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_78);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 78;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_79)/4 >= selected_average) & (prelim_midterm+_100_79)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_79);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 79;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_80)/4 >= selected_average) & (prelim_midterm+_100_80)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_80);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 80;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_81)/4 >= selected_average) & (prelim_midterm+_100_81)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_81);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 81;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_82)/4 >= selected_average) & (prelim_midterm+_100_82)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_82);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 82;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_83)/4 >= selected_average) & (prelim_midterm+_100_83)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_83);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 83;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_84)/4 >= selected_average) & (prelim_midterm+_100_84)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_84);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 84;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_85)/4 >= selected_average) & (prelim_midterm+_100_85)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_85);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 85;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_86)/4 >= selected_average) & (prelim_midterm+_100_86)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_86);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 86;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_87)/4 >= selected_average) & (prelim_midterm+_100_87)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_87);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 87;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_88)/4 >= selected_average) & (prelim_midterm+_100_88)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_88);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 88;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_89)/4 >= selected_average) & (prelim_midterm+_100_89)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_89);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 89;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_90)/4 >= selected_average) & (prelim_midterm+_100_90)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_90);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 90;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_91)/4 >= selected_average) & (prelim_midterm+_100_91)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_91);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 91;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_92)/4 >= selected_average) & (prelim_midterm+_100_92)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_92);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 92;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_93)/4 >= selected_average) & (prelim_midterm+_100_93)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_93);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 93;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_94)/4 >= selected_average) & (prelim_midterm+_100_94)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_94);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 94;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_95)/4 >= selected_average) & (prelim_midterm+_100_95)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_95);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 95;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_96)/4 >= selected_average) & (prelim_midterm+_100_96)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_96);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 96;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_97)/4 >= selected_average) & (prelim_midterm+_100_97)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_97);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 97;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_98)/4 >= selected_average) & (prelim_midterm+_100_98)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_98);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 98;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_99)/4 >= selected_average) & (prelim_midterm+_100_99)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_99);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 99;
+  // alert(grade_array);
 }
 
 if(((prelim_midterm+_100_100)/4 >= selected_average) & (prelim_midterm+_100_100)/4 <= parseInt(selected_average) + 1){
   grade_array.push(_100_100);
-  alert(grade_array);
+  new_prefinal = 100;
+  new_final = 100;
+  // alert(grade_array);
 }
+
+// grade_array.count();
+// for(i=0;i<=grade_array.length;i++){
+// alert(i+"."+grade_array[i]);
+// }
+
+// alert(grade_array.length);
+// alert(grade_array);
+// get_random_array = Math.floor(Math.random() * grade_array.length)+1;
+// random_array = get_random_array;
+// alert(random_array);
+
+// if(get_random_array == 1){
+//   new_prefinal = 75;
+//   new_final = 75;
+//   alert("newPrefinal="+new_prefinal+"newFinal="+new_final);
+// }
+
+  alert("newPrefinal="+new_prefinal+"newFinal="+new_final);
+
+// if(random_array == 1){
+//   new_prefinal = 75;
+//   new_final = 75;
+//   alert("newPrefinal="+new_prefinal+"newFinal="+new_final);
+// }else if(random_array == 2){
+//   new_prefinal = 75;
+//   new_final = 76;
+//   alert("newPrefinal="+new_prefinal+"newFinal="+new_final);
+// }else if(random_array == 3){
+//   new_prefinal = 75;
+//   new_final = 77;
+//   alert("newPrefinal="+new_prefinal+"newFinal="+new_final);
+// }
+
+
 
 
   // for(a=75;a<=100;a++){
