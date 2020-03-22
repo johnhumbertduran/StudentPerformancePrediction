@@ -75,7 +75,7 @@ $predict = "<sup class='badge badge-warning'>Predict</sup>";
     <thead>
     <tr><th class="px-3 text-center bg-success text-white" colspan="5">My Grade</th></tr><!-- Preliminary Here -->
 
-    <tr class="text-center"><th class="px-3">Prelim</th><th class="px-3">Midterm</th><th class="px-3" id="prefinal">Prefinal</th><th class="px-3" id="final">Final</th><th class="px-3">Prediction<sup class='badge badge-warning'>Prediction</sup></th></tr>
+    <tr class="text-center"><th class="px-3">Prelim</th><th class="px-3">Midterm</th><th class="px-3" id="prefinal">Prefinal</th><th class="px-3" id="final">Final</th><th class="px-3" id="prediction">Prediction<sup class='badge badge-warning'>Prediction</sup></th></tr>
 
     </thead>
 
@@ -254,7 +254,7 @@ $average_prediction = 0;
 <td id="get_midterm"><?php echo $midterm_grade; ?></td>
 <td><span id="get_prefinal"><?php echo $prefinal_grade; ?></span><input type="text" id="prefinal_grade_prediction"></td>
 <td><span id="get_final"><?php echo $final_grade; ?></span><input type="text" id="final_grade_prediction"></td>
-<td>
+<td id="select_prediction">
 <select class="form-control pt-1 pb-2 bg-info text-white" id="average_predict" onchange="average()">
   <option value="select_semester">Select Value</option>
   <option value="75" id="75" <?php if(isset($_GET['ave'])){ if($_GET['ave'] == "75"){ echo 'selected'; }}?>>75</option>
@@ -320,7 +320,14 @@ ma remove it grade prediction kung di kaabot it 75
   // alert(select_average[1].value);
   var select_prelim = parseFloat(document.getElementById("get_prelim").innerHTML);
   var select_midterm = parseFloat(document.getElementById("get_midterm").innerHTML);
+  var select_prefinal = parseFloat(document.getElementById("get_prefinal").innerHTML);
   var select_prelim_and_midterm = select_prelim + select_midterm;
+
+  
+var get_prelim_value = document.getElementById("get_prelim");
+var get_midterm_value = document.getElementById("get_midterm");
+var get_prefinal_value = document.getElementById("get_prefinal");
+var get_final_value = document.getElementById("get_final");
   // alert(select_prelim_and_midterm);
   // alert(
   //   "1="+select_average[1].value+
@@ -334,9 +341,465 @@ ma remove it grade prediction kung di kaabot it 75
   //   "\n9="+select_average[9].value+
   //   "\n10="+select_average[10].value
   // );
-if(((select_prelim_and_midterm + 150) / 4) < select_average ){
-  document.getElementById("75").remove();
+  // alert(select_prelim_and_midterm);
+if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML == 0 & get_final_value.innerHTML  == 0){
+
+  for(i=1;i<=74;i++){
+  for(x=1;x<=74;x++){
+    console.log(i+"+"+x);
+    if((((select_prelim_and_midterm + i + x) / 4) >= 75)  & ((select_prelim_and_midterm + i + x) / 4) < 76 ){
+    // alert("75");
+    
+    _75 = document.getElementById("75");
+    _75.style.display = "none"
+    // _75 = select_average.options.value = "75";
+    // select_average.options.value("75").remove();
+    
+    }
+    if((((select_prelim_and_midterm + i + x) / 4) >= 76)  & ((select_prelim_and_midterm + i + x) / 4) < 77 ){
+    // alert("76");
+    
+    _76 = document.getElementById("76");
+    _76.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + i + x) / 4) >= 77)  & ((select_prelim_and_midterm + i + x) / 4) < 78 ){
+    // alert("77");
+    _77 = document.getElementById("77");
+    
+    _77.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + i + x) / 4) >= 78)  & ((select_prelim_and_midterm + i + x) / 4) < 79 ){
+    // alert("78");
+    _78 = document.getElementById("78");
+    
+    _78.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + i + x) / 4) >= 79) & ((select_prelim_and_midterm + i + x) / 4) < 80 ){
+    // alert("79");
+    _79 = document.getElementById("79");
+    console.log((((select_prelim_and_midterm + i + x) / 4)));
+    _79.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + i + x) / 4) >= 80)  & ((select_prelim_and_midterm + i + x) / 4) < 81 ){
+    // alert("80");
+    _80 = document.getElementById("80");
+    _80.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + i + x) / 4) >= 81)  & ((select_prelim_and_midterm + i + x) / 4) < 82 ){
+    // alert("81");
+    _81 = document.getElementById("81");
+    _81.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + i + x) / 4) >= 82)  & ((select_prelim_and_midterm + i + x) / 4) < 83 ){
+    // alert("82");
+    _82 = document.getElementById("82");
+    
+    _82.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + i + x) / 4) >= 83) & ((select_prelim_and_midterm + i + x) / 4) < 84 ){
+    // alert("83");
+    _83 = document.getElementById("83");
+    console.log((((select_prelim_and_midterm + i + x) / 4)));
+    _83.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + i + x) / 4) >= 84)  & ((select_prelim_and_midterm + i + x) / 4) < 85 ){
+    // alert("84");
+    _84 = document.getElementById("84");
+    _84.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + i + x) / 4) >= 85)  & ((select_prelim_and_midterm + i + x) / 4) < 86 ){
+    // alert("85");
+    _85 = document.getElementById("85");
+    _85.style.display = "none"
+    }
+
+  }
+  }
+
+
+  for(y=100;y<=150;y++){
+  for(z=100;z<=150;z++){
+    console.log(y+"+"+z);
+    if((((select_prelim_and_midterm + y + z) / 4) >= 75)  & ((select_prelim_and_midterm + y + z) / 4) < 76 ){
+    // alert("75");
+    
+    _75 = document.getElementById("75");
+    _75.style.display = "none"
+    // _75 = select_average.options.value = "75";
+    // select_average.options.value("75").remove();
+    
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 76)  & ((select_prelim_and_midterm + y + z) / 4) < 77 ){
+    // alert("76");
+    
+    _76 = document.getElementById("76");
+    _76.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 77)  & ((select_prelim_and_midterm + y + z) / 4) < 78 ){
+    // alert("77");
+    _77 = document.getElementById("77");
+    
+    _77.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 78)  & ((select_prelim_and_midterm + y + z) / 4) < 79 ){
+    // alert("78");
+    _78 = document.getElementById("78");
+    
+    _78.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 79) & ((select_prelim_and_midterm + y + z) / 4) < 80 ){
+    // alert("79");
+    _79 = document.getElementById("79");
+    console.log((((select_prelim_and_midterm + y + z) / 4)));
+    _79.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 80)  & ((select_prelim_and_midterm + y + z) / 4) < 81 ){
+    // alert("80");
+    _80 = document.getElementById("80");
+    _80.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 81)  & ((select_prelim_and_midterm + y + z) / 4) < 82 ){
+    // alert("81");
+    _81 = document.getElementById("81");
+    _81.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 82)  & ((select_prelim_and_midterm + y + z) / 4) < 83 ){
+    // alert("82");
+    _82 = document.getElementById("82");
+    _82.style.display = "none"
+    
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 83)  & ((select_prelim_and_midterm + y + z) / 4) < 84 ){
+    // alert("83");
+    _83 = document.getElementById("83");
+    _83.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 84)  & ((select_prelim_and_midterm + y + z) / 4) < 85 ){
+    // alert("84");
+    _84 = document.getElementById("84");
+    _84.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 85)  & ((select_prelim_and_midterm + y + z) / 4) < 86 ){
+    // alert("85");
+    _85 = document.getElementById("85");
+    _85.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 86) & ((select_prelim_and_midterm + y + z) / 4) < 87 ){
+    // alert("86");
+    _86 = document.getElementById("86");
+    console.log((((select_prelim_and_midterm + y + z) / 4)));
+    _86.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 87)  & ((select_prelim_and_midterm + y + z) / 4) < 88 ){
+    // alert("87");
+    _87 = document.getElementById("87");
+    _87.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 88)  & ((select_prelim_and_midterm + y + z) / 4) < 89 ){
+    // alert("88");
+    _88 = document.getElementById("88");
+    _88.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 89)  & ((select_prelim_and_midterm + y + z) / 4) < 90 ){
+    // alert("89");
+    _89 = document.getElementById("89");
+    _89.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 90)  & ((select_prelim_and_midterm + y + z) / 4) < 91 ){
+    // alert("90");
+    _90 = document.getElementById("90");
+    _90.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 91)  & ((select_prelim_and_midterm + y + z) / 4) < 92 ){
+    // alert("91");
+    _91 = document.getElementById("91");
+    _91.style.display = "none"
+    
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 92)  & ((select_prelim_and_midterm + y + z) / 4) < 93 ){
+    // alert("92");
+    _92 = document.getElementById("92");
+    _92.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 93)  & ((select_prelim_and_midterm + y + z) / 4) < 94 ){
+    // alert("93");
+    _93 = document.getElementById("93");
+    _93.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 94)  & ((select_prelim_and_midterm + y + z) / 4) < 95 ){
+    // alert("94");
+    _94 = document.getElementById("94");
+    _94.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 95) & ((select_prelim_and_midterm + y + z) / 4) < 96 ){
+    // alert("95");
+    _95 = document.getElementById("95");
+    _95.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 96)  & ((select_prelim_and_midterm + y + z) / 4) < 97 ){
+    // alert("96");
+    _96 = document.getElementById("96");
+    _96.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 97)  & ((select_prelim_and_midterm + y + z) / 4) < 98 ){
+    // alert("97");
+    _97 = document.getElementById("97");
+    _97.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 98) & ((select_prelim_and_midterm + y + z) / 4) < 99 ){
+    // alert("98");
+    _98 = document.getElementById("98");
+    _98.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 99)  & ((select_prelim_and_midterm + y + z) / 4) < 100 ){
+    // alert("99");
+    _99 = document.getElementById("99");
+    _99.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + y + z) / 4) >= 100)){
+    // alert("100");
+    _100 = document.getElementById("100");
+    _100.style.display = "none"
+    }
+
+  }
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & get_final_value.innerHTML  == 0){
+
+  for(a=1;a<=74;a++){
+    console.log(a);
+    if((((select_prelim_and_midterm + select_prefinal + a) / 4) >= 75)  & ((select_prelim_and_midterm + select_prefinal + a) / 4) < 76 ){
+    // alert("75");
+    
+    _75 = document.getElementById("75");
+    _75.style.display = "none"
+    // _75 = select_average.options.value = "75";
+    // select_average.options.value("75").remove();
+    
+    }
+    if((((select_prelim_and_midterm + select_prefinal + a) / 4) >= 76)  & ((select_prelim_and_midterm + select_prefinal + a) / 4) < 77 ){
+    // alert("76");
+    
+    _76 = document.getElementById("76");
+    _76.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + a) / 4) >= 77)  & ((select_prelim_and_midterm + select_prefinal + a) / 4) < 78 ){
+    // alert("77");
+    _77 = document.getElementById("77");
+    
+    _77.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + a) / 4) >= 78)  & ((select_prelim_and_midterm + select_prefinal + a) / 4) < 79 ){
+    // alert("78");
+    _78 = document.getElementById("78");
+    
+    _78.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + a) / 4) >= 79) & ((select_prelim_and_midterm + select_prefinal + a) / 4) < 80 ){
+    // alert("79");
+    _79 = document.getElementById("79");
+    console.log((((select_prelim_and_midterm + select_prefinal + a) / 4)));
+    _79.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + a) / 4) >= 80)  & ((select_prelim_and_midterm + select_prefinal + a) / 4) < 81 ){
+    // alert("80");
+    _80 = document.getElementById("80");
+    _80.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + a) / 4) >= 81)  & ((select_prelim_and_midterm + select_prefinal + a) / 4) < 82 ){
+    // alert("81");
+    _81 = document.getElementById("81");
+    _81.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + a) / 4) >= 82)  & ((select_prelim_and_midterm + select_prefinal + a) / 4) < 83 ){
+    // alert("82");
+    _82 = document.getElementById("82");
+    
+    _82.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + a) / 4) >= 83) & ((select_prelim_and_midterm + select_prefinal + a) / 4) < 84 ){
+    // alert("83");
+    _83 = document.getElementById("83");
+    console.log((((select_prelim_and_midterm + select_prefinal + a) / 4)));
+    _83.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + a) / 4) >= 84)  & ((select_prelim_and_midterm + select_prefinal + a) / 4) < 85 ){
+    // alert("84");
+    _84 = document.getElementById("84");
+    _84.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + a) / 4) >= 85)  & ((select_prelim_and_midterm + select_prefinal + a) / 4) < 86 ){
+    // alert("85");
+    _85 = document.getElementById("85");
+    _85.style.display = "none"
+    }
+  }
+
+
+  for(b=100;b<=150;b++){
+    console.log(+b);
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 75)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 76 ){
+    // alert("75");
+    
+    _75 = document.getElementById("75");
+    _75.style.display = "none"
+    // _75 = select_average.options.value = "75";
+    // select_average.options.value("75").remove();
+    
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 76)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 77 ){
+    // alert("76");
+    
+    _76 = document.getElementById("76");
+    _76.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 77)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 78 ){
+    // alert("77");
+    _77 = document.getElementById("77");
+    
+    _77.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 78)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 79 ){
+    // alert("78");
+    _78 = document.getElementById("78");
+    
+    _78.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 79) & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 80 ){
+    // alert("79");
+    _79 = document.getElementById("79");
+    console.log((((select_prelim_and_midterm + select_prefinal + b) / 4)));
+    _79.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 80)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 81 ){
+    // alert("80");
+    _80 = document.getElementById("80");
+    _80.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 81)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 82 ){
+    // alert("81");
+    _81 = document.getElementById("81");
+    _81.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 82)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 83 ){
+    // alert("82");
+    _82 = document.getElementById("82");
+    _82.style.display = "none"
+    
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 83)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 84 ){
+    // alert("83");
+    _83 = document.getElementById("83");
+    _83.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 84)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 85 ){
+    // alert("84");
+    _84 = document.getElementById("84");
+    _84.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 85)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 86 ){
+    // alert("85");
+    _85 = document.getElementById("85");
+    _85.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 86) & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 87 ){
+    // alert("86");
+    _86 = document.getElementById("86");
+    console.log((((select_prelim_and_midterm + select_prefinal + b) / 4)));
+    _86.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 87)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 88 ){
+    // alert("87");
+    _87 = document.getElementById("87");
+    _87.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 88)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 89 ){
+    // alert("88");
+    _88 = document.getElementById("88");
+    _88.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 89)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 90 ){
+    // alert("89");
+    _89 = document.getElementById("89");
+    _89.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 90)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 91 ){
+    // alert("90");
+    _90 = document.getElementById("90");
+    _90.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 91)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 92 ){
+    // alert("91");
+    _91 = document.getElementById("91");
+    _91.style.display = "none"
+    
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 92)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 93 ){
+    // alert("92");
+    _92 = document.getElementById("92");
+    _92.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 93)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 94 ){
+    // alert("93");
+    _93 = document.getElementById("93");
+    _93.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 94)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 95 ){
+    // alert("94");
+    _94 = document.getElementById("94");
+    _94.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 95) & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 96 ){
+    // alert("95");
+    _95 = document.getElementById("95");
+    _95.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 96)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 97 ){
+    // alert("96");
+    _96 = document.getElementById("96");
+    _96.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 97)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 98 ){
+    // alert("97");
+    _97 = document.getElementById("97");
+    _97.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 98) & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 99 ){
+    // alert("98");
+    _98 = document.getElementById("98");
+    _98.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 99)  & ((select_prelim_and_midterm + select_prefinal + b) / 4) < 100 ){
+    // alert("99");
+    _99 = document.getElementById("99");
+    _99.style.display = "none"
+    }
+    if((((select_prelim_and_midterm + select_prefinal + b) / 4) >= 100)){
+    // alert("100");
+    _100 = document.getElementById("100");
+    _100.style.display = "none"
+    }
+
+  }
+
+}
+
+
 // alert("Low average value");
 
 // if(((select_prelim_and_midterm + 151) / 4) < select_average[2].value ){
@@ -366,6 +829,7 @@ function semester(){
   // alert("hay");
 }
 
+
 var prefinal = document.getElementById("prefinal");
 var prefinal_grade = document.getElementById("prefinal_grade");
 
@@ -374,6 +838,13 @@ var get_prefinal = document.getElementById("get_prefinal");
 
 var final_grade_prediction = document.getElementById("final_grade_prediction");
 var get_final = document.getElementById("get_final");
+var final = document.getElementById("final");
+var final_grade = document.getElementById("final_grade");
+var prediction = document.getElementById("prediction");
+var select_prediction = document.getElementById("select_prediction");
+
+
+if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 ){
 
 if(prefinal_grade.value == 0){
   prefinal_grade_prediction.style.display = "block";
@@ -384,8 +855,7 @@ if(prefinal_grade.value == 0){
   get_prefinal.style.display = "block";
 }
 
-var final = document.getElementById("final");
-var final_grade = document.getElementById("final_grade");
+
 
 if(final_grade.value == 0){
   // var final_str = final.innerHTML;
@@ -405,11 +875,25 @@ if(final_grade.value == 0){
   final_grade_prediction.style.display = "none";
   get_final.style.display = "block";
 }
+}else if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0){
 
-var prelim = document.getElementById("get_prelim");
-var midterm = document.getElementById("get_midterm");
-var prefinal = document.getElementById("get_prefinal");
-var final = document.getElementById("get_final");
+if(final_grade.value == 0){
+
+  final_grade_prediction.style.display = "block";
+  get_final.style.display = "none";
+  final.innerHTML += "<sup class='badge badge-warning'>Prediction</sup>";
+
+}else{
+  final_grade_prediction.style.display = "none";
+  get_final.style.display = "block";
+}
+}else{
+  final_grade_prediction.style.display = "none";
+  get_final.style.display = "block";
+  prediction.style.display = "none";
+  select_prediction.style.display = "none";
+}
+
 
 function average(){
   // var semester = document.getElementById("semester");
@@ -420,9 +904,9 @@ function average(){
 
 
 
-if(prelim.innerHTML != 0 & midterm.innerHTML != 0 & prefinal.innerHTML == 0 & final.innerHTML  == 0){
-  var new_prelim = parseFloat(prelim.innerHTML);
-  var new_midterm = parseFloat(midterm.innerHTML);
+  var new_prelim = parseFloat(get_prelim_value.innerHTML);
+  var new_midterm = parseFloat(get_midterm_value.innerHTML);
+  var new_prefinal = parseFloat(get_prefinal_value.innerHTML);
   var prelim_midterm =  new_prelim+new_midterm;
 
   // alert(prelim_midterm.toFixed(2)/2);
@@ -1221,6 +1705,8 @@ if(prelim.innerHTML != 0 & midterm.innerHTML != 0 & prefinal.innerHTML == 0 & fi
   var _100_98 = 100 + 98;
   var _100_99 = 100 + 99;
   var _100_100 = 100 + 100;
+
+if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML == 0 & get_final_value.innerHTML  == 0){
 
 
 // _75
@@ -6148,7 +6634,192 @@ get_final_prediction.value = predict_final;
         // alert("Average=" + average + "Prefinal=" + new_prefinal + "Final=" + new_prefinal);
 
 
-  }
+  }else if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & get_final_value.innerHTML  == 0){
+
+
+// _75
+
+if(((prelim_midterm+new_prefinal+75)/4 >= selected_average) & (prelim_midterm+new_prefinal+75)/4 <= parseInt(selected_average) + 1){
+  // alert(selected_average);
+  grade_array.push("75");
+  new_final = 75;
+  // alert(_75_75.valueOf());
+  // alert(grade_array);
+  // alert((prelim_midterm+_75_77)/4);
+}
+
+if(((prelim_midterm+new_prefinal+76)/4 >= selected_average) & (prelim_midterm+new_prefinal+76)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("76");
+  new_final = 76;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+77)/4 >= selected_average) & (prelim_midterm+new_prefinal+77)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("77");
+  new_final = 77;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+78)/4 >= selected_average) & (prelim_midterm+new_prefinal+78)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("78");
+  new_final = 78;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+79)/4 >= selected_average) & (prelim_midterm+new_prefinal+79)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("79");
+  new_final = 79; 
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+80)/4 >= selected_average) & (prelim_midterm+new_prefinal+80)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("80");
+  new_final = 80;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+81)/4 >= selected_average) & (prelim_midterm+new_prefinal+81)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("81");
+  new_final = 81;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+82)/4 >= selected_average) & (prelim_midterm+new_prefinal+82)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("82");
+  new_final = 82;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+83)/4 >= selected_average) & (prelim_midterm+new_prefinal+83)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("83");
+  new_final = 83;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+84)/4 >= selected_average) & (prelim_midterm+new_prefinal+84)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("84");
+  new_final = 84;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+85)/4 >= selected_average) & (prelim_midterm+new_prefinal+85)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("85");
+  new_final = 85;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+86)/4 >= selected_average) & (prelim_midterm+new_prefinal+86)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("86");
+  new_final = 86;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+87)/4 >= selected_average) & (prelim_midterm+new_prefinal+87)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("87");
+  new_final = 87;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+88)/4 >= selected_average) & (prelim_midterm+new_prefinal+88)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("88");
+  new_final = 88;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+89)/4 >= selected_average) & (prelim_midterm+new_prefinal+89)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("89");
+  new_final = 89;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+90)/4 >= selected_average) & (prelim_midterm+new_prefinal+90)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("90");
+  new_final = 90;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+91)/4 >= selected_average) & (prelim_midterm+new_prefinal+91)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("91");
+  new_final = 91;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+92)/4 >= selected_average) & (prelim_midterm+new_prefinal+92)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("92");
+  new_final = 92;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+93)/4 >= selected_average) & (prelim_midterm+new_prefinal+93)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("93");
+  new_final = 93;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+94)/4 >= selected_average) & (prelim_midterm+new_prefinal+94)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("94");
+  new_final = 94; 
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+95)/4 >= selected_average) & (prelim_midterm+new_prefinal+95)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("95");
+  new_final = 95;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+96)/4 >= selected_average) & (prelim_midterm+new_prefinal+96)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("96");
+  new_final = 96;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+97)/4 >= selected_average) & (prelim_midterm+new_prefinal+97)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("97");
+  new_final = 97;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+98)/4 >= selected_average) & (prelim_midterm+new_prefinal+98)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("98");
+  new_final = 98;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+99)/4 >= selected_average) & (prelim_midterm+new_prefinal+99)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("99");
+  new_final = 99;
+  // alert(grade_array);
+}
+
+if(((prelim_midterm+new_prefinal+100)/4 >= selected_average) & (prelim_midterm+new_prefinal+100)/4 <= parseInt(selected_average) + 1){
+  grade_array.push("100");
+  new_final = 100;
+  // alert(grade_array);
+}
+
+
+// grade_array.count();
+// for(i=0;i<=grade_array.length;i++){
+// alert(i+"."+grade_array[i]);
+// }
+
+// alert Umpisa iya
+
+// alert(grade_array.length);
+// alert(grade_array);
+get_random_array = Math.floor(Math.random() * grade_array.length);
+random_array = get_random_array;
+predict_grade_array = grade_array[random_array];
+
+
+var get_final_prediction = document.getElementById("final_grade_prediction");
+
+// location.relaod();
+// get_prefinal_prediction.value = predict_prefinal;
+get_final_prediction.value = predict_grade_array;
+
+}
 }
 
 // if(prelim.innerHTML != 0 & midterm.innerHTML != 0 & prefinal.innerHTML != 0 & final.innerHTML  == 0){
