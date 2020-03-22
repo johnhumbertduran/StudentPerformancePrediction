@@ -29,12 +29,12 @@ if(isset($_SESSION["username"])){
 ?>
 
 <center>
-<h1 class="py-3 text-info px-1">Student Performance</h1>
+<h1 class="py-3 text-info px-1">Student Prediction</h1>
 </center>
 
 
 <style>
-.student_performance_active{
+.prediction{
   border: 1.5px solid white;
   border-radius: 6px;
 }

@@ -45,6 +45,16 @@ if(isset($_SESSION["username"])){
   border: 1.5px solid white;
   border-radius: 6px;
 }
+
+#prefinal_grade_prediction{
+  border:none;
+  background-color: transparent;
+}
+
+#final_grade_prediction{
+  border:none;
+  background-color: transparent;
+}
 </style>
 
 
@@ -73,9 +83,9 @@ $predict = "<sup class='badge badge-warning'>Predict</sup>";
 <div class="table-responsive table_table mt-3 col-8 container-fluid">
 <table border="1" class="table table-hover">
     <thead>
-    <tr><th class="px-3 text-center bg-success text-white" colspan="5">My Grade</th></tr><!-- Preliminary Here -->
+    <tr><th class="px-3 text-center bg-info text-white" colspan="5">My Grade</th></tr><!-- Preliminary Here -->
 
-    <tr class="text-center"><th class="px-3">Prelim</th><th class="px-3">Midterm</th><th class="px-3" id="prefinal">Prefinal</th><th class="px-3" id="final">Final</th><th class="px-3" id="prediction">Prediction<sup class='badge badge-warning'>Prediction</sup></th></tr>
+    <tr class="text-center"><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal">Prefinal</th><th class="px-3 bg-warning text-white" id="final">Final</th><th class="px-3 bg-dark text-white" id="prediction">Prediction<sup class='badge badge-warning'>Prediction</sup></th></tr>
 
     </thead>
 
@@ -252,10 +262,10 @@ $average_prediction = 0;
 <tr class="text-center">
 <td id="get_prelim"><?php echo $prelim_grade; ?></td>
 <td id="get_midterm"><?php echo $midterm_grade; ?></td>
-<td><span id="get_prefinal"><?php echo $prefinal_grade; ?></span><input type="text" id="prefinal_grade_prediction"></td>
-<td><span id="get_final"><?php echo $final_grade; ?></span><input type="text" id="final_grade_prediction"></td>
+<td><span id="get_prefinal"><?php echo $prefinal_grade; ?></span><input type="text" id="prefinal_grade_prediction" class="text-center col-5 container-fluid"></td>
+<td><span id="get_final"><?php echo $final_grade; ?></span><input type="text" id="final_grade_prediction" class="text-center col-5 container-fluid"></td>
 <td id="select_prediction">
-<select class="form-control pt-1 pb-2 bg-info text-white" id="average_predict" onchange="average()">
+<select class="form-control pt-1 pb-2 bg-dark text-white" id="average_predict" onchange="average()">
   <option value="select_semester">Select Value</option>
   <option value="75" id="75" <?php if(isset($_GET['ave'])){ if($_GET['ave'] == "75"){ echo 'selected'; }}?>>75</option>
   <option value="76" id="76" <?php if(isset($_GET['ave'])){ if($_GET['ave'] == "76"){ echo 'selected'; }}?>>76</option>
@@ -306,10 +316,10 @@ $average_prediction = 0;
 </table>
 </div>
 
-<input type="text" id="prefinal_grade" value="<?php echo $prefinal_grade; ?>">
-<input type="text" id="final_grade" value="<?php echo $final_grade; ?>">
+<input type="hidden" id="prefinal_grade" value="<?php echo $prefinal_grade; ?>">
+<input type="hidden" id="final_grade" value="<?php echo $final_grade; ?>">
 
-ma remove it grade prediction kung di kaabot it 75
+<!-- ma remove it grade prediction kung di kaabot it 75 -->
 
 <!-- <input type="text" id="final_grade_prediction">
 <input type="text" id="prefinal_grade_prediction"> -->
@@ -844,52 +854,65 @@ var prediction = document.getElementById("prediction");
 var select_prediction = document.getElementById("select_prediction");
 
 
-if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 ){
+if(get_prefinal_value.innerHTML == 0){
+prefinal.classList.remove("bg-danger");
+prefinal.classList.add("bg-dark");
+}
+if(get_final_value.innerHTML == 0 ){
+final.classList.remove("bg-warning");
+final.classList.add("bg-dark");
+}
 
-if(prefinal_grade.value == 0){
-  prefinal_grade_prediction.style.display = "block";
-  get_prefinal.style.display = "none";
-  prefinal.innerHTML += "<sup class='badge badge-warning'>Prediction</sup>";
+if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML == 0 & get_final_value.innerHTML == 0){
+
+  if(prefinal_grade.value == 0){
+    prefinal_grade_prediction.style.display = "block";
+    get_prefinal.style.display = "none";
+    prefinal.innerHTML += "<sup class='badge badge-warning'>Prediction</sup>";
+  }else{
+    prefinal_grade_prediction.style.display = "none";
+    get_prefinal.style.display = "block";
+  }
+
+
+
+    if(final_grade.value == 0){
+      // var final_str = final.innerHTML;
+      // var b = "<sup class='badge badge-warning'>Prediction</sup>";
+      // var pos = 5;
+      // final.innerHTML = [b,final_str.slice(pos)].join(final_str);
+    
+      final_grade_prediction.style.display = "block";
+      get_final.style.display = "none";
+      final.innerHTML += "<sup class='badge badge-warning'>Prediction</sup>";
+    
+    
+      // alert(final_str);
+      // [final_str.slice(0),"<sup class='badge badge-warning'><small>Predict</small></sup>",0].join('');
+      // final.innerHTML += string.slice("Final", "<sup class='badge badge-warning'><small>Predict</small></sup>");
+    }else{
+      final_grade_prediction.style.display = "none";
+      get_final.style.display = "block";
+    }
+}else if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & get_final_value.innerHTML == 0){
+
+    if(final_grade.value == 0){
+    
+      final_grade_prediction.style.display = "block";
+      get_final.style.display = "none";
+      final.innerHTML += "<sup class='badge badge-warning'>Prediction</sup>";
+    
+    }else{
+      final_grade_prediction.style.display = "none";
+      get_final.style.display = "block";
+    }
+
+
 }else{
-  prefinal_grade_prediction.style.display = "none";
   get_prefinal.style.display = "block";
-}
-
-
-
-if(final_grade.value == 0){
-  // var final_str = final.innerHTML;
-  // var b = "<sup class='badge badge-warning'>Prediction</sup>";
-  // var pos = 5;
-  // final.innerHTML = [b,final_str.slice(pos)].join(final_str);
-
-  final_grade_prediction.style.display = "block";
-  get_final.style.display = "none";
-  final.innerHTML += "<sup class='badge badge-warning'>Prediction</sup>";
-
-
-  // alert(final_str);
-  // [final_str.slice(0),"<sup class='badge badge-warning'><small>Predict</small></sup>",0].join('');
-  // final.innerHTML += string.slice("Final", "<sup class='badge badge-warning'><small>Predict</small></sup>");
-}else{
-  final_grade_prediction.style.display = "none";
   get_final.style.display = "block";
-}
-}else if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0){
-
-if(final_grade.value == 0){
-
-  final_grade_prediction.style.display = "block";
-  get_final.style.display = "none";
-  final.innerHTML += "<sup class='badge badge-warning'>Prediction</sup>";
-
-}else{
+  prefinal_grade_prediction.style.display = "none";
   final_grade_prediction.style.display = "none";
-  get_final.style.display = "block";
-}
-}else{
-  final_grade_prediction.style.display = "none";
-  get_final.style.display = "block";
   prediction.style.display = "none";
   select_prediction.style.display = "none";
 }

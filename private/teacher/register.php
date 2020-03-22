@@ -50,7 +50,7 @@ if(isset($_SESSION["username"])){
 </style>
 
 <?php
-include("../bins/admin_nav.php");
+include("../bins/teacher_nav.php");
 ?>
 
 <center>

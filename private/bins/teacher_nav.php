@@ -13,7 +13,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item home_active">
-        <a class="nav-link pl-2" href="../admin">Home</a>
+        <a class="nav-link pl-2" href="../teacher">Home</a>
       </li>
       <li class="nav-item student_performance_active">
         <a class="nav-link pl-2" href="studentperformance">Student Performance</a>
