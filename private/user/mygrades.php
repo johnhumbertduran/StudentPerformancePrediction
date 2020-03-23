@@ -262,8 +262,8 @@ $average_prediction = 0;
 <tr class="text-center">
 <td id="get_prelim"><?php echo $prelim_grade; ?></td>
 <td id="get_midterm"><?php echo $midterm_grade; ?></td>
-<td><span id="get_prefinal"><?php echo $prefinal_grade; ?></span><input type="text" id="prefinal_grade_prediction" class="text-center col-5 container-fluid"></td>
-<td><span id="get_final"><?php echo $final_grade; ?></span><input type="text" id="final_grade_prediction" class="text-center col-5 container-fluid"></td>
+<td><span id="get_prefinal"><?php echo $prefinal_grade; ?></span><input type="text" id="prefinal_grade_prediction" class="text-center col-5 container-fluid" disabled></td>
+<td><span id="get_final"><?php echo $final_grade; ?></span><input type="text" id="final_grade_prediction" class="text-center col-5 container-fluid" disabled></td>
 <td id="select_prediction">
 <select class="form-control pt-1 pb-2 bg-dark text-white" id="average_predict" onchange="average()">
   <option value="select_semester">Select Value</option>
