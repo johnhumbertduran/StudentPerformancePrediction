@@ -376,10 +376,10 @@ $prefinal_grade = $midterm_grade * 0.3 + $prefinal_3rd_quarter * 0.7;
 ?>
 </div>
 
-<input type="text" value="<?php echo $_GET["redir"]; ?>" id="grade_period">
-<input type="text" value="<?php echo $_GET["_y"]; ?>" id="year">
-<input type="text" value="<?php echo $_GET["_c"]; ?>" id="course">
-<input type="text" value="<?php echo $_GET["_s_e_"]; ?>" id="semester">
+<input type="hidden" value="<?php echo $_GET["redir"]; ?>" id="grade_period">
+<input type="hidden" value="<?php echo $_GET["_y"]; ?>" id="year">
+<input type="hidden" value="<?php echo $_GET["_c"]; ?>" id="course">
+<input type="hidden" value="<?php echo $_GET["_s_e_"]; ?>" id="semester">
 
 <script>
 

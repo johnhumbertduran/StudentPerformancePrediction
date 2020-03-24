@@ -91,13 +91,16 @@ include("../bins/teacher_nav.php");
 </div>
 
 
+<!-- ######################################################################################### -->
+<!-- ################################### Table Starts Here ################################### -->
+<!-- ######################################################################################### -->
 
 <div class="table-responsive table_table mt-3 container">
 <table border="1" class="table table-hover">
     <thead>
     <tr><th class="px-3 text-center bg-info text-white" colspan="7">Student Grade</th></tr><!-- Preliminary Here -->
 
-    <tr class="text-center"><th class="px-3">Student ID</th><th class="px-3">Student Name</th><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal">Prefinal</th><th class="px-3 bg-warning text-white" id="final">Final</th><th class="px-3 bg-dark text-white" id="prediction">Prediction</th></tr>
+    <tr class="text-center"><th class="px-3">Student ID</th><th class="px-3">Student Name</th><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal">Prefinal</th><th class="px-3 bg-warning text-white" id="final">Final</th><th class="px-3 bg-dark text-white" id="prediction1">Prediction</th></tr>
 
     </thead>
 
@@ -105,22 +108,76 @@ include("../bins/teacher_nav.php");
 
 <?php
 
-  if(isset($_GET["_s"])){
-    $semester = $_GET["_s"];
+  if(isset($_GET["_y"])){
+    $year = $_GET["_y"];
+  }else{
+    $year = "";
+  }
+
+  
+
+  if(isset($_GET["_c"])){
+    $course = $_GET["_c"];
+  }else{
+    $course = "BSIT";
+  }
+
+
+  if(isset($_GET["_s_e_"])){
+    $semester = $_GET["_s_e_"];
   }else{
     $semester = "sem1";
   }
+
+  if(isset($_GET["_y"]) && !isset($_GET["_c"]) && !isset($_GET["_s_e_"])){
+    $ready = "100";
+  }elseif(isset($_GET["_y"]) && isset($_GET["_c"]) && !isset($_GET["_s_e_"])){
+    $ready = "110";
+  }elseif(isset($_GET["_y"]) && isset($_GET["_c"]) && isset($_GET["_s_e_"])){
+    $ready = "111";
+  }else{
+    $ready = "";
+  }
+
+  // echo $ready;
+
   
 
   $prelim = "prelim$semester[3]";
   $midterm = "midterm$semester[3]";
   $prefinal = "prefinal$semester[3]";
   $final = "final$semester[3]";
-  $prelim_qry = mysqli_query($connections, "SELECT * FROM $prelim ");
-  $midterm_qry = mysqli_query($connections, "SELECT * FROM $midterm ");
-  $prefinal_qry = mysqli_query($connections, "SELECT * FROM $prefinal ");
-  $final_qry = mysqli_query($connections, "SELECT * FROM $final ");
-  $students_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE account_type='2'");
+
+  if($ready == "100"){
+    $prelim_qry = mysqli_query($connections, "SELECT * FROM $prelim WHERE year='$year' ");
+    $midterm_qry = mysqli_query($connections, "SELECT * FROM $midterm WHERE year='$year' ");
+    $prefinal_qry = mysqli_query($connections, "SELECT * FROM $prefinal WHERE year='$year' ");
+    $final_qry = mysqli_query($connections, "SELECT * FROM $final WHERE year='$year' ");
+    $students_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE account_type='2' AND year='$year' ");
+    // echo "<script>alert('there is a year');</script>";
+}elseif($ready == "110"){
+    $prelim_qry = mysqli_query($connections, "SELECT * FROM $prelim WHERE year='$year' AND course='$course' ");
+    $midterm_qry = mysqli_query($connections, "SELECT * FROM $midterm WHERE year='$year' AND course='$course' ");
+    $prefinal_qry = mysqli_query($connections, "SELECT * FROM $prefinal WHERE year='$year' AND course='$course' ");
+    $final_qry = mysqli_query($connections, "SELECT * FROM $final WHERE year='$year' AND course='$course' ");
+    $students_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE account_type='2' AND year='$year' AND course='$course' ");
+    // echo "<script>alert('$course');</script>";
+  }elseif($ready == "111"){
+    $prelim_qry = mysqli_query($connections, "SELECT * FROM $prelim WHERE year='$year' AND course='$course' ");
+    $midterm_qry = mysqli_query($connections, "SELECT * FROM $midterm WHERE year='$year' AND course='$course' ");
+    $prefinal_qry = mysqli_query($connections, "SELECT * FROM $prefinal WHERE year='$year' AND course='$course' ");
+    $final_qry = mysqli_query($connections, "SELECT * FROM $final WHERE year='$year' AND course='$course' ");
+    $students_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE account_type='2' AND year='$year' AND course='$course' ");
+  }else{
+    $prelim_qry = mysqli_query($connections, "SELECT * FROM $prelim ");
+    $midterm_qry = mysqli_query($connections, "SELECT * FROM $midterm ");
+    $prefinal_qry = mysqli_query($connections, "SELECT * FROM $prefinal ");
+    $final_qry = mysqli_query($connections, "SELECT * FROM $final ");
+    $students_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE account_type='2' ");
+    // echo "<script>alert('there is no year');</script>";
+  }
+
+  
 
 
 while($row_prelim = mysqli_fetch_assoc($prelim_qry)){
@@ -282,24 +339,16 @@ $average_prediction = 0;
 ?>
 
 <tr class="text-center">
-<td id="get_prelim"><?php echo $student_no; ?></td>
-<td id="get_prelim"><?php echo $student_name; ?></td>
-<td id="get_prelim"><?php echo $prelim_grade; ?></td>
-<td id="get_midterm"><?php echo $midterm_grade; ?></td>
-<td><span id="get_prefinal"><?php echo $prefinal_grade; ?></span></td>
-<td><span id="get_final"><?php echo $final_grade; ?></span></td>
-<td id="select_prediction">
-<a href="#">Predict</a>
+<td><?php echo $student_no; ?></td>
+<td><?php echo $student_name; ?></td>
+<td><?php echo $prelim_grade; ?></td>
+<td><?php echo $midterm_grade; ?></td>
+<td><span><?php echo $prefinal_grade; ?></span></td>
+<td><span><?php echo $final_grade; ?></span></td>
+<td>
+<a href="?id=<?php echo $student_no; ?>">Predict</a>
 </td>
 </tr>
-<!-- <tr class="text-center">
-<td></td>
-<td></td>
-<td id="prefinal_prediction"><?php echo $prefinal_prediction; ?></td>
-<td id="final_prediction"><?php echo $final_prediction; ?></td>
-<td id="average_prediction"><?php echo $average_prediction; ?></td>
-</tr> -->
-
 
 
 <?php
@@ -310,9 +359,18 @@ $average_prediction = 0;
 </table>
 </div>
 
-<input type="hidden" id="prefinal_grade" value="<?php echo $prefinal_grade; ?>">
-<input type="hidden" id="final_grade" value="<?php echo $final_grade; ?>">
 
+
+<!-- ######################################################################################### -->
+<!-- ################################### Table Ends Here ################################### -->
+<!-- ######################################################################################### -->
+
+
+<?php
+if(isset($_GET["id"])){
+  include("student_prediction.php");
+}
+?>
 
 <br>
 <br>
