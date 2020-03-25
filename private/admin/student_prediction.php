@@ -28,7 +28,7 @@ $student_name = $firstname . " " . $middlename[0] . ". " . $lastname;
 
 <div class="black p-5 fixed-top">
 
-<input type="hidden" id="get_semester" value="<?php echo $_GET["s_"]; ?>">
+
 
 <div class="table-responsive table_table mt-3 col-10 container-fluid">
 <table border="1" class="table table-hover">
@@ -6546,9 +6546,6 @@ var get_final_prediction = document.getElementById("final_grade_prediction");
 get_prefinal_prediction.value = predict_prefinal;
 get_final_prediction.value = predict_final;
 
-
-
-
 // document.getElementById("get_prefinal").innerHTML = predict_prefinal;
 // document.getElementById("get_final").innerHTML = predict_final;
   // alert("predictPrefinal="+predict_prefinal+"predictFinal="+predict_final);
@@ -6797,30 +6794,6 @@ var get_final_prediction = document.getElementById("final_grade_prediction");
 get_final_prediction.value = predict_grade_array;
 
 }
-
-
-
-
-var xhr = new XMLHttpRequest();
-  xhr.open('POST','save_prediction.php?prefinal='+predict_prefinal, true);
-  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-  xhr.onreadystatechange = function () {
-    if(xhr.readyState == 4 && xhr.status == 200) {
-      var result = xhr.responseText;
-      console.log(result);
-      
-      if(result == "true"){
-        alert('true');
-      }else{
-        alert('false');
-      }
-    // console.log('prefinal:'+predict_prefinal+'final:'+predict_final);
-  }
-  }
-  xhr.send();
-
-
 }
 
 // if(prelim.innerHTML != 0 & midterm.innerHTML != 0 & prefinal.innerHTML != 0 & final.innerHTML  == 0){

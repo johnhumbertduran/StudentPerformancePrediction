@@ -13,7 +13,7 @@ if(isset($_SESSION["username"])){
     $my_info = mysqli_fetch_assoc($query_info);
     $account_type = $my_info["account_type"];
     
-    if($account_type != 3){
+    if($account_type != 1){
     
         header('Location: ../../forbidden');
     
@@ -55,12 +55,6 @@ if(isset($_SESSION["username"])){
 include("../bins/teacher_nav.php");
 ?>
 <br>
-
-
-<h2 class="text-danger text-center">
-E SAVE DU PREDICTED NUMBERS PARA MA TAW AN IT CHART
-</h2>
-
 
 <div class="container-fluid d-inline py-5">
 <select class="form-control col-2 ml-2 pt-1 pb-2 d-inline text-white text-white bg-info" id="year" onchange="year()">
@@ -352,7 +346,7 @@ $average_prediction = 0;
 <td><span><?php echo $prefinal_grade; ?></span></td>
 <td><span><?php echo $final_grade; ?></span></td>
 <td>
-<a href="?id=<?php echo $student_no; ?>&s_=<?php echo $semester[3]; ?>">Predict</a>
+<a href="?id=<?php echo $student_no; ?>">Predict</a>
 </td>
 </tr>
 
