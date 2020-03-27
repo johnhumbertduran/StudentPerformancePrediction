@@ -1,29 +1,50 @@
 <?php
 
+include("../bins/connections.php");
+
+if(isset($_GET["s_"])){
+    $grade_period = $_GET["s_"];
+}
 
 if(isset($_GET["prefinal"])){
     $prefinal = $_GET["prefinal"];
-}else{
-    $prefinal = "nothing";
+    echo $prefinal."\n";
 }
 
 if(isset($_GET["final"])){
     $final = $_GET["final"];
-}else{
-    $final = "nothing";
+    echo $final."\n";
 }
 
-// echo $prefinal.$final;
-
-if(isset($_GET["prefinal"])){
-    echo "true";
-}else{
-    echo "false";
+if(isset($_GET["id"])){
+    $id = $_GET["id"];
 }
 
-include("../bins/connections.php");
+echo $id."\n";
 
-// mysqli_query($connections, "INSERT INTO prefinal,final (prefinal_prediction,final_prediction,average_prediction)
-// VALUES ('$student_no','$fullname')");
+
+if((isset($_GET["prefinal"])) & (isset($_GET["final"]))){
+    $prefinal_grade_semester = "prefinal".$grade_period;
+    $final_grade_semester = "final".$grade_period;
+
+mysqli_query($connections, "UPDATE $prefinal_grade_semester SET 
+prefinal_prediction='$prefinal' WHERE student_no='$id'");
+// echo $prefinal_grade_semester."\n";
+
+mysqli_query($connections, "UPDATE $final_grade_semester SET 
+final_prediction='$final' WHERE student_no='$id'");
+// echo $prefinal_grade_semester."\n";
+
+}else if((!isset($_GET["prefinal"])) & (isset($_GET["final"]))){
+    $final_grade_semester = "final".$grade_period;
+
+mysqli_query($connections, "UPDATE $final_grade_semester SET 
+final_prediction='$final' WHERE student_no='$id'");
+
+}
+echo $final_grade_semester;
+
+
+    
 
 ?>
