@@ -252,9 +252,9 @@ $average_prediction = 0;
 <td id="get_midterm" class="bg-white"><?php echo $midterm_grade; ?></td>
 <td class="bg-white"><span id="get_prefinal"><?php if($prefinal_prediction>0){echo $prefinal_prediction; }else{echo $prefinal_grade;} ?></span><input type="text" id="prefinal_grade_prediction" class="text-center col-5 container-fluid" disabled></td>
 <td class="bg-white"><span id="get_final"><?php if($final_prediction>0){echo $final_prediction; }else{echo $final_grade;} ?></span><input type="text" id="final_grade_prediction" class="text-center col-5 container-fluid" disabled></td>
-<td id="select_prediction">
+<td id="select_prediction" class="bg-white">
 <select class="form-control pt-1 pb-2 bg-dark text-white" id="average_predict" onchange="average()">
-  <option value="select_semester">Select Value</option>
+  <option value="select_grade_prediction">Select Value</option>
   <option value="75" id="75" <?php if(isset($_GET['ave'])){ if($_GET['ave'] == "75"){ echo 'selected'; }}?>>75</option>
   <option value="76" id="76" <?php if(isset($_GET['ave'])){ if($_GET['ave'] == "76"){ echo 'selected'; }}?>>76</option>
   <option value="77" id="77" <?php if(isset($_GET['ave'])){ if($_GET['ave'] == "77"){ echo 'selected'; }}?>>77</option>
@@ -322,10 +322,18 @@ $average_prediction = 0;
   var select_prelim_and_midterm = select_prelim + select_midterm;
 
   
-var get_prelim_value = document.getElementById("get_prelim");
-var get_midterm_value = document.getElementById("get_midterm");
-var get_prefinal_value = document.getElementById("get_prefinal");
-var get_final_value = document.getElementById("get_final");
+  var get_prelim_value = document.getElementById("get_prelim");
+  var get_midterm_value = document.getElementById("get_midterm");
+  var get_prefinal_value = document.getElementById("get_prefinal");
+  var get_final_value = document.getElementById("get_final");
+
+  var confirm_prefinal_prediction = document.getElementById("confirm_prefinal_prediction").innerHTML;
+  var confirm_final_prediction = document.getElementById("confirm_final_prediction").innerHTML;
+
+  var average_prediction = (parseFloat(get_prelim_value.innerHTML) + parseFloat(get_midterm_value.innerHTML) + parseFloat(confirm_prefinal_prediction) + parseFloat(confirm_final_prediction))/4;
+
+
+// alert(average_prediction);
   // alert(select_prelim_and_midterm);
   // alert(
   //   "1="+select_average[1].value+
@@ -896,12 +904,27 @@ if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_pref
 
 
 }else if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & get_final_value.innerHTML != 0 & confirmation_prefinal != 0 & confirmation_final != 0){
+  
+  // select_average.selectedIndex = 75;
+  // select_average = select_average.options[select_average.selectedIndex].value;
+  // select_average.selectedIndex.value = "87";
+
+  // select_average = average_prediction;
+  // alert(average_prediction);
+  // alert(new_select_average);
   // get_prefinal.style.display = "block";
   // get_final.style.display = "block";
   // prefinal_grade_prediction.style.display = "none";
   // final_grade_prediction.style.display = "none";
   // prediction.style.display = "none";
   // select_prediction.style.display = "none";
+
+  var new_select_average = document.getElementById("average_predict").selectedIndex.value;
+
+  // new_select_average = "74";
+  alert(new_select_average);
+
+
 }else{
   get_prefinal.style.display = "block";
   get_final.style.display = "block";

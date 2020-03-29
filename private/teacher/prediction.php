@@ -49,6 +49,20 @@ if(isset($_SESSION["username"])){
   border:none;
   background-color: transparent;
 }
+
+
+.table-hover tbody tr:hover {
+    background: #4ef0a2;
+    cursor:pointer;
+}
+
+/* .table-hover tbody tr:hover td {
+    background: #4ef0a2;
+    cursor:pointer;
+} */
+
+td:hover { background-color: #f75271; color: #fff; }
+
 </style>
 
 <?php
@@ -104,9 +118,9 @@ E SAVE DU PREDICTED NUMBERS PARA MA TAW AN IT CHART
 <div class="table-responsive table_table mt-3 container">
 <table border="1" class="table table-hover">
     <thead>
-    <tr><th class="px-3 text-center bg-info text-white" colspan="7">Student Grade</th></tr><!-- Preliminary Here -->
+    <tr><th class="px-3 text-center bg-info text-white" colspan="9">Student Grade</th></tr><!-- Preliminary Here -->
 
-    <tr class="text-center"><th class="px-3">Student ID</th><th class="px-3">Student Name</th><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal">Prefinal</th><th class="px-3 bg-warning text-white" id="final">Final</th><th class="px-3 bg-dark text-white" id="prediction1">Prediction</th></tr>
+    <tr class="text-center"><th class="px-3">Student ID</th><th class="px-3">Student Name</th><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal">Prefinal</th><th class="px-3 bg-warning text-white" id="final">Final</th><th class="px-3 bg-secondary text-white" id="average">Average</th><th class="px-3 bg-secondary text-white" id="average">Equivalent</th><th class="px-3 bg-dark text-white" id="prediction1">Prediction</th></tr>
 
     </thead>
 
@@ -276,10 +290,11 @@ $prefinal_performance_1 = $row_prefinal["prefinal_performance_1"]; //ok
 $prefinal_performance_2 = $row_prefinal["prefinal_performance_2"]; //ok
 $prefinal_written_test = $row_prefinal["prefinal_written_test"]; //ok
 
+$prefinal_prediction = $row_prefinal["prefinal_prediction"];
 
-if($prefinal_output_1 == 0 && $prefinal_output_2 == 0 &&
-   $prefinal_performance_1 == 0 && $prefinal_performance_1 == 0 &&
-   $prefinal_written_test == 0){
+if($prefinal_output_1 <= 0 && $prefinal_output_2 <= 0 &&
+   $prefinal_performance_1 <= 0 && $prefinal_performance_1 <= 0 &&
+   $prefinal_written_test <= 0){
   
     $prefinal_grade = 0;
 
@@ -311,9 +326,9 @@ $final_performance_2 = $row_final["final_performance_2"];
 $final_written_test = $row_final["final_written_test"];
 
 
-if($final_output_1 == 0 && $final_output_2 == 0 &&
-   $final_performance_1 == 0 && $final_performance_1 == 0 &&
-   $final_written_test == 0){
+if($final_output_1 <= 0 && $final_output_2 <= 0 &&
+   $final_performance_1 <= 0 && $final_performance_1 <= 0 &&
+   $final_written_test <= 0){
   
     $final_grade = 0;
 
@@ -336,10 +351,10 @@ $final_grade = number_format((float)$final_grade,2,".","");
   
 
 
-$prefinal_prediction = 0;
+// $prefinal_prediction = 0;
 $final_prediction = 0;
 $average_prediction = 0;
-
+$average = "";
 
 
 ?>
@@ -349,10 +364,85 @@ $average_prediction = 0;
 <td><?php echo $student_name; ?></td>
 <td><?php echo $prelim_grade; ?></td>
 <td><?php echo $midterm_grade; ?></td>
-<td><span><?php echo $prefinal_grade; ?></span></td>
+<td>
+<?php
+// echo $prefinal_prediction;
+if($prefinal_prediction>0){
+  echo $prefinal_prediction;
+}else{
+  echo $prefinal_grade;
+}
+?>
+</td>
 <td><span><?php echo $final_grade; ?></span></td>
 <td>
+<?php
+if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_grade>0)){
+  $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_grade) / 4;
+  echo number_format((float)$average,2,".","");
+}else{
+  echo "---";
+}
+?>
+</td>
+<td>
+<?php
+
+switch (true) {
+    // case ($average <= 74.4):
+    //     $equivalent = "5";
+    //     break;
+    case ($average >= 74.5 && $average <= 76.4):
+        $equivalent = "3";
+        break;
+    case ($average >= 76.5 && $average <= 79.4):
+        $equivalent = "2.75";
+        break;
+    case ($average >= 79.5 && $average <= 82.4):
+        $equivalent = "2.5";
+        break;
+    case ($average >= 82.5 && $average <= 85.4):
+        $equivalent = "2.25";
+        break;
+    case ($average >= 85.5 && $average <= 88.4):
+        $equivalent = "2";
+        break;
+    case ($average >= 88.5 && $average <= 91.4):
+        $equivalent = "1.75";
+        break;
+    case ($average >= 91.5 && $average <= 94.4):
+        $equivalent = "1.5";
+        break;
+    case ($average >= 94.5 && $average <= 97.4):
+        $equivalent = "1.25";
+        break;
+    case ($average >= 97.5 && $average <= 100):
+        $equivalent = "1";
+        break;
+
+    default:
+        $equivalent = "---";
+}
+
+if($average > 0 && $average <= 74.4){
+  $equivalent = "5";
+}
+
+ echo $equivalent; 
+ 
+ ?>
+</td>
+
+<td>
+<?php
+if(($prelim_grade>0) && ($midterm_grade>0) && (($prefinal_grade == 0) && ($final_grade==0) || ($final_grade==0))){
+?>
 <a href="?id=<?php echo $student_no; ?>&s_=<?php echo $semester[3]; ?>">Predict</a>
+<?php
+}else{
+  echo "---";
+}
+?>
 </td>
 </tr>
 
