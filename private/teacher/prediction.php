@@ -325,6 +325,8 @@ $final_performance_1 = $row_final["final_performance_1"];
 $final_performance_2 = $row_final["final_performance_2"];
 $final_written_test = $row_final["final_written_test"];
 
+$final_prediction = $row_final["final_prediction"];
+
 
 if($final_output_1 <= 0 && $final_output_2 <= 0 &&
    $final_performance_1 <= 0 && $final_performance_1 <= 0 &&
@@ -352,7 +354,7 @@ $final_grade = number_format((float)$final_grade,2,".","");
 
 
 // $prefinal_prediction = 0;
-$final_prediction = 0;
+// $final_prediction = 0;
 $average_prediction = 0;
 $average = "";
 
@@ -368,18 +370,32 @@ $average = "";
 <?php
 // echo $prefinal_prediction;
 if($prefinal_prediction>0){
-  echo $prefinal_prediction;
+  echo "<sup class='badge badge-warning'>Prediction</sup>".$prefinal_prediction;
 }else{
   echo $prefinal_grade;
 }
 ?>
 </td>
-<td><span><?php echo $final_grade; ?></span></td>
+<td>
+<?php
+if($final_prediction>0){
+  echo "<sup class='badge badge-warning'>Prediction</sup>".$final_prediction;
+}else{
+  echo $final_grade;
+}
+?>
+</td>
 <td>
 <?php
 if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_grade>0)){
   $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_grade) / 4;
   echo number_format((float)$average,2,".","");
+}else if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
+  $average = ($prelim_grade + $midterm_grade + $prefinal_prediction + $final_prediction) / 4;
+  echo "<sup class='badge badge-warning'>Prediction</sup>".number_format((float)$average,2,".","");
+}else if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_prediction>0)){
+  $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_prediction) / 4;
+  echo "<sup class='badge badge-warning'>Prediction</sup>".number_format((float)$average,2,".","");
 }else{
   echo "---";
 }
@@ -428,8 +444,15 @@ if($average > 0 && $average <= 74.4){
   $equivalent = "5";
 }
 
+if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
+ echo "<sup class='badge badge-warning'>Prediction</sup></br>".$equivalent; 
+ }elseif(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_prediction>0)){
+  $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_prediction) / 4;
+  echo "<sup class='badge badge-warning'>Prediction</sup></br>".$equivalent;
+ }else{
  echo $equivalent; 
- 
+ }
+
  ?>
 </td>
 

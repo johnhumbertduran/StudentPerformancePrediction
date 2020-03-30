@@ -19,6 +19,8 @@
   background-color: transparent;
 }
 
+td:hover { color: #000; }
+
 </style>
 
 <?php
@@ -289,8 +291,8 @@ $average_prediction = 0;
 <!-- <tr class="text-center"> -->
 <!-- <td></td> -->
 <!-- <td></td> -->
-<td id="confirm_prefinal_prediction" class="bg-white d-none"><?php if($prefinal_prediction>0){echo $confirm_prefinal_prediction; } ?></td>
-<td id="confirm_final_prediction" class="bg-white d-none"><?php if($final_prediction>0){echo $confirm_final_prediction; } ?></td>
+<td id="confirm_prefinal_prediction" class="bg-white d-none"><?php if($prefinal_prediction>0){echo $confirm_prefinal_prediction; }else{ echo $confirm_prefinal_prediction; } ?></td>
+<td id="confirm_final_prediction" class="bg-white d-none"><?php if($final_prediction>0){echo $confirm_final_prediction; }else{ echo $confirm_final_prediction; } ?></td>
 <!-- <td id="average_prediction"><?php echo $average_prediction; ?></td> -->
 <!-- </tr> -->
 
@@ -333,6 +335,13 @@ $average_prediction = 0;
   var average_prediction = (parseFloat(get_prelim_value.innerHTML) + parseFloat(get_midterm_value.innerHTML) + parseFloat(confirm_prefinal_prediction) + parseFloat(confirm_final_prediction))/4;
 
 
+  var close_button = document.getElementById("close_btn");
+  window.onkeyup = function (event) {
+  if (event.keyCode == 27) {
+    // document.getElementById(boxid).style.visibility="hidden";
+    window.location.href = "prediction";
+  }
+ }
 // alert(average_prediction);
   // alert(select_prelim_and_midterm);
   // alert(
@@ -348,7 +357,7 @@ $average_prediction = 0;
   //   "\n10="+select_average[10].value
   // );
   // alert(select_prelim_and_midterm);
-if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML == 0 & get_final_value.innerHTML  == 0){
+if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & (get_prefinal_value.innerHTML == 0 | confirm_prefinal_prediction > 0) & (get_final_value.innerHTML  == 0 | confirm_prefinal_prediction > 0)){
 
   for(i=1;i<=74;i++){
   for(x=1;x<=74;x++){
@@ -585,7 +594,7 @@ if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_pref
 
 
 
-if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & get_final_value.innerHTML  == 0){
+if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & (get_final_value.innerHTML  == 0 | confirm_final_prediction > 0)){
 
   for(a=1;a<=74;a++){
     console.log(a);
@@ -922,7 +931,7 @@ if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_pref
   var new_select_average = document.getElementById("average_predict").selectedIndex.value;
 
   // new_select_average = "74";
-  alert(new_select_average);
+  // alert(new_select_average);
 
 
 }else{
@@ -1746,7 +1755,7 @@ function average(){
   var _100_99 = 100 + 99;
   var _100_100 = 100 + 100;
 
-if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML == 0 & get_final_value.innerHTML  == 0){
+if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & (get_prefinal_value.innerHTML == 0 | confirmation_prefinal > 0) & (get_final_value.innerHTML  == 0 | confirmation_final > 0)){
 
 
 // _75
@@ -6609,8 +6618,8 @@ var get_prefinal_prediction = document.getElementById("prefinal_grade_prediction
 var get_final_prediction = document.getElementById("final_grade_prediction");
 
 // location.relaod();
-get_prefinal_prediction.value = predict_prefinal;
-get_final_prediction.value = predict_final;
+get_prefinal_prediction.innerHTML = predict_prefinal;
+get_final_prediction.innerHTML = predict_final;
 
 
 
@@ -6626,7 +6635,8 @@ var xhr = new XMLHttpRequest();
     if(xhr.readyState == 4 && xhr.status == 200) {
       var result = xhr.responseText;
       console.log(result);
-    // console.log('prefinal:'+predict_prefinal+'final:'+predict_final);
+    console.log('prefinal:'+predict_prefinal+'final:'+predict_final);
+    location.reload();
   }
   }
   xhr.send();
@@ -6693,7 +6703,7 @@ var xhr = new XMLHttpRequest();
         // alert("Average=" + average + "Prefinal=" + new_prefinal + "Final=" + new_prefinal);
 
 
-  }else if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & get_final_value.innerHTML  == 0){
+  }else if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & (get_final_value.innerHTML  == 0 | confirmation_final > 0)){
 
 
 // _75
@@ -6917,7 +6927,7 @@ var xhr = new XMLHttpRequest();
 
 
 
-<div class="btn close_btn text-white bg-danger fixed-top col-1 ml-auto rounded-circle mt-3 mr-3 container-fluid">
+<div class="btn close_btn text-white bg-danger fixed-top col-1 ml-auto rounded-circle mt-3 mr-3 container-fluid" id="close_btn">
 <h3>
 <a href="prediction" class="text-white text-decoration-none">
 &times;
