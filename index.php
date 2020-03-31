@@ -154,7 +154,7 @@ if(isset($_POST["log_me_in"])){
 </div> -->
 <br>
 <center>
-<div class="card w-25">
+<div class="card col-sm-3 col-lg-3">
   <div class="card-header bg-primary text-light">Log in</div>
   <div class="card-body">
   <div class="form-group">
@@ -182,10 +182,14 @@ if(isset($_POST["log_me_in"])){
 
 </center>
 
+<br>
+<br>
+<br>
+<br>
 <!-- <footer class="footer">
 <div class="container"> -->
 <?php
-include("bins/footer.php");
+include("bins/footer_non_fixed.php");
 ?>
 <!-- </div>
 </footer> -->

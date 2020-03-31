@@ -62,6 +62,35 @@ if(isset($_SESSION["username"])){
 } */
 
 td:hover { background-color: #f75271; color: #fff; }
+td:hover a { color: #fff; }
+
+table tbody { display:block; max-height:450px; overflow-y:scroll; }
+table thead, table tbody tr { display:table; width:100%; table-layout:fixed; }
+
+
+.long_specs{
+  overflow: auto;
+}
+
+table tbody::-webkit-scrollbar{
+  width: 3px;
+}
+
+table tbody::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  /* background: #81b7f5; */
+}
+
+table tbody::-webkit-scrollbar-thumb{
+  background: #81b7f5;
+  border-radius: 15px;
+  /* background: #2379db; */
+}
+
+table tbody::-webkit-scrollbar-thumb:hover{
+  background: #2379db;
+}
+
 
 </style>
 
@@ -115,8 +144,8 @@ E SAVE DU PREDICTED NUMBERS PARA MA TAW AN IT CHART
 <!-- ################################### Table Starts Here ################################### -->
 <!-- ######################################################################################### -->
 
-<div class="table-responsive table_table mt-3 container">
-<table border="1" class="table table-hover">
+<!-- <div class="table-responsive table_table mt-3 container"> -->
+<table border="1" class="table table-hover mt-3 col-sm">
     <thead>
     <tr><th class="px-3 text-center bg-info text-white" colspan="9">Student Grade</th></tr><!-- Preliminary Here -->
 
@@ -476,7 +505,7 @@ if(($prelim_grade>0) && ($midterm_grade>0) && (($prefinal_grade == 0) && ($final
 ?>
 
 </table>
-</div>
+<!-- </div> -->
 
 
 

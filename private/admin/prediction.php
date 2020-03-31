@@ -49,12 +49,56 @@ if(isset($_SESSION["username"])){
   border:none;
   background-color: transparent;
 }
+
+
+.table-hover tbody tr:hover {
+    background: #4ef0a2;
+    cursor:pointer;
+}
+
+/* .table-hover tbody tr:hover td {
+    background: #4ef0a2;
+    cursor:pointer;
+} */
+
+td:hover { background-color: #f75271; color: #fff; }
+td:hover a { color: #fff; }
+
+table tbody { display:block; max-height:450px; overflow-y:scroll; }
+table thead, table tbody tr { display:table; width:100%; table-layout:fixed; }
+
+
+.long_specs{
+  overflow: auto;
+}
+
+table tbody::-webkit-scrollbar{
+  width: 3px;
+}
+
+table tbody::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  /* background: #81b7f5; */
+}
+
+table tbody::-webkit-scrollbar-thumb{
+  background: #81b7f5;
+  border-radius: 15px;
+  /* background: #2379db; */
+}
+
+table tbody::-webkit-scrollbar-thumb:hover{
+  background: #2379db;
+}
+
+
 </style>
 
 <?php
 include("../bins/teacher_nav.php");
 ?>
 <br>
+
 
 <div class="container-fluid d-inline py-5">
 <select class="form-control col-2 ml-2 pt-1 pb-2 d-inline text-white text-white bg-info" id="year" onchange="year()">
@@ -95,12 +139,12 @@ include("../bins/teacher_nav.php");
 <!-- ################################### Table Starts Here ################################### -->
 <!-- ######################################################################################### -->
 
-<div class="table-responsive table_table mt-3 container">
-<table border="1" class="table table-hover">
+<!-- <div class="table-responsive table_table mt-3 container"> -->
+<table border="1" class="table table-hover mt-3 col-sm">
     <thead>
-    <tr><th class="px-3 text-center bg-info text-white" colspan="7">Student Grade</th></tr><!-- Preliminary Here -->
+    <tr><th class="px-3 text-center bg-info text-white" colspan="8">Student Grade</th></tr><!-- Preliminary Here -->
 
-    <tr class="text-center"><th class="px-3">Student ID</th><th class="px-3">Student Name</th><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal">Prefinal</th><th class="px-3 bg-warning text-white" id="final">Final</th><th class="px-3 bg-dark text-white" id="prediction1">Prediction</th></tr>
+    <tr class="text-center"><th class="px-3">Student ID</th><th class="px-3">Student Name</th><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal">Prefinal</th><th class="px-3 bg-warning text-white" id="final">Final</th><th class="px-3 bg-secondary text-white" id="average">Average</th><th class="px-3 bg-secondary text-white" id="average">Equivalent</th></tr>
 
     </thead>
 
@@ -270,10 +314,11 @@ $prefinal_performance_1 = $row_prefinal["prefinal_performance_1"]; //ok
 $prefinal_performance_2 = $row_prefinal["prefinal_performance_2"]; //ok
 $prefinal_written_test = $row_prefinal["prefinal_written_test"]; //ok
 
+$prefinal_prediction = $row_prefinal["prefinal_prediction"];
 
-if($prefinal_output_1 == 0 && $prefinal_output_2 == 0 &&
-   $prefinal_performance_1 == 0 && $prefinal_performance_1 == 0 &&
-   $prefinal_written_test == 0){
+if($prefinal_output_1 <= 0 && $prefinal_output_2 <= 0 &&
+   $prefinal_performance_1 <= 0 && $prefinal_performance_1 <= 0 &&
+   $prefinal_written_test <= 0){
   
     $prefinal_grade = 0;
 
@@ -304,10 +349,12 @@ $final_performance_1 = $row_final["final_performance_1"];
 $final_performance_2 = $row_final["final_performance_2"];
 $final_written_test = $row_final["final_written_test"];
 
+$final_prediction = $row_final["final_prediction"];
 
-if($final_output_1 == 0 && $final_output_2 == 0 &&
-   $final_performance_1 == 0 && $final_performance_1 == 0 &&
-   $final_written_test == 0){
+
+if($final_output_1 <= 0 && $final_output_2 <= 0 &&
+   $final_performance_1 <= 0 && $final_performance_1 <= 0 &&
+   $final_written_test <= 0){
   
     $final_grade = 0;
 
@@ -330,10 +377,10 @@ $final_grade = number_format((float)$final_grade,2,".","");
   
 
 
-$prefinal_prediction = 0;
-$final_prediction = 0;
+// $prefinal_prediction = 0;
+// $final_prediction = 0;
 $average_prediction = 0;
-
+$average = "";
 
 
 ?>
@@ -343,11 +390,96 @@ $average_prediction = 0;
 <td><?php echo $student_name; ?></td>
 <td><?php echo $prelim_grade; ?></td>
 <td><?php echo $midterm_grade; ?></td>
-<td><span><?php echo $prefinal_grade; ?></span></td>
-<td><span><?php echo $final_grade; ?></span></td>
 <td>
-<a href="?id=<?php echo $student_no; ?>">Predict</a>
+<?php
+// echo $prefinal_prediction;
+if($prefinal_prediction>0){
+  echo "<sup class='badge badge-warning'>Prediction</sup>".$prefinal_prediction;
+}else{
+  echo $prefinal_grade;
+}
+?>
 </td>
+<td>
+<?php
+if($final_prediction>0){
+  echo "<sup class='badge badge-warning'>Prediction</sup>".$final_prediction;
+}else{
+  echo $final_grade;
+}
+?>
+</td>
+<td>
+<?php
+if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_grade>0)){
+  $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_grade) / 4;
+  echo number_format((float)$average,2,".","");
+}else if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
+  $average = ($prelim_grade + $midterm_grade + $prefinal_prediction + $final_prediction) / 4;
+  echo "<sup class='badge badge-warning'>Prediction</sup>".number_format((float)$average,2,".","");
+}else if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_prediction>0)){
+  $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_prediction) / 4;
+  echo "<sup class='badge badge-warning'>Prediction</sup>".number_format((float)$average,2,".","");
+}else{
+  echo "---";
+}
+?>
+</td>
+<td>
+<?php
+
+switch (true) {
+    // case ($average <= 74.4):
+    //     $equivalent = "5";
+    //     break;
+    case ($average >= 74.5 && $average <= 76.4):
+        $equivalent = "3";
+        break;
+    case ($average >= 76.5 && $average <= 79.4):
+        $equivalent = "2.75";
+        break;
+    case ($average >= 79.5 && $average <= 82.4):
+        $equivalent = "2.5";
+        break;
+    case ($average >= 82.5 && $average <= 85.4):
+        $equivalent = "2.25";
+        break;
+    case ($average >= 85.5 && $average <= 88.4):
+        $equivalent = "2";
+        break;
+    case ($average >= 88.5 && $average <= 91.4):
+        $equivalent = "1.75";
+        break;
+    case ($average >= 91.5 && $average <= 94.4):
+        $equivalent = "1.5";
+        break;
+    case ($average >= 94.5 && $average <= 97.4):
+        $equivalent = "1.25";
+        break;
+    case ($average >= 97.5 && $average <= 100):
+        $equivalent = "1";
+        break;
+
+    default:
+        $equivalent = "---";
+}
+
+if($average > 0 && $average <= 74.4){
+  $equivalent = "5";
+}
+
+if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
+ echo "<sup class='badge badge-warning'>Prediction</sup></br>".$equivalent; 
+ }elseif(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_prediction>0)){
+  $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_prediction) / 4;
+  echo "<sup class='badge badge-warning'>Prediction</sup></br>".$equivalent;
+ }else{
+ echo $equivalent; 
+ }
+
+ ?>
+</td>
+
 </tr>
 
 
@@ -357,7 +489,7 @@ $average_prediction = 0;
 ?>
 
 </table>
-</div>
+<!-- </div> -->
 
 
 
