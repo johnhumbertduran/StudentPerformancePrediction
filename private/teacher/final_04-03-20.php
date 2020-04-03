@@ -86,13 +86,13 @@ if(isset($_GET["_c"])){
 <table border="1" class="table table-hover">
     <thead>
     <tr><th class="px-3" colspan="2"></th>
-    <th class="px-3 text-center bg-warning text-white" colspan="18">Final Period</th></tr><!-- Final Here -->
+    <th class="px-3 text-center bg-warning text-white" colspan="17">Final Period</th></tr><!-- Final Here -->
 
     <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th>
-    <!-- <th class="px-5 text-center bg-warning text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-warning text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-warning text-white" colspan="5">Performance</th><th class="px-5 text-center bg-warning text-white" colspan="3">Major&nbsp;Exam</th><th class="px-5 text-center bg-warning text-white">4th&nbsp;Quarter</th><th class="px-5 text-center bg-warning text-white" colspan="2">Final&nbsp;Grade</th><th class="px-5 text-center bg-warning text-white">Remarks</th><th class="px-5 text-center bg-warning text-white">Action</th></tr><!-- Final Here -->
+    <!-- <th class="px-5 text-center bg-warning text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-warning text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-warning text-white" colspan="5">Performance</th><th class="px-5 text-center bg-warning text-white" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center bg-warning text-white">4th&nbsp;Quarter</th><th class="px-5 text-center bg-warning text-white" colspan="2">Final&nbsp;Grade</th><th class="px-5 text-center bg-warning text-white">Remarks</th></tr><!-- Final Here -->
 
     <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th>
-    <!-- <th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">100</th><th class="bg-warning text-white">60</th> --><th class="bg-warning text-white">20</th><th class="bg-warning text-white">20</th><th class="bg-warning text-white">40</th><th class="bg-warning text-white">60</th><th class="bg-warning text-white">0.40</th><th class="bg-warning text-white">20</th><th class="bg-warning text-white">20</th><th class="bg-warning text-white">40</th><th class="bg-warning text-white">60</th><th class="bg-warning text-white">0.40</th><th class="bg-warning text-white">30</th><th class="bg-warning text-white">60</th><th class="bg-warning text-white">0.20</th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th></tr><!-- Final Here -->
+    <!-- <th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">100</th><th class="bg-warning text-white">60</th> --><th class="bg-warning text-white">20</th><th class="bg-warning text-white">20</th><th class="bg-warning text-white">40</th><th class="bg-warning text-white">60</th><th class="bg-warning text-white">0.40</th><th class="bg-warning text-white">20</th><th class="bg-warning text-white">20</th><th class="bg-warning text-white">40</th><th class="bg-warning text-white">60</th><th class="bg-warning text-white">0.40</th><th class="bg-warning text-white">30</th><th class="bg-warning text-white">60</th><th class="bg-warning text-white">0.20</th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th></tr><!-- Final Here -->
     </thead>
 
     <tbody>
@@ -312,88 +312,23 @@ $prefinal_grade = $midterm_grade * 0.3 + $prefinal_3rd_quarter * 0.7;
 <td><a href="#"><?php /* echo $final_formative_assessment_10; */ ?></a></td> 
 <td><a href="#"><?php /* echo $final_formative_assessment_total_score; */ ?></a></td> 
 <td><a href="#"><?php /* echo $final_formative_assessment_base; */ ?></a></td>  -->
-<td><a class="text-primary"><?php echo $final_output_1; ?></a></td>
-<td><a class="text-primary"><?php echo $final_output_2; ?></a></td>
-<td><a class="text-danger"><?php echo $final_output_total_score; ?></a></td>
-<td><a class="text-danger"><?php echo $final_output_base; ?></a></td>
-
-<!-- <td><a class="text-danger"><?php echo $final_output_weight; ?></a></td> -->
-
-<?php
-// echo $prelim_output_weight;
-if($final_output_weight < 30){
-  echo
-  "<td class='bg-danger text-white'><center>
-  <h6>".$final_output_weight."</h6>
-  </center></td>"; 
-}else{
-?>
-<td><center><a class="text-danger">
-<?php
-  echo $final_output_weight;
-}
-?>
-</a></center></td>
-
-
-
-
-
-<td><a class="text-primary"><?php echo $final_performance_1; ?></a></td>
-<td><a class="text-primary"><?php echo $final_performance_2; ?></a></td>
-<td><a class="text-danger"><?php echo $final_performance_total_score; ?></a></td>
-<td><a class="text-danger"><?php echo $final_performance_base; ?></a></td>
-
-<!-- <td><a class="text-danger"><?php echo $final_performance_weight; ?></a></td> -->
-
-<?php
-// echo $prelim_output_weight;
-if($final_performance_weight < 30){
-  echo
-  "<td class='bg-danger text-white'><center>
-  <h6>".$final_performance_weight."</h6>
-  </center></td>"; 
-}else{
-?>
-<td><center><a class="text-danger">
-<?php
-  echo $final_performance_weight;
-}
-?>
-</a></center></td>
-
-
-
-
-<td><a class="text-primary"><?php echo $final_written_test; ?></a></td> 
+<td><a href="?redir=final&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po1=<?php echo $student_no; ?>"><?php echo $final_output_1; ?></a></td> 
+<td><a href="?redir=final&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po2=<?php echo $student_no; ?>"><?php echo $final_output_2; ?></a></td> 
+<td><a class="text-danger"><?php echo $final_output_total_score; ?></a></td> 
+<td><a class="text-danger"><?php echo $final_output_base; ?></a></td> 
+<td><a class="text-danger"><?php echo $final_output_weight; ?></a></td> 
+<td><a href="?redir=final&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp1=<?php echo $student_no; ?>"><?php echo $final_performance_1; ?></a></td> 
+<td><a href="?redir=final&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp2=<?php echo $student_no; ?>"><?php echo $final_performance_2; ?></a></td> 
+<td><a class="text-danger"><?php echo $final_performance_total_score; ?></a></td> 
+<td><a class="text-danger"><?php echo $final_performance_base; ?></a></td> 
+<td><a class="text-danger"><?php echo $final_performance_weight; ?></a></td> 
+<td><a href="?redir=final&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pwt=<?php echo $student_no; ?>"><?php echo $final_written_test; ?></a></td> 
 <td><a class="text-danger"><?php echo number_format((float)$final_written_test_base,2,".",""); ?></a></td> 
-
-<!-- <td><a class="text-danger"><?php echo number_format((float)$final_written_test_weight,2,".",""); ?></a></td> -->
-
-<?php
-// echo $prelim_output_weight;
-if($final_written_test_weight < 15){
-  echo
-  "<td class='bg-danger text-white'><center>
-  <h6>".number_format((float)$final_written_test_weight,2,".","")."</h6>
-  </center></td>"; 
-}else{
-?>
-<td><center><a class="text-danger">
-<?php
-  echo number_format((float)$final_written_test_weight,2,".","");
-}
-?>
-</a></center></td>
-
-
-
-
+<td><a class="text-danger"><?php echo number_format((float)$final_written_test_weight,2,".",""); ?></a></td> 
 <td><a class="text-danger"><?php echo number_format((float)$final_4th_quarter,2,".",""); ?></a></td> 
 <td><a class="<?php if($final_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$final_grade,2,".",""); ?></a></td> 
 <td><a class="<?php if($final_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $final_grade_equivalent; ?></a></td> 
 <td><a class="<?php if($final_grade_remarks == 'Passed'){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $final_grade_remarks; ?></a></td> 
-<td><center><a href="?redir=final&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=<?php echo $student_no; ?>" class="btn btn-warning text-white">Input Grade</a></center></td>
 </tr>
 
 <?php
@@ -438,12 +373,6 @@ if($final_written_test_weight < 15){
 }elseif(isset($_GET["pge"])){
   include("redir.php");
 }
-
-
-if(isset($_GET["in_"])){
-  include("redir.php");
-}
-
 ?>
 </div>
 

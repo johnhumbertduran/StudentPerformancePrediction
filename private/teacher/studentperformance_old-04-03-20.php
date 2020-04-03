@@ -45,7 +45,19 @@ include("../bins/teacher_nav.php");
 ?>
 <br>
 
+<!-- <div class="input-group col-sm-6">
+<input class="form-control mr-sm-2" type="text" placeholder="Course Name...">
+<input class="form-control mr-sm-2" type="text" placeholder="Semester...">
+<div class="input-group-append">
+<button class="btn btn-success">View Charts</button>
+</div>
+</div> -->
+
 <div class="container-fluid d-inline py-5">
+<!-- <a class="btn btn-info ml-2 my-3" href="?redir=prelim">Preliminary Period</a>
+<a class="btn btn-info ml-2 my-3" href="?redir=midterm">Midterm Period</a>
+<a class="btn btn-info ml-2 my-3" href="?redir=prefinal">Prefinal</a>
+<a class="btn btn-info ml-2 my-3" href="?redir=final">Final</a> -->
 
 <select class="form-control col-3 ml-2 pt-1 pb-2 d-inline bg-info text-white" id="grade_period" onchange="grade_period()">
   <option value="select_grading">Select Grading Period</option>

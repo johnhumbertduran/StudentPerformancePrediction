@@ -85,13 +85,13 @@ if(isset($_GET["_c"])){
 <div class="table-responsive mt-3">
 <table border="1" class="table table-hover">
     <thead>
-    <tr><th class="px-3" colspan="2"></th><th class="px-3 text-center bg-primary text-white" colspan="18">Midterm</th></tr><!-- Midterm Here -->
+    <tr><th class="px-3" colspan="2"></th><th class="px-3 text-center bg-primary text-white" colspan="17">Midterm</th></tr><!-- Midterm Here -->
 
     <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th>
-    <!-- <th class="px-5 text-center bg-primary text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-primary text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-primary text-white" colspan="5">Performance</th><th class="px-5 text-center bg-primary text-white" colspan="3">Major&nbsp;Exam</th><th class="px-5 text-center bg-primary text-white">2nd&nbsp;Quarter</th><th class="px-5 text-center bg-primary text-white" colspan="2">Midterm&nbsp;Grade</th><th class="px-5 text-center bg-primary text-white">Remarks</th><th class="px-5 text-center bg-primary text-white">Action</th></tr><!-- Midterm Here -->
+    <!-- <th class="px-5 text-center bg-primary text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-primary text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-primary text-white" colspan="5">Performance</th><th class="px-5 text-center bg-primary text-white" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center bg-primary text-white">2nd&nbsp;Quarter</th><th class="px-5 text-center bg-primary text-white" colspan="2">Midterm&nbsp;Grade</th><th class="px-5 text-center bg-primary text-white">Remarks</th></tr><!-- Midterm Here -->
 
     <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th>
-    <!-- <th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">100</th><th class="bg-primary text-white">60</th> --><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">30</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.20</th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th></tr><!-- Midterm Here -->
+    <!-- <th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">100</th><th class="bg-primary text-white">60</th> --><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">30</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.20</th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th></tr><!-- Midterm Here -->
     </thead>
 
     <tbody>
@@ -190,7 +190,6 @@ $prelim_grade = $prelim_output_weight + $prelim_performance_weight + $prelim_wri
 // echo $prelim_grade;
 // $prelim_grade = $row_prelim["prelim_grade"];
 
-$check_prelim_grade = $prelim_output_1 + $prelim_output_2 + $prelim_performance_1 + $prelim_performance_2 + $prelim_written_test;
 
     // ####################______Midterm Formulas______####################
     // $midterm_formative_assessment_total_score =
@@ -275,87 +274,24 @@ $check_prelim_grade = $prelim_output_1 + $prelim_output_2 + $prelim_performance_
   <td><a href="#"><?php /* echo $midterm_formative_assessment_10; */ ?></a></td> 
   <td><a href="#"><?php /* echo $midterm_formative_assessment_total_score; */ ?></a></td> 
   <td><a href="#"><?php /* echo $midterm_formative_assessment_base; */ ?></a></td>  -->
-  <td><a class="text-primary"><?php echo $midterm_output_1; ?></a></td> 
-  <td><a class="text-primary"><?php echo $midterm_output_2; ?></a></td> 
+  <td><a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po1=<?php echo $student_no; ?>"><?php echo $midterm_output_1; ?></a></td> 
+  <td><a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po2=<?php echo $student_no; ?>"><?php echo $midterm_output_2; ?></a></td> 
   <td><a class="text-danger"><?php echo $midterm_output_total_score; ?></a></td> 
   <td><a class="text-danger"><?php echo $midterm_output_base; ?></a></td> 
-  
-  <!-- <td><a class="text-danger"><?php echo $midterm_output_weight; ?></a></td>  -->
-  
-  <?php
-// echo $prelim_output_weight;
-if($midterm_output_weight < 30){
-  echo
-  "<td class='bg-danger text-white'><center>
-  <h6>".$midterm_output_weight."</h6>
-  </center></td>"; 
-}else{
-?>
-<td><center><a class="text-danger">
-<?php
-  echo $midterm_output_weight;
-}
-?>
-</a></center></td>
-
-
-  
-  <td><a class="text-primary"><?php echo $midterm_performance_1; ?></a></td> 
-  <td><a class="text-primary"><?php echo $midterm_performance_2; ?></a></td> 
+  <td><a class="text-danger"><?php echo $midterm_output_weight; ?></a></td> 
+  <td><a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp1=<?php echo $student_no; ?>"><?php echo $midterm_performance_1; ?></a></td> 
+  <td><a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp2=<?php echo $student_no; ?>"><?php echo $midterm_performance_2; ?></a></td> 
   <td><a class="text-danger"><?php echo $midterm_performance_total_score; ?></a></td> 
   <td><a class="text-danger"><?php echo $midterm_performance_base; ?></a></td> 
-  
-  
-  <!-- <td><a class="text-danger"><?php echo $midterm_performance_weight; ?></a></td>  -->
-  
-  <?php
-// echo $prelim_output_weight;
-if($midterm_performance_weight < 30){
-  echo
-  "<td class='bg-danger text-white'><center>
-  <h6>".$midterm_performance_weight."</h6>
-  </center></td>"; 
-}else{
-?>
-<td><center><a class="text-danger">
-<?php
-  echo $midterm_performance_weight;
-}
-?>
-</a></center></td>
-
-
-  
-  <td><a class="text-primary"><?php echo $midterm_written_test; ?></a></td> 
+  <td><a class="text-danger"><?php echo $midterm_performance_weight; ?></a></td> 
+  <td><a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pwt=<?php echo $student_no; ?>"><?php echo $midterm_written_test; ?></a></td> 
   <td><a class="text-danger"><?php echo number_format((float)$midterm_written_test_base,2,".",""); ?></a></td> 
-  
-  
-  <!-- <td><a class="text-danger"><?php echo number_format((float)$midterm_written_test_weight,2,".",""); ?></a></td>  -->
-  
-    
-  <?php
-// echo $prelim_output_weight;
-if($midterm_written_test_weight < 15){
-  echo
-  "<td class='bg-danger text-white'><center>
-  <h6>".number_format((float)$midterm_written_test_weight,2,".","")."</h6>
-  </center></td>"; 
-}else{
-?>
-<td><center><a class="text-danger">
-<?php
-  echo number_format((float)$midterm_written_test_weight,2,".","");
-}
-?>
-</a></center></td>
-
-  
-  
+  <td><a class="text-danger"><?php echo number_format((float)$midterm_written_test_weight,2,".",""); ?></a></td> 
   <td><a class="text-danger"><?php echo number_format((float)$midterm_2nd_quarter,2,".",""); ?></a></td> 
   <td><a class="<?php if($midterm_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$midterm_grade,2,".",""); ?></a></td> 
   <td><a class="<?php if($midterm_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $midterm_grade_equivalent; ?></a></td> 
-  <td><a data-toggle="tooltip" title="Hooray!" class="<?php if($midterm_remarks == 'Failed'){ echo 'text-danger';}else{echo 'text-success';} ?>"><?php echo $midterm_remarks; ?></a></td> 
-  <td><center><a <?php if($check_prelim_grade>0){ echo 'href=?redir=midterm&_y='.$year.'&_c='.$course.'&_s_e_='.$semester.'&in_='.$student_no; }else{ echo 'data-toggle="tooltip" data-placement="top" title="Input prelim grade first!"';}?> class="btn <?php if($check_prelim_grade>0){echo 'btn-primary'; }else{ echo 'btn-secondary text-white'; } ?>">Input Grade</a></center></td>
+  <td><a class="<?php if($midterm_remarks == 'Failed'){ echo 'text-danger';}else{echo 'text-success';} ?>"><?php echo $midterm_remarks; ?></a></td> 
+  
   </tr>
 
 <?php
@@ -422,11 +358,6 @@ if($midterm_written_test_weight < 15){
 }elseif(isset($_GET["pge"])){
   include("redir.php");
 }
-
-if(isset($_GET["in_"])){
-  include("redir.php");
-}
-
 ?>
 </div>
 
@@ -436,10 +367,6 @@ if(isset($_GET["in_"])){
 <input type="hidden" value="<?php echo $_GET["_s_e_"]; ?>" id="semester">
 
 <script>
-
-// $(document).ready(function(){
-//   $('[data-toggle="tooltip"]').tooltip();   
-// });
 
 // var black_cover = document.getElementById("myModal");
 

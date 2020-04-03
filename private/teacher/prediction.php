@@ -703,7 +703,7 @@ if(($prelim_grade>0) && ($midterm_grade>0) && (($prefinal_grade == 0) && ($final
 
       <!-- Modal body -->
       <div class="modal-body">
-        <h3 class="text-danger">Incomplete Activities:</h3>
+        <h3 class="text-danger">Defeciencies:</h3>
         <?php echo $prelim_status_missed; ?>
       </div>
 
@@ -731,7 +731,7 @@ if(($prelim_grade>0) && ($midterm_grade>0) && (($prefinal_grade == 0) && ($final
 
       <!-- Modal body -->
       <div class="modal-body">
-        <h3 class="text-danger">Incomplete Activities:</h3>
+        <h3 class="text-danger">Defeciencies:</h3>
         <?php echo $midterm_status_missed; ?>
       </div>
 
@@ -758,7 +758,7 @@ if(($prelim_grade>0) && ($midterm_grade>0) && (($prefinal_grade == 0) && ($final
 
       <!-- Modal body -->
       <div class="modal-body">
-        <h3 class="text-danger">Incomplete Activities:</h3>
+        <h3 class="text-danger">Defeciencies:</h3>
         <?php echo $prefinal_status_missed; ?>
       </div>
 
@@ -785,7 +785,7 @@ if(($prelim_grade>0) && ($midterm_grade>0) && (($prefinal_grade == 0) && ($final
 
       <!-- Modal body -->
       <div class="modal-body">
-        <h3 class="text-danger">Incomplete Activities:</h3>
+        <h3 class="text-danger">Defeciencies:</h3>
         <?php echo $final_status_missed; ?>
       </div>
 
@@ -829,6 +829,14 @@ if(isset($_GET["id"])){
 
 
 <script>
+
+var close_button = document.getElementsByClassName("close");
+  window.onkeyup = function (event) {
+  if (event.keyCode == 27) {
+    // document.getElementById(boxid).style.visibility="hidden";
+    window.location.href = "prediction";
+  }
+ }
 
 function year(){
 

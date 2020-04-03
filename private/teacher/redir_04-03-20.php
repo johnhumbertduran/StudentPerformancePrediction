@@ -40,122 +40,117 @@ function get_url_data(){
     $semester = $_GET["_s_e_"];
 }
 
-// /* }else */if(isset($_GET["po1"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["po1"];
-// }elseif(isset($_GET["po2"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["po2"];
-// }elseif(isset($_GET["pots"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["pots"];
-// }elseif(isset($_GET["pob"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["pob"];
-// }elseif(isset($_GET["pow"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["pow"];
-// }elseif(isset($_GET["pp1"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["pp1"];
-// }elseif(isset($_GET["pp2"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["pp2"];
-// }elseif(isset($_GET["ppts"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["ppts"];
-// }elseif(isset($_GET["ppb"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["ppb"];
-// }elseif(isset($_GET["ppw"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["ppw"];
-// }elseif(isset($_GET["pwt"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["pwt"];
-// }elseif(isset($_GET["pwtb"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["pwtb"];
-// }elseif(isset($_GET["pwtw"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["pwtw"];
-// }elseif(isset($_GET["pg"])) {
-//     $grading_period = $_GET["redir"];
-//     $grading = $_GET["redir"].$_GET["_s_e_"][3];
-//     $year = $_GET["_y"];
-//     $course = $_GET["_c"];
-//     $semester = $_GET["_s_e_"];
-//     $student_no = $_GET["pg"];
-// }elseif(isset($_GET["pge"])) {
+/* }else */if(isset($_GET["po1"])) {
     $grading_period = $_GET["redir"];
     $grading = $_GET["redir"].$_GET["_s_e_"][3];
     $year = $_GET["_y"];
     $course = $_GET["_c"];
     $semester = $_GET["_s_e_"];
-    $student_no = $_GET["in_"];
-// }
+    $student_no = $_GET["po1"];
+}elseif(isset($_GET["po2"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["po2"];
+}elseif(isset($_GET["pots"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["pots"];
+}elseif(isset($_GET["pob"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["pob"];
+}elseif(isset($_GET["pow"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["pow"];
+}elseif(isset($_GET["pp1"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["pp1"];
+}elseif(isset($_GET["pp2"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["pp2"];
+}elseif(isset($_GET["ppts"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["ppts"];
+}elseif(isset($_GET["ppb"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["ppb"];
+}elseif(isset($_GET["ppw"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["ppw"];
+}elseif(isset($_GET["pwt"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["pwt"];
+}elseif(isset($_GET["pwtb"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["pwtb"];
+}elseif(isset($_GET["pwtw"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["pwtw"];
+}elseif(isset($_GET["pg"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["pg"];
+}elseif(isset($_GET["pge"])) {
+    $grading_period = $_GET["redir"];
+    $grading = $_GET["redir"].$_GET["_s_e_"][3];
+    $year = $_GET["_y"];
+    $course = $_GET["_c"];
+    $semester = $_GET["_s_e_"];
+    $student_no = $_GET["pge"];
+}
 
 $student_record = mysqli_query($connections, "SELECT * FROM $grading WHERE student_no=$student_no");
 $row_student = mysqli_fetch_assoc($student_record);
 
 $student_name = $row_student["student_name"];
-$_output_1 = $row_student[$_GET["redir"]."_output_1"];
-$_output_2 = $row_student[$_GET["redir"]."_output_2"];
-$_performance_1 = $row_student[$_GET["redir"]."_performance_1"];
-$_performance_2 = $row_student[$_GET["redir"]."_performance_2"];
-$_written_test = $row_student[$_GET["redir"]."_written_test"];
 
 // if(isset($_GET["a1"])){
 //     $grade = $row_student["prelim_formative_assessment_1"];
@@ -514,65 +509,16 @@ switch (true) {
   }
 
   if(isset($_POST["input_grade"])){
-      // if(!empty($_POST["grade_input"])){
-      //   //   echo "<script>alert('ahy');</script>";
-      //   $grade = $_POST["grade_input"];
+      if(!empty($_POST["grade_input"])){
+        //   echo "<script>alert('ahy');</script>";
+        $grade = $_POST["grade_input"];
 
-      //   mysqli_query($connections, "UPDATE $grading SET $grade_name='$grade'
-      //   WHERE student_no=$student_no");
-        
-      //   echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
-      
-      // }
-      
-      if(!empty($_POST[$_GET["redir"]."_output_1"])){
-        $output_1_grade_post = $_POST[$_GET["redir"]."_output_1"];
-        $output_1_grade = $_GET["redir"]."_output_1";
-        
-          // echo "<script>alert('hay');</script>";
-        mysqli_query($connections, "UPDATE $grading SET $output_1_grade='$output_1_grade_post'
+        mysqli_query($connections, "UPDATE $grading SET $grade_name='$grade'
         WHERE student_no=$student_no");
-      }
-
-      if(!empty($_POST[$_GET["redir"]."_output_2"])){
-        $output_2_grade_post = $_POST[$_GET["redir"]."_output_2"];
-        $output_2_grade = $_GET["redir"]."_output_2";
         
-          // echo "<script>alert('hay');</script>";
-        mysqli_query($connections, "UPDATE $grading SET $output_2_grade='$output_2_grade_post'
-        WHERE student_no=$student_no");
-      }
-      
-      if(!empty($_POST[$_GET["redir"]."_performance_1"])){
-        $performance_1_grade_post = $_POST[$_GET["redir"]."_performance_1"];
-        $performance_1_grade = $_GET["redir"]."_performance_1";
-        
-          // echo "<script>alert('hay');</script>";
-        mysqli_query($connections, "UPDATE $grading SET $performance_1_grade='$performance_1_grade_post'
-        WHERE student_no=$student_no");
-      }
-
-      if(!empty($_POST[$_GET["redir"]."_performance_2"])){
-        $performance_2_grade_post = $_POST[$_GET["redir"]."_performance_2"];
-        $performance_2_grade = $_GET["redir"]."_performance_2";
-        
-          // echo "<script>alert('hay');</script>";
-        mysqli_query($connections, "UPDATE $grading SET $performance_2_grade='$performance_2_grade_post'
-        WHERE student_no=$student_no");
-      }
-
-      if(!empty($_POST[$_GET["redir"]."_written_test"])){
-        $written_test_grade_post = $_POST[$_GET["redir"]."_written_test"];
-        $written_test_grade = $_GET["redir"]."_written_test";
-        
-          // echo "<script>alert('hay');</script>";
-        mysqli_query($connections, "UPDATE $grading SET $written_test_grade='$written_test_grade_post'
-        WHERE student_no=$student_no");
-      }
-
-
         echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
 
+      }
   }
 
 ?>
@@ -586,62 +532,12 @@ switch (true) {
 <p></p>
  <h2><?php echo $student_name; ?></h2>
   <div class="card-header bg-info">
-  <font color="white"> Input Grade </font>
+  <font color="white"> <?php echo $grade_number; ?> </font>
   </div>
 
   <div class="card-body">
   <form method="POST">
-  <table>
-
-  <tr>
-  <td>
-  <label for="<?php echo $_GET["redir"]; ?>_output_1" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Output 1: &nbsp;</label>
-  </td>
-  <td>
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_output_1" value="<?php echo $_output_1; ?>" class="w-25 text-center" id="<?php echo $_GET["redir"]; ?>_output_1">
-  </td>
-  </tr>
-
-
-  <tr>
-  <td>
-  <label for="<?php echo $_GET["redir"]; ?>_output_2" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Output 2: &nbsp;</label>
-  </td>
-  <td>
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_output_2" value="<?php echo $_output_2; ?>" class="w-25 text-center" id="<?php echo $_GET["redir"]; ?>_output_2">
-  </td>
-  </tr>
-
-
-  <tr>
-  <td>
-  <label for="<?php echo $_GET["redir"]; ?>_performance_1" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Performance 1: &nbsp;</label>
-  </td>
-  <td>
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_performance_1" value="<?php echo $_performance_1; ?>" class="w-25 text-center" id="<?php echo $_GET["redir"]; ?>_performance_1">
-  </td>
-  </tr>
-
-
-  <tr>
-  <td>
-  <label for="<?php echo $_GET["redir"]; ?>_performance_2" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Performance 2: &nbsp;</label>
-  </td>
-  <td>
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_performance_2" value="<?php echo $_performance_2; ?>" class="w-25 text-center" id="<?php echo $_GET["redir"]; ?>_performance_2">
-  </td>
-  </tr>
-
-
-  <tr>
-  <td>
-  <label for="<?php echo $_GET["redir"]; ?>_written_test" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Written Test: &nbsp;</label>
-  </td>
-  <td>
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_written_test" value="<?php echo $_written_test; ?>" class="w-25 text-center" id="<?php echo $_GET["redir"]; ?>_written_test">
-  </td>
-  </tr>
-  </table>
+  <input type="text" name="grade_input" value="<?php echo $grade; ?>" class="col-2 text-center" id="grade">
   
   </div>
   

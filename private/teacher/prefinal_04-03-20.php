@@ -1,8 +1,6 @@
-<style>
-
-</style>
-
 <?php
+
+
 // $prefinal_formative_assessment_1 = $prefinal_formative_assessment_2 =
 // $prefinal_formative_assessment_3 = $prefinal_formative_assessment_4 =
 // $prefinal_formative_assessment_5 = $prefinal_formative_assessment_6 =
@@ -88,13 +86,13 @@ if(isset($_GET["_c"])){
 <table border="1" class="table table-hover">
     <thead>
     <tr><th class="px-3" colspan="2"></th>
-    <th class="px-3 text-center bg-danger text-white" colspan="17">Prefinal Period</th></tr><!-- Prefinal Here -->
+    <th class="px-3 text-center bg-danger text-white" colspan="16">Prefinal Period</th></tr><!-- Prefinal Here -->
 
     <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th>
-    <!-- <th class="px-5 text-center bg-danger text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-danger text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-danger text-white" colspan="5">Performance</th><th class="px-5 text-center bg-danger text-white" colspan="3">Major&nbsp;Exam</th><th class="px-5 text-center bg-danger text-white">3rd&nbsp;Quarter</th><th class="px-5 text-center bg-danger text-white" colspan="2">Prefinal&nbsp;Grade</th><th class="px-5 text-center bg-danger text-white" colspan="2">Action</th></tr><!-- Prefinal Here -->
+    <!-- <th class="px-5 text-center bg-danger text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-danger text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-danger text-white" colspan="5">Performance</th><th class="px-5 text-center bg-danger text-white" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center bg-danger text-white">3rd&nbsp;Quarter</th><th class="px-5 text-center bg-danger text-white" colspan="2">Prefinal&nbsp;Grade</th></tr><!-- Prefinal Here -->
 
     <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th>
-    <!-- <th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">100</th><th class="bg-danger text-white">60</th> --><th class="bg-danger text-white">20</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">40</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.40</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">40</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.40</th><th class="bg-danger text-white">30</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.20</th><th class="bg-danger text-white"></th><th class="bg-danger text-white"></th><th class="bg-danger text-white"></th><th class="bg-danger text-white"></th></tr><!-- Prefinal Here -->
+    <!-- <th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">100</th><th class="bg-danger text-white">60</th> --><th class="bg-danger text-white">20</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">40</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.40</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">40</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.40</th><th class="bg-danger text-white">30</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.20</th><th class="bg-danger text-white"></th><th class="bg-danger text-white"></th><th class="bg-danger text-white"></th></tr><!-- Prefinal Here -->
     </thead>
 
     <tbody>
@@ -198,8 +196,6 @@ while($row_student = mysqli_fetch_assoc($grading_period)){
 
   $prelim_grade = $prelim_output_weight + $prelim_performance_weight + $prelim_written_test_weight;
 
-$check_prelim_grade = $prelim_output_1 + $prelim_output_2 + $prelim_performance_1 + $prelim_performance_2 + $prelim_written_test;
-
 
   $midterm_grade = $prelim_grade * 0.3 + $midterm_2nd_quarter * 0.7;
 // echo $midterm_grade;
@@ -287,88 +283,22 @@ $check_prelim_grade = $prelim_output_1 + $prelim_output_2 + $prelim_performance_
 <td><a href="#"><?php /* echo $prefinal_formative_assessment_10; */ ?></a></td> 
 <td><a href="#"><?php /* echo $prefinal_formative_assessment_total_score; */ ?></a></td> 
 <td><a href="#"><?php /* echo $prefinal_formative_assessment_base; */ ?></a></td>  -->
-<td><a class="text-primary"><?php echo $prefinal_output_1; ?></a></td> 
-<td><a class="text-primary"><?php echo $prefinal_output_2; ?></a></td> 
+<td><a href="?redir=prefinal&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po1=<?php echo $student_no; ?>"><?php echo $prefinal_output_1; ?></a></td> 
+<td><a href="?redir=prefinal&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&po2=<?php echo $student_no; ?>"><?php echo $prefinal_output_2; ?></a></td> 
 <td><a class="text-danger"><?php echo $prefinal_output_total_score; ?></a></td> 
 <td><a class="text-danger"><?php echo $prefinal_output_base; ?></a></td> 
-
-<!-- <td><a class="text-danger"><?php echo $prefinal_output_weight; ?></a></td>  -->
-
-<?php
-// echo $prelim_output_weight;
-if($prefinal_output_weight < 30){
-  echo
-  "<td class='bg-danger text-white'><center>
-  <h6>".$prefinal_output_weight."</h6>
-  </center></td>"; 
-}else{
-?>
-<td><center><a class="text-danger">
-<?php
-  echo $prefinal_output_weight;
-}
-?>
-</a></center></td>
-
-
-
-
-<td><a class="text-primary"><?php echo $prefinal_performance_1; ?></a></td> 
-<td><a class="text-primary"><?php echo $prefinal_performance_2; ?></a></td> 
+<td><a class="text-danger"><?php echo $prefinal_output_weight; ?></a></td> 
+<td><a href="?redir=prefinal&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp1=<?php echo $student_no; ?>"><?php echo $prefinal_performance_1; ?></a></td> 
+<td><a href="?redir=prefinal&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pp2=<?php echo $student_no; ?>"><?php echo $prefinal_performance_2; ?></a></td> 
 <td><a class="text-danger"><?php echo $prefinal_performance_total_score; ?></a></td> 
 <td><a class="text-danger"><?php echo $prefinal_performance_base; ?></a></td> 
-
-<!-- <td><a class="text-danger"><?php echo $prefinal_performance_weight; ?></a></td>  -->
-
-<?php
-// echo $prelim_output_weight;
-if($prefinal_performance_weight < 30){
-  echo
-  "<td class='bg-danger text-white'><center>
-  <h6>".$prefinal_performance_weight."</h6>
-  </center></td>"; 
-}else{
-?>
-<td><center><a class="text-danger">
-<?php
-  echo $prefinal_performance_weight;
-}
-?>
-</a></center></td>
-
-
-
-
-
-<td><a class="text-primary"><?php echo $prefinal_written_test; ?></a></td> 
+<td><a class="text-danger"><?php echo $prefinal_performance_weight; ?></a></td> 
+<td><a href="?redir=prefinal&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&pwt=<?php echo $student_no; ?>"><?php echo $prefinal_written_test; ?></a></td> 
 <td><a class="text-danger"><?php echo number_format((float)$prefinal_written_test_base,2,".",""); ?></a></td> 
-
-<!-- <td><a class="text-danger"><?php echo number_format((float)$prefinal_written_test_weight,2,".",""); ?></a></td>  -->
-
-<?php
-// echo $prelim_output_weight;
-if($prefinal_written_test_weight < 15){
-  echo
-  "<td class='bg-danger text-white'><center>
-  <h6>".number_format((float)$prefinal_written_test_weight,2,".","")."</h6>
-  </center></td>"; 
-}else{
-?>
-<td><center><a class="text-danger">
-<?php
-  echo number_format((float)$prefinal_written_test_weight,2,".","");
-}
-?>
-</a></center></td>
-
-
-
-
-
+<td><a class="text-danger"><?php echo number_format((float)$prefinal_written_test_weight,2,".",""); ?></a></td> 
 <td><a class="text-danger"><?php echo number_format((float)$prefinal_3rd_quarter,2,".",""); ?></a></td> 
 <td><a class="<?php if($prefinal_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$prefinal_grade,2,".",""); ?></a></td> 
 <td><a class="<?php if($prefinal_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $prefinal_grade_equivalent; ?></a></td> 
-<td><center><a <?php if($check_prelim_grade>0){ echo 'href=?redir=prefinal&_y='.$year.'&_c='.$course.'&_s_e_='.$semester.'&in_='.$student_no; }else{ echo 'data-toggle="tooltip" data-placement="top" title="Check other grading period before inputting grade"';}?> class="btn <?php if($check_prelim_grade>0){echo 'btn-primary'; }else{ echo 'btn-secondary text-white'; } ?>">Input Grade</a></center></td>
 </tr>
 
 <?php
@@ -413,12 +343,6 @@ if($prefinal_written_test_weight < 15){
 }elseif(isset($_GET["pge"])){
   include("redir.php");
 }
-
-
-if(isset($_GET["in_"])){
-  include("redir.php");
-}
-
 ?>
 </div>
 
