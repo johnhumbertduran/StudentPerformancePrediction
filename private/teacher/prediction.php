@@ -60,9 +60,18 @@ if(isset($_SESSION["username"])){
     background: #4ef0a2;
     cursor:pointer;
 } */
+.table-hover tbody h6 { color: #007bff; }
+.table-hover tbody .passed { color: #28a745; }
+.table-hover tbody .failed { color: #dc3545; }
 
 td:hover { background-color: #f75271; color: #fff; }
 td:hover a { color: #fff; }
+td:hover h6 { color: #fff; }
+td:hover .remarks { color: #fff; }
+/* .passed { color: #5cb85c;}
+.failed { color: #d9534f;} */
+/* .table-hover tbody .get_h6 td:hover { background-color: #343a40 !important; } */
+/* td:hover h6 { background-color: #343a40; color: #fff; } */
 
 table tbody { display:block; max-height:450px; overflow-y:scroll; }
 table thead, table tbody tr { display:table; width:100%; table-layout:fixed; }
@@ -91,7 +100,9 @@ table tbody::-webkit-scrollbar-thumb:hover{
   background: #2379db;
 }
 
-
+/* .grade_status{
+  background-color
+} */
 </style>
 
 <?php
@@ -147,9 +158,9 @@ E SAVE DU PREDICTED NUMBERS PARA MA TAW AN IT CHART
 <!-- <div class="table-responsive table_table mt-3 container"> -->
 <table border="1" class="table table-hover mt-3 col-sm">
     <thead>
-    <tr><th class="px-3 text-center bg-info text-white" colspan="9">Student Grade</th></tr><!-- Preliminary Here -->
+    <tr><th class="px-3 text-center bg-info text-white" colspan="10">Student Grade</th></tr><!-- Preliminary Here -->
 
-    <tr class="text-center"><th class="px-3">Student ID</th><th class="px-3">Student Name</th><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal">Prefinal</th><th class="px-3 bg-warning text-white" id="final">Final</th><th class="px-3 bg-secondary text-white" id="average">Average</th><th class="px-3 bg-secondary text-white" id="average">Equivalent</th><th class="px-3 bg-dark text-white" id="prediction1">Prediction</th></tr>
+    <tr class="text-center"><th class="px-3">Student ID</th><th class="px-3">Student Name</th><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal">Prefinal</th><th class="px-3 bg-warning text-white" id="final">Final</th><th class="px-3 bg-secondary text-white" id="average">Average</th><th class="px-3 bg-secondary text-white" id="average">Equivalent</th><th class="px-3 bg-secondary text-white" id="remarks">Remarks</th><th class="px-3 bg-dark text-white" id="prediction1">Prediction</th></tr>
 
     </thead>
 
@@ -387,30 +398,191 @@ $final_grade = number_format((float)$final_grade,2,".","");
 $average_prediction = 0;
 $average = "";
 
+$prelim_status = 0;
+$prelim_status_missed = "";
+
+$midterm_status = 0;
+$midterm_status_missed = "";
+
+$prefinal_status = 0;
+$prefinal_status_missed = "";
+
+$final_status = 0;
+$final_status_missed = "";
+
+if ($prelim_output_1 == 0){
+  $prelim_status++;
+  $prelim_status_missed .= "Prelim Output 1 </br>";
+}
+
+if ($prelim_output_2 == 0){
+  $prelim_status++;
+  $prelim_status_missed .= "Prelim Output 2 </br>";
+}
+
+if ($prelim_performance_1 == 0){
+  $prelim_status++;
+  $prelim_status_missed .= "Prelim Performance 1 </br>";
+}
+
+if ($prelim_performance_2 == 0){
+  $prelim_status++;
+  $prelim_status_missed .= "Prelim Performance 2 </br>";
+}
+
+if ($prelim_written_test == 0){
+  $prelim_status++;
+  $prelim_status_missed .= "Prelim Written Test </br>";
+}
+
+
+
+if ($midterm_output_1 == 0){
+  $midterm_status+=1;
+  $midterm_status_missed .= "Midterm Output 1 </br>";
+}
+
+if ($midterm_output_2 == 0){
+  $midterm_status+=1;
+  $midterm_status_missed .= "Midterm Output 2 </br>";
+}
+
+if ($midterm_performance_1 == 0){
+  $midterm_status+=1;
+  $midterm_status_missed .= "Midterm Performance 1 </br>";
+}
+
+if ($midterm_performance_2 == 0){
+  $midterm_status+=1;
+  $midterm_status_missed .= "Midterm Performance 2 </br>";
+}
+
+if ($midterm_written_test == 0){
+  $midterm_status+=1;
+  $midterm_status_missed .= "Midterm Written Test </br>";
+}
+
+
+if ($prefinal_output_1 == 0){
+  $prefinal_status+=1;
+  $prefinal_status_missed .= "Prefinal Output 1 </br>";
+}
+
+if ($prefinal_output_2 == 0){
+  $prefinal_status+=1;
+  $prefinal_status_missed .= "Prefinal Output 2 </br>";
+}
+
+if ($prefinal_performance_1 == 0){
+  $prefinal_status+=1;
+  $prefinal_status_missed .= "Prefinal Performance 1 </br>";
+}
+
+if ($prefinal_performance_2 == 0){
+  $prefinal_status+=1;
+  $prefinal_status_missed .= "Prefinal Performance 2 </br>";
+}
+
+if ($prefinal_written_test == 0){
+  $prefinal_status+=1;
+  $prefinal_status_missed .= "Prefinal Written Test </br>";
+}
+
+
+if ($final_output_1 == 0){
+  $final_status+=1;
+  $final_status_missed .= "final Output 1 </br>";
+}
+
+if ($final_output_2 == 0){
+  $final_status+=1;
+  $final_status_missed .= "final Output 2 </br>";
+}
+
+if ($final_performance_1 == 0){
+  $final_status+=1;
+  $final_status_missed .= "final Performance 1 </br>";
+}
+
+if ($final_performance_2 == 0){
+  $final_status+=1;
+  $final_status_missed .= "final Performance 2 </br>";
+}
+
+if ($final_written_test == 0){
+  $final_status+=1;
+  $final_status_missed .= "final Written Test </br>";
+}
 
 ?>
 
 <tr class="text-center">
 <td><?php echo $student_no; ?></td>
 <td><?php echo $student_name; ?></td>
-<td><?php echo $prelim_grade; ?></td>
-<td><?php echo $midterm_grade; ?></td>
+
+<td>
+<?php
+if($prelim_grade>0){
+  if($prelim_status > 0){
+    echo $prelim_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#prelim$student_no'><b>$prelim_status</b><sup>";
+  }else{
+    echo $prelim_grade;
+  }
+}else{
+  echo $prelim_grade;
+}
+?>
+</td>
+
+
+<td>
+<?php
+if($midterm_grade>0){
+  if($midterm_status > 0){
+    echo $midterm_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#midterm$student_no'><b>$midterm_status</b><sup>";
+  }else{
+    echo $midterm_grade;
+  }
+}else{
+  echo $midterm_grade;
+}
+?>
+</td>
+
+
 <td>
 <?php
 // echo $prefinal_prediction;
 if($prefinal_prediction>0){
-  echo "<sup class='badge badge-warning'>Prediction</sup>".$prefinal_prediction;
+  echo "<h6>".$prefinal_prediction."</h6>";
 }else{
-  echo $prefinal_grade;
+  if($prefinal_grade>0){
+    if($prefinal_status > 0){
+      echo $prefinal_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#prefinal$student_no'><b>$prefinal_status</b><sup>";
+    }else{
+      echo $prefinal_grade;
+    }
+  }else{
+    echo $prefinal_grade;
+  }
 }
 ?>
 </td>
+
 <td>
 <?php
 if($final_prediction>0){
-  echo "<sup class='badge badge-warning'>Prediction</sup>".$final_prediction;
+  echo "<h6>".$final_prediction."</h6>";
 }else{
-  echo $final_grade;
+  if($final_grade>0){
+    if($final_status > 0){
+      echo $final_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#final$student_no'><b>$final_status</b><sup>";
+    }else{
+      echo $final_grade;
+    }
+  }else{
+    echo $final_grade;
+  }
 }
 ?>
 </td>
@@ -421,10 +593,10 @@ if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_g
   echo number_format((float)$average,2,".","");
 }else if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
   $average = ($prelim_grade + $midterm_grade + $prefinal_prediction + $final_prediction) / 4;
-  echo "<sup class='badge badge-warning'>Prediction</sup>".number_format((float)$average,2,".","");
+  echo "<h6>".number_format((float)$average,2,".","")."</h6>";
 }else if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_prediction>0)){
   $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_prediction) / 4;
-  echo "<sup class='badge badge-warning'>Prediction</sup>".number_format((float)$average,2,".","");
+  echo "<h6>".number_format((float)$average,2,".","")."</h6>";
 }else{
   echo "---";
 }
@@ -474,13 +646,31 @@ if($average > 0 && $average <= 74.4){
 }
 
 if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
- echo "<sup class='badge badge-warning'>Prediction</sup></br>".$equivalent; 
+ echo "<h6>".$equivalent."</h6>"; 
  }elseif(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_prediction>0)){
   $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_prediction) / 4;
-  echo "<sup class='badge badge-warning'>Prediction</sup></br>".$equivalent;
+  echo "<h6>".$equivalent."</h6>";
  }else{
  echo $equivalent; 
  }
+
+ ?>
+</td>
+
+<td>
+<?php
+
+
+if($equivalent > 0 && $equivalent <= 3){
+  $remarks = "Passed";
+  echo "<h6 class='passed remarks'>".$remarks."</h6>";
+}elseif($equivalent == 5){
+  $remarks = "Failed";
+  echo "<h6 class='failed remarks'>".$remarks."</h6>";
+}else{
+  $remarks = "---";
+  echo $remarks;
+}
 
  ?>
 </td>
@@ -498,6 +688,115 @@ if(($prelim_grade>0) && ($midterm_grade>0) && (($prefinal_grade == 0) && ($final
 </td>
 </tr>
 
+
+
+<!-- The Prelim Modal -->
+<div class="modal" id="<?php echo "prelim".$student_no; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-success text-white">
+        <h4 class="modal-title"><?php echo $student_name; ?></h4>
+        <button type="button" class="close text-danger" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h3 class="text-danger">Incomplete Activities:</h3>
+        <?php echo $prelim_status_missed; ?>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer bg-success">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- The Midterm Modal -->
+<div class="modal" id="<?php echo "midterm".$student_no; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-primary text-white">
+        <h4 class="modal-title"><?php echo $student_name; ?></h4>
+        <button type="button" class="close text-danger" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h3 class="text-danger">Incomplete Activities:</h3>
+        <?php echo $midterm_status_missed; ?>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer bg-primary">
+        <button type="button" class="btn btn-warning text-white" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- The Prefinal Modal -->
+<div class="modal" id="<?php echo "prefinal".$student_no; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-danger text-white">
+        <h4 class="modal-title"><?php echo $student_name; ?></h4>
+        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h3 class="text-danger">Incomplete Activities:</h3>
+        <?php echo $prefinal_status_missed; ?>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer bg-danger">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- The final Modal -->
+<div class="modal" id="<?php echo "final".$student_no; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-warning">
+        <h4 class="modal-title text-white"><?php echo $student_name; ?></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h3 class="text-danger">Incomplete Activities:</h3>
+        <?php echo $final_status_missed; ?>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer bg-warning">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <?php
 // }
@@ -527,6 +826,7 @@ if(isset($_GET["id"])){
 <br>
 <br>
 <br>
+
 
 <script>
 
