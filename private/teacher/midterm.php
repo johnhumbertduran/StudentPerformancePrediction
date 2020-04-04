@@ -91,7 +91,7 @@ if(isset($_GET["_c"])){
     <!-- <th class="px-5 text-center bg-primary text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-primary text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-primary text-white" colspan="5">Performance</th><th class="px-5 text-center bg-primary text-white" colspan="3">Major&nbsp;Exam</th><th class="px-5 text-center bg-primary text-white">2nd&nbsp;Quarter</th><th class="px-5 text-center bg-primary text-white" colspan="2">Midterm&nbsp;Grade</th><th class="px-5 text-center bg-primary text-white">Remarks</th><th class="px-5 text-center bg-primary text-white">Action</th></tr><!-- Midterm Here -->
 
     <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th>
-    <!-- <th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">100</th><th class="bg-primary text-white">60</th> --><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">30</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.20</th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th></tr><!-- Midterm Here -->
+    <!-- <th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">100</th><th class="bg-primary text-white">60</th> --><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">70</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.20</th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th></tr><!-- Midterm Here -->
     </thead>
 
     <tbody>
@@ -180,7 +180,7 @@ $prelim_performance_total_score = $prelim_performance_1 + $prelim_performance_2;
 
 $prelim_output_base = $prelim_output_total_score / 40 * 40 + 60;
 $prelim_performance_base = $prelim_performance_total_score / 40 * 40 + 60;
-$prelim_written_test_base =  $prelim_written_test / 30 * 40 + 60;
+$prelim_written_test_base =  $prelim_written_test / 70 * 40 + 60;
 
 $prelim_output_weight = $prelim_output_base * 0.40;
 $prelim_performance_weight = $prelim_performance_base * 0.40;
@@ -207,35 +207,35 @@ $check_prelim_grade = $prelim_output_1 + $prelim_output_2 + $prelim_performance_
     $midterm_performance_total_score = $midterm_performance_1 + $midterm_performance_2;
     $midterm_performance_base = $midterm_performance_total_score / 40 * 40 + 60;
     $midterm_performance_weight = $midterm_performance_base * 0.40;
-    $midterm_written_test_base = $midterm_written_test / 30 * 40 + 60;
+    $midterm_written_test_base = $midterm_written_test / 70 * 40 + 60;
     $midterm_written_test_weight = $midterm_written_test_base * 0.20;
     $midterm_2nd_quarter = $midterm_output_weight + $midterm_performance_weight + $midterm_written_test_weight;
     $midterm_grade = $prelim_grade * 0.3 + $midterm_2nd_quarter * 0.7;
 
 
     switch (true) {
-      case ($midterm_grade >= 74.5 && $midterm_grade <= 76.4):
+      case ($midterm_grade >= 74.5 && $midterm_grade <= 76.49):
           $midterm_grade_equivalent = "3";
           break;
-      case ($midterm_grade >= 76.5 && $midterm_grade <= 79.4):
+      case ($midterm_grade >= 76.5 && $midterm_grade <= 79.49):
           $midterm_grade_equivalent = "2.75";
           break;
-      case ($midterm_grade >= 79.5 && $midterm_grade <= 82.4):
+      case ($midterm_grade >= 79.5 && $midterm_grade <= 82.49):
           $midterm_grade_equivalent = "2.5";
           break;
-      case ($midterm_grade >= 82.5 && $midterm_grade <= 85.4):
+      case ($midterm_grade >= 82.5 && $midterm_grade <= 85.49):
           $midterm_grade_equivalent = "2.25";
           break;
-      case ($midterm_grade >= 85.5 && $midterm_grade <= 88.4):
+      case ($midterm_grade >= 85.5 && $midterm_grade <= 88.49):
           $midterm_grade_equivalent = "2";
           break;
-      case ($midterm_grade >= 88.5 && $midterm_grade <= 91.4):
+      case ($midterm_grade >= 88.5 && $midterm_grade <= 91.49):
           $midterm_grade_equivalent = "1.75";
           break;
-      case ($midterm_grade >= 91.5 && $midterm_grade <= 94.4):
+      case ($midterm_grade >= 91.5 && $midterm_grade <= 94.49):
           $midterm_grade_equivalent = "1.5";
           break;
-      case ($midterm_grade >= 94.5 && $midterm_grade <= 97.4):
+      case ($midterm_grade >= 94.5 && $midterm_grade <= 97.49):
           $midterm_grade_equivalent = "1.25";
           break;
       case ($midterm_grade >= 97.5 && $midterm_grade <= 100):
