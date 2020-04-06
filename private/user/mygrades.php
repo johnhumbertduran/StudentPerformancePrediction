@@ -75,17 +75,45 @@ $predict = "<sup class='badge badge-warning'>Predict</sup>";
 
 <select class="form-control col-2 ml-2 pt-1 pb-2 d-inline bg-info text-white mt-3" id="semester" onchange="semester()">
   <option value="select_semester">Select Semester</option>
-  <option value="sem1" <?php if(isset($_GET['_s'])){ if($_GET['_s'] == "sem1"){ echo "selected"; }}?>>1st Semester</option>
-  <option value="sem2" <?php if(isset($_GET['_s'])){ if($_GET['_s'] == "sem2"){ echo "selected"; }}?>>2nd Semester</option>
+  <option value="1" <?php if(isset($_GET['s_'])){ if($_GET['s_'] == "1"){ echo "selected"; }}?>>1st Semester</option>
+  <option value="2" <?php if(isset($_GET['s_'])){ if($_GET['s_'] == "2"){ echo "selected"; }}?>>2nd Semester</option>
 </select>
 
 
-<div class="table-responsive table_table mt-3 col-8 container-fluid">
+<?php
+
+
+if(isset($_GET["s_"])){
+  $semester_no = $_GET["s_"];
+}else{
+  $semester_no = "1";
+}
+
+
+
+// $final_prediction_qry = mysqli_query($connections, "SELECT * FROM $final_prediction_table_semester WHERE student_no='$student_no' ");
+// $row_final_prediction = mysqli_fetch_assoc($final_prediction_qry);
+
+$student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE student_no='$student_no' ");
+$row_student = mysqli_fetch_assoc($student_qry);
+$lastname = $row_student['lastname'];
+$firstname = $row_student['firstname'];
+$middlename = $row_student['middlename'];
+$student_name = $firstname . " " . $middlename[0] . ". " . $lastname;
+
+
+?>
+<!-- <div class="black p-5 fixed-top"> -->
+<input type="hidden" id="get_student_no" value="<?php echo $student_no; ?>">
+
+<input type="hidden" id="get_semester" value="<?php echo $_GET["s_"]; ?>">
+
+<div class="table-responsive table_table mt-3 col-10 container-fluid">
 <table border="1" class="table table-hover">
     <thead>
-    <tr><th class="px-3 text-center bg-info text-white" colspan="5">My Grade</th></tr><!-- Preliminary Here -->
+    <tr><th class="px-3 text-center bg-info text-white" colspan="6">My Grade</th></tr><!-- Preliminary Here -->
 
-    <tr class="text-center"><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal">Prefinal</th><th class="px-3 bg-warning text-white" id="final">Final</th><th class="px-3 bg-dark text-white" id="prediction">Prediction<sup class='badge badge-warning'>Prediction</sup></th></tr>
+    <tr class="text-center"><th class="px-3 bg-white">Student Name</th><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal_student_predict">Prefinal</th><th class="px-3 bg-warning text-white" id="final_student_predict">Final</th><th class="px-3 bg-dark text-white" id="prediction">Prediction<sup class='badge badge-warning'>Prediction</sup></th></tr>
 
     </thead>
 
@@ -93,21 +121,18 @@ $predict = "<sup class='badge badge-warning'>Predict</sup>";
 
 <?php
 
-  if(isset($_GET["_s"])){
-    $semester = $_GET["_s"];
-  }else{
-    $semester = "sem1";
-  }
   
 
-  $prelim = "prelim$semester[3]";
-  $midterm = "midterm$semester[3]";
-  $prefinal = "prefinal$semester[3]";
-  $final = "final$semester[3]";
+  $prelim = "prelim$semester_no";
+  $midterm = "midterm$semester_no";
+  $prefinal = "prefinal$semester_no";
+  $final = "final$semester_no";
   $prelim_qry = mysqli_query($connections, "SELECT * FROM $prelim WHERE student_no='$student_no' ");
   $midterm_qry = mysqli_query($connections, "SELECT * FROM $midterm WHERE student_no='$student_no' ");
   $prefinal_qry = mysqli_query($connections, "SELECT * FROM $prefinal WHERE student_no='$student_no' ");
   $final_qry = mysqli_query($connections, "SELECT * FROM $final WHERE student_no='$student_no' ");
+
+// $prefinal_prediction_qry = mysqli_query($connections, "SELECT * FROM $prefinal WHERE student_no='$student_no' ");
 
 
 while($row_prelim = mysqli_fetch_assoc($prelim_qry)){
@@ -116,6 +141,7 @@ while($row_prelim = mysqli_fetch_assoc($prelim_qry)){
  $row_midterm = mysqli_fetch_assoc($midterm_qry);
  $row_prefinal = mysqli_fetch_assoc($prefinal_qry);
  $row_final = mysqli_fetch_assoc($final_qry);
+
  
 
 $prelim_output_1 = $row_prelim['prelim_output_1'];
@@ -137,7 +163,7 @@ $prelim_performance_total_score = $prelim_performance_1 + $prelim_performance_2;
 
 $prelim_output_base = $prelim_output_total_score / 40 * 40 + 60;
 $prelim_performance_base = $prelim_performance_total_score / 40 * 40 + 60;
-$prelim_written_test_base =  $prelim_written_test / 30 * 40 + 60;
+$prelim_written_test_base =  $prelim_written_test / 70 * 40 + 60;
 
 $prelim_output_weight = $prelim_output_base * 0.40;
 $prelim_performance_weight = $prelim_performance_base * 0.40;
@@ -170,7 +196,7 @@ $midterm_output_weight = $midterm_output_base * 0.40;
 
 $midterm_performance_total_score = $midterm_performance_1 + $midterm_performance_2;
 $midterm_performance_base = $midterm_performance_total_score / 40 * 40 + 60;
-$midterm_written_test_base = $midterm_written_test / 30 * 40 + 60;
+$midterm_written_test_base = $midterm_written_test / 70 * 40 + 60;
 $midterm_performance_weight = $midterm_performance_base * 0.40;
 $midterm_written_test_weight = $midterm_written_test_base * 0.20;
 $midterm_2nd_quarter = $midterm_output_weight + $midterm_performance_weight + $midterm_written_test_weight;
@@ -191,12 +217,19 @@ $prefinal_performance_1 = $row_prefinal["prefinal_performance_1"]; //ok
 $prefinal_performance_2 = $row_prefinal["prefinal_performance_2"]; //ok
 $prefinal_written_test = $row_prefinal["prefinal_written_test"]; //ok
 
+$prefinal_prediction = $row_prefinal["prefinal_prediction"];
 
 if($prefinal_output_1 == 0 && $prefinal_output_2 == 0 &&
    $prefinal_performance_1 == 0 && $prefinal_performance_1 == 0 &&
    $prefinal_written_test == 0){
   
-    $prefinal_grade = 0;
+    if($prefinal_prediction>0){
+    $prefinal_prediction = $row_prefinal["prefinal_prediction"];
+    $confirm_prefinal_prediction = $prefinal_prediction;
+    }else{
+      $prefinal_grade = 0;
+      $prefinal_prediction = 0;
+    }
 
 }else{
 
@@ -205,7 +238,7 @@ $prefinal_performance_total_score = $prefinal_performance_1 + $prefinal_performa
 
 $prefinal_output_base = $prefinal_output_total_score / 40 * 40 + 60; //ok
 $prefinal_performance_base = $prefinal_performance_total_score / 40 * 40 + 60; //ok
-$prefinal_written_test_base = $prefinal_written_test / 30 * 40 + 60; //ok
+$prefinal_written_test_base = $prefinal_written_test / 70 * 40 + 60; //ok
 
 $prefinal_output_weight = $prefinal_output_base * 0.40; //ok
 $prefinal_performance_weight = $prefinal_performance_base * 0.40; //ok
@@ -225,12 +258,22 @@ $final_performance_1 = $row_final["final_performance_1"];
 $final_performance_2 = $row_final["final_performance_2"];
 $final_written_test = $row_final["final_written_test"];
 
+$final_prediction = $row_final["final_prediction"];
+
 
 if($final_output_1 == 0 && $final_output_2 == 0 &&
    $final_performance_1 == 0 && $final_performance_1 == 0 &&
    $final_written_test == 0){
   
-    $final_grade = 0;
+    // $final_grade = 0;
+
+    if($final_prediction>0){
+      $final_prediction = $row_final["final_prediction"];
+      $confirm_final_prediction = $final_prediction;
+      }else{
+        $final_grade = 0;
+        $final_prediction = 0;
+      }
 
 }else{
 
@@ -240,7 +283,7 @@ $final_output_weight = $final_output_base * 0.40;
 $final_performance_total_score = $final_performance_1 + $final_performance_2;
 $final_performance_base = $final_performance_total_score / 40 * 40 + 60;
 $final_performance_weight = $final_performance_base * 0.40;
-$final_written_test_base = $final_written_test / 30 * 40 + 60;
+$final_written_test_base = $final_written_test / 70 * 40 + 60;
 $final_written_test_weight = $final_written_test_base * 0.20;
 $final_4th_quarter = $final_output_weight + $final_performance_weight + $final_written_test_weight;
 $final_grade = $prefinal_grade * 0.3 + $final_4th_quarter * 0.7;
@@ -251,8 +294,7 @@ $final_grade = number_format((float)$final_grade,2,".","");
   
 
 
-$prefinal_prediction = 0;
-$final_prediction = 0;
+
 $average_prediction = 0;
 
 
@@ -260,13 +302,14 @@ $average_prediction = 0;
 ?>
 
 <tr class="text-center">
-<td id="get_prelim"><?php echo $prelim_grade; ?></td>
-<td id="get_midterm"><?php echo $midterm_grade; ?></td>
-<td><span id="get_prefinal"><?php echo $prefinal_grade; ?></span><input type="text" id="prefinal_grade_prediction" class="text-center col-5 container-fluid" disabled></td>
-<td><span id="get_final"><?php echo $final_grade; ?></span><input type="text" id="final_grade_prediction" class="text-center col-5 container-fluid" disabled></td>
-<td id="select_prediction">
+<td class="bg-white"><?php echo $student_name; ?></td>
+<td id="get_prelim" class="bg-white"><?php echo $prelim_grade; ?></td>
+<td id="get_midterm" class="bg-white"><?php echo $midterm_grade; ?></td>
+<td class="bg-white"><span id="get_prefinal"><?php if($prefinal_prediction>0){echo $prefinal_prediction; }else{echo $prefinal_grade;} ?></span><input type="text" id="prefinal_grade_prediction" class="text-center col-5 container-fluid" disabled></td>
+<td class="bg-white"><span id="get_final"><?php if($final_prediction>0){echo $final_prediction; }else{echo $final_grade;} ?></span><input type="text" id="final_grade_prediction" class="text-center col-5 container-fluid" disabled></td>
+<td id="select_prediction" class="bg-white">
 <select class="form-control pt-1 pb-2 bg-dark text-white" id="average_predict" onchange="average()">
-  <option value="select_semester">Select Value</option>
+  <option value="select_grade_prediction">Select Value</option>
   <option value="75" id="75" <?php if(isset($_GET['ave'])){ if($_GET['ave'] == "75"){ echo 'selected'; }}?>>75</option>
   <option value="76" id="76" <?php if(isset($_GET['ave'])){ if($_GET['ave'] == "76"){ echo 'selected'; }}?>>76</option>
   <option value="77" id="77" <?php if(isset($_GET['ave'])){ if($_GET['ave'] == "77"){ echo 'selected'; }}?>>77</option>
@@ -298,13 +341,13 @@ $average_prediction = 0;
 </select>
 </td>
 </tr>
-<!-- <tr class="text-center">
-<td></td>
-<td></td>
-<td id="prefinal_prediction"><?php echo $prefinal_prediction; ?></td>
-<td id="final_prediction"><?php echo $final_prediction; ?></td>
-<td id="average_prediction"><?php echo $average_prediction; ?></td>
-</tr> -->
+<!-- <tr class="text-center"> -->
+<!-- <td></td> -->
+<!-- <td></td> -->
+<td id="confirm_prefinal_prediction" class="bg-white d-none"><?php if($prefinal_prediction>0){echo $confirm_prefinal_prediction; }else{ echo $confirm_prefinal_prediction; } ?></td>
+<td id="confirm_final_prediction" class="bg-white d-none"><?php if($final_prediction>0){echo $confirm_final_prediction; }else{ echo $confirm_final_prediction; } ?></td>
+<!-- <td id="average_prediction"><?php echo $average_prediction; ?></td> -->
+<!-- </tr> -->
 
 
 
@@ -334,10 +377,33 @@ $average_prediction = 0;
   var select_prelim_and_midterm = select_prelim + select_midterm;
 
   
-var get_prelim_value = document.getElementById("get_prelim");
-var get_midterm_value = document.getElementById("get_midterm");
-var get_prefinal_value = document.getElementById("get_prefinal");
-var get_final_value = document.getElementById("get_final");
+  var get_prelim_value = document.getElementById("get_prelim");
+  var get_midterm_value = document.getElementById("get_midterm");
+  var get_prefinal_value = document.getElementById("get_prefinal");
+  var get_final_value = document.getElementById("get_final");
+
+  var confirm_prefinal_prediction = document.getElementById("confirm_prefinal_prediction").innerHTML;
+  var confirm_final_prediction = document.getElementById("confirm_final_prediction").innerHTML;
+
+  var average_prediction = (parseFloat(get_prelim_value.innerHTML) + parseFloat(get_midterm_value.innerHTML) + parseFloat(confirm_prefinal_prediction) + parseFloat(confirm_final_prediction))/4;
+
+  function semester(){
+ 
+ var semester = document.getElementById("semester");
+ var selected_semester = semester.options[semester.selectedIndex].value;
+
+ window.location.href = "?s_="+selected_semester;
+ // alert("hay");
+}
+
+  var close_button = document.getElementById("close_btn");
+  window.onkeyup = function (event) {
+  if (event.keyCode == 27) {
+    // document.getElementById(boxid).style.visibility="hidden";
+    window.location.href = "prediction";
+  }
+ }
+// alert(average_prediction);
   // alert(select_prelim_and_midterm);
   // alert(
   //   "1="+select_average[1].value+
@@ -352,7 +418,7 @@ var get_final_value = document.getElementById("get_final");
   //   "\n10="+select_average[10].value
   // );
   // alert(select_prelim_and_midterm);
-if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML == 0 & get_final_value.innerHTML  == 0){
+if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & (get_prefinal_value.innerHTML == 0 | confirm_prefinal_prediction > 0) & (get_final_value.innerHTML  == 0 | confirm_prefinal_prediction > 0)){
 
   for(i=1;i<=74;i++){
   for(x=1;x<=74;x++){
@@ -589,7 +655,7 @@ if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_pref
 
 
 
-if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & get_final_value.innerHTML  == 0){
+if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & (get_final_value.innerHTML  == 0 | confirm_final_prediction > 0)){
 
   for(a=1;a<=74;a++){
     console.log(a);
@@ -830,17 +896,8 @@ if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_pref
 // }
 
 
-function semester(){
- 
-  var semester = document.getElementById("semester");
-  var selected_semester = semester.options[semester.selectedIndex].value;
 
-  window.location.href = "?_s="+selected_semester;
-  // alert("hay");
-}
-
-
-var prefinal = document.getElementById("prefinal");
+var prefinal = document.getElementById("prefinal_student_predict");
 var prefinal_grade = document.getElementById("prefinal_grade");
 
 var prefinal_grade_prediction = document.getElementById("prefinal_grade_prediction");
@@ -848,27 +905,35 @@ var get_prefinal = document.getElementById("get_prefinal");
 
 var final_grade_prediction = document.getElementById("final_grade_prediction");
 var get_final = document.getElementById("get_final");
-var final = document.getElementById("final");
+var final = document.getElementById("final_student_predict");
 var final_grade = document.getElementById("final_grade");
 var prediction = document.getElementById("prediction");
 var select_prediction = document.getElementById("select_prediction");
 
+var confirm_prefinal_prediction = document.getElementById("confirm_prefinal_prediction").innerHTML;
+var confirm_final_prediction = document.getElementById("confirm_final_prediction").innerHTML;
+var confirmation_prefinal = 0;
+var confirmation_final = 0;
 
-if(get_prefinal_value.innerHTML == 0){
+if(confirm_prefinal_prediction >0){
+confirmation_prefinal = 1;
 prefinal.classList.remove("bg-danger");
 prefinal.classList.add("bg-dark");
+prefinal.innerHTML += " <sup class='badge badge-warning'>Prediction</sup>";
 }
-if(get_final_value.innerHTML == 0 ){
+if(confirm_final_prediction >0 ){
+confirmation_final = 1;
 final.classList.remove("bg-warning");
 final.classList.add("bg-dark");
+final.innerHTML += " <sup class='badge badge-warning'>Prediction</sup>";
 }
 
-if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML == 0 & get_final_value.innerHTML == 0){
+if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML == 0 & get_final_value.innerHTML == 0 & confirmation_prefinal == 0 & confirmation_final == 0){
 
-  if(prefinal_grade.value == 0){
+  if(prefinal_grade.value == 0 & confirmation_prefinal == 0 & confirmation_final == 0){
     prefinal_grade_prediction.style.display = "block";
     get_prefinal.style.display = "none";
-    prefinal.innerHTML += "<sup class='badge badge-warning'>Prediction</sup>";
+    // prefinal.innerHTML += "<sup class='badge badge-warning'>Prediction</sup>";
   }else{
     prefinal_grade_prediction.style.display = "none";
     get_prefinal.style.display = "block";
@@ -884,7 +949,7 @@ if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_pref
     
       final_grade_prediction.style.display = "block";
       get_final.style.display = "none";
-      final.innerHTML += "<sup class='badge badge-warning'>Prediction</sup>";
+      // final.innerHTML += "<sup class='badge badge-warning'>Prediction</sup>";
     
     
       // alert(final_str);
@@ -894,9 +959,9 @@ if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_pref
       final_grade_prediction.style.display = "none";
       get_final.style.display = "block";
     }
-}else if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & get_final_value.innerHTML == 0){
+}else if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & get_final_value.innerHTML == 0 & confirmation_prefinal == 0 & confirmation_final == 0){
 
-    if(final_grade.value == 0){
+    if(final_grade.value == 0 & confirmation_prefinal == 0 & confirmation_final == 0){
     
       final_grade_prediction.style.display = "block";
       get_final.style.display = "none";
@@ -906,6 +971,28 @@ if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_pref
       final_grade_prediction.style.display = "none";
       get_final.style.display = "block";
     }
+
+
+}else if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & get_final_value.innerHTML != 0 & confirmation_prefinal != 0 & confirmation_final != 0){
+  
+  // select_average.selectedIndex = 75;
+  // select_average = select_average.options[select_average.selectedIndex].value;
+  // select_average.selectedIndex.value = "87";
+
+  // select_average = average_prediction;
+  // alert(average_prediction);
+  // alert(new_select_average);
+  // get_prefinal.style.display = "block";
+  // get_final.style.display = "block";
+  // prefinal_grade_prediction.style.display = "none";
+  // final_grade_prediction.style.display = "none";
+  // prediction.style.display = "none";
+  // select_prediction.style.display = "none";
+
+  var new_select_average = document.getElementById("average_predict").selectedIndex.value;
+
+  // new_select_average = "74";
+  // alert(new_select_average);
 
 
 }else{
@@ -1729,7 +1816,7 @@ function average(){
   var _100_99 = 100 + 99;
   var _100_100 = 100 + 100;
 
-if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML == 0 & get_final_value.innerHTML  == 0){
+if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & (get_prefinal_value.innerHTML == 0 | confirmation_prefinal > 0) & (get_final_value.innerHTML  == 0 | confirmation_final > 0)){
 
 
 // _75
@@ -6592,8 +6679,28 @@ var get_prefinal_prediction = document.getElementById("prefinal_grade_prediction
 var get_final_prediction = document.getElementById("final_grade_prediction");
 
 // location.relaod();
-get_prefinal_prediction.value = predict_prefinal;
-get_final_prediction.value = predict_final;
+get_prefinal_prediction.innerHTML = predict_prefinal;
+get_final_prediction.innerHTML = predict_final;
+
+
+
+
+var student_no= document.getElementById("get_student_no").value;
+ var semester_value= document.getElementById("get_semester").value;
+
+var xhr = new XMLHttpRequest();
+  xhr.open('POST','save_prediction.php?prefinal='+predict_prefinal+'&final='+predict_final+'&id='+student_no+'&s_='+semester_value, true);
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  xhr.onreadystatechange = function () {
+    if(xhr.readyState == 4 && xhr.status == 200) {
+      var result = xhr.responseText;
+      console.log(result);
+    console.log('prefinal:'+predict_prefinal+'final:'+predict_final);
+    location.reload();
+  }
+  }
+  xhr.send();
 
 // document.getElementById("get_prefinal").innerHTML = predict_prefinal;
 // document.getElementById("get_final").innerHTML = predict_final;
@@ -6657,7 +6764,7 @@ get_final_prediction.value = predict_final;
         // alert("Average=" + average + "Prefinal=" + new_prefinal + "Final=" + new_prefinal);
 
 
-  }else if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & get_final_value.innerHTML  == 0){
+  }else if(get_prelim_value.innerHTML != 0 & get_midterm_value.innerHTML != 0 & get_prefinal_value.innerHTML != 0 & (get_final_value.innerHTML  == 0 | confirmation_final > 0)){
 
 
 // _75
@@ -6842,7 +6949,26 @@ var get_final_prediction = document.getElementById("final_grade_prediction");
 // get_prefinal_prediction.value = predict_prefinal;
 get_final_prediction.value = predict_grade_array;
 
-}
+
+var student_no= document.getElementById("get_student_no").value;
+ var semester_value= document.getElementById("get_semester").value;
+
+var xhr = new XMLHttpRequest();
+  xhr.open('POST','save_prediction.php?final='+predict_grade_array+'&id='+student_no+'&s_='+semester_value, true);
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  xhr.onreadystatechange = function () {
+    if(xhr.readyState == 4 && xhr.status == 200) {
+      var result = xhr.responseText;
+      console.log(result);
+    // console.log('prefinal:'+predict_prefinal+'final:'+predict_final);
+  }
+  }
+  xhr.send();
+
+  }
+
+
 }
 
 // if(prelim.innerHTML != 0 & midterm.innerHTML != 0 & prefinal.innerHTML != 0 & final.innerHTML  == 0){
@@ -6852,6 +6978,7 @@ get_final_prediction.value = predict_grade_array;
 // alert(prelim.innerHTML+"|"+midterm.innerHTML+"|"+prefinal.innerHTML+"|"+final.innerHTML);
 
 </script>
+
 <!-- <a href="logout.php">Log Out</a> -->
 
 <?php

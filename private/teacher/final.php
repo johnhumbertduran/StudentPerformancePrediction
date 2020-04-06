@@ -89,7 +89,7 @@ if(isset($_GET["_c"])){
     <th class="px-3 text-center bg-warning text-white" colspan="18">Final Period</th></tr><!-- Final Here -->
 
     <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th>
-    <!-- <th class="px-5 text-center bg-warning text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-warning text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-warning text-white" colspan="5">Performance</th><th class="px-5 text-center bg-warning text-white" colspan="3">Major&nbsp;Exam</th><th class="px-5 text-center bg-warning text-white">4th&nbsp;Quarter</th><th class="px-5 text-center bg-warning text-white" colspan="2">Final&nbsp;Grade</th><th class="px-5 text-center bg-warning text-white">Remarks</th><th class="px-5 text-center bg-warning text-white">Action</th></tr><!-- Final Here -->
+    <!-- <th class="px-5 text-center bg-warning text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-warning text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-warning text-white" colspan="5">Performance</th><th class="px-5 text-center bg-warning text-white" colspan="3">Major&nbsp;Exam</th><th class="px-2 text-center bg-warning text-white">4th&nbsp;Quarter</th><th class="px-2 text-center bg-warning text-white">Final&nbsp;Grade</th><th class="px-2 text-center bg-warning text-white">Equivalent</th><th class="px-2 text-center bg-warning text-white">Remarks</th><th class="px-5 text-center bg-warning text-white">Action</th></tr><!-- Final Here -->
 
     <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th>
     <!-- <th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">100</th><th class="bg-warning text-white">60</th> --><th class="bg-warning text-white">20</th><th class="bg-warning text-white">20</th><th class="bg-warning text-white">40</th><th class="bg-warning text-white">60</th><th class="bg-warning text-white">0.40</th><th class="bg-warning text-white">20</th><th class="bg-warning text-white">20</th><th class="bg-warning text-white">40</th><th class="bg-warning text-white">60</th><th class="bg-warning text-white">0.40</th><th class="bg-warning text-white">70</th><th class="bg-warning text-white">60</th><th class="bg-warning text-white">0.20</th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th></tr><!-- Final Here -->
@@ -392,10 +392,10 @@ if($final_written_test_weight < 15){
 
 
 
-<td><a class="text-danger"><?php echo number_format((float)$final_4th_quarter,2,".",""); ?></a></td> 
-<td><a class="<?php if($final_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$final_grade,2,".",""); ?></a></td> 
-<td><a class="<?php if($final_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $final_grade_equivalent; ?></a></td> 
-<td><a class="<?php if($final_grade_remarks == 'Passed'){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $final_grade_remarks; ?></a></td> 
+<td><center><a class="text-danger"><?php echo number_format((float)$final_4th_quarter,2,".",""); ?></a></center></td> 
+<td><center><a class="<?php if($final_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$final_grade,2,".",""); ?></a></center></td> 
+<td><center><a class="<?php if($final_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $final_grade_equivalent; ?></a></center></td> 
+<td><center><a class="<?php if($final_grade_remarks == 'Passed'){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $final_grade_remarks; ?></a></center></td> 
 <td><center><a <?php if(($check_prelim_grade>0) & ($check_midterm_grade>0) & ($check_prefinal_grade>0)){ echo 'href=?redir=final&_y='.$year.'&_c='.$course.'&_s_e_='.$semester.'&in_='.$student_no; }else{ echo 'data-toggle="tooltip" data-placement="top" title="Check other grading period before inputting grade"';} ?> class="btn <?php if(($check_prelim_grade>0) & ($check_midterm_grade>0) & ($check_prefinal_grade>0)){echo 'btn-primary'; }else{ echo 'btn-secondary text-white'; } ?>">Input Grade</a></center></td>
 </tr>
 
