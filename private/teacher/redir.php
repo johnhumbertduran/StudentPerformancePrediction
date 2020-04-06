@@ -513,6 +513,77 @@ switch (true) {
           $grade_name = "5";
   }
 
+  if(isset($_POST["output_1"])){
+    if(!empty($_POST[$_GET["redir"]."_output_1"])){
+      $output_1_grade_post = $_POST[$_GET["redir"]."_output_1"];
+      $output_1_grade = $_GET["redir"]."_output_1";
+      
+        // echo "<script>alert('hay');</script>";
+      mysqli_query($connections, "UPDATE $grading SET $output_1_grade='$output_1_grade_post'
+      WHERE student_no=$student_no");
+    }
+        echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
+
+  }
+
+  if(isset($_POST["output_2"])){
+    if(!empty($_POST[$_GET["redir"]."_output_2"])){
+      $output_2_grade_post = $_POST[$_GET["redir"]."_output_2"];
+      $output_2_grade = $_GET["redir"]."_output_2";
+      
+        // echo "<script>alert('hay');</script>";
+      mysqli_query($connections, "UPDATE $grading SET $output_2_grade='$output_2_grade_post'
+      WHERE student_no=$student_no");
+    }
+        echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
+
+  }
+
+  
+
+  if(isset($_POST["performance_1"])){
+    if(!empty($_POST[$_GET["redir"]."_performance_1"])){
+      $performance_1_grade_post = $_POST[$_GET["redir"]."_performance_1"];
+      $performance_1_grade = $_GET["redir"]."_performance_1";
+      
+        // echo "<script>alert('hay');</script>";
+      mysqli_query($connections, "UPDATE $grading SET $performance_1_grade='$performance_1_grade_post'
+      WHERE student_no=$student_no");
+    }
+        echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
+
+  }
+
+
+  if(isset($_POST["performance_2"])){
+    if(!empty($_POST[$_GET["redir"]."_performance_2"])){
+      $performance_2_grade_post = $_POST[$_GET["redir"]."_performance_2"];
+      $performance_2_grade = $_GET["redir"]."_performance_2";
+      
+        // echo "<script>alert('hay');</script>";
+      mysqli_query($connections, "UPDATE $grading SET $performance_2_grade='$performance_2_grade_post'
+      WHERE student_no=$student_no");
+    }
+        echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
+
+  }
+
+  
+
+  if(isset($_POST["written_test"])){
+    if(!empty($_POST[$_GET["redir"]."_written_test"])){
+      $written_test_grade_post = $_POST[$_GET["redir"]."_written_test"];
+      $written_test_grade = $_GET["redir"]."_written_test";
+      
+        // echo "<script>alert('hay');</script>";
+      mysqli_query($connections, "UPDATE $grading SET $written_test_grade='$written_test_grade_post'
+      WHERE student_no=$student_no");
+    }
+        echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
+
+  }
+
+
   if(isset($_POST["input_grade"])){
       // if(!empty($_POST["grade_input"])){
       //   //   echo "<script>alert('ahy');</script>";
@@ -524,54 +595,6 @@ switch (true) {
       //   echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
       
       // }
-      
-      if(!empty($_POST[$_GET["redir"]."_output_1"])){
-        $output_1_grade_post = $_POST[$_GET["redir"]."_output_1"];
-        $output_1_grade = $_GET["redir"]."_output_1";
-        
-          // echo "<script>alert('hay');</script>";
-        mysqli_query($connections, "UPDATE $grading SET $output_1_grade='$output_1_grade_post'
-        WHERE student_no=$student_no");
-      }
-
-      if(!empty($_POST[$_GET["redir"]."_output_2"])){
-        $output_2_grade_post = $_POST[$_GET["redir"]."_output_2"];
-        $output_2_grade = $_GET["redir"]."_output_2";
-        
-          // echo "<script>alert('hay');</script>";
-        mysqli_query($connections, "UPDATE $grading SET $output_2_grade='$output_2_grade_post'
-        WHERE student_no=$student_no");
-      }
-      
-      if(!empty($_POST[$_GET["redir"]."_performance_1"])){
-        $performance_1_grade_post = $_POST[$_GET["redir"]."_performance_1"];
-        $performance_1_grade = $_GET["redir"]."_performance_1";
-        
-          // echo "<script>alert('hay');</script>";
-        mysqli_query($connections, "UPDATE $grading SET $performance_1_grade='$performance_1_grade_post'
-        WHERE student_no=$student_no");
-      }
-
-      if(!empty($_POST[$_GET["redir"]."_performance_2"])){
-        $performance_2_grade_post = $_POST[$_GET["redir"]."_performance_2"];
-        $performance_2_grade = $_GET["redir"]."_performance_2";
-        
-          // echo "<script>alert('hay');</script>";
-        mysqli_query($connections, "UPDATE $grading SET $performance_2_grade='$performance_2_grade_post'
-        WHERE student_no=$student_no");
-      }
-
-      if(!empty($_POST[$_GET["redir"]."_written_test"])){
-        $written_test_grade_post = $_POST[$_GET["redir"]."_written_test"];
-        $written_test_grade = $_GET["redir"]."_written_test";
-        
-          // echo "<script>alert('hay');</script>";
-        mysqli_query($connections, "UPDATE $grading SET $written_test_grade='$written_test_grade_post'
-        WHERE student_no=$student_no");
-      }
-
-
-        echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
 
   }
 
@@ -583,8 +606,9 @@ switch (true) {
 
 <div class="card col-sm-5 mx-auto p-3">
 <button type="button" class="close ml-auto bg-info rounded-circle px-1" id="black1">&times;</button>
-<p></p>
- <h2><?php echo $student_name; ?></h2>
+
+ <h3 class="position-fixed "><?php echo $student_name; ?></h3>
+ <p></p>
   <div class="card-header bg-info">
   <font color="white"> Input Grade </font>
   </div>
@@ -594,51 +618,66 @@ switch (true) {
   <table>
 
   <tr>
-  <td>
+  <td class="w-50">
   <label for="<?php echo $_GET["redir"]; ?>_output_1" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Output 1: &nbsp;</label>
   </td>
+  <td class="w-25">
+  <input type="text" name="<?php echo $_GET["redir"]; ?>_output_1" value="<?php echo $_output_1; ?>" class="w-50 text-center" id="<?php echo $_GET["redir"]; ?>_output_1">
+  </td>
   <td>
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_output_1" value="<?php echo $_output_1; ?>" class="w-25 text-center" id="<?php echo $_GET["redir"]; ?>_output_1">
+  <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="output_1">
   </td>
   </tr>
 
 
   <tr>
-  <td>
+  <td class="w-50">
   <label for="<?php echo $_GET["redir"]; ?>_output_2" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Output 2: &nbsp;</label>
   </td>
+  <td class="w-25">
+  <input type="text" name="<?php echo $_GET["redir"]; ?>_output_2" value="<?php echo $_output_2; ?>" class="w-50 text-center" id="<?php echo $_GET["redir"]; ?>_output_2">
+  </td>
   <td>
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_output_2" value="<?php echo $_output_2; ?>" class="w-25 text-center" id="<?php echo $_GET["redir"]; ?>_output_2">
+  <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="output_2">
   </td>
   </tr>
 
 
   <tr>
-  <td>
+  <td class="w-50">
   <label for="<?php echo $_GET["redir"]; ?>_performance_1" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Performance 1: &nbsp;</label>
   </td>
+  <td class="w-25">
+  <input type="text" name="<?php echo $_GET["redir"]; ?>_performance_1" value="<?php echo $_performance_1; ?>" class="w-50 text-center" id="<?php echo $_GET["redir"]; ?>_performance_1">
+  </td>
   <td>
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_performance_1" value="<?php echo $_performance_1; ?>" class="w-25 text-center" id="<?php echo $_GET["redir"]; ?>_performance_1">
+  <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="performance_1">
   </td>
   </tr>
 
 
   <tr>
-  <td>
+  <td class="w-50">
   <label for="<?php echo $_GET["redir"]; ?>_performance_2" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Performance 2: &nbsp;</label>
   </td>
+  <td class="w-25">
+  <input type="text" name="<?php echo $_GET["redir"]; ?>_performance_2" value="<?php echo $_performance_2; ?>" class="w-50 text-center" id="<?php echo $_GET["redir"]; ?>_performance_2">
+  </td>
   <td>
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_performance_2" value="<?php echo $_performance_2; ?>" class="w-25 text-center" id="<?php echo $_GET["redir"]; ?>_performance_2">
+  <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="performance_2">
   </td>
   </tr>
 
 
   <tr>
-  <td>
-  <label for="<?php echo $_GET["redir"]; ?>_written_test" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Written Test: &nbsp;</label>
+  <td class="w-50">
+  <label for="<?php echo $_GET["redir"]; ?>_written_test" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Major Test: &nbsp;</label>
+  </td>
+  <td class="w-25">
+  <input type="text" name="<?php echo $_GET["redir"]; ?>_written_test" value="<?php echo $_written_test; ?>" class="w-50 text-center" id="<?php echo $_GET["redir"]; ?>_written_test">
   </td>
   <td>
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_written_test" value="<?php echo $_written_test; ?>" class="w-25 text-center" id="<?php echo $_GET["redir"]; ?>_written_test">
+  <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="written_test">
   </td>
   </tr>
   </table>
@@ -647,7 +686,7 @@ switch (true) {
   
   <div class="card-footer bg-info">
   
-  <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="input_grade">
+  <!-- <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="input_grade"> -->
   </form>
   </div>
 </div>

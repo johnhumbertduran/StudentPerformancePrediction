@@ -276,7 +276,7 @@ $prelim_performance_total_score = $prelim_performance_1 + $prelim_performance_2;
 
 $prelim_output_base = $prelim_output_total_score / 40 * 40 + 60;
 $prelim_performance_base = $prelim_performance_total_score / 40 * 40 + 60;
-$prelim_written_test_base =  $prelim_written_test / 30 * 40 + 60;
+$prelim_written_test_base =  $prelim_written_test / 70 * 40 + 60;
 
 $prelim_output_weight = $prelim_output_base * 0.40;
 $prelim_performance_weight = $prelim_performance_base * 0.40;
@@ -309,7 +309,7 @@ $midterm_output_weight = $midterm_output_base * 0.40;
 
 $midterm_performance_total_score = $midterm_performance_1 + $midterm_performance_2;
 $midterm_performance_base = $midterm_performance_total_score / 40 * 40 + 60;
-$midterm_written_test_base = $midterm_written_test / 30 * 40 + 60;
+$midterm_written_test_base = $midterm_written_test / 70 * 40 + 60;
 $midterm_performance_weight = $midterm_performance_base * 0.40;
 $midterm_written_test_weight = $midterm_written_test_base * 0.20;
 $midterm_2nd_quarter = $midterm_output_weight + $midterm_performance_weight + $midterm_written_test_weight;
@@ -345,7 +345,7 @@ $prefinal_performance_total_score = $prefinal_performance_1 + $prefinal_performa
 
 $prefinal_output_base = $prefinal_output_total_score / 40 * 40 + 60; //ok
 $prefinal_performance_base = $prefinal_performance_total_score / 40 * 40 + 60; //ok
-$prefinal_written_test_base = $prefinal_written_test / 30 * 40 + 60; //ok
+$prefinal_written_test_base = $prefinal_written_test / 70 * 40 + 60; //ok
 
 $prefinal_output_weight = $prefinal_output_base * 0.40; //ok
 $prefinal_performance_weight = $prefinal_performance_base * 0.40; //ok
@@ -382,7 +382,7 @@ $final_output_weight = $final_output_base * 0.40;
 $final_performance_total_score = $final_performance_1 + $final_performance_2;
 $final_performance_base = $final_performance_total_score / 40 * 40 + 60;
 $final_performance_weight = $final_performance_base * 0.40;
-$final_written_test_base = $final_written_test / 30 * 40 + 60;
+$final_written_test_base = $final_written_test / 70 * 40 + 60;
 $final_written_test_weight = $final_written_test_base * 0.20;
 $final_4th_quarter = $final_output_weight + $final_performance_weight + $final_written_test_weight;
 $final_grade = $prefinal_grade * 0.3 + $final_4th_quarter * 0.7;
