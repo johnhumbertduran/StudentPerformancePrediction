@@ -588,17 +588,33 @@ if($final_prediction>0){
 </td>
 <td>
 <?php
-if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_grade>0)){
-  $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_grade) / 4;
-  echo number_format((float)$average,2,".","");
-}else if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
-  $average = ($prelim_grade + $midterm_grade + $prefinal_prediction + $final_prediction) / 4;
-  echo "<h6>".number_format((float)$average,2,".","")."</h6>";
-}else if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_prediction>0)){
-  $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_prediction) / 4;
-  echo "<h6>".number_format((float)$average,2,".","")."</h6>";
+// if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_grade>0)){
+//   $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_grade) / 4;
+//   echo number_format((float)$average,2,".","");
+// }else if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
+//   $average = ($prelim_grade + $midterm_grade + $prefinal_prediction + $final_prediction) / 4;
+//   echo "<h6>".number_format((float)$average,2,".","")."</h6>";
+// }else if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_prediction>0)){
+//   $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_prediction) / 4;
+//   echo "<h6>".number_format((float)$average,2,".","")."</h6>";
+// }else{
+//   echo "---";
+// }
+if($final_prediction>0){
+  $average = $final_prediction;
+  echo "<h6>".$final_prediction."</h6>";
 }else{
-  echo "---";
+  $average = $final_grade;
+
+  if($final_grade>0){
+    // if($final_status > 0){
+      // echo $final_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#final$student_no'><b>$final_status</b><sup>";
+    // }else{
+      echo $final_grade;
+    // }
+  }else{
+    echo $final_grade;
+  }
 }
 ?>
 </td>
