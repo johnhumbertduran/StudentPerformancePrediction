@@ -21,8 +21,8 @@
       <li class="nav-item prediction">
         <a class="nav-link pl-2" href="prediction">Prediction</a>
       </li>    
-      <li class="nav-item">
-        <a class="nav-link pl-2" href="#">View Charts</a>
+      <li class="nav-item chart_active">
+        <a class="nav-link pl-2" href="charts.php">View Charts</a>
       </li>    
       <li class="nav-item register_active">
         <a class="nav-link pl-2" href="register">Register</a>

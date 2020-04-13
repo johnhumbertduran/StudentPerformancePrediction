@@ -94,7 +94,7 @@ if(isset($_GET["_c"])){
     <th class="px-3 text-center bg-danger text-white" colspan="16">Prefinal Period</th></tr><!-- Prefinal Here -->
 
     <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th>
-    <!-- <th class="px-5 text-center bg-danger text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-danger text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-danger text-white" colspan="5">Performance</th><th class="px-5 text-center bg-danger text-white" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center bg-danger text-white">3rd&nbsp;Quarter</th><th class="px-5 text-center bg-danger text-white" colspan="2">Prefinal&nbsp;Grade</th></tr><!-- Prefinal Here -->
+    <!-- <th class="px-5 text-center bg-danger text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-danger text-white" colspan="5">Output</th><th class="px-5 text-center bg-danger text-white" colspan="5">Performance</th><th class="px-5 text-center bg-danger text-white" colspan="3">Major&nbsp;Exam</th><th class="px-2 text-center bg-danger text-white">3rd&nbsp;Quarter</th><th class="px-2 text-center bg-danger text-white">Prefinal&nbsp;Grade</th><th class="px-2 text-center bg-danger text-white">Equivalent</th></tr><!-- Prefinal Here -->
 
     <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th>
     <!-- <th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">10</th><th class="bg-danger text-white">100</th><th class="bg-danger text-white">60</th> --><th class="bg-danger text-white">20</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">40</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.40</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">20</th><th class="bg-danger text-white">40</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.40</th><th class="bg-danger text-white">30</th><th class="bg-danger text-white">60</th><th class="bg-danger text-white">0.20</th><th class="bg-danger text-white"></th><th class="bg-danger text-white"></th><th class="bg-danger text-white"></th></tr><!-- Prefinal Here -->
@@ -171,7 +171,7 @@ while($row_student = mysqli_fetch_assoc($grading_period)){
   
   $midterm_performance_total_score = $midterm_performance_1 + $midterm_performance_2;
   $midterm_performance_base = $midterm_performance_total_score / 40 * 40 + 60;
-  $midterm_written_test_base = $midterm_written_test / 30 * 40 + 60;
+  $midterm_written_test_base = $midterm_written_test / 70 * 40 + 60;
 
   $midterm_output_weight = $midterm_output_base * 0.40;
   $midterm_performance_weight = $midterm_performance_base * 0.40;
@@ -194,7 +194,7 @@ while($row_student = mysqli_fetch_assoc($grading_period)){
 
   $prelim_output_base = $prelim_output_total_score / 40 * 40 + 60;
   $prelim_performance_base = $prelim_performance_total_score / 40 * 40 + 60;
-  $prelim_written_test_base =  $prelim_written_test / 30 * 40 + 60;
+  $prelim_written_test_base =  $prelim_written_test / 70 * 40 + 60;
 
   $prelim_output_weight = $prelim_output_base * 0.40;
   $prelim_performance_weight = $prelim_performance_base * 0.40;
@@ -225,7 +225,7 @@ while($row_student = mysqli_fetch_assoc($grading_period)){
     $prefinal_performance_total_score = $prefinal_performance_1 + $prefinal_performance_2;
     $prefinal_performance_base = $prefinal_performance_total_score / 40 * 40 + 60;
     $prefinal_performance_weight = $prefinal_performance_base * 0.40;
-    $prefinal_written_test_base = $prefinal_written_test / 30 * 40 + 60;
+    $prefinal_written_test_base = $prefinal_written_test / 70 * 40 + 60;
     $prefinal_written_test_weight = $prefinal_written_test_base * 0.20;
     $prefinal_3rd_quarter = $prefinal_output_weight + $prefinal_performance_weight + $prefinal_written_test_weight;
     $prefinal_grade = $midterm_grade * 0.3 + $prefinal_3rd_quarter * 0.7;
@@ -301,10 +301,10 @@ while($row_student = mysqli_fetch_assoc($grading_period)){
 <td><a class="text-primary"><?php echo $prefinal_performance_weight; ?></a></td> 
 <td><a class="text-primary"><?php echo $prefinal_written_test; ?></a></td> 
 <td><a class="text-primary"><?php echo number_format((float)$prefinal_written_test_base,2,".",""); ?></a></td> 
-<td><a class="text-primary"><?php echo number_format((float)$prefinal_written_test_weight,2,".",""); ?></a></td> 
-<td><a class="text-primary"><?php echo number_format((float)$prefinal_3rd_quarter,2,".",""); ?></a></td> 
-<td><a class="<?php if($prefinal_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$prefinal_grade,2,".",""); ?></a></td> 
-<td><a class="<?php if($prefinal_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $prefinal_grade_equivalent; ?></a></td> 
+<td><center><a class="text-primary"><?php echo number_format((float)$prefinal_written_test_weight,2,".",""); ?></a></center></td> 
+<td><center><a class="text-primary"><?php echo number_format((float)$prefinal_3rd_quarter,2,".",""); ?></a></center></td> 
+<td><center><a class="<?php if($prefinal_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$prefinal_grade,2,".",""); ?></a></center></td> 
+<td><center><a class="<?php if($prefinal_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $prefinal_grade_equivalent; ?></a></center></td> 
 </tr>
 
 <?php

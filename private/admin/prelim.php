@@ -127,7 +127,7 @@ if(isset($_GET["_s_e_"])){
     <thead>
     <tr><th class="px-3" colspan="2"></th><th class="px-3 text-center bg-success text-white" colspan="17">Preliminary Period</th></tr><!-- Preliminary Here -->
 
-    <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th><!-- <th class="px-5 text-center bg-success text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-success text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-success text-white" colspan="5">Performance&nbsp;Project</th><th class="px-5 text-cente bg-success text-white" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center bg-success text-white " colspan="2">Prelim&nbsp;Grade</th></tr><!-- Preliminary Here -->
+    <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th><!-- <th class="px-5 text-center bg-success text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-success text-white" colspan="5">Output</th><th class="px-5 text-center bg-success text-white" colspan="5">Performance</th><th class="px-5 text-cente bg-success text-white" colspan="3">Major&nbsp;Exam</th><th class="px-2 text-center bg-success text-white ">Prelim&nbsp;Grade</th><th class="px-2 text-center bg-success text-white ">Equivalent</th></tr><!-- Preliminary Here -->
 
     <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th><!-- <th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">100</th><th class="bg-success text-white">60</th> --><th class="bg-success text-white">20</th><th class="bg-success text-white">20</th><th class="bg-success text-white">40</th><th class="bg-success text-white">60</th><th class="bg-success text-white">0.40</th><th class="bg-success text-white">20</th><th class="bg-success text-white">20</th><th class="bg-success text-white">40</th><th class="bg-success text-white">60</th><th class="bg-success text-white">0.40</th><th class="bg-success text-white">30</th><th class="bg-success text-white">60</th><th class="bg-success text-white">0.20</th><th class="bg-success text-white"></th><th class="bg-success text-white"></th></tr><!-- Preliminary Here -->
     </thead>
@@ -268,7 +268,7 @@ while($row_prelim = mysqli_fetch_assoc($grading_period)){
   $prelim_performance_total_score = $prelim_performance_1 + $prelim_performance_2;
   $prelim_performance_base = $prelim_performance_total_score / 40 * 40 + 60;
   $prelim_performance_weight = $prelim_performance_base * 0.40;
-  $prelim_written_test_base = $prelim_written_test / 30 * 40 + 60;
+  $prelim_written_test_base = $prelim_written_test / 70 * 40 + 60;
   $prelim_written_test_weight = $prelim_written_test_base * 0.20;
   $prelim_grade = $prelim_output_weight + $prelim_performance_weight + $prelim_written_test_weight;
 

@@ -92,7 +92,7 @@ if(isset($_GET["_c"])){
     <tr><th class="px-3" colspan="2"></th><th class="px-3 text-center bg-primary text-white" colspan="17">Midterm</th></tr><!-- Midterm Here -->
 
     <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th>
-    <!-- <th class="px-5 text-center bg-primary text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-primary text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-primary text-white" colspan="5">Performance</th><th class="px-5 text-center bg-primary text-white" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center bg-primary text-white">2nd&nbsp;Quarter</th><th class="px-5 text-center bg-primary text-white" colspan="2">Midterm&nbsp;Grade</th><th class="px-5 text-center bg-primary text-white">Remarks</th></tr><!-- Midterm Here -->
+    <!-- <th class="px-5 text-center bg-primary text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-primary text-white" colspan="5">Output</th><th class="px-5 text-center bg-primary text-white" colspan="5">Performance</th><th class="px-5 text-center bg-primary text-white" colspan="3">Major&nbsp;Exam</th><th class="px-2 text-center bg-primary text-white">2nd&nbsp;Quarter</th><th class="px-2 text-center bg-primary text-white">Midterm&nbsp;Grade</th><th class="px-2 text-center bg-primary text-white">Equivalent</th><th class="px-2 text-center bg-primary text-white">Remarks</th></tr><!-- Midterm Here -->
 
     <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th>
     <!-- <th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">10</th><th class="bg-primary text-white">100</th><th class="bg-primary text-white">60</th> --><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">20</th><th class="bg-primary text-white">40</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.40</th><th class="bg-primary text-white">30</th><th class="bg-primary text-white">60</th><th class="bg-primary text-white">0.20</th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th><th class="bg-primary text-white"></th></tr><!-- Midterm Here -->
@@ -184,7 +184,7 @@ $prelim_performance_total_score = $prelim_performance_1 + $prelim_performance_2;
 
 $prelim_output_base = $prelim_output_total_score / 40 * 40 + 60;
 $prelim_performance_base = $prelim_performance_total_score / 40 * 40 + 60;
-$prelim_written_test_base =  $prelim_written_test / 30 * 40 + 60;
+$prelim_written_test_base =  $prelim_written_test / 70 * 40 + 60;
 
 $prelim_output_weight = $prelim_output_base * 0.40;
 $prelim_performance_weight = $prelim_performance_base * 0.40;
@@ -210,7 +210,7 @@ $prelim_grade = $prelim_output_weight + $prelim_performance_weight + $prelim_wri
     $midterm_performance_total_score = $midterm_performance_1 + $midterm_performance_2;
     $midterm_performance_base = $midterm_performance_total_score / 40 * 40 + 60;
     $midterm_performance_weight = $midterm_performance_base * 0.40;
-    $midterm_written_test_base = $midterm_written_test / 30 * 40 + 60;
+    $midterm_written_test_base = $midterm_written_test / 70 * 40 + 60;
     $midterm_written_test_weight = $midterm_written_test_base * 0.20;
     $midterm_2nd_quarter = $midterm_output_weight + $midterm_performance_weight + $midterm_written_test_weight;
     $midterm_grade = $prelim_grade * 0.3 + $midterm_2nd_quarter * 0.7;
@@ -291,10 +291,10 @@ $prelim_grade = $prelim_output_weight + $prelim_performance_weight + $prelim_wri
   <td><a class="text-primary"><?php echo $midterm_written_test; ?></a></td> 
   <td><a class="text-primary"><?php echo number_format((float)$midterm_written_test_base,2,".",""); ?></a></td> 
   <td><a class="text-primary"><?php echo number_format((float)$midterm_written_test_weight,2,".",""); ?></a></td> 
-  <td><a class="text-primary"><?php echo number_format((float)$midterm_2nd_quarter,2,".",""); ?></a></td> 
-  <td><a class="<?php if($midterm_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$midterm_grade,2,".",""); ?></a></td> 
-  <td><a class="<?php if($midterm_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $midterm_grade_equivalent; ?></a></td> 
-  <td><a class="<?php if($midterm_remarks == "Failed"){ echo "text-danger";}else{echo "text-success";} ?>"><?php echo $midterm_remarks; ?></a></td> 
+  <td><center><a class="text-primary"><?php echo number_format((float)$midterm_2nd_quarter,2,".",""); ?></a></center></td> 
+  <td><center><a class="<?php if($midterm_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$midterm_grade,2,".",""); ?></a></center></td> 
+  <td><center><a class="<?php if($midterm_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $midterm_grade_equivalent; ?></a></center></td> 
+  <td><center><a class="<?php if($midterm_remarks == "Failed"){ echo "text-danger";}else{echo "text-success";} ?>"><?php echo $midterm_remarks; ?></a></center></td> 
   
   </tr>
 

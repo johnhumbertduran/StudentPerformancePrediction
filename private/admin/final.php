@@ -94,7 +94,7 @@ if(isset($_GET["_c"])){
     <th class="px-3 text-center bg-warning text-white" colspan="17">Final Period</th></tr><!-- Final Here -->
 
     <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th>
-    <!-- <th class="px-5 text-center bg-warning text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-warning text-white" colspan="5">Outpout</th><th class="px-5 text-center bg-warning text-white" colspan="5">Performance</th><th class="px-5 text-center bg-warning text-white" colspan="3">Written&nbsp;Test</th><th class="px-5 text-center bg-warning text-white">4th&nbsp;Quarter</th><th class="px-5 text-center bg-warning text-white" colspan="2">Final&nbsp;Grade</th><th class="px-5 text-center bg-warning text-white">Remarks</th></tr><!-- Final Here -->
+    <!-- <th class="px-5 text-center bg-warning text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-warning text-white" colspan="5">Output</th><th class="px-5 text-center bg-warning text-white" colspan="5">Performance</th><th class="px-5 text-center bg-warning text-white" colspan="3">Major&nbsp;Exam</th><th class="px-2 text-center bg-warning text-white">4th&nbsp;Quarter</th><th class="px-2 text-center bg-warning text-white">Final&nbsp;Grade</th><th class="px-2 text-center bg-warning text-white">Equivalent</th><th class="px-2 text-center bg-warning text-white">Remarks</th></tr><!-- Final Here -->
 
     <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th>
     <!-- <th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">10</th><th class="bg-warning text-white">100</th><th class="bg-warning text-white">60</th> --><th class="bg-warning text-white">20</th><th class="bg-warning text-white">20</th><th class="bg-warning text-white">40</th><th class="bg-warning text-white">60</th><th class="bg-warning text-white">0.40</th><th class="bg-warning text-white">20</th><th class="bg-warning text-white">20</th><th class="bg-warning text-white">40</th><th class="bg-warning text-white">60</th><th class="bg-warning text-white">0.40</th><th class="bg-warning text-white">30</th><th class="bg-warning text-white">60</th><th class="bg-warning text-white">0.20</th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th><th class="bg-warning text-white"></th></tr><!-- Final Here -->
@@ -177,7 +177,7 @@ $prelim_performance_total_score = $prelim_performance_1 + $prelim_performance_2;
 
 $prelim_output_base = $prelim_output_total_score / 40 * 40 + 60;
 $prelim_performance_base = $prelim_performance_total_score / 40 * 40 + 60;
-$prelim_written_test_base =  $prelim_written_test / 30 * 40 + 60;
+$prelim_written_test_base =  $prelim_written_test / 70 * 40 + 60;
 
 $prelim_output_weight = $prelim_output_base * 0.40;
 $prelim_performance_weight = $prelim_performance_base * 0.40;
@@ -199,7 +199,7 @@ $midterm_output_base = $midterm_output_total_score / 40 * 40 + 60;
 
 $midterm_performance_total_score = $midterm_performance_1 + $midterm_performance_2;
 $midterm_performance_base = $midterm_performance_total_score / 40 * 40 + 60;
-$midterm_written_test_base = $midterm_written_test / 30 * 40 + 60;
+$midterm_written_test_base = $midterm_written_test / 70 * 40 + 60;
 
 $midterm_output_weight = $midterm_output_base * 0.40;
 $midterm_performance_weight = $midterm_performance_base * 0.40;
@@ -222,7 +222,7 @@ $prefinal_performance_total_score = $prefinal_performance_1 + $prefinal_performa
 
 $prefinal_output_base = $prefinal_output_total_score / 40 * 40 + 60; //ok
 $prefinal_performance_base = $prefinal_performance_total_score / 40 * 40 + 60; //ok
-$prefinal_written_test_base = $prefinal_written_test / 30 * 40 + 60; //ok
+$prefinal_written_test_base = $prefinal_written_test / 70 * 40 + 60; //ok
 
 $prefinal_output_weight = $prefinal_output_base * 0.40; //ok
 $prefinal_performance_weight = $prefinal_performance_base * 0.40; //ok
@@ -249,35 +249,35 @@ $prefinal_grade = $midterm_grade * 0.3 + $prefinal_3rd_quarter * 0.7;
     $final_performance_total_score = $final_performance_1 + $final_performance_2;
     $final_performance_base = $final_performance_total_score / 40 * 40 + 60;
     $final_performance_weight = $final_performance_base * 0.40;
-    $final_written_test_base = $final_written_test / 30 * 40 + 60;
+    $final_written_test_base = $final_written_test / 70 * 40 + 60;
     $final_written_test_weight = $final_written_test_base * 0.20;
     $final_4th_quarter = $final_output_weight + $final_performance_weight + $final_written_test_weight;
     $final_grade = $prefinal_grade * 0.3 + $final_4th_quarter * 0.7;
 
 
     switch (true) {
-      case ($final_grade >= 74.5 && $final_grade <= 76.4):
+      case ($final_grade >= 74.5 && $final_grade <= 76.49):
           $final_grade_equivalent = "3";
           break;
-      case ($final_grade >= 76.5 && $final_grade <= 79.4):
+      case ($final_grade >= 76.5 && $final_grade <= 79.49):
           $final_grade_equivalent = "2.75";
           break;
-      case ($final_grade >= 79.5 && $final_grade <= 82.4):
+      case ($final_grade >= 79.5 && $final_grade <= 82.49):
           $final_grade_equivalent = "2.5";
           break;
-      case ($final_grade >= 82.5 && $final_grade <= 85.4):
+      case ($final_grade >= 82.5 && $final_grade <= 85.49):
           $final_grade_equivalent = "2.25";
           break;
-      case ($final_grade >= 85.5 && $final_grade <= 88.4):
+      case ($final_grade >= 85.5 && $final_grade <= 88.49):
           $final_grade_equivalent = "2";
           break;
-      case ($final_grade >= 88.5 && $final_grade <= 91.4):
+      case ($final_grade >= 88.5 && $final_grade <= 91.49):
           $final_grade_equivalent = "1.75";
           break;
-      case ($final_grade >= 91.5 && $final_grade <= 94.4):
+      case ($final_grade >= 91.5 && $final_grade <= 94.49):
           $midterm_grade_equivalent = "1.5";
           break;
-      case ($final_grade >= 94.5 && $final_grade <= 97.4):
+      case ($final_grade >= 94.5 && $final_grade <= 97.49):
           $final_grade_equivalent = "1.25";
           break;
       case ($final_grade >= 97.5 && $final_grade <= 100):
@@ -330,10 +330,10 @@ $prefinal_grade = $midterm_grade * 0.3 + $prefinal_3rd_quarter * 0.7;
 <td><a class="text-primary"><?php echo $final_written_test; ?></a></td> 
 <td><a class="text-primary"><?php echo number_format((float)$final_written_test_base,2,".",""); ?></a></td> 
 <td><a class="text-primary"><?php echo number_format((float)$final_written_test_weight,2,".",""); ?></a></td> 
-<td><a class="text-primary"><?php echo number_format((float)$final_4th_quarter,2,".",""); ?></a></td> 
-<td><a class="<?php if($final_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$final_grade,2,".",""); ?></a></td> 
-<td><a class="<?php if($final_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $final_grade_equivalent; ?></a></td> 
-<td><a class="<?php if($final_grade_remarks == 'Passed'){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $final_grade_remarks; ?></a></td> 
+<td><center><a class="text-primary"><?php echo number_format((float)$final_4th_quarter,2,".",""); ?></a></center></td> 
+<td><center><a class="<?php if($final_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$final_grade,2,".",""); ?></a></center></td> 
+<td><center><a class="<?php if($final_grade >= 74.5){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $final_grade_equivalent; ?></a></center></td> 
+<td><center><a class="<?php if($final_grade_remarks == 'Passed'){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $final_grade_remarks; ?></a></center></td> 
 </tr>
 
 <?php
