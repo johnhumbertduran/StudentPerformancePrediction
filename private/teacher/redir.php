@@ -596,6 +596,53 @@ switch (true) {
       
       // }
 
+      if(!empty($_POST[$_GET["redir"]."_output_1"])){
+        $output_1_grade_post = $_POST[$_GET["redir"]."_output_1"];
+        $output_1_grade = $_GET["redir"]."_output_1";
+        
+          // echo "<script>alert('hay');</script>";
+        mysqli_query($connections, "UPDATE $grading SET $output_1_grade='$output_1_grade_post'
+        WHERE student_no=$student_no");
+      }
+
+      if(!empty($_POST[$_GET["redir"]."_output_2"])){
+        $output_2_grade_post = $_POST[$_GET["redir"]."_output_2"];
+        $output_2_grade = $_GET["redir"]."_output_2";
+        
+          // echo "<script>alert('hay');</script>";
+        mysqli_query($connections, "UPDATE $grading SET $output_2_grade='$output_2_grade_post'
+        WHERE student_no=$student_no");
+      }
+
+        if(!empty($_POST[$_GET["redir"]."_performance_1"])){
+          $performance_1_grade_post = $_POST[$_GET["redir"]."_performance_1"];
+          $performance_1_grade = $_GET["redir"]."_performance_1";
+          
+            // echo "<script>alert('hay');</script>";
+          mysqli_query($connections, "UPDATE $grading SET $performance_1_grade='$performance_1_grade_post'
+          WHERE student_no=$student_no");
+        }
+
+          if(!empty($_POST[$_GET["redir"]."_performance_2"])){
+            $performance_2_grade_post = $_POST[$_GET["redir"]."_performance_2"];
+            $performance_2_grade = $_GET["redir"]."_performance_2";
+            
+              // echo "<script>alert('hay');</script>";
+            mysqli_query($connections, "UPDATE $grading SET $performance_2_grade='$performance_2_grade_post'
+            WHERE student_no=$student_no");
+          }
+
+            if(!empty($_POST[$_GET["redir"]."_written_test"])){
+              $written_test_grade_post = $_POST[$_GET["redir"]."_written_test"];
+              $written_test_grade = $_GET["redir"]."_written_test";
+              
+                // echo "<script>alert('hay');</script>";
+              mysqli_query($connections, "UPDATE $grading SET $written_test_grade='$written_test_grade_post'
+              WHERE student_no=$student_no");
+            }
+                echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
+        
+
   }
 
 ?>
@@ -644,7 +691,7 @@ switch (true) {
 
 
   <tr>
-  <td class="w-50">
+  <td class="w-75">
   <label for="<?php echo $_GET["redir"]; ?>_performance_1" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Performance 1: &nbsp;</label>
   </td>
   <td class="w-25">
@@ -657,7 +704,7 @@ switch (true) {
 
 
   <tr>
-  <td class="w-50">
+  <td class="w-75">
   <label for="<?php echo $_GET["redir"]; ?>_performance_2" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Performance 2: &nbsp;</label>
   </td>
   <td class="w-25">
@@ -686,7 +733,7 @@ switch (true) {
   
   <div class="card-footer bg-info">
   
-  <!-- <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="input_grade"> -->
+  <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="input_grade">
   </form>
   </div>
 </div>

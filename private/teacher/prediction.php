@@ -553,37 +553,40 @@ if($midterm_grade>0){
 <td>
 <?php
 // echo $prefinal_prediction;
-if($prefinal_prediction>0){
-  echo "<h6>".$prefinal_prediction."</h6>";
-}else{
-  if($prefinal_grade>0){
-    if($prefinal_status > 0){
-      echo $prefinal_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#prefinal$student_no'><b>$prefinal_status</b><sup>";
-    }else{
-      echo $prefinal_grade;
-    }
+
+
+if($prefinal_grade>0){
+  if($prefinal_status > 0){
+    echo $prefinal_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#prefinal$student_no'><b>$prefinal_status</b><sup>";
   }else{
     echo $prefinal_grade;
   }
+}else{
+  if($prefinal_prediction>0){
+    echo "<h6>".$prefinal_prediction."</h6>";
+  }
 }
+
+
 ?>
 </td>
 
 <td>
 <?php
-if($final_prediction>0){
-  echo "<h6>".$final_prediction."</h6>";
-}else{
-  if($final_grade>0){
-    if($final_status > 0){
-      echo $final_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#final$student_no'><b>$final_status</b><sup>";
-    }else{
-      echo $final_grade;
-    }
+
+
+if($final_grade>0){
+  if($final_status > 0){
+    echo $final_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#final$student_no'><b>$final_status</b><sup>";
   }else{
     echo $final_grade;
   }
+}else{
+  if($final_prediction>0){
+    echo "<h6>".$final_prediction."</h6>";
+  }
 }
+
 ?>
 </td>
 <td>
@@ -600,20 +603,20 @@ if($final_prediction>0){
 // }else{
 //   echo "---";
 // }
-if($final_prediction>0){
-  $average = $final_prediction;
-  echo "<h6>".$final_prediction."</h6>";
-}else{
+
+
+if($final_grade>0){
   $average = $final_grade;
 
-  if($final_grade>0){
-    // if($final_status > 0){
-      // echo $final_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#final$student_no'><b>$final_status</b><sup>";
-    // }else{
-      echo $final_grade;
-    // }
-  }else{
+  // if($final_status > 0){
+    // echo $final_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#final$student_no'><b>$final_status</b><sup>";
+  // }else{
     echo $final_grade;
+  // }
+}else{
+  if($final_prediction>0){
+    $average = $final_prediction;
+    echo "<h6>".$final_prediction."</h6>";
   }
 }
 ?>
@@ -625,28 +628,28 @@ switch (true) {
     // case ($average <= 74.4):
     //     $equivalent = "5";
     //     break;
-    case ($average >= 74.5 && $average <= 76.4):
+    case ($average >= 74.5 && $average <= 76.49):
         $equivalent = "3";
         break;
-    case ($average >= 76.5 && $average <= 79.4):
+    case ($average >= 76.5 && $average <= 79.49):
         $equivalent = "2.75";
         break;
-    case ($average >= 79.5 && $average <= 82.4):
+    case ($average >= 79.5 && $average <= 82.49):
         $equivalent = "2.5";
         break;
-    case ($average >= 82.5 && $average <= 85.4):
+    case ($average >= 82.5 && $average <= 85.49):
         $equivalent = "2.25";
         break;
-    case ($average >= 85.5 && $average <= 88.4):
+    case ($average >= 85.5 && $average <= 88.49):
         $equivalent = "2";
         break;
-    case ($average >= 88.5 && $average <= 91.4):
+    case ($average >= 88.5 && $average <= 91.49):
         $equivalent = "1.75";
         break;
-    case ($average >= 91.5 && $average <= 94.4):
+    case ($average >= 91.5 && $average <= 94.49):
         $equivalent = "1.5";
         break;
-    case ($average >= 94.5 && $average <= 97.4):
+    case ($average >= 94.5 && $average <= 97.49):
         $equivalent = "1.25";
         break;
     case ($average >= 97.5 && $average <= 100):
@@ -661,13 +664,17 @@ if($average > 0 && $average <= 74.4){
   $equivalent = "5";
 }
 
-if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
- echo "<h6>".$equivalent."</h6>"; 
- }elseif(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_prediction>0)){
-  $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_prediction) / 4;
-  echo "<h6>".$equivalent."</h6>";
+
+
+ if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_grade>0)){
+  echo $equivalent; 
  }else{
- echo $equivalent; 
+  if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
+    echo "<h6>".$equivalent."</h6>"; 
+    }elseif(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_prediction>0)){
+     // $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_prediction) / 4;
+     echo "<h6>".$equivalent."</h6>";
+    }
  }
 
  ?>

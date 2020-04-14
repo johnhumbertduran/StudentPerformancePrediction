@@ -80,6 +80,8 @@ $counter_1_75 = 0;
 $counter_1_5 = 0;
 $counter_1_25 = 0;
 $counter_1 = 0;
+$counter_passed = 0;
+$counter_failed = 0;
 
 $prelim_qry = mysqli_query($connections, "SELECT * FROM prelim1 ");
 $midterm_qry = mysqli_query($connections, "SELECT * FROM midterm1 ");
@@ -258,35 +260,35 @@ while($row_prelim = mysqli_fetch_assoc($prelim_qry)){
      // case ($average <= 74.4):
      //     $equivalent = "5";
      //     break;
-     case ($average >= 74.5 && $average <= 76.4):
+     case ($average >= 74.5 && $average <= 76.49):
          $equivalent = "3";
          $counter_3++;
          break;
-     case ($average >= 76.5 && $average <= 79.4):
+     case ($average >= 76.5 && $average <= 79.49):
          $equivalent = "2.75";
          $counter_2_75++;
          break;
-     case ($average >= 79.5 && $average <= 82.4):
+     case ($average >= 79.5 && $average <= 82.49):
          $equivalent = "2.5";
          $counter_2_5++;
          break;
-     case ($average >= 82.5 && $average <= 85.4):
+     case ($average >= 82.5 && $average <= 85.49):
          $equivalent = "2.25";
          $counter_2_25++;
          break;
-     case ($average >= 85.5 && $average <= 88.4):
+     case ($average >= 85.5 && $average <= 88.49):
          $equivalent = "2";
          $counter_2++;
          break;
-     case ($average >= 88.5 && $average <= 91.4):
+     case ($average >= 88.5 && $average <= 91.49):
          $equivalent = "1.75";
          $counter_1_75++;
          break;
-     case ($average >= 91.5 && $average <= 94.4):
+     case ($average >= 91.5 && $average <= 94.49):
          $equivalent = "1.5";
          $counter_1_5++;
          break;
-     case ($average >= 94.5 && $average <= 97.4):
+     case ($average >= 94.5 && $average <= 97.49):
          $equivalent = "1.25";
          $counter_1_25++;
          break;
@@ -304,6 +306,19 @@ while($row_prelim = mysqli_fetch_assoc($prelim_qry)){
    $counter_5++;
 
  }
+
+ 
+if($equivalent > 0 && $equivalent <= 3){
+  // $remarks = "Passed";
+  $counter_passed++;
+}elseif($equivalent == 5){
+  // $remarks = "Failed";
+  $counter_failed++;
+}
+
+$total_passed = $counter_passed / ( $counter_passed + $counter_failed);
+$total_failed = $counter_failed / ( $counter_passed + $counter_failed);
+
 
  
 //  if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
@@ -341,35 +356,85 @@ $dataPoints = array(
 	array("x"=> 90, "y"=> $counter_3, "label"=> "3"),
 	array("x"=> 100, "y"=> $counter_5, "label"=> "5"),
 );
+
+$pieChartDataPoints = array(
+	array("y"=> number_format((float)$total_passed,2,".",""), "label"=> "Passed", "name"=> "Passed", "indexLabelFontColor"=> "green", "exploded"=> "true" ),
+	array("y"=> number_format((float)$total_failed,2,".",""), "label"=> "Failed", "name"=> "Failed", "indexLabelFontColor"=> "red"),
+);
 	
 ?>
 
+<br>
 
-<div id="chartContainer" style="height: 370px; width: 95%;"></div>
+<div id="barChartContainerFirstSem" style="height: 370px; width: 95%;"></div>
  
+<br>
+<hr>
+<br>
+
+<div id="pieChartContainer" style="height: 300px; width: 95%;"></div>
 
  
 <script>
 window.onload = function () {
  
-var chart = new CanvasJS.Chart("chartContainer", {
+var barChart = new CanvasJS.Chart("barChartContainerFirstSem", {
 	animationEnabled: true,
 	exportEnabled: true,
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Overall Predicted Student's Performance"
+    fontColor: "red",
+		text: "Overall Predicted Student's Performance First Semester"
 	},
 	data: [{
 		type: "column", //change type to bar, line, area, pie, etc
 		indexLabel: "{y}", //Shows y value on all Data Points
-		indexLabelFontColor: "#5A5757",
-		indexLabelPlacement: "outside",   
+		indexLabelFontColor: /* "#5A5757", */ "#fff",
+    indexLabelFontWeight: "bold",
+    indexLabelFontSize: 16,
+		indexLabelPlacement: "inside",   
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	}]
 });
-chart.render();
+barChart.render();
+
+
+var pieChart = new CanvasJS.Chart("pieChartContainer", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "Pie Chart: Pass and Failure Percentage",
+    fontColor: "green"
+	},
+	legend:{
+		cursor: "pointer",
+		itemclick: explodePie
+	},
+	data: [{
+		type: "pie",
+		showInLegend: true,
+		toolTipContent: "{label}: <strong>{y}%</strong>",
+		indexLabel: "{label} - {y}%",
+    // indexLabelFontWeight: "bold",
+    indexLabelFontSize: 15,
+    indexLabelLineThickness: 2,
+		dataPoints: <?php echo json_encode($pieChartDataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+pieChart.render();
+}
+
+function explodePie (e) {
+	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+	} else {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+	}
+	e.pieChart.render();
  
 }
+
+
 </script>
 
  <script src="../../canvasjs-2.3.2/canvasjs.min.js"></script>
