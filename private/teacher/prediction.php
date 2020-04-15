@@ -333,7 +333,7 @@ $prefinal_written_test = $row_prefinal["prefinal_written_test"]; //ok
 $prefinal_prediction = $row_prefinal["prefinal_prediction"];
 
 if($prefinal_output_1 <= 0 && $prefinal_output_2 <= 0 &&
-   $prefinal_performance_1 <= 0 && $prefinal_performance_1 <= 0 &&
+   $prefinal_performance_1 <= 0 && $prefinal_performance_2 <= 0 &&
    $prefinal_written_test <= 0){
   
     $prefinal_grade = 0;
@@ -369,7 +369,7 @@ $final_prediction = $row_final["final_prediction"];
 
 
 if($final_output_1 <= 0 && $final_output_2 <= 0 &&
-   $final_performance_1 <= 0 && $final_performance_1 <= 0 &&
+   $final_performance_1 <= 0 && $final_performance_2 <= 0 &&
    $final_written_test <= 0){
   
     $final_grade = 0;
