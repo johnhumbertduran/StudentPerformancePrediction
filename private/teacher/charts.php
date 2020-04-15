@@ -72,7 +72,19 @@ include('pieChartPassAndFailure.php');
 <hr>
 
 <?php
-include('overallStudentsPerfomanceByCourse.php');
+include('overallStudentsPerfomanceBSCS.php');
+?>
+
+<hr>
+
+<?php
+include('overallStudentsPerfomanceBSIT.php');
+?>
+
+<hr>
+
+<?php
+include('midtermVSfinal.php');
 ?>
 
 
@@ -149,6 +161,49 @@ var barChart_BSCS = new CanvasJS.Chart("barChartContainer_BSCS", {
 	}]
 });
 barChart_BSCS.render();
+
+
+var barChart_BSIT = new CanvasJS.Chart("barChartContainer_BSIT", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+    fontColor: "red",
+		text: "Overall Student's Performance in a BSIT"
+	},
+	data: [{
+		type: "column", //change type to bar, line, area, pie, etc
+		indexLabel: "{y}", //Shows y value on all Data Points
+		indexLabelFontColor: /* "#5A5757", */ "#fff",
+    indexLabelFontWeight: "bold",
+    indexLabelFontSize: 16,
+		indexLabelPlacement: "inside",   
+		dataPoints: <?php echo json_encode($dataPoints_BSIT, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+barChart_BSIT.render();
+
+
+var midtermVSfinalChart = new CanvasJS.Chart("midtermVSfinalChartContainer", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+    fontColor: "red",
+		text: "Overall Predicted Student's Performance First Semester"
+	},
+	data: [{
+		type: "column", //change type to bar, line, area, pie, etc
+		indexLabel: "{y}", //Shows y value on all Data Points
+		indexLabelFontColor: /* "#5A5757", */ "#fff",
+    indexLabelFontWeight: "bold",
+    indexLabelFontSize: 16,
+		indexLabelPlacement: "inside",   
+		dataPoints: <?php echo json_encode($dataPointsMidtermVSfinal, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+midtermVSfinalChart.render();
+
 
 }
 
