@@ -25,10 +25,10 @@ $counter_1 = 0;
 $counter_passed = 0;
 $counter_failed = 0;
 
-$prelim_qry = mysqli_query($connections, "SELECT * FROM prelim1 ");
-$midterm_qry = mysqli_query($connections, "SELECT * FROM midterm1 ");
-$prefinal_qry = mysqli_query($connections, "SELECT * FROM prefinal1 ");
-$final_qry = mysqli_query($connections, "SELECT * FROM final1 ");
+$prelim_qry = mysqli_query($connections, "SELECT * FROM prelim2 ");
+$midterm_qry = mysqli_query($connections, "SELECT * FROM midterm2 ");
+$prefinal_qry = mysqli_query($connections, "SELECT * FROM prefinal2 ");
+$final_qry = mysqli_query($connections, "SELECT * FROM final2 ");
 $students_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE account_type='2' ");
 
 while($row_prelim = mysqli_fetch_assoc($prelim_qry)){
@@ -254,19 +254,6 @@ while($row_prelim = mysqli_fetch_assoc($prelim_qry)){
  }
 
  
-if($equivalent > 0 && $equivalent <= 3){
-  // $remarks = "Passed";
-  $counter_passed++;
-}elseif($equivalent == 5){
-  // $remarks = "Failed";
-  $counter_failed++;
-}
-
-$total_passed = $counter_passed / ( $counter_passed + $counter_failed);
-$total_failed = $counter_failed / ( $counter_passed + $counter_failed);
-
-
- 
 //  if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
 //   echo "<h6>".$equivalent.",</h6>"; 
 
@@ -290,7 +277,7 @@ $total_failed = $counter_failed / ( $counter_passed + $counter_failed);
 
 // echo "hay".$counter_5;
  
-$dataPointsFirstSemester = array(
+$dataPointsSecondSemester = array(
 	array("x"=> 10, "y"=> $counter_1, "label"=> "1"),
 	array("x"=> 20, "y"=> $counter_1_25, "label"=> "1.25"),
 	array("x"=> 30, "y"=> $counter_1_5, "label"=> "1.5"),
@@ -308,6 +295,6 @@ $dataPointsFirstSemester = array(
 
 <br>
 
-<div id="barChartContainerFirstSem" style="height: 370px; width: 95%;"></div>
+<div id="barChartContainerSecondSem" style="height: 370px; width: 100%;"></div>
  
 

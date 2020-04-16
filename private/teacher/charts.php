@@ -58,10 +58,28 @@ include("../bins/teacher_nav.php");
 <!-- <h1 class="py-3 text-info px-1"><font color="red">Student ID sa Register</font></h1> -->
 </center>
 
+<div>
 
+<select name="overAllSemester" id="overAllSemester" class="form-control col-2 ml-3 bg-info text-white" onchange="semester()">
+<option value="firstSemester">First Smester</option>
+<option value="secondSemester">Second Smester</option>
+</select>
+
+<input type="hidden" id="overAllSemesterText">
+
+<div id="firstSemester" style="width:100%;">
 <?php
 include('overallPredictedStudentsPerformanceFirstSemesterBarChart.php');
 ?>
+</div>
+
+<div id="secondSemester" style="width:100%;">
+<?php
+include('overallPredictedStudentsPerformanceSecondSemesterBarChart.php');
+?>
+</div>
+
+</div>
 
 <hr>
 
@@ -71,16 +89,27 @@ include('pieChartPassAndFailure.php');
 
 <hr>
 
+
+<div>
+
+<select name="overAllSemester" id="overAllSemester" class="form-control col-2 ml-3 bg-info text-white">
+<option value="BSCS">BSCS</option>
+<option value="BSIT">BSIT</option>
+</select>
+
+<input type="text" value="">
+
 <?php
 include('overallStudentsPerfomanceBSCS.php');
 ?>
-
-<hr>
 
 <?php
 include('overallStudentsPerfomanceBSIT.php');
 ?>
 
+</div>
+
+<br>
 <hr>
 
 <?php
@@ -94,7 +123,7 @@ include('midtermVSfinal.php');
 window.onload = function () {
 
   
-var barChart = new CanvasJS.Chart("barChartContainerFirstSem", {
+var barChartFirstSemester = new CanvasJS.Chart("barChartContainerFirstSem", {
 	animationEnabled: true,
 	exportEnabled: true,
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
@@ -109,12 +138,34 @@ var barChart = new CanvasJS.Chart("barChartContainerFirstSem", {
     indexLabelFontWeight: "bold",
     indexLabelFontSize: 16,
 		indexLabelPlacement: "inside",   
-		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+		dataPoints: <?php echo json_encode($dataPointsFirstSemester, JSON_NUMERIC_CHECK); ?>
 	}]
 });
-barChart.render();
+barChartFirstSemester.render();
 
+setTimeout(function(){
+  
+var barChartSecondSemester = new CanvasJS.Chart("barChartContainerSecondSem", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+    fontColor: "red",
+		text: "Overall Predicted Student's Performance Second Semester"
+	},
+	data: [{
+		type: "column", //change type to bar, line, area, pie, etc
+		indexLabel: "{y}", //Shows y value on all Data Points
+		indexLabelFontColor: /* "#5A5757", */ "#fff",
+    indexLabelFontWeight: "bold",
+    indexLabelFontSize: 16,
+		indexLabelPlacement: "inside",   
+		dataPoints: <?php echo json_encode($dataPointsSecondSemester, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+barChartSecondSemester.render();
 
+},2000);
 
 
 var pieChart = new CanvasJS.Chart("pieChartContainer", {
@@ -187,19 +238,38 @@ barChart_BSIT.render();
 var midtermVSfinalChart = new CanvasJS.Chart("midtermVSfinalChartContainer", {
 	animationEnabled: true,
 	exportEnabled: true,
+	axisX:{
+    labelAngle: -90,
+ 	},
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
     fontColor: "red",
 		text: "Overall Predicted Student's Performance First Semester"
 	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor: "pointer",
+		itemclick: toggleDataSeries
+	},
 	data: [{
 		type: "column", //change type to bar, line, area, pie, etc
 		indexLabel: "{y}", //Shows y value on all Data Points
+		indexLabelOrientation: "vertical",
 		indexLabelFontColor: /* "#5A5757", */ "#fff",
-    indexLabelFontWeight: "bold",
-    indexLabelFontSize: 16,
-		indexLabelPlacement: "inside",   
-		dataPoints: <?php echo json_encode($dataPointsMidtermVSfinal, JSON_NUMERIC_CHECK); ?>
+    	indexLabelFontWeight: "bold",
+    	indexLabelFontSize: 16,
+		indexLabelPlacement: "inside",
+		name: "Midterm Grade",
+		showInLegend: true, 
+		dataPoints: <?php echo json_encode($getPushData, JSON_NUMERIC_CHECK); ?>
+	},{
+		type: "column",
+		name: "Final Grade",
+		axisYType: "secondary",
+		showInLegend: true,
+		dataPoints: <?php echo json_encode($getPushData2, JSON_NUMERIC_CHECK); ?>
 	}]
 });
 midtermVSfinalChart.render();
@@ -217,13 +287,21 @@ function explodePie (e) {
  
 }
 
-
+function toggleDataSeries(e) {
+	if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	} else {
+		e.dataSeries.visible = true;
+	}
+	e.chart.render();
+}
 
 
 
 </script>
 
 <script src="../../canvasjs-2.3.2/canvasjs.min.js"></script>
+<script src="../bins/sc/charts.js"></script>
 
 
  <!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->

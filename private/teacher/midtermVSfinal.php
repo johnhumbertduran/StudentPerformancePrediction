@@ -1,7 +1,6 @@
 <!-- overallPredictedStudentsPerformanceFirstSemesterBarChart.php -->
 
 
-
 <?php
 
 
@@ -26,7 +25,8 @@ $counter_passed = 0;
 $counter_failed = 0;
 
 $countAll = 0;
-$getPushData = [];
+$getPushData = array();
+$getPushData2 = array();
 
 $prelim_qry = mysqli_query($connections, "SELECT * FROM prelim1 WHERE year='2011' ");
 $midterm_qry = mysqli_query($connections, "SELECT * FROM midterm1 WHERE year='2011' ");
@@ -43,6 +43,7 @@ while($row_prelim = mysqli_fetch_assoc($prelim_qry)){
  
   $row_students = mysqli_fetch_assoc($students_qry);
   $student_no = $row_students["student_no"];
+  $id_no = $row_students["id"];
   $lastname = $row_students["lastname"];
   $firstname = $row_students["firstname"];
   $middlename = $row_students["middlename"];
@@ -193,34 +194,29 @@ while($row_prelim = mysqli_fetch_assoc($prelim_qry)){
 
 
 
-// for($x=0; $x<=$countAll; $x++){
-    // $dataPointsMidtermVSfinal = array(
-    //     array("x"=> $countAll*10, "y"=> $countAll, "label"=> $countAll),
-    // );
-    // echo $x."<br>";
-// }
+for($x=0; $x<=$countAll; $x++){
+    $dataX = $x * 10;
+}
 
-// echo $countAll;
+$test = array("x"=> $dataX, "y"=> $midterm_grade, "label"=> $student_no, "color"=> "#537bf5" );
+$test2 = array("x"=> $dataX, "y"=> $final_grade, "label"=> $student_no, "color"=> "#f5536b" );
 
-
-array_push($getPushData, 'array("y"=> '.$midterm_grade.', "label"=> '.$student_no.'),</br>');
+array_push($getPushData, $test);
+array_push($getPushData2, $test2);
 
 }
 
-// $dataPointsMidtermVSfinal = array(
-//     ,
-// );
-print_r($getPushData);
-
-$dataPointsMidtermVSfinal = array($getPushData);
-
-// echo $dataPointsMidtermVSfinal;
-	
 ?>
 
 <br>
 
 
-<div id="midtermVSfinalChartContainer" style="height: 300px; width: 100%;"></div>
+
+<select name="midtermVSfinal" id="midtermVSfinal" class="form-control col-2 ml-3 bg-info text-white">
+<option value="select_year">Select Year</option>
+<option value="BSIT">BSIT</option>
+</select>
+
+<div id="midtermVSfinalChartContainer" style="height: 300px; width: 100%; "></div>
 
 
