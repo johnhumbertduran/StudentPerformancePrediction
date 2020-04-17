@@ -27,12 +27,33 @@ $counter_failed = 0;
 $countAll = 0;
 $getPushData = array();
 $getPushData2 = array();
+$yearData = "2011";
 
-$prelim_qry = mysqli_query($connections, "SELECT * FROM prelim1 WHERE year='2011' ");
-$midterm_qry = mysqli_query($connections, "SELECT * FROM midterm1 WHERE year='2011' ");
-$prefinal_qry = mysqli_query($connections, "SELECT * FROM prefinal1 WHERE year='2011' ");
-$final_qry = mysqli_query($connections, "SELECT * FROM final1 WHERE year='2011' ");
-$students_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE account_type='2' AND year='2011' ");
+$year_qry = mysqli_query($connections, "SELECT DISTINCT year FROM _user_tbl_ WHERE account_type='2' ");
+// $row_year1 = mysqli_fetch_assoc($year_qry);
+// while($row_year = mysqli_fetch_assoc($year_qry)){
+//     $year = $row_year["year"];
+//     // $getYear = array($year);
+//     array_push($yearData, $year);
+    
+    
+// }
+
+if(isset($_GET['vs'])){
+    $yearData = $_GET['vs'];
+}
+
+// echo implode(" ",$yearData);
+// print_r($yearData);
+// echo $year;
+
+
+
+$prelim_qry = mysqli_query($connections, "SELECT * FROM prelim1 WHERE year='$yearData'; ");
+$midterm_qry = mysqli_query($connections, "SELECT * FROM midterm1 WHERE year='$yearData'; ");
+$prefinal_qry = mysqli_query($connections, "SELECT * FROM prefinal1 WHERE year='$yearData'; ");
+$final_qry = mysqli_query($connections, "SELECT * FROM final1 WHERE year='$yearData'; ");
+$students_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE account_type='2' ");
 
 while($row_prelim = mysqli_fetch_assoc($prelim_qry)){
   
@@ -44,6 +65,7 @@ while($row_prelim = mysqli_fetch_assoc($prelim_qry)){
   $row_students = mysqli_fetch_assoc($students_qry);
   $student_no = $row_students["student_no"];
   $id_no = $row_students["id"];
+  $_year_ = $row_students["year"];
   $lastname = $row_students["lastname"];
   $firstname = $row_students["firstname"];
   $middlename = $row_students["middlename"];
@@ -204,19 +226,68 @@ $test2 = array("x"=> $dataX, "y"=> $final_grade, "label"=> $student_no, "color"=
 array_push($getPushData, $test);
 array_push($getPushData2, $test2);
 
+
+// echo implode(" ",$getYear);
 }
+
 
 ?>
 
 <br>
 
+<?php
+
+// for($y=0; $y<count($yearData); $y++){
+//     // echo $y;
+    
+//     // echo implode("<br>",$yearData[1]);
+    
+//     // unset($yearData[1]);
+    
+//     // print_r($yearData);
+//     echo $yearData[$y]."</br>";
+// }
+
+?>
 
 
-<select name="midtermVSfinal" id="midtermVSfinal" class="form-control col-2 ml-3 bg-info text-white">
+
+<div id="midtermVSfinalBefore"></div>
+<br>
+<br>
+
+<select name="midtermVSfinal" id="midtermVSfinal" class="form-control col-2 ml-3 bg-info text-white" onchange="midtermVSfinal()">
 <option value="select_year">Select Year</option>
-<option value="BSIT">BSIT</option>
+
+<?php
+while($row_year = mysqli_fetch_assoc($year_qry)){
+    $year = $row_year["year"]; 
+    ?>   
+    <option value='<?php echo $year; ?>' <?php if(isset($_GET['vs'])){ if($_GET['vs'] == $year){ echo "selected"; }}?>>
+    <?php
+    echo $year;
+}
+?>
+</option>
 </select>
 
-<div id="midtermVSfinalChartContainer" style="height: 300px; width: 100%; "></div>
 
 
+<div id="midtermVSfinalChartContainer" style="height: 300px; width: 95%; "></div>
+
+
+<script>
+
+function midtermVSfinal(){
+    var midtermVSfinal = document.getElementById("midtermVSfinal");
+    var selected_midtermVSfinal = midtermVSfinal.options[midtermVSfinal.selectedIndex].value;
+  
+    window.location.href = "?vs="+selected_midtermVSfinal;
+
+    // alert("hay");
+  }
+
+  
+  window.location.href = "#midtermVSfinalBefore";
+
+</script>

@@ -295,6 +295,6 @@ $dataPointsSecondSemester = array(
 
 <br>
 
-<div id="barChartContainerSecondSem" style="height: 370px; width: 100%;"></div>
+<div id="barChartContainerSecondSem" style="height: 370px; width: 95%;"></div>
  
 

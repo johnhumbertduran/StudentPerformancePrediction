@@ -47,6 +47,23 @@ if(isset($_SESSION["username"])){
   border: 1.5px solid white;
   border-radius: 6px;
 }
+
+.secondSemester{
+	display: none;
+}
+
+.bsit{
+	display: none;
+}
+
+.displayBlock{
+	display: block;
+}
+
+.displayNone{
+	display: none;
+}
+
 </style>
 
 <?php
@@ -60,20 +77,23 @@ include("../bins/teacher_nav.php");
 
 <div>
 
+<div id="overAllSemesterBefore"></div>
+<br>
+
 <select name="overAllSemester" id="overAllSemester" class="form-control col-2 ml-3 bg-info text-white" onchange="semester()">
-<option value="firstSemester">First Smester</option>
-<option value="secondSemester">Second Smester</option>
+<option value="firstSemester">First Semester</option>
+<option value="secondSemester">Second Semester</option>
 </select>
 
-<input type="hidden" id="overAllSemesterText">
+<input type="hidden" id="overAllSemesterText" value="<?php if(isset($_GET['sem'])){ echo $_GET['sem'];} ?>">
 
-<div id="firstSemester" style="width:100%;">
+<div id="firstSemester" class="firstSemester">
 <?php
 include('overallPredictedStudentsPerformanceFirstSemesterBarChart.php');
 ?>
 </div>
 
-<div id="secondSemester" style="width:100%;">
+<div id="secondSemester" class="secondSemester">
 <?php
 include('overallPredictedStudentsPerformanceSecondSemesterBarChart.php');
 ?>
@@ -92,25 +112,33 @@ include('pieChartPassAndFailure.php');
 
 <div>
 
-<select name="overAllSemester" id="overAllSemester" class="form-control col-2 ml-3 bg-info text-white">
+<div id="overAllByCourseBefore"></div>
+<br>
+<br>
+<select name="overAllByCourse" id="overAllByCourse" class="form-control col-2 ml-3 bg-info text-white" onchange="course()">
 <option value="BSCS">BSCS</option>
 <option value="BSIT">BSIT</option>
 </select>
 
-<input type="text" value="">
+<input type="hidden" id="overAllByCourseText" value="<?php if(isset($_GET['course'])){ echo $_GET['course'];} ?>">
 
+<div id="bscs" class="bscs">
 <?php
 include('overallStudentsPerfomanceBSCS.php');
 ?>
+</div>
 
+<div id="bsit" class="bsit">
 <?php
 include('overallStudentsPerfomanceBSIT.php');
 ?>
+</div>
 
 </div>
 
 <br>
 <hr>
+
 
 <?php
 include('midtermVSfinal.php');
@@ -121,6 +149,45 @@ include('midtermVSfinal.php');
 
  
 window.onload = function () {
+
+	var overAllSemesterText = document.getElementById("overAllSemesterText");
+	var overAllSemester = document.getElementById("overAllSemester");
+	var firstSemester = document.getElementById("firstSemester");
+	var secondSemester = document.getElementById("secondSemester");
+	var secondSemesterValue = document.getElementById("secondSemester").value;
+
+
+	if(overAllSemesterText.value == "secondSemester"){
+    // alert("hay");
+    overAllSemester.value = "secondSemester";
+    secondSemester.classList.add("displayBlock");
+	firstSemester.classList.add("displayNone");
+    window.location.href = "#overAllSemesterBefore";
+	}
+
+	if(overAllSemesterText.value == "firstSemester"){
+    window.location.href = "#overAllSemesterBefore";
+	}
+
+
+	var overAllByCourseText = document.getElementById("overAllByCourseText");
+	var overAllByCourse = document.getElementById("overAllByCourse");
+	var bscs = document.getElementById("bscs");
+	var bsit = document.getElementById("bsit");
+
+
+	if(overAllByCourseText.value == "BSIT"){
+    // alert("hay");
+    overAllByCourse.value = "BSIT";
+    bsit.classList.add("displayBlock");
+	bscs.classList.add("displayNone");
+    window.location.href = "#overAllByCourseBefore";
+	}
+
+	if(overAllByCourseText.value == "BSCS"){
+    // alert("hay");
+    window.location.href = "#overAllByCourseBefore";
+	}
 
   
 var barChartFirstSemester = new CanvasJS.Chart("barChartContainerFirstSem", {
@@ -143,7 +210,8 @@ var barChartFirstSemester = new CanvasJS.Chart("barChartContainerFirstSem", {
 });
 barChartFirstSemester.render();
 
-setTimeout(function(){
+
+// setTimeout(function(){
   
 var barChartSecondSemester = new CanvasJS.Chart("barChartContainerSecondSem", {
 	animationEnabled: true,
@@ -163,9 +231,10 @@ var barChartSecondSemester = new CanvasJS.Chart("barChartContainerSecondSem", {
 		dataPoints: <?php echo json_encode($dataPointsSecondSemester, JSON_NUMERIC_CHECK); ?>
 	}]
 });
+
 barChartSecondSemester.render();
 
-},2000);
+// },1000);
 
 
 var pieChart = new CanvasJS.Chart("pieChartContainer", {
@@ -199,7 +268,7 @@ var barChart_BSCS = new CanvasJS.Chart("barChartContainer_BSCS", {
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
     fontColor: "red",
-		text: "Overall Student's Performance in a BSCS"
+		text: "Overall Student's Performance of BSCS"
 	},
 	data: [{
 		type: "column", //change type to bar, line, area, pie, etc
@@ -214,13 +283,15 @@ var barChart_BSCS = new CanvasJS.Chart("barChartContainer_BSCS", {
 barChart_BSCS.render();
 
 
+// setTimeout(function(){
+
 var barChart_BSIT = new CanvasJS.Chart("barChartContainer_BSIT", {
 	animationEnabled: true,
 	exportEnabled: true,
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
     fontColor: "red",
-		text: "Overall Student's Performance in a BSIT"
+		text: "Overall Student's Performance of BSIT"
 	},
 	data: [{
 		type: "column", //change type to bar, line, area, pie, etc
@@ -232,7 +303,10 @@ var barChart_BSIT = new CanvasJS.Chart("barChartContainer_BSIT", {
 		dataPoints: <?php echo json_encode($dataPoints_BSIT, JSON_NUMERIC_CHECK); ?>
 	}]
 });
+
 barChart_BSIT.render();
+
+// },1000);
 
 
 var midtermVSfinalChart = new CanvasJS.Chart("midtermVSfinalChartContainer", {

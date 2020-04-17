@@ -311,3 +311,10 @@ $dataPoints_BSIT = array(
 <div id="barChartContainer_BSIT" style="height: 370px; width: 95%;"></div>
  
 
+
+<script>
+var barChartContainer_BSIT = document.getElementById("barChartContainer_BSIT");
+
+barChartContainer_BSIT.width = window.innerWidth;
+
+</script>
