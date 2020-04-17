@@ -285,9 +285,15 @@ function midtermVSfinal(){
     window.location.href = "?vs="+selected_midtermVSfinal;
 
     // alert("hay");
+    
   }
 
   
-  window.location.href = "#midtermVSfinalBefore";
 
 </script>
+
+<?php
+if(isset($_GET["vs"])){
+    echo "<script>window.location.href = '#midtermVSfinalBefore';</script>";
+}
+?>

@@ -90,11 +90,11 @@ if(isset($_GET["_s_e_"])){
 <div class="table-responsive table_table mt-3">
 <table border="1" class="table table-hover">
     <thead>
-    <tr><th class="px-3" colspan="2"></th><th class="px-3 text-center bg-success text-white" colspan="17">Preliminary Period</th></tr><!-- Preliminary Here -->
+    <tr><th class="px-3" colspan="2"></th><th class="px-3 text-center bg-success text-white" colspan="18">Preliminary Period</th></tr><!-- Preliminary Here -->
 
-    <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th><!-- <th class="px-5 text-center bg-success text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-success text-white" colspan="5">Output</th><th class="px-5 text-center bg-success text-white" colspan="5">Performance</th><th class="px-5 text-cente bg-success text-white" colspan="3">Major&nbsp;Exam</th><th class="px-2 text-center bg-success text-white ">Prelim&nbsp;Grade</th><th class="px-2 text-center bg-success text-white ">Equivalent</th></tr><!-- Preliminary Here -->
+    <tr><th class="px-3">Student&nbsp;ID</th><th class="px-3">Student&nbsp;Name</th><!-- <th class="px-5 text-center bg-success text-white" colspan="12">Formative Assessment</th> --><th class="px-5 text-center bg-success text-white" colspan="5">Output</th><th class="px-5 text-center bg-success text-white" colspan="5">Performance</th><th class="px-5 text-cente bg-success text-white" colspan="3">Major&nbsp;Exam</th><th class="px-2 text-center bg-success text-white ">Prelim&nbsp;Grade</th><th class="px-2 text-center bg-success text-white ">Equivalent</th><th class="px-5 text-center bg-success text-white " colspan="2">Action</th></tr><!-- Preliminary Here -->
 
-    <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th><!-- <th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">100</th><th class="bg-success text-white">60</th> --><th class="bg-success text-white">20</th><th class="bg-success text-white">20</th><th class="bg-success text-white">40</th><th class="bg-success text-white">60</th><th class="bg-success text-white">0.40</th><th class="bg-success text-white">20</th><th class="bg-success text-white">20</th><th class="bg-success text-white">40</th><th class="bg-success text-white">60</th><th class="bg-success text-white">0.40</th><th class="bg-success text-white">70</th><th class="bg-success text-white">60</th><th class="bg-success text-white">0.20</th><th class="bg-success text-white"></th><th class="bg-success text-white"></th></tr><!-- Preliminary Here -->
+    <tr><th class="px-3"></th><th class="px-3">Highest&nbsp;Possible&nbsp;Score</th><!-- <th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">10</th><th class="bg-success text-white">100</th><th class="bg-success text-white">60</th> --><th class="bg-success text-white">20</th><th class="bg-success text-white">20</th><th class="bg-success text-white">40</th><th class="bg-success text-white">60</th><th class="bg-success text-white">0.40</th><th class="bg-success text-white">20</th><th class="bg-success text-white">20</th><th class="bg-success text-white">40</th><th class="bg-success text-white">60</th><th class="bg-success text-white">0.40</th><th class="bg-success text-white">70</th><th class="bg-success text-white">60</th><th class="bg-success text-white">0.20</th><th class="bg-success text-white"></th><th class="bg-success text-white"></th><th class="bg-success text-white"></th></tr><!-- Preliminary Here -->
     </thead>
 
     <tbody>
@@ -310,7 +310,7 @@ if($prelim_written_test_weight < 15){
 
 <td><center><a class="<?php if($prelim_grade >= '74.5'){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo number_format((float)$prelim_grade,2,".",""); ?></a></center></td> 
 <td><center><a class="<?php if($prelim_grade >= '74.5'){ echo 'text-success';}else{echo 'text-danger';} ?>"><?php echo $prelim_grade_equivalent; ?></a></center></td>
-<!-- <td><center><a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=<?php echo $student_no; ?>" class="btn btn-success">Input Grade</a></center></td> -->
+<td><center><a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=<?php echo $student_no; ?>" class="btn btn-success">Input Grade</a></center></td>
 </tr>
 
 
@@ -323,14 +323,6 @@ if($prelim_written_test_weight < 15){
 </table>
 </div>
 
-
-<div class="fixed-bottom">
-<a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=output1" class="btn btn-success col-sm-2 mb-3 ml-3">Output 1 Grade</a>
-<a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=output2" class="btn btn-success col-sm-2 mb-3 ml-3">Output 2 Grade</a>
-<a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=performance1" class="btn btn-success col-sm-2 mb-3 ml-3">Performance 1 Grade</a>
-<a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=performance2" class="btn btn-success col-sm-2 mb-3 ml-3">Performance 2 Grade</a>
-<a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=written_test" class="btn btn-success col-sm-2 mb-3 ml-3">Major Exam Grade</a>
-</div>
 
 <div class="fixed-top">
 <?php
@@ -395,8 +387,6 @@ if(isset($_GET["in_"])){
 }
 ?>
 </div>
-
-
 
 <input type="hidden" value="<?php echo $_GET["redir"]; ?>" id="grade_period">
 <input type="hidden" value="<?php echo $_GET["_y"]; ?>" id="year">
