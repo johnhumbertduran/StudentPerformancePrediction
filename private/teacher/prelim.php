@@ -323,6 +323,9 @@ if($prelim_written_test_weight < 15){
 </table>
 </div>
 
+<?php
+if(isset($_GET["redir"]) & isset($_GET["_y"]) & isset($_GET["_c"]) & isset($_GET["_s_e_"])){
+?>
 
 <div class="fixed-bottom">
 <a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=output1" class="btn btn-success col-sm-2 mb-3 ml-3">Output 1 Grade</a>
@@ -331,6 +334,11 @@ if($prelim_written_test_weight < 15){
 <a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=performance2" class="btn btn-success col-sm-2 mb-3 ml-3">Performance 2 Grade</a>
 <a href="?redir=prelim&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=written_test" class="btn btn-success col-sm-2 mb-3 ml-3">Major Exam Grade</a>
 </div>
+
+<?php
+}
+?>
+
 
 <div class="fixed-top">
 <?php

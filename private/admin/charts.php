@@ -21,7 +21,7 @@ if(isset($_SESSION["username"])){
     $my_info = mysqli_fetch_assoc($query_info);
     $account_type = $my_info["account_type"];
     
-    if($account_type != 3){
+    if($account_type != 1){
     
         header('Location: ../../forbidden');
     
@@ -38,7 +38,7 @@ if(isset($_SESSION["username"])){
 
 
 <center>
-<h1 class="py-3 text-info px-1">Student Performance Chart</h1>
+<h1 class="py-3 text-info px-1">Student Performance Charts</h1>
 </center>
 
 
@@ -67,7 +67,7 @@ if(isset($_SESSION["username"])){
 </style>
 
 <?php
-include("../bins/teacher_nav.php");
+include("../bins/admin_nav.php");
 ?>
 <br>
 

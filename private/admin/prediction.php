@@ -29,7 +29,7 @@ if(isset($_SESSION["username"])){
 ?>
 
 <center>
-<h1 class="py-3 text-info px-1">Student Prediction</h1>
+<h1 class="py-3 text-info px-1">Student Performance Prediction</h1>
 </center>
 
 
@@ -106,7 +106,7 @@ table tbody::-webkit-scrollbar-thumb:hover{
 </style>
 
 <?php
-include("../bins/teacher_nav.php");
+include("../bins/admin_nav.php");
 ?>
 <br>
 

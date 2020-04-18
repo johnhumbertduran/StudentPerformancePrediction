@@ -303,7 +303,7 @@ VALUES ('$student_no','$fullname','0','0','0','0','0','0','0','0','0','0','0',
     <!-- <tr><th colspan="4"><center> <h1>Registration Form</h1> </center></th></tr> -->
 
     <tr><td colspan="4"><hr></td></tr>
-<p>dash sa input butangan dahil sa validation</p>
+<!-- <p>dash sa input butangan dahil sa validation</p> -->
     <div class="form-group">
     <tr>
     <td class="label"><b><label for="student_no">Student ID:</label></b></td>

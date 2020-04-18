@@ -29,7 +29,7 @@ if(isset($_SESSION["username"])){
 ?>
 
 <center>
-<h1 class="py-3 text-info px-1">Student Prediction</h1>
+<h1 class="py-3 text-info px-1">Student Performance Prediction</h1>
 </center>
 
 
@@ -111,9 +111,9 @@ include("../bins/teacher_nav.php");
 <br>
 
 
-<h2 class="text-danger text-center">
+<!-- <h2 class="text-danger text-center">
 E SAVE DU PREDICTED NUMBERS PARA MA TAW AN IT CHART
-</h2>
+</h2> -->
 
 
 <div class="container-fluid d-inline py-5">

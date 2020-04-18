@@ -59,7 +59,8 @@ if(isset($_SESSION["username"])){
 
 
 <center>
-<h1 class="py-3 text-info px-1">Welcome <?php echo $firstname; ?>!</h1>
+<h1 class="py-3 text-info px-1">View Grades</h1>
+<!-- <h1 class="py-3 text-info px-1">Welcome <?php echo $firstname; ?>!</h1> -->
 </center>
 
 
