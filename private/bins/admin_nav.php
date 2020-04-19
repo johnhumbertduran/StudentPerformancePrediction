@@ -22,7 +22,7 @@
         <a class="nav-link pl-2" href="prediction">Prediction</a>
       </li>    
       <li class="nav-item">
-        <a class="nav-link pl-2" href="charts">View Charts</a>
+        <a class="nav-link pl-2 chart_active" href="charts">View Charts</a>
       </li>    
       <li class="nav-item register_active">
         <a class="nav-link pl-2" href="register">Register</a>
