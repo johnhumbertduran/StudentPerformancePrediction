@@ -262,8 +262,8 @@ if($equivalent > 0 && $equivalent <= 3){
   $counter_failed++;
 }
 
-$total_passed = $counter_passed / ( $counter_passed + $counter_failed);
-$total_failed = $counter_failed / ( $counter_passed + $counter_failed);
+// $total_passed = $counter_passed / ( $counter_passed + $counter_failed);
+// $total_failed = $counter_failed / ( $counter_passed + $counter_failed);
 
 
  
@@ -291,16 +291,16 @@ $total_failed = $counter_failed / ( $counter_passed + $counter_failed);
 // echo "hay".$counter_5;
  
 $dataPointsFirstSemester = array(
-	array("x"=> 10, "y"=> $counter_1, "label"=> "1"),
-	array("x"=> 20, "y"=> $counter_1_25, "label"=> "1.25"),
-	array("x"=> 30, "y"=> $counter_1_5, "label"=> "1.5"),
-	array("x"=> 40, "y"=> $counter_1_75, "label"=> "1.75"),
-	array("x"=> 50, "y"=> $counter_2, "label"=> "2"),
-	array("x"=> 60, "y"=> $counter_2_25, "label"=> "2.25"),
-	array("x"=> 70, "y"=> $counter_2_5, "label"=> "2.5"),
-	array("x"=> 80, "y"=> $counter_2_75, "label"=> "2.75"),
-	array("x"=> 90, "y"=> $counter_3, "label"=> "3"),
-	array("x"=> 100, "y"=> $counter_5, "label"=> "5"),
+	array(/* "x"=> 10,  */"y"=> $counter_1, "label"=> "1"),
+	array(/* "x"=> 20,  */"y"=> $counter_1_25, "label"=> "1.25"),
+	array(/* "x"=> 30,  */"y"=> $counter_1_5, "label"=> "1.5"),
+	array(/* "x"=> 40,  */"y"=> $counter_1_75, "label"=> "1.75"),
+	array(/* "x"=> 50,  */"y"=> $counter_2, "label"=> "2"),
+	array(/* "x"=> 60,  */"y"=> $counter_2_25, "label"=> "2.25"),
+	array(/* "x"=> 70,  */"y"=> $counter_2_5, "label"=> "2.5"),
+	array(/* "x"=> 80,  */"y"=> $counter_2_75, "label"=> "2.75"),
+	array(/* "x"=> 90,  */"y"=> $counter_3, "label"=> "3"),
+	array(/* "x"=> 100,  */"y"=> $counter_5, "label"=> "5"),
 );
 
 	

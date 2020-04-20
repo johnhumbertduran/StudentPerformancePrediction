@@ -370,12 +370,14 @@ if($midterm_written_test_weight < 15){
 if(isset($_GET["redir"]) & isset($_GET["_y"]) & isset($_GET["_c"]) & isset($_GET["_s_e_"])){
 ?>
 
-<div class="fixed-bottom">
+<div class="mt-5">
+<center>
 <a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=output1" class="btn btn-primary col-sm-2 mb-3 ml-3">Output 1 Grade</a>
 <a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=output2" class="btn btn-primary col-sm-2 mb-3 ml-3">Output 2 Grade</a>
 <a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=performance1" class="btn btn-primary col-sm-2 mb-3 ml-3">Performance 1 Grade</a>
 <a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=performance2" class="btn btn-primary col-sm-2 mb-3 ml-3">Performance 2 Grade</a>
 <a href="?redir=midterm&_y=<?php echo $year; ?>&_c=<?php echo $course; ?>&_s_e_=<?php echo $semester; ?>&in_=written_test" class="btn btn-primary col-sm-2 mb-3 ml-3">Major Exam Grade</a>
+</center>
 </div>
 
 <?php

@@ -253,8 +253,8 @@ if($bscs_equivalent > 0 && $bscs_equivalent <= 3){
   $bscs_counter_failed++;
 }
 
-$bscs_total_passed = $bscs_counter_passed / ( $bscs_counter_passed + $bscs_counter_failed);
-$bscs_total_failed = $bscs_counter_failed / ( $bscs_counter_passed + $bscs_counter_failed);
+// $bscs_total_passed = $bscs_counter_passed / ( $bscs_counter_passed + $bscs_counter_failed);
+// $bscs_total_failed = $bscs_counter_failed / ( $bscs_counter_passed + $bscs_counter_failed);
 
 
  
@@ -283,16 +283,16 @@ $bscs_total_failed = $bscs_counter_failed / ( $bscs_counter_passed + $bscs_count
 // echo "hay".$counter_5;
  
 $dataPoints_BSCS = array(
-	array("x"=> 10, "y"=> $bscs_counter_1, "label"=> "1"),
-	array("x"=> 20, "y"=> $bscs_counter_1_25, "label"=> "1.25"),
-	array("x"=> 30, "y"=> $bscs_counter_1_5, "label"=> "1.5"),
-	array("x"=> 40, "y"=> $bscs_counter_1_75, "label"=> "1.75"),
-	array("x"=> 50, "y"=> $bscs_counter_2, "label"=> "2"),
-	array("x"=> 60, "y"=> $bscs_counter_2_25, "label"=> "2.25"),
-	array("x"=> 70, "y"=> $bscs_counter_2_5, "label"=> "2.5"),
-	array("x"=> 80, "y"=> $bscs_counter_2_75, "label"=> "2.75"),
-	array("x"=> 90, "y"=> $bscs_counter_3, "label"=> "3"),
-	array("x"=> 100, "y"=> $bscs_counter_5, "label"=> "5"),
+	array(/* "x"=> 10,  */"y"=> $bscs_counter_1, "label"=> "1"),
+	array(/* "x"=> 20,  */"y"=> $bscs_counter_1_25, "label"=> "1.25"),
+	array(/* "x"=> 30,  */"y"=> $bscs_counter_1_5, "label"=> "1.5"),
+	array(/* "x"=> 40,  */"y"=> $bscs_counter_1_75, "label"=> "1.75"),
+	array(/* "x"=> 50,  */"y"=> $bscs_counter_2, "label"=> "2"),
+	array(/* "x"=> 60,  */"y"=> $bscs_counter_2_25, "label"=> "2.25"),
+	array(/* "x"=> 70,  */"y"=> $bscs_counter_2_5, "label"=> "2.5"),
+	array(/* "x"=> 80,  */"y"=> $bscs_counter_2_75, "label"=> "2.75"),
+	array(/* "x"=> 90,  */"y"=> $bscs_counter_3, "label"=> "3"),
+	array(/* "x"=> 100,  */"y"=> $bscs_counter_5, "label"=> "5"),
 );
 
 	

@@ -248,22 +248,42 @@ if($equivalent > 0 && $equivalent <= 3){
   $counter_failed++;
 }
 
-$total_passed = $counter_passed / ( $counter_passed + $counter_failed);
-$total_failed = $counter_failed / ( $counter_passed + $counter_failed);
+if($counter_passed != 0 && $counter_failed != 0){   
+    $total_passed = $counter_passed / ( $counter_passed + $counter_failed);
+    $total_failed = $counter_failed / ( $counter_passed + $counter_failed);
+}
 
   
 }
 
 
-
+if($counter_passed != 0 && $counter_failed != 0){  
 $pieChartDataPoints = array(
 	array("y"=> number_format((float)$total_passed,2,".",""), "label"=> "Passed", "name"=> "Passed", "indexLabelFontColor"=> "green", "exploded"=> "true" ),
 	array("y"=> number_format((float)$total_failed,2,".",""), "label"=> "Failed", "name"=> "Failed", "indexLabelFontColor"=> "red"),
 );
+}else{
+    $pieChartDataPoints = array(
+        array("y"=> 0, "label"=> "Passed", "name"=> "Passed", "indexLabelFontColor"=> "green", "exploded"=> "true" ),
+        array("y"=> 0, "label"=> "Failed", "name"=> "Failed", "indexLabelFontColor"=> "red"),
+    );
+}
 	
 ?>
 
 
 <div id="pieChartContainer" style="height: 300px; width: 95%;"></div>
 
+<?php
+if($counter_passed == 0 && $counter_failed == 0){
+?>
+
+<center>
+<h3 style="position: relative; top: -150;">No data to show.</h3>
+</center>
+
+<?php
+// echo "No data to show.";
+}
+?>
 

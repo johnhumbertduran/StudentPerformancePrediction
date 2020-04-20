@@ -359,7 +359,8 @@ switch (true) {
 
 <div class="card col-sm-5 mx-auto p-3">
 <button type="button" class="close ml-auto bg-info rounded-circle px-1" id="black1">&times;</button>
-
+<br>
+<h6>E sort lang du array ag find last array then check if it is greater than 20 or 70.</h6>
  <h3 class="position-fixed "><?php echo $card_title; ?></h3>
  <p></p>
   <div class="card-header bg-info">
@@ -407,7 +408,7 @@ while($row_student_record = mysqli_fetch_assoc($get_student_record)){
   <label for="<?php echo $new_student_no; ?>" class="float-right"><?php echo $new_student_name; ?> : &nbsp;</label>
   </td>
   <td class="w-25">
-  <input type="text" name="<?php echo $new_student_no; ?>" value="<?php echo $selected_column; ?>" class="w-50 text-center" id="<?php echo $new_student_no; ?>">
+  <input type="text" name="<?php echo $new_student_no; ?>" value="<?php echo $selected_column; ?>" class="w-50 text-center" id="<?php echo $new_student_no; ?>" maxlength="2" onkeypress='return isNumberKey(event)'>
   </td>
   <td>
   <!-- <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="output_1"> -->
@@ -488,3 +489,13 @@ while($row_student_record = mysqli_fetch_assoc($get_student_record)){
     border-bottom:1px solid gray;
 }
 </style>
+
+
+<script>
+  function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if(charCode > 31 && (charCode < 40 || charCode > 41) && ( charCode < 48 || charCode > 57) && charCode != 43  && charCode != 45 )
+        return false;
+    return true;
+  }
+</script>
