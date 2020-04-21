@@ -1,12 +1,4 @@
-
-<!-- <input type="text" id="a1" value="<?php /* echo $_GET["a1"]; */?>">
-<script>
-var a1 = document.getElementById("a1").value;
-window.location.href = "studentperformance?redir=prelim&&a1="+a1;
-</script> -->
-
 <?php
-
 
 function get_url_data(){
     $grading_period = $_GET["redir"];
@@ -43,314 +35,6 @@ function get_url_data(){
     }
 
 
-$student_record = mysqli_query($connections, "SELECT * FROM $grading WHERE year='$year' AND course='$course' AND semester='$semester[3]' ");
-$row_student = mysqli_fetch_assoc($student_record);
-
-$student_name = $row_student["student_name"];
-$_output_1 = $row_student[$_GET["redir"]."_output_1"];
-$_output_2 = $row_student[$_GET["redir"]."_output_2"];
-$_performance_1 = $row_student[$_GET["redir"]."_performance_1"];
-$_performance_2 = $row_student[$_GET["redir"]."_performance_2"];
-$_written_test = $row_student[$_GET["redir"]."_written_test"];
-
-if(isset($_GET["po1"])) {
-
-    if($_GET["redir"] == "prelim"){
-        $grade = $row_student["prelim_output_1"];
-    }
-
-    if($_GET["redir"] == "midterm"){
-        $grade = $row_student["midterm_output_1"];
-    }
-
-    if($_GET["redir"] == "prefinal"){
-        $grade = $row_student["prefinal_output_1"];
-    }
-
-    if($_GET["redir"] == "final"){
-        $grade = $row_student["final_output_1"];
-    }
-
-}elseif(isset($_GET["po2"])) {
-    
-    if($_GET["redir"] == "prelim"){
-    $grade = $row_student["prelim_output_2"];
-    }
-
-    if($_GET["redir"] == "midterm"){
-    $grade = $row_student["midterm_output_2"];
-    }
-
-    if($_GET["redir"] == "prefinal"){
-    $grade = $row_student["prefinal_output_2"];
-    }
-
-    if($_GET["redir"] == "final"){
-    $grade = $row_student["final_output_2"];
-    }
-
-
-}elseif(isset($_GET["pp1"])) {
-
-    if($_GET["redir"] == "prelim"){
-    $grade = $row_student["prelim_performance_1"];
-    }
-
-    if($_GET["redir"] == "midterm"){
-    $grade = $row_student["midterm_performance_1"];
-    }
-
-    if($_GET["redir"] == "prefinal"){
-    $grade = $row_student["prefinal_performance_1"];
-    }
-
-    if($_GET["redir"] == "final"){
-    $grade = $row_student["final_performance_1"];
-    }
-
-}elseif(isset($_GET["pp2"])) {
-
-    if($_GET["redir"] == "prelim"){
-    $grade = $row_student["prelim_performance_2"];
-    }
-
-    if($_GET["redir"] == "midterm"){
-    $grade = $row_student["midterm_performance_2"];
-    }
-
-    if($_GET["redir"] == "prefinal"){
-    $grade = $row_student["prefinal_performance_2"];
-    }
-
-    if($_GET["redir"] == "final"){
-    $grade = $row_student["final_performance_2"];
-    }
-
-
-}elseif(isset($_GET["pwt"])) {
-
-    if($_GET["redir"] == "prelim"){
-    $grade = $row_student["prelim_written_test"];
-    }
-
-    if($_GET["redir"] == "midterm"){
-    $grade = $row_student["midterm_written_test"];
-    }
-
-    if($_GET["redir"] == "prefinal"){
-    $grade = $row_student["prefinal_written_test"];
-    }
-
-    if($_GET["redir"] == "final"){
-    $grade = $row_student["final_written_test"];
-    }
-
-
-}
-
-
-switch (true) {
-
-      case (!empty($_GET["po1"])):
-        if($_GET["redir"] == "prelim"){
-            $grade_name = "prelim_output_1";
-            $grade_number = "Prelim output 1";
-        }
-
-        if($_GET["redir"] == "midterm"){
-            $grade_name = "midterm_output_1";
-            $grade_number = "Midterm output 1";
-        }
-
-        if($_GET["redir"] == "prefinal"){
-            $grade_name = "prefinal_output_1";
-            $grade_number = "Prefinal output 1";
-        }
-
-        if($_GET["redir"] == "final"){
-            $grade_name = "final_output_1";
-            $grade_number = "Final output 1";
-        }
-
-          break;
-      case (!empty($_GET["po2"])):
-        if($_GET["redir"] == "prelim"){
-          $grade_name = "prelim_output_2";
-          $grade_number = "Prelim output 2";
-          break;
-        }
-        
-        if($_GET["redir"] == "midterm"){
-          $grade_name = "midterm_output_2";
-          $grade_number = "Midterm output 2";
-          break;
-        }
-        
-        if($_GET["redir"] == "prefinal"){
-          $grade_name = "prefinal_output_2";
-          $grade_number = "Prefinal output 2";
-          break;
-        }
-        
-        if($_GET["redir"] == "final"){
-          $grade_name = "final_output_2";
-          $grade_number = "Final output 2";
-          break;
-        }
-
-      case (!empty($_GET["pp1"])):
-        if($_GET["redir"] == "prelim"){
-          $grade_name = "prelim_performance_1";
-          $grade_number = "Prelim Performance 1";
-          break;
-        }
-        
-        if($_GET["redir"] == "midterm"){
-          $grade_name = "midterm_performance_1";
-          $grade_number = "Midterm Performance 1";
-          break;
-        }
-        
-        if($_GET["redir"] == "prefinal"){
-          $grade_name = "prefinal_performance_1";
-          $grade_number = "Prefinal Performance 1";
-          break;
-        }
-        
-        if($_GET["redir"] == "final"){
-          $grade_name = "final_performance_1";
-          $grade_number = "Final Performance 1";
-          break;
-        }
-
-      case (!empty($_GET["pp2"])):
-        if($_GET["redir"] == "prelim"){
-          $grade_name = "prelim_performance_2";
-          $grade_number = "Prelim Performance 2";
-          break;
-        }
-        
-        if($_GET["redir"] == "midterm"){
-          $grade_name = "midterm_performance_2";
-          $grade_number = "Midterm Performance 2";
-          break;
-        }
-        
-        if($_GET["redir"] == "prefinal"){
-          $grade_name = "prefinal_performance_2";
-          $grade_number = "Prefinal Performance 2";
-          break;
-        }
-        
-        if($_GET["redir"] == "final"){
-          $grade_name = "final_performance_2";
-          $grade_number = "final Performance 2";
-          break;
-        }
-        
-      case (!empty($_GET["pwt"])):
-        if($_GET["redir"] == "prelim"){
-          $grade_name = "prelim_written_test";
-          $grade_number = "Prelim Written Test";
-          break;
-        }
-        
-        if($_GET["redir"] == "midterm"){
-          $grade_name = "midterm_written_test";
-          $grade_number = "Midterm Written Test";
-          break;
-        }
-        
-        if($_GET["redir"] == "prefinal"){
-          $grade_name = "prefinal_written_test";
-          $grade_number = "Prefinal Written Test";
-          break;
-        }
-        
-        if($_GET["redir"] == "final"){
-          $grade_name = "final_written_test";
-          $grade_number = "Final Written Test";
-          break;
-        }
-
-
-      default:
-          $grade_name = "5";
-  }
-
-  if(isset($_POST["output_1"])){
-    if(!empty($_POST[$_GET["redir"]."_output_1"])){
-      $output_1_grade_post = $_POST[$_GET["redir"]."_output_1"];
-      $output_1_grade = $_GET["redir"]."_output_1";
-      
-        // echo "<script>alert('hay');</script>";
-      mysqli_query($connections, "UPDATE $grading SET $output_1_grade='$output_1_grade_post'
-      WHERE student_no=$student_no");
-    }
-        echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
-
-  }
-
-  if(isset($_POST["output_2"])){
-    if(!empty($_POST[$_GET["redir"]."_output_2"])){
-      $output_2_grade_post = $_POST[$_GET["redir"]."_output_2"];
-      $output_2_grade = $_GET["redir"]."_output_2";
-      
-        // echo "<script>alert('hay');</script>";
-      mysqli_query($connections, "UPDATE $grading SET $output_2_grade='$output_2_grade_post'
-      WHERE student_no=$student_no");
-    }
-        echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
-
-  }
-
-  
-
-  if(isset($_POST["performance_1"])){
-    if(!empty($_POST[$_GET["redir"]."_performance_1"])){
-      $performance_1_grade_post = $_POST[$_GET["redir"]."_performance_1"];
-      $performance_1_grade = $_GET["redir"]."_performance_1";
-      
-        // echo "<script>alert('hay');</script>";
-      mysqli_query($connections, "UPDATE $grading SET $performance_1_grade='$performance_1_grade_post'
-      WHERE student_no=$student_no");
-    }
-        echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
-
-  }
-
-
-  if(isset($_POST["performance_2"])){
-    if(!empty($_POST[$_GET["redir"]."_performance_2"])){
-      $performance_2_grade_post = $_POST[$_GET["redir"]."_performance_2"];
-      $performance_2_grade = $_GET["redir"]."_performance_2";
-      
-        // echo "<script>alert('hay');</script>";
-      mysqli_query($connections, "UPDATE $grading SET $performance_2_grade='$performance_2_grade_post'
-      WHERE student_no=$student_no");
-    }
-        echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
-
-  }
-
-  
-
-  if(isset($_POST["written_test"])){
-    if(!empty($_POST[$_GET["redir"]."_written_test"])){
-      $written_test_grade_post = $_POST[$_GET["redir"]."_written_test"];
-      $written_test_grade = $_GET["redir"]."_written_test";
-      
-        // echo "<script>alert('hay');</script>";
-      mysqli_query($connections, "UPDATE $grading SET $written_test_grade='$written_test_grade_post'
-      WHERE student_no=$student_no");
-    }
-        echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
-
-  }
-
-
-
-
 ?>
 
 
@@ -360,7 +44,12 @@ switch (true) {
 <div class="card col-sm-5 mx-auto p-3">
 <button type="button" class="close ml-auto bg-info rounded-circle px-1" id="black1">&times;</button>
 <br>
-<h6>E sort lang du array ag find last array then check if it is greater than 20 or 70.</h6>
+<input type="hidden" id="column_data" value="<?php echo $column_data; ?>">
+<input type="hidden" id="_grading_period" value="<?php echo $grading_period;?>">
+<input type="hidden" id="_year" value="<?php echo $year;?>">
+<input type="hidden" id="_course" value="<?php echo $course;?>">
+<input type="hidden" id="_semester" value="<?php echo $semester;?>">
+<!-- <h6>E sort lang du array ag find last array then check if it is greater than 20 or 70.</h6> -->
  <h3 class="position-fixed "><?php echo $card_title; ?></h3>
  <p></p>
   <div class="card-header bg-info">
@@ -373,6 +62,7 @@ switch (true) {
 
 <?php
 $get_student_record = mysqli_query($connections, "SELECT * FROM $grading WHERE year='$year' AND course='$course' AND semester='$semester[3]'  ");
+$get_student_record1 = mysqli_query($connections, "SELECT * FROM final1 WHERE year='$year' AND course='$course' AND semester='1'  ");
 
 while($row_student_record = mysqli_fetch_assoc($get_student_record)){
 
@@ -381,22 +71,41 @@ while($row_student_record = mysqli_fetch_assoc($get_student_record)){
   $selected_column = $row_student_record[$column_data];
   // echo $new_student_name;
 
+  $row_student_record1 = mysqli_fetch_assoc($get_student_record1);
+  $new_student_name1 = $row_student_record1["student_name"];
+  $new_student_no1 = $row_student_record1["student_no"];
+  $final_output_1_1 = $row_student_record1["final_output_1"];
+  $final_output_2_1 = $row_student_record1["final_output_2"];
+  $final_performance_1_1 = $row_student_record1["final_performance_1"];
+  $final_performance_2_1 = $row_student_record1["final_performance_2"];
+  $final_written_test_1 = $row_student_record1["final_written_test"];
+
+  $check_pre_requisite = 0;
+
+  if(($final_output_1_1 > 0) & ($final_output_2_1 > 0) & ($final_performance_1_1 > 0) & ($final_performance_2_1 > 0) & ($final_written_test_1 > 0)){
+    $check_pre_requisite = 1;
+  }
+
   if(isset($_POST["input_grade"])){
 
 
     if(!empty($_POST[$new_student_no])){
-      // $output_1_grade_post = $_POST[$_GET["redir"]."_output_1"];
-      // $output_1_grade = $_GET["redir"]."_output_1";
+      
       $new__output_1_data = $_POST[$new_student_no];
       
-        // echo "<script>alert('hay');</script>";
       mysqli_query($connections, "UPDATE $grading SET $column_data='$new__output_1_data'
       WHERE student_no=$new_student_no");
-    // echo "<script>alert('hay');</script>";
+
+      if($grading_period == "prefinal"){
+        mysqli_query($connections, "UPDATE $grading SET prefinal_prediction='' ");
+      }
+      if($grading_period == "final"){
+        mysqli_query($connections, "UPDATE $grading SET final_prediction='' ");
+      }
     }
 
     
-    echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester'</script>";
+    echo "<script>window.location.href='studentperformance?redir=$grading_period&_y=$year&_c=$course&_s_e_=$semester';</script>";
       
 
 }
@@ -407,11 +116,18 @@ while($row_student_record = mysqli_fetch_assoc($get_student_record)){
   <td class="w-75">
   <label for="<?php echo $new_student_no; ?>" class="float-right"><?php echo $new_student_name; ?> : &nbsp;</label>
   </td>
-  <td class="w-25">
-  <input type="text" name="<?php echo $new_student_no; ?>" value="<?php echo $selected_column; ?>" class="w-50 text-center" id="<?php echo $new_student_no; ?>" maxlength="2" onkeypress='return isNumberKey(event)'>
+  <td>
+  <input type="text" name="<?php echo $new_student_no; ?>" value="<?php echo $selected_column; ?>" class="text-center student_no" id="<?php echo $new_student_no; ?>" maxlength="2" size="1" onkeypress='return isNumberKey(event)' <?php if($semester == "sem2"){ if($check_pre_requisite != 1){ echo "disabled"; }} ?>>
   </td>
   <td>
-  <!-- <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="output_1"> -->
+<?php
+  if($semester == "sem2"){
+    if($check_pre_requisite != 1){
+      echo "<small style='color:red;'>Pre&#8209;requisite</small>";
+      }
+    }
+?>
+  
   </td>
   </tr>
 
@@ -419,56 +135,6 @@ while($row_student_record = mysqli_fetch_assoc($get_student_record)){
 }
 ?>
 
-  <!-- <tr>
-  <td class="w-50">
-  <label for="<?php echo $_GET["redir"]; ?>_output_2" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Output 2: &nbsp;</label>
-  </td>
-  <td class="w-25">
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_output_2" value="<?php echo $_output_2; ?>" class="w-50 text-center" id="<?php echo $_GET["redir"]; ?>_output_2">
-  </td>
-  <td>
-  <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="output_2">
-  </td>
-  </tr>
-
-
-  <tr>
-  <td class="w-75">
-  <label for="<?php echo $_GET["redir"]; ?>_performance_1" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Performance 1: &nbsp;</label>
-  </td>
-  <td class="w-25">
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_performance_1" value="<?php echo $_performance_1; ?>" class="w-50 text-center" id="<?php echo $_GET["redir"]; ?>_performance_1">
-  </td>
-  <td>
-  <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="performance_1">
-  </td>
-  </tr>
-
-
-  <tr>
-  <td class="w-75">
-  <label for="<?php echo $_GET["redir"]; ?>_performance_2" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Performance 2: &nbsp;</label>
-  </td>
-  <td class="w-25">
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_performance_2" value="<?php echo $_performance_2; ?>" class="w-50 text-center" id="<?php echo $_GET["redir"]; ?>_performance_2">
-  </td>
-  <td>
-  <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="performance_2">
-  </td>
-  </tr>
-
-
-  <tr>
-  <td class="w-50">
-  <label for="<?php echo $_GET["redir"]; ?>_written_test" class="float-right"><?php echo ucfirst($_GET["redir"]); ?> Major Test: &nbsp;</label>
-  </td>
-  <td class="w-25">
-  <input type="text" name="<?php echo $_GET["redir"]; ?>_written_test" value="<?php echo $_written_test; ?>" class="w-50 text-center" id="<?php echo $_GET["redir"]; ?>_written_test">
-  </td>
-  <td>
-  <input type="submit" class="btn btn-warning float-right" value="Submit Grade" name="written_test">
-  </td>
-  </tr> -->
   </table>
   
   </div>
@@ -493,9 +159,56 @@ while($row_student_record = mysqli_fetch_assoc($get_student_record)){
 
 <script>
   function isNumberKey(evt){
+
+    // alert(this.innerHTML);
     var charCode = (evt.which) ? evt.which : event.keyCode
     if(charCode > 31 && (charCode < 40 || charCode > 41) && ( charCode < 48 || charCode > 57) && charCode != 43  && charCode != 45 )
         return false;
     return true;
+
   }
+
+
+  function max_value(){
+    var column_data = document.getElementById("column_data");
+    var _grading_period = document.getElementById("_grading_period").value;
+    
+      if(column_data.value == _grading_period+"_written_test"){
+        if(this.value > 70){
+          alert("Input is greater than 70");
+          this.value = "";
+        }
+      }else{
+        if(this.value > 20){
+          alert("Input is greater than 20");
+          this.value = "";
+        }
+      }
+    
+  }
+
+  var student_box = document.getElementsByClassName("student_no");
+  for(q=0; q < student_box.length; q++){
+    student_box.item(q).addEventListener("keyup", max_value);
+  }
+
+
+  window.onkeyup = function (event) {
+    var _grading_period = document.getElementById("_grading_period").value;
+    var _year = document.getElementById("_year").value;
+    var _course = document.getElementById("_course").value;
+    var _semester = document.getElementById("_semester").value;
+
+  if (event.keyCode == 27) {
+    // alert(_year);
+    // document.getElementById(boxid).style.visibility="hidden";
+    // window.location.href = "prediction";
+    // alert("hay");
+    window.location.href='studentperformance?redir='+_grading_period+'&_y='+_year+'&_c='+_course+'&_s_e_='+_semester;
+    // alert('studentperformance?redir='+_grading_period+'&_y='+_year+'&_c='+_course+'&_s_e_='+_semester+');
+
+  }
+ }
+
+
 </script>

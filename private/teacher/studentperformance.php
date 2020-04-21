@@ -45,6 +45,14 @@ include("../bins/teacher_nav.php");
 ?>
 <br>
 
+
+<center>
+<?php
+include("grading_system.php");
+?>
+</center>
+
+<br>
 <div class="container-fluid d-inline py-5">
 
 <select class="form-control col-3 ml-2 pt-1 pb-2 d-inline bg-info text-white" id="grade_period" onchange="grade_period()">

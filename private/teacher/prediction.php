@@ -82,7 +82,7 @@ table thead, table tbody tr { display:table; width:100%; table-layout:fixed; }
 }
 
 table tbody::-webkit-scrollbar{
-  width: 3px;
+  width: 10px;
 }
 
 table tbody::-webkit-scrollbar-track{
@@ -92,7 +92,7 @@ table tbody::-webkit-scrollbar-track{
 
 table tbody::-webkit-scrollbar-thumb{
   background: #81b7f5;
-  border-radius: 15px;
+  border-radius: 2px;
   /* background: #2379db; */
 }
 
@@ -150,7 +150,7 @@ E SAVE DU PREDICTED NUMBERS PARA MA TAW AN IT CHART
 
 </div>
 
-
+<h1>may bug sa grade validation</h1>
 <!-- ######################################################################################### -->
 <!-- ################################### Table Starts Here ################################### -->
 <!-- ######################################################################################### -->

@@ -19,9 +19,9 @@
         <a class="nav-link pl-2" href="mygrades">My grades</a>
       </li>
       <!-- <li class="nav-item">
-        <a class="nav-link pl-2" href="#">Prediction</a>
-      </li>    
-      <li class="nav-item">
+        <a class="nav-link pl-2" href="save_prediction">Prediction</a>
+      </li>     -->
+      <!-- <li class="nav-item">
         <a class="nav-link pl-2" href="#">View Charts</a>
       </li>     -->
       <!-- <li class="nav-item register_active">

@@ -53,3 +53,13 @@ include("../bins/admin_nav.php");
 <?php
 include("../../bins/footer.php");
 ?>
+
+<script>
+
+window.onload = function(){
+
+  window.location.href= "studentperformance";
+
+}
+
+</script>

@@ -35,7 +35,7 @@ mysqli_query($connections, "UPDATE $final_grade_semester SET
 final_prediction='$final' WHERE student_no='$id'");
 // echo $prefinal_grade_semester."\n";
 
-}else if((!isset($_GET["prefinal"])) & (isset($_GET["final"]))){
+}else if( (isset($_GET["final"]))){
     $final_grade_semester = "final".$grade_period;
 
 mysqli_query($connections, "UPDATE $final_grade_semester SET 

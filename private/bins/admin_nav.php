@@ -12,9 +12,9 @@
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item home_active">
+      <!-- <li class="nav-item home_active">
         <a class="nav-link pl-2" href="../admin">Home</a>
-      </li>
+      </li> -->
       <li class="nav-item student_performance_active">
         <a class="nav-link pl-2" href="studentperformance">Student Performance</a>
       </li>

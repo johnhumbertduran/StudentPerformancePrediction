@@ -50,6 +50,18 @@ include("../bins/teacher_nav.php");
 <!-- <h1 class="py-3 text-info px-1"><font color="red">Student ID sa Register</font></h1> -->
 </center>
 
+
+
 <?php
-include("../../bins/footer.php");
+include("../../bins/footer_non_fixed.php");
 ?>
+
+<script>
+
+window.onload = function(){
+
+  window.location.href= "studentperformance";
+
+}
+
+</script>
