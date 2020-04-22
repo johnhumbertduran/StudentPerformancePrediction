@@ -57,33 +57,6 @@ if(isset($_SESSION["username"])){
   border:none;
   background-color: transparent;
 }
-
-.table-hover tbody tr:hover {
-    background: #4ef0a2;
-    cursor:pointer;
-}
-
-/* .table-hover tbody tr:hover td {
-    background: #4ef0a2;
-    cursor:pointer;
-} */
-.table-hover tbody h6 { color: #007bff; }
-.table-hover tbody .passed { color: #28a745; }
-.table-hover tbody .failed { color: #dc3545; }
-
-td:hover { background-color: #f75271; color: #fff; }
-td:hover a { color: #fff; }
-td:hover h6 { color: #fff; }
-td:hover .remarks { color: #fff; }
-/* .passed { color: #5cb85c;}
-.failed { color: #d9534f;} */
-/* .table-hover tbody .get_h6 td:hover { background-color: #343a40 !important; } */
-/* td:hover h6 { background-color: #343a40; color: #fff; } */
-
-/* table tbody { display:block; max-height:450px; overflow-y:scroll; }
-table thead, table tbody tr { display:table; width:100%; table-layout:fixed; } */
-
-
 </style>
 
 
@@ -92,7 +65,7 @@ table thead, table tbody tr { display:table; width:100%; table-layout:fixed; } *
 <!-- <h1 class="py-3 text-info px-1">Welcome <?php echo $firstname; ?>!</h1> -->
 </center>
 
-<h1>E same lang sa teacher nga may link du pag predict</h1>
+
 <?php
 
 include('../bins/student_nav.php');
@@ -141,9 +114,9 @@ $student_name = $firstname . " " . $middlename[0] . ". " . $lastname;
 <div class="table-responsive table_table mt-3 col-10 container-fluid">
 <table border="1" class="table table-hover">
     <thead>
-    <tr><th class="px-3 text-center bg-info text-white" colspan="9">My Grade</th></tr><!-- Preliminary Here -->
+    <tr><th class="px-3 text-center bg-info text-white" colspan="6">My Grade</th></tr><!-- Preliminary Here -->
 
-    <tr class="text-center"><th class="px-3 bg-white">Student Name</th><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal_student_predict">Prefinal</th><th class="px-3 bg-warning text-white" id="final_student_predict">Final</th><th class="px-3 bg-secondary text-white" id="average">Average</th><th class="px-3 bg-secondary text-white" id="average">Equivalent</th><th class="px-3 bg-secondary text-white" id="remarks">Remarks</th><th class="px-3 bg-dark text-white" id="prediction">Prediction<sup class='badge badge-warning'>Prediction</sup></th></tr>
+    <tr class="text-center"><th class="px-3 bg-white">Student Name</th><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal_student_predict">Prefinal</th><th class="px-3 bg-warning text-white" id="final_student_predict">Final</th><th class="px-3 bg-dark text-white" id="prediction">Prediction<sup class='badge badge-warning'>Prediction</sup></th></tr>
 
     </thead>
 
@@ -249,27 +222,17 @@ $prefinal_written_test = $row_prefinal["prefinal_written_test"]; //ok
 
 $prefinal_prediction = $row_prefinal["prefinal_prediction"];
 
-
-// #######old condition it prefinal grade and prefinal prediction
-// if($prefinal_output_1 == 0 && $prefinal_output_2 == 0 &&
-//    $prefinal_performance_1 == 0 && $prefinal_performance_1 == 0 &&
-//    $prefinal_written_test == 0){
+if($prefinal_output_1 == 0 && $prefinal_output_2 == 0 &&
+   $prefinal_performance_1 == 0 && $prefinal_performance_1 == 0 &&
+   $prefinal_written_test == 0){
   
-//     if($prefinal_prediction>0){
-//     $prefinal_prediction = $row_prefinal["prefinal_prediction"];
-//     $confirm_prefinal_prediction = $prefinal_prediction;
-//     }else{
-//       $prefinal_grade = 0;
-//       $prefinal_prediction = 0;
-//     }
-
-
-// new condition it code sa babaw
-if($prefinal_output_1 <= 0 && $prefinal_output_2 <= 0 &&
-   $prefinal_performance_1 <= 0 && $prefinal_performance_2 <= 0 &&
-   $prefinal_written_test <= 0){
-  
-    $prefinal_grade = 0;
+    if($prefinal_prediction>0){
+    $prefinal_prediction = $row_prefinal["prefinal_prediction"];
+    $confirm_prefinal_prediction = $prefinal_prediction;
+    }else{
+      $prefinal_grade = 0;
+      $prefinal_prediction = 0;
+    }
 
 }else{
 
@@ -300,28 +263,20 @@ $final_written_test = $row_final["final_written_test"];
 
 $final_prediction = $row_final["final_prediction"];
 
-// ######## old final condition with final prediction
-// if($final_output_1 == 0 && $final_output_2 == 0 &&
-//    $final_performance_1 == 0 && $final_performance_1 == 0 &&
-//    $final_written_test == 0){
+
+if($final_output_1 == 0 && $final_output_2 == 0 &&
+   $final_performance_1 == 0 && $final_performance_1 == 0 &&
+   $final_written_test == 0){
   
-//     // $final_grade = 0;
+    // $final_grade = 0;
 
-//     if($final_prediction>0){
-//       $final_prediction = $row_final["final_prediction"];
-//       $confirm_final_prediction = $final_prediction;
-//       }else{
-//         $final_grade = 0;
-//         $final_prediction = 0;
-//       }
-
-
-// daya du gn baylo nga condition sa ibabaw
-if($final_output_1 <= 0 && $final_output_2 <= 0 &&
-   $final_performance_1 <= 0 && $final_performance_2 <= 0 &&
-   $final_written_test <= 0){
-  
-    $final_grade = 0;
+    if($final_prediction>0){
+      $final_prediction = $row_final["final_prediction"];
+      $confirm_final_prediction = $final_prediction;
+      }else{
+        $final_grade = 0;
+        $final_prediction = 0;
+      }
 
 }else{
 
@@ -344,305 +299,18 @@ $final_grade = number_format((float)$final_grade,2,".","");
 
 
 $average_prediction = 0;
-$average = "";
 
-$prelim_status = 0;
-$prelim_status_missed = "";
-
-$midterm_status = 0;
-$midterm_status_missed = "";
-
-$prefinal_status = 0;
-$prefinal_status_missed = "";
-
-$final_status = 0;
-$final_status_missed = "";
-
-if ($prelim_output_1 == 0){
-  $prelim_status++;
-  $prelim_status_missed .= "Prelim Output 1 </br>";
-}
-
-if ($prelim_output_2 == 0){
-  $prelim_status++;
-  $prelim_status_missed .= "Prelim Output 2 </br>";
-}
-
-if ($prelim_performance_1 == 0){
-  $prelim_status++;
-  $prelim_status_missed .= "Prelim Performance 1 </br>";
-}
-
-if ($prelim_performance_2 == 0){
-  $prelim_status++;
-  $prelim_status_missed .= "Prelim Performance 2 </br>";
-}
-
-if ($prelim_written_test == 0){
-  $prelim_status++;
-  $prelim_status_missed .= "Prelim Written Test </br>";
-}
-
-
-
-if ($midterm_output_1 == 0){
-  $midterm_status+=1;
-  $midterm_status_missed .= "Midterm Output 1 </br>";
-}
-
-if ($midterm_output_2 == 0){
-  $midterm_status+=1;
-  $midterm_status_missed .= "Midterm Output 2 </br>";
-}
-
-if ($midterm_performance_1 == 0){
-  $midterm_status+=1;
-  $midterm_status_missed .= "Midterm Performance 1 </br>";
-}
-
-if ($midterm_performance_2 == 0){
-  $midterm_status+=1;
-  $midterm_status_missed .= "Midterm Performance 2 </br>";
-}
-
-if ($midterm_written_test == 0){
-  $midterm_status+=1;
-  $midterm_status_missed .= "Midterm Written Test </br>";
-}
-
-
-if ($prefinal_output_1 == 0){
-  $prefinal_status+=1;
-  $prefinal_status_missed .= "Prefinal Output 1 </br>";
-}
-
-if ($prefinal_output_2 == 0){
-  $prefinal_status+=1;
-  $prefinal_status_missed .= "Prefinal Output 2 </br>";
-}
-
-if ($prefinal_performance_1 == 0){
-  $prefinal_status+=1;
-  $prefinal_status_missed .= "Prefinal Performance 1 </br>";
-}
-
-if ($prefinal_performance_2 == 0){
-  $prefinal_status+=1;
-  $prefinal_status_missed .= "Prefinal Performance 2 </br>";
-}
-
-if ($prefinal_written_test == 0){
-  $prefinal_status+=1;
-  $prefinal_status_missed .= "Prefinal Written Test </br>";
-}
-
-
-if ($final_output_1 == 0){
-  $final_status+=1;
-  $final_status_missed .= "final Output 1 </br>";
-}
-
-if ($final_output_2 == 0){
-  $final_status+=1;
-  $final_status_missed .= "final Output 2 </br>";
-}
-
-if ($final_performance_1 == 0){
-  $final_status+=1;
-  $final_status_missed .= "final Performance 1 </br>";
-}
-
-if ($final_performance_2 == 0){
-  $final_status+=1;
-  $final_status_missed .= "final Performance 2 </br>";
-}
-
-if ($final_written_test == 0){
-  $final_status+=1;
-  $final_status_missed .= "final Written Test </br>";
-}
 
 
 ?>
 
 <tr class="text-center">
-<td><?php echo $student_name; ?></td>
-
-<td id="get_prelim">
-<?php
-if($prelim_grade>0){
-  if($prelim_status > 0){
-    echo $prelim_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#prelim$student_no'><b>$prelim_status</b><sup>";
-  }else{
-    echo $prelim_grade;
-  }
-}else{
-  echo $prelim_grade;
-}
-?>
-</td>
-
-<td id="get_midterm">
-<?php
-if($midterm_grade>0){
-  if($midterm_status > 0){
-    echo $midterm_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#midterm$student_no'><b>$midterm_status</b><sup>";
-  }else{
-    echo $midterm_grade;
-  }
-}else{
-  echo $midterm_grade;
-}
-?>
-</td>
-
-<td>
-<?php
-// echo $prefinal_prediction;
-
-
-if($prefinal_grade>0){
-  if($prefinal_status > 0){
-    echo $prefinal_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#prefinal$student_no'><b>$prefinal_status</b><sup>";
-  }else{
-    echo $prefinal_grade;
-  }
-}else{
-  if($prefinal_prediction>0){
-    echo "<h6>".$prefinal_prediction."</h6>";
-  }
-}
-
-
-?>
-</td>
-
-<td>
-<!-- <?php if($prefinal_prediction>0){echo $prefinal_prediction; }else{echo $prefinal_grade;} ?> -->
-<span id="get_prefinal">
-<?php
-
-
-if($final_grade>0){
-  if($final_status > 0){
-    echo $final_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#final$student_no'><b>$final_status</b><sup>";
-  }else{
-    echo $final_grade;
-  }
-}else{
-  if($final_prediction>0){
-    echo "<h6>".$final_prediction."</h6>";
-  }
-}
-
-?>
-</span>
-<input type="text" id="prefinal_grade_prediction" class="text-center col-5 container-fluid" disabled>
-
-</td>
-
-<td>
-<!-- <?php if($final_prediction>0){echo $final_prediction; }else{echo $final_grade;} ?> -->
-<span id="get_final">
-<?php
-if($final_grade>0){
-  $average = $final_grade;
-
-  // if($final_status > 0){
-    // echo $final_grade." <sup class='grade_status bg-warning rounded-circle px-1' data-toggle='modal' data-target='#final$student_no'><b>$final_status</b><sup>";
-  // }else{
-    echo $final_grade;
-  // }
-}else{
-  if($final_prediction>0){
-    $average = $final_prediction;
-    echo "<h6>".$final_prediction."</h6>";
-  }
-}
-?>
-</span>
-<input type="text" id="final_grade_prediction" class="text-center col-5 container-fluid" disabled>
-
-</td>
-
-<td>
-<?php
-
-switch (true) {
-    // case ($average <= 74.4):
-    //     $equivalent = "5";
-    //     break;
-    case ($average >= 74.5 && $average <= 76.49):
-        $equivalent = "3";
-        break;
-    case ($average >= 76.5 && $average <= 79.49):
-        $equivalent = "2.75";
-        break;
-    case ($average >= 79.5 && $average <= 82.49):
-        $equivalent = "2.5";
-        break;
-    case ($average >= 82.5 && $average <= 85.49):
-        $equivalent = "2.25";
-        break;
-    case ($average >= 85.5 && $average <= 88.49):
-        $equivalent = "2";
-        break;
-    case ($average >= 88.5 && $average <= 91.49):
-        $equivalent = "1.75";
-        break;
-    case ($average >= 91.5 && $average <= 94.49):
-        $equivalent = "1.5";
-        break;
-    case ($average >= 94.5 && $average <= 97.49):
-        $equivalent = "1.25";
-        break;
-    case ($average >= 97.5 && $average <= 100):
-        $equivalent = "1";
-        break;
-
-    default:
-        $equivalent = "---";
-}
-
-if($average > 0 && $average <= 74.4){
-  $equivalent = "5";
-}
-
-
-
- if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_grade>0)){
-  echo $equivalent; 
- }else{
-  if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
-    echo "<h6>".$equivalent."</h6>"; 
-    }elseif(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_prediction>0)){
-     // $average = ($prelim_grade + $midterm_grade + $prefinal_grade + $final_prediction) / 4;
-     echo "<h6>".$equivalent."</h6>";
-    }
- }
-
- ?>
-</td>
-
-<td>
-<?php
-
-
-if($equivalent > 0 && $equivalent <= 3){
-  $remarks = "Passed";
-  echo "<h6 class='passed remarks'>".$remarks."</h6>";
-}elseif($equivalent == 5){
-  $remarks = "Failed";
-  echo "<h6 class='failed remarks'>".$remarks."</h6>";
-}else{
-  $remarks = "---";
-  echo $remarks;
-}
-
- ?>
-</td>
-
-<td id="select_prediction">
+<td class="bg-white"><?php echo $student_name; ?></td>
+<td id="get_prelim" class="bg-white"><?php echo $prelim_grade; ?></td>
+<td id="get_midterm" class="bg-white"><?php echo $midterm_grade; ?></td>
+<td class="bg-white"><span id="get_prefinal"><?php if($prefinal_prediction>0){echo $prefinal_prediction; }else{echo $prefinal_grade;} ?></span><input type="text" id="prefinal_grade_prediction" class="text-center col-5 container-fluid" disabled></td>
+<td class="bg-white"><span id="get_final"><?php if($final_prediction>0){echo $final_prediction; }else{echo $final_grade;} ?></span><input type="text" id="final_grade_prediction" class="text-center col-5 container-fluid" disabled></td>
+<td id="select_prediction" class="bg-white">
 <select class="form-control pt-1 pb-2 bg-dark text-white" id="average_predict" onchange="average()">
   <option value="select_grade_prediction">Select Value</option>
   <option value="75" id="75" <?php if(isset($_GET['ave'])){ if($_GET['ave'] == "75"){ echo 'selected'; }}?>>75</option>
@@ -711,7 +379,7 @@ if($equivalent > 0 && $equivalent <= 3){
   var select_prefinal = parseFloat(document.getElementById("get_prefinal").innerHTML);
   var select_prelim_and_midterm = select_prelim + select_midterm;
 
-  // alert(select_prelim_and_midterm);
+  
   var get_prelim_value = document.getElementById("get_prelim");
   var get_midterm_value = document.getElementById("get_midterm");
   var get_prefinal_value = document.getElementById("get_prefinal");
@@ -1400,7 +1068,7 @@ var confirm_final_prediction = document.getElementById("confirm_final_prediction
 var confirmation_prefinal = 0;
 var confirmation_final = 0;
 
-if(final_grade.value>0){
+if(final_grade.value>=0){
   // alert(final_grade.value);
   prediction.style.display="none";
   select_prediction.style.display="none";

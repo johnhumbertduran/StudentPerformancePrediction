@@ -46,12 +46,6 @@ include("../bins/teacher_nav.php");
 <br>
 
 
-<center>
-<?php
-include("grading_system.php");
-?>
-</center>
-
 <br>
 <div class="container-fluid d-inline py-5">
 
@@ -119,13 +113,15 @@ if($_GET['redir'] == "final"){
 
 ?>
 
+<br>
+<br>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<center>
+<?php
+include("grading_system.php");
+?>
+</center>
+
 <br>
 
 <script>

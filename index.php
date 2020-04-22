@@ -148,7 +148,7 @@ if(isset($_POST["log_me_in"])){
 ?>
 
 <center>
-<h1 class="py-3 text-primary px-1">Student Performance System</h1>
+<h1 class="py-3 text-primary px-1">Student Performance Prediction System</h1>
 </center>
 
 <!-- <div class="">
