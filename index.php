@@ -147,6 +147,10 @@ if(isset($_POST["log_me_in"])){
 
 ?>
 
+<center>
+<h1 class="py-3 text-primary px-1">Student Performance System</h1>
+</center>
+
 <!-- <div class="">
 <?php
 // include("piechart.php");
@@ -154,20 +158,20 @@ if(isset($_POST["log_me_in"])){
 </div> -->
 <br>
 <center>
-<div class="card col-sm-3 col-lg-3">
+<div class="card" style="width:25%;">
   <div class="card-header bg-primary text-light">Log in</div>
   <div class="card-body">
   <div class="form-group">
 
   <form method="POST">
     <tr>
-    <td colspan="3"><input class="form-control w-85" type="text" value="<?php echo $session_user; ?>" name="nameuser" id="" autocomplete="off" placeholder="User Name" required></td>
+    <td><input class="form-control w-85" type="text" value="<?php echo $session_user; ?>" name="nameuser" id="" autocomplete="off" placeholder="User Name" required></td>
     </tr>
     </div>
 
     <div class="form-group">
     <tr>
-    <td colspan="3"><input class="form-control w-85" type="password" value="<?php echo $session_pass; ?>" name="wordpass" id="" autocomplete="off" placeholder="Password" required></td>
+    <td><input class="form-control w-85" type="password" value="<?php echo $session_pass; ?>" name="wordpass" id="" autocomplete="off" placeholder="Password" required></td>
     </tr>
     </div>
   </div>

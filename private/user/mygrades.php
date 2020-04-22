@@ -47,11 +47,13 @@ if(isset($_SESSION["username"])){
 }
 
 #prefinal_grade_prediction{
+  display:none;
   border:none;
   background-color: transparent;
 }
 
 #final_grade_prediction{
+  display:none;
   border:none;
   background-color: transparent;
 }
@@ -1065,6 +1067,12 @@ var confirm_prefinal_prediction = document.getElementById("confirm_prefinal_pred
 var confirm_final_prediction = document.getElementById("confirm_final_prediction").innerHTML;
 var confirmation_prefinal = 0;
 var confirmation_final = 0;
+
+if(final_grade.value>=0){
+  // alert(final_grade.value);
+  prediction.style.display="none";
+  select_prediction.style.display="none";
+}
 
 if(confirm_prefinal_prediction >0){
 confirmation_prefinal = 1;
@@ -6848,7 +6856,7 @@ var xhr = new XMLHttpRequest();
       var result = xhr.responseText;
       console.log(result);
     console.log('prefinal:'+predict_prefinal+'final:'+predict_final);
-    windiw.location.reload();
+    window.location.reload();
   }
   }
   xhr.send();
