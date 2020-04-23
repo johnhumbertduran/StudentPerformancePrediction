@@ -814,6 +814,114 @@ if($equivalent > 0 && $equivalent <= 3){
 <!-- </tr> -->
 
 
+<!-- The Prelim Modal -->
+<div class="modal" id="<?php echo "prelim".$student_no; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-success text-white">
+        <h4 class="modal-title"><?php echo $student_name; ?></h4>
+        <button type="button" class="close text-danger" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h3 class="text-danger">Defeciencies:</h3>
+        <?php echo $prelim_status_missed; ?>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer bg-success">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- The Midterm Modal -->
+<div class="modal" id="<?php echo "midterm".$student_no; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-primary text-white">
+        <h4 class="modal-title"><?php echo $student_name; ?></h4>
+        <button type="button" class="close text-danger" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h3 class="text-danger">Defeciencies:</h3>
+        <?php echo $midterm_status_missed; ?>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer bg-primary">
+        <button type="button" class="btn btn-warning text-white" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- The Prefinal Modal -->
+<div class="modal" id="<?php echo "prefinal".$student_no; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-danger text-white">
+        <h4 class="modal-title"><?php echo $student_name; ?></h4>
+        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h3 class="text-danger">Defeciencies:</h3>
+        <?php echo $prefinal_status_missed; ?>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer bg-danger">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- The final Modal -->
+<div class="modal" id="<?php echo "final".$student_no; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-warning">
+        <h4 class="modal-title text-white"><?php echo $student_name; ?></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h3 class="text-danger">Defeciencies:</h3>
+        <?php echo $final_status_missed; ?>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer bg-warning">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 <?php
 // }
@@ -1408,6 +1516,116 @@ if($equivalent > 0 && $equivalent <= 3){
 
 <input type="hidden" id="prefinal_grade" value="<?php echo $prefinal_grade; ?>">
 <input type="hidden" id="final_grade" value="<?php echo $final_grade; ?>">
+
+
+
+<!-- The Prelim Modal -->
+<div class="modal" id="<?php echo "prelim".$student_no; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-success text-white">
+        <h4 class="modal-title"><?php echo $student_name; ?></h4>
+        <button type="button" class="close text-danger" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h3 class="text-danger">Defeciencies:</h3>
+        <?php echo $prelim_status_missed; ?>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer bg-success">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- The Midterm Modal -->
+<div class="modal" id="<?php echo "midterm".$student_no; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-primary text-white">
+        <h4 class="modal-title"><?php echo $student_name; ?></h4>
+        <button type="button" class="close text-danger" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h3 class="text-danger">Defeciencies:</h3>
+        <?php echo $midterm_status_missed; ?>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer bg-primary">
+        <button type="button" class="btn btn-warning text-white" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- The Prefinal Modal -->
+<div class="modal" id="<?php echo "prefinal".$student_no; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-danger text-white">
+        <h4 class="modal-title"><?php echo $student_name; ?></h4>
+        <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h3 class="text-danger">Defeciencies:</h3>
+        <?php echo $prefinal_status_missed; ?>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer bg-danger">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- The final Modal -->
+<div class="modal" id="<?php echo "final".$student_no; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header bg-warning">
+        <h4 class="modal-title text-white"><?php echo $student_name; ?></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <h3 class="text-danger">Defeciencies:</h3>
+        <?php echo $final_status_missed; ?>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer bg-warning">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
 <?php
