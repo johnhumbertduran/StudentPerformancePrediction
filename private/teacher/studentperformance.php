@@ -44,6 +44,7 @@ if(isset($_SESSION["username"])){
 include("../bins/teacher_nav.php");
 ?>
 <br>
+<!-- <h1>Balik sa midterm ag prefinal may kueang sa column</h1> -->
 
 
 <br>
@@ -88,6 +89,16 @@ include("../bins/teacher_nav.php");
   <option value="sem2" <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem2"){ echo "selected"; }}?>>2nd Semester</option>
 </select>
 
+</div>
+
+
+<br>
+<br>
+
+<div>
+<h6 class="ml-3 d-inline"><b>Course</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1"){ echo "Application Programming 1"; }else{ echo "Application Programming 2"; } } ?></h6>
+<h6 class="ml-3 d-inline"><b>Year</b>: <?php if(isset($_GET['_y'])){ echo $_GET['_y']; } ?></h6>
+<h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1" ){ echo "First Semester"; }else{ echo "Second Semester"; } } ?></h6>
 </div>
 
 <?php

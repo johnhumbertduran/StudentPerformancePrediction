@@ -1636,6 +1636,16 @@ if($equivalent > 0 && $equivalent <= 3){
 <!-- <input type="text" id="final_grade_prediction">
 <input type="text" id="prefinal_grade_prediction"> -->
 
+
+<br>
+<br>
+
+<center>
+<?php
+include("grading_system.php");
+?>
+</center>
+
 <script>
 
   var select_average = document.getElementById("average_predict");

@@ -450,6 +450,9 @@ if(isset($_GET["in_"])){
 ?>
 </div>
 
+<a href="pdf_files_midterm?redir=<?php echo $_GET["redir"]; ?>&_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>&_s_e_=<?php echo $_GET["_s_e_"]; ?>" target="_blank" class="btn btn-warning fixed-bottom col-1 mb-3 ml-3">Get PDF</a>
+
+
 <input type="hidden" value="<?php echo $_GET["redir"]; ?>" id="grade_period">
 <input type="hidden" value="<?php echo $_GET["_y"]; ?>" id="year">
 <input type="hidden" value="<?php echo $_GET["_c"]; ?>" id="course">

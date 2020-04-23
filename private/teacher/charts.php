@@ -198,6 +198,12 @@ var barChartFirstSemester = new CanvasJS.Chart("barChartContainerFirstSem", {
     fontColor: "red",
 		text: "Overall Predicted Student's Performance First Semester"
 	},
+	axisY: {
+		title: "Number of Students"
+	},
+	axisX: {
+		title: "Grade Equivalent"
+	},
 	data: [{
 		type: "column", //change type to bar, line, area, pie, etc
 		indexLabel: "{y}", //Shows y value on all Data Points
@@ -220,6 +226,12 @@ var barChartSecondSemester = new CanvasJS.Chart("barChartContainerSecondSem", {
 	title:{
     fontColor: "red",
 		text: "Overall Predicted Student's Performance Second Semester"
+	},
+	axisY: {
+		title: "Number of Students"
+	},
+	axisX: {
+		title: "Grade Equivalent"
 	},
 	data: [{
 		type: "column", //change type to bar, line, area, pie, etc
@@ -270,6 +282,12 @@ var barChart_BSCS = new CanvasJS.Chart("barChartContainer_BSCS", {
     fontColor: "red",
 		text: "Overall Student's Performance of BSCS"
 	},
+	axisY: {
+		title: "Number of Students"
+	},
+	axisX: {
+		title: "Grade Equivalent"
+	},
 	data: [{
 		type: "column", //change type to bar, line, area, pie, etc
 		indexLabel: "{y}", //Shows y value on all Data Points
@@ -292,6 +310,12 @@ var barChart_BSIT = new CanvasJS.Chart("barChartContainer_BSIT", {
 	title:{
     fontColor: "red",
 		text: "Overall Student's Performance of BSIT"
+	},
+	axisY: {
+		title: "Number of Students"
+	},
+	axisX: {
+		title: "Grade Equivalent"
 	},
 	data: [{
 		type: "column", //change type to bar, line, area, pie, etc
@@ -318,7 +342,13 @@ var midtermVSfinalChart = new CanvasJS.Chart("midtermVSfinalChartContainer", {
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
     fontColor: "red",
-		text: "Overall Predicted Student's Performance First Semester"
+		text: "Midterm vs Final Marks"
+	},
+	axisY: {
+		title: "Student Grade"
+	},
+	axisX: {
+		title: "Student number"
 	},
 	toolTip: {
 		shared: true
