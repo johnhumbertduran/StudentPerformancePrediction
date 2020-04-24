@@ -835,6 +835,24 @@ if(($prelim_grade>0) && ($midterm_grade>0) && (($prefinal_grade == 0) && ($final
 <!-- ################################### Table Ends Here ################################### -->
 <!-- ######################################################################################### -->
 
+<!-- <a href="pdf_files_prediction" target="_blank" class="btn btn-warning fixed-bottom col-1 mb-3 ml-3">Get PDF</a> -->
+
+<?php
+if(isset($_GET['_y']) && !isset($_GET['_c']) && !isset($_GET['_s_e_'])){
+?>
+  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>" target="_blank" class="btn btn-warning fixed-bottom col-1 mb-3 ml-3">Get PDF</a>
+<?php
+}else if(isset($_GET['_y']) && isset($_GET['_c']) && !isset($_GET['_s_e_'])){
+?>
+  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>" target="_blank" class="btn btn-warning fixed-bottom col-1 mb-3 ml-3">Get PDF</a>
+<?php
+}else if(isset($_GET['_y']) && isset($_GET['_c']) && isset($_GET['_s_e_'])){
+?>
+  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>&_s_e_=<?php echo $_GET["_s_e_"]; ?>" target="_blank" class="btn btn-warning fixed-bottom col-1 mb-3 ml-3">Get PDF</a>
+<?php
+}
+?>
+<!-- <a href="pdf_files_prediction?redir=<?php echo $_GET["redir"]; ?>&_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>&_s_e_=<?php echo $_GET["_s_e_"]; ?>" target="_blank" class="btn btn-warning fixed-bottom col-1 mb-3 ml-3">Get PDF</a> -->
 
 <?php
 if(isset($_GET["id"])){
