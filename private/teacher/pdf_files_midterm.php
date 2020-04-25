@@ -18,7 +18,76 @@ class myPDF extends FPDF{
         $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
     }
     function headerTable(){
-        $this->SetFont('Times','B',12);
+        $this->SetFont('Times','B',10);
+        if(isset($_GET["redir"])){
+        
+          if($_GET["redir"] == "select_grading"){
+            $grade_period = "";
+          }else{
+            $grade_period = $_GET["redir"];
+          }
+      
+      
+        }else{
+          $grade_period = "";
+        }
+
+
+        if(isset($_GET["_y"])){
+        
+          if($_GET["_y"] == "select_year"){
+            $year = "";
+          }else{
+            $year = $_GET["_y"];
+          }
+      
+
+        }else{
+          $year = "";
+        }
+
+
+        if(isset($_GET["_c"])){
+        
+          if($_GET["_c"] == "select_course"){
+            $course = "";
+          }else{
+            $course = $_GET["_c"];
+            // echo $course;
+          }
+      
+
+        }else{
+          $course = "";
+        }
+
+        // Select Semester here Kara nag tapos
+        if(isset($_GET["_s_e_"])){
+        
+          if($_GET["_s_e_"] == "select_semester"){
+            $semester = "";
+          }else{
+            $semester = $_GET["_s_e_"];
+            // echo $semester;
+          }
+      
+
+        }else{
+          $semester = "";
+        }
+
+        if($semester == "sem1"){
+          $get_course_name = "Application Programming 1";
+          $get_semester = "First Semester";
+        }else{
+          $get_course_name = "Application Programming 2";
+          $get_semester = "Second Semester";
+        }
+
+        $this->Cell(70,10,'Course Name: '.$get_course_name,0,0,'L');
+        $this->Cell(25,10,'Year: '.$year,0,0,'L');
+        $this->Cell(70,10,'Semester: '.$get_semester,0,0,'L');
+        $this->Ln();
         $this->Cell(276,10,'Midterm Period',1,0,'C');
         $this->Ln();
         $this->SetFont('Times','B',9);
@@ -306,7 +375,14 @@ class myPDF extends FPDF{
           $this->Ln();
         }       
         // }       
-
+          $this->Ln();
+          $this->Ln();
+          $this->Cell(80,5,'',0,0,'L');
+          $this->Cell(80,5,'Date Submitted:__________',0,0,'L');
+          $this->Cell(80,5,'_______________________',0,0,'L');
+          $this->Ln();
+          $this->Cell(358,5,'Signature over printed name',0,0,'C');
+          $this->Ln();
     }
 }
 

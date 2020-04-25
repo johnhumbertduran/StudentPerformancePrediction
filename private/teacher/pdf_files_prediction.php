@@ -503,6 +503,14 @@ class myPDF extends FPDF{
         $this->Ln();
 
       }
+      $this->Ln();
+      $this->Ln();
+      $this->Cell(80,5,'',0,0,'L');
+      $this->Cell(80,5,'Date Submitted:__________',0,0,'L');
+      $this->Cell(80,5,'_______________________',0,0,'L');
+      $this->Ln();
+      $this->Cell(358,5,'Signature over printed name',0,0,'C');
+      $this->Ln();
     }
 
      

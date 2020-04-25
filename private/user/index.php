@@ -50,3 +50,7 @@ if(isset($_SESSION["username"])){
 include('../bins/student_nav.php');
 ?>
 <!-- <a href="logout.php">Log Out</a> -->
+
+<?php
+include("../../bins/footer.php");
+?>

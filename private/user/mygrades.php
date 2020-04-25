@@ -12,6 +12,14 @@ $my_info = mysqli_fetch_assoc($query_info);
 $account_type = $my_info["account_type"];
 $student_no = $my_info["student_no"];
 $firstname = $my_info["firstname"];
+$course = $my_info["course"];
+$year = $my_info["year"];
+
+$lastname = $my_info['lastname'];
+// $firstname = $my_info['firstname'];
+$middlename = $my_info['middlename'];
+$student_name = $firstname . " " . $middlename[0] . ". " . $lastname;
+
 
 if(isset($_SESSION["username"])){
 
@@ -94,6 +102,24 @@ $predict = "<sup class='badge badge-warning'>Predict</sup>";
   <option value="2" <?php if(isset($_GET['s_'])){ if($_GET['s_'] == "2"){ echo "selected"; }}?>>2nd Semester</option>
 </select>
 
+
+<div>
+<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php echo $course;  ?></h6>
+<h6 class="ml-3 d-inline"><b>Year</b>: <?php echo $year; ?></h6>
+<h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['s_'])){ if($_GET['s_'] == "1" ){ echo "First Semester"; }else{ echo "Second Semester"; } }else{ echo "First Semester"; } ?></h6>
+&nbsp;
+<?php
+ if(isset($_GET['s_'])){
+?>
+  <a href="pdf_files_user?s_=<?php echo $_GET["s_"]; ?>&_c=<?php echo $course; ?>&_y=<?php echo $year; ?>&_sn=<?php echo $student_no; ?>&_n=<?php echo $student_name; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+<?php
+}else{
+?>
+  <a href="pdf_files_user?s_=<?php echo "1"; ?>&_c=<?php echo $course; ?>&_y=<?php echo $year; ?>&_sn=<?php echo $student_no; ?>&_n=<?php echo $student_name; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+<?php
+}
+?>
+</div>
 
 <?php
 

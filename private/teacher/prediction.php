@@ -150,6 +150,31 @@ E SAVE DU PREDICTED NUMBERS PARA MA TAW AN IT CHART
 
 </div>
 
+<br>
+<br>
+
+<div>
+<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1"){ echo "Application Programming 1"; }else{ echo "Application Programming 2"; } } ?></h6>
+<h6 class="ml-3 d-inline"><b>Year</b>: <?php if(isset($_GET['_y'])){ echo $_GET['_y']; } ?></h6>
+<h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1" ){ echo "First Semester"; }else{ echo "Second Semester"; } } ?></h6>
+&nbsp;
+<?php
+if(isset($_GET['_y']) && !isset($_GET['_c']) && !isset($_GET['_s_e_'])){
+?>
+  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+<?php
+}else if(isset($_GET['_y']) && isset($_GET['_c']) && !isset($_GET['_s_e_'])){
+?>
+  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+<?php
+}else if(isset($_GET['_y']) && isset($_GET['_c']) && isset($_GET['_s_e_'])){
+?>
+  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>&_s_e_=<?php echo $_GET["_s_e_"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+<?php
+}
+?>
+</div>
+
 <!-- <h1>may bug sa grade validation</h1> -->
 <!-- ######################################################################################### -->
 <!-- ################################### Table Starts Here ################################### -->
@@ -837,21 +862,7 @@ if(($prelim_grade>0) && ($midterm_grade>0) && (($prefinal_grade == 0) && ($final
 
 <!-- <a href="pdf_files_prediction" target="_blank" class="btn btn-warning fixed-bottom col-1 mb-3 ml-3">Get PDF</a> -->
 
-<?php
-if(isset($_GET['_y']) && !isset($_GET['_c']) && !isset($_GET['_s_e_'])){
-?>
-  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>" target="_blank" class="btn btn-warning fixed-bottom col-1 mb-3 ml-3">Get PDF</a>
-<?php
-}else if(isset($_GET['_y']) && isset($_GET['_c']) && !isset($_GET['_s_e_'])){
-?>
-  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>" target="_blank" class="btn btn-warning fixed-bottom col-1 mb-3 ml-3">Get PDF</a>
-<?php
-}else if(isset($_GET['_y']) && isset($_GET['_c']) && isset($_GET['_s_e_'])){
-?>
-  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>&_s_e_=<?php echo $_GET["_s_e_"]; ?>" target="_blank" class="btn btn-warning fixed-bottom col-1 mb-3 ml-3">Get PDF</a>
-<?php
-}
-?>
+
 <!-- <a href="pdf_files_prediction?redir=<?php echo $_GET["redir"]; ?>&_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>&_s_e_=<?php echo $_GET["_s_e_"]; ?>" target="_blank" class="btn btn-warning fixed-bottom col-1 mb-3 ml-3">Get PDF</a> -->
 
 <?php
