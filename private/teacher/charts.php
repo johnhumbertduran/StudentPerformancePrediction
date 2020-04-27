@@ -253,7 +253,7 @@ var pieChart = new CanvasJS.Chart("pieChartContainer", {
 	exportEnabled: true,
 	animationEnabled: true,
 	title:{
-		text: "Pie Chart: Pass and Failure Percentage",
+		text: "Pass and Failure Percentage",
     fontColor: "green"
 	},
 	legend:{

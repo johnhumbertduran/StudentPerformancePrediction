@@ -89,16 +89,6 @@ include("../bins/teacher_nav.php");
   <option value="sem2" <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem2"){ echo "selected"; }}?>>2nd Semester</option>
 </select>
 
-</div>
-
-
-<br>
-<br>
-
-<div>
-<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1"){ echo "Application Programming 1"; }else{ echo "Application Programming 2"; } } ?></h6>
-<h6 class="ml-3 d-inline"><b>Year</b>: <?php if(isset($_GET['_y'])){ echo $_GET['_y']; } ?></h6>
-<h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1" ){ echo "First Semester"; }else{ echo "Second Semester"; } } ?></h6>
 &nbsp;
 <?php
 if(isset($_GET["redir"])){
@@ -121,6 +111,16 @@ if(isset($_GET["redir"])){
 }
 }
 ?>
+</div>
+
+
+<br>
+<br>
+
+<div>
+<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1"){ echo "Application Programming 1"; }else{ echo "Application Programming 2"; } } ?></h6>
+<h6 class="ml-3 d-inline"><b>Year</b>: <?php if(isset($_GET['_y'])){ echo $_GET['_y']; } ?></h6>
+<h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1" ){ echo "First Semester"; }else{ echo "Second Semester"; } } ?></h6>
 </div>
 
 <?php

@@ -101,12 +101,6 @@ $predict = "<sup class='badge badge-warning'>Predict</sup>";
   <option value="1" <?php if(isset($_GET['s_'])){ if($_GET['s_'] == "1"){ echo "selected"; }}?>>1st Semester</option>
   <option value="2" <?php if(isset($_GET['s_'])){ if($_GET['s_'] == "2"){ echo "selected"; }}?>>2nd Semester</option>
 </select>
-
-
-<div>
-<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php echo $course;  ?></h6>
-<h6 class="ml-3 d-inline"><b>Year</b>: <?php echo $year; ?></h6>
-<h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['s_'])){ if($_GET['s_'] == "1" ){ echo "First Semester"; }else{ echo "Second Semester"; } }else{ echo "First Semester"; } ?></h6>
 &nbsp;
 <?php
  if(isset($_GET['s_'])){
@@ -119,6 +113,11 @@ $predict = "<sup class='badge badge-warning'>Predict</sup>";
 <?php
 }
 ?>
+
+<div>
+<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php echo $course;  ?></h6>
+<h6 class="ml-3 d-inline"><b>Year</b>: <?php echo $year; ?></h6>
+<h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['s_'])){ if($_GET['s_'] == "1" ){ echo "First Semester"; }else{ echo "Second Semester"; } }else{ echo "First Semester"; } ?></h6>
 </div>
 
 <?php

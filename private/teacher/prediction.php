@@ -148,15 +148,6 @@ E SAVE DU PREDICTED NUMBERS PARA MA TAW AN IT CHART
   <option value="sem2" <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem2"){ echo "selected"; }}?>>2nd Semester</option>
 </select>
 
-</div>
-
-<br>
-<br>
-
-<div>
-<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1"){ echo "Application Programming 1"; }else{ echo "Application Programming 2"; } } ?></h6>
-<h6 class="ml-3 d-inline"><b>Year</b>: <?php if(isset($_GET['_y'])){ echo $_GET['_y']; } ?></h6>
-<h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1" ){ echo "First Semester"; }else{ echo "Second Semester"; } } ?></h6>
 &nbsp;
 <?php
 if(isset($_GET['_y']) && !isset($_GET['_c']) && !isset($_GET['_s_e_'])){
@@ -173,6 +164,15 @@ if(isset($_GET['_y']) && !isset($_GET['_c']) && !isset($_GET['_s_e_'])){
 <?php
 }
 ?>
+</div>
+
+<br>
+<br>
+
+<div>
+<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1"){ echo "Application Programming 1"; }else if($_GET['_s_e_'] == "sem2"){ echo "Application Programming 2"; }else{ echo "Empty"; } } ?></h6>
+<h6 class="ml-3 d-inline"><b>Year</b>: <?php if(isset($_GET['_y'])){ if($_GET['_y'] == "select_year"){ echo "Empty"; }else{echo $_GET['_y']; } } ?></h6>
+<h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1" ){ echo "First Semester"; }else if($_GET['_s_e_'] == "sem1" ){ echo "Second Semester"; }else{ echo "Empty"; } } ?></h6>
 </div>
 
 <!-- <h1>may bug sa grade validation</h1> -->
@@ -209,7 +209,11 @@ if(isset($_GET['_y']) && !isset($_GET['_c']) && !isset($_GET['_s_e_'])){
 
 
   if(isset($_GET["_s_e_"])){
-    $semester = $_GET["_s_e_"];
+    if($_GET["_s_e_"] == "select_semester"){
+      $semester = "";
+    }else{
+      $semester = $_GET["_s_e_"];
+    }
   }else{
     $semester = "sem1";
   }
@@ -226,7 +230,10 @@ if(isset($_GET['_y']) && !isset($_GET['_c']) && !isset($_GET['_s_e_'])){
 
   // echo $ready;
 
-  
+    
+if($semester == ""){
+  echo "<center><h4 class='text-danger'>Please select semester</h4></center>";
+  }else{
 
   $prelim = "prelim$semester[3]";
   $midterm = "midterm$semester[3]";
@@ -262,7 +269,6 @@ if(isset($_GET['_y']) && !isset($_GET['_c']) && !isset($_GET['_s_e_'])){
     // echo "<script>alert('there is no year');</script>";
   }
 
-  
 
 
 while($row_prelim = mysqli_fetch_assoc($prelim_qry)){
@@ -847,7 +853,7 @@ if(($prelim_grade>0) && ($midterm_grade>0) && (($prefinal_grade == 0) && ($final
 </div>
 
 <?php
-// }
+}
 }
 ?>
 
