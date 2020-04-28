@@ -77,10 +77,10 @@ class myPDF extends FPDF{
         }
 
         if($semester == "sem1"){
-          $get_course_name = "Application Programming 1";
+          $get_course_name = "IT 2 - Application Programming 1";
           $get_semester = "First Semester";
         }else{
-          $get_course_name = "Application Programming 2";
+          $get_course_name = "IT 5 - Application Programming 2";
           $get_semester = "Second Semester";
         }
 

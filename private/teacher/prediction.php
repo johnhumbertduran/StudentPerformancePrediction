@@ -170,9 +170,9 @@ if(isset($_GET['_y']) && !isset($_GET['_c']) && !isset($_GET['_s_e_'])){
 <br>
 
 <div>
-<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1"){ echo "Application Programming 1"; }else if($_GET['_s_e_'] == "sem2"){ echo "Application Programming 2"; }else{ echo "Empty"; } } ?></h6>
+<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1"){ echo "IT 2 - Application Programming 1"; }else if($_GET['_s_e_'] == "sem2"){ echo "IT 5 - Application Programming 2"; }else{ echo "Empty"; } } ?></h6>
 <h6 class="ml-3 d-inline"><b>Year</b>: <?php if(isset($_GET['_y'])){ if($_GET['_y'] == "select_year"){ echo "Empty"; }else{echo $_GET['_y']; } } ?></h6>
-<h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1" ){ echo "First Semester"; }else if($_GET['_s_e_'] == "sem1" ){ echo "Second Semester"; }else{ echo "Empty"; } } ?></h6>
+<h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1" ){ echo "First Semester"; }else if($_GET['_s_e_'] == "sem2" ){ echo "Second Semester"; }else{ echo "Empty"; } } ?></h6>
 </div>
 
 <!-- <h1>may bug sa grade validation</h1> -->

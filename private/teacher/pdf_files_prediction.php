@@ -63,10 +63,10 @@ class myPDF extends FPDF{
         }
 
         if($semester == "sem1"){
-          $get_course_name = "Application Programming 1";
+          $get_course_name = "IT 2 - Application Programming 1";
           $get_semester = "First Semester";
         }else if($semester == "sem2"){
-          $get_course_name = "Application Programming 2";
+          $get_course_name = "IT 5 - Application Programming 2";
           $get_semester = "Second Semester";
         }else{
           $get_course_name = "Empty";
@@ -453,7 +453,9 @@ class myPDF extends FPDF{
           $this->Cell(25,10,$prefinal_grade,1,0,'C');
         }else{
           if($prefinal_prediction>0){
+            $this->SetTextColor(255,0,0);
             $this->Cell(25,10,$prefinal_prediction,1,0,'C');
+            $this->SetTextColor(0,0,0);
           }else{
             $this->Cell(25,10,'00',1,0,'C');
           }
@@ -468,9 +470,11 @@ class myPDF extends FPDF{
         }else{
           if($final_prediction>0){
             // echo "<h6>".$final_prediction."</h6>";
-          $this->Cell(25,10,$final_prediction,1,0,'C');
+            $this->SetTextColor(255,0,0);
+            $this->Cell(25,10,$final_prediction,1,0,'C');
+            $this->SetTextColor(0,0,0);
           }else{
-          $this->Cell(25,10,'00',1,0,'C');
+            $this->Cell(25,10,'00',1,0,'C');
           }
         }
         if($final_grade>0){
@@ -480,7 +484,9 @@ class myPDF extends FPDF{
           if($final_prediction>0){
             $average = $final_prediction;
             // echo "<h6>".$final_prediction."</h6>";
+            $this->SetTextColor(255,0,0);
             $this->Cell(24,10,$final_prediction,1,0,'C');
+            $this->SetTextColor(0,0,0);
           }else{
             $this->Cell(24,10,'00',1,0,'C');
           }
