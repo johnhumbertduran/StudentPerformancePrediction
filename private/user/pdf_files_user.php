@@ -93,14 +93,14 @@ class myPDF extends FPDF{
         }
 
         if($semester == "1"){
-          $get_course_name = "Application Programming 1";
+          $get_course_name = "IT 2 - Application Programming 1";
           $get_semester = "First Semester";
         }else{
-          $get_course_name = "Application Programming 2";
+          $get_course_name = "IT 5 - Application Programming 2";
           $get_semester = "Second Semester";
         }
 
-        $this->Cell(70,10,'Course Name: '.$get_course_name,0,0,'L');
+        $this->Cell(80,10,'Course Name: '.$get_course_name,0,0,'L');
         $this->Cell(25,10,'Year: '.$year,0,0,'L');
         $this->Cell(70,10,'Semester: '.$get_semester,0,0,'L');
         $this->Ln();
@@ -647,7 +647,9 @@ class myPDF extends FPDF{
           }else{
             if($prefinal_prediction>0){
               // echo "<h6>".$prefinal_prediction."</h6>";
+              $this->SetTextColor(255,0,0);
               $this->Cell(30,10,$prefinal_prediction,1,0,'C');
+              $this->SetTextColor(0,0,0);
             }
           }
 
@@ -663,7 +665,9 @@ class myPDF extends FPDF{
           }else{
             if($final_prediction>0){
               // echo "<h6>".$final_prediction."</h6>";
+              $this->SetTextColor(255,0,0);
               $this->Cell(30,10,$final_prediction,1,0,'C');
+              $this->SetTextColor(0,0,0);
             }
           }
           
@@ -678,7 +682,9 @@ class myPDF extends FPDF{
             if($final_prediction>0){
               $average = $final_prediction;
               // echo "<h6>".$final_prediction."</h6>";
+              $this->SetTextColor(255,0,0);
               $this->Cell(30,10,$average,1,0,'C');
+              $this->SetTextColor(0,0,0);
             }
           }
           
@@ -727,10 +733,14 @@ class myPDF extends FPDF{
          }else{
           if(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_prediction > 0) && ($final_prediction>0)){
             // echo "<h6>".$equivalent."</h6>"; 
+            $this->SetTextColor(255,0,0);
             $this->Cell(30,10,$equivalent,1,0,'C');
+            $this->SetTextColor(0,0,0);
             }elseif(($prelim_grade>0) && ($midterm_grade>0) && ($prefinal_grade > 0) && ($final_prediction>0)){
             //  echo "<h6>".$equivalent."</h6>";
+            $this->SetTextColor(255,0,0);
              $this->Cell(30,10,$equivalent,1,0,'C');
+             $this->SetTextColor(0,0,0);
             }
          }
           
@@ -751,6 +761,13 @@ class myPDF extends FPDF{
           
           }       
           // }    
+          $this->Ln();
+          $this->Ln();
+          $this->SetFont('Times','B',12);
+          $this->Cell(80,5,'Note:',0,0,'L');
+          $this->Ln();
+          $this->SetFont('Times','',9);
+          $this->Cell(80,5,'Highlighted grades are predicted grades.',0,0,'L');
           $this->Ln();
           $this->Ln();
           $this->Cell(80,5,'',0,0,'L');

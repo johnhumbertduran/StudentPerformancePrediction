@@ -428,7 +428,7 @@ $check_prefinal1_grade = $prefinal1_output_1 + $prefinal1_output_2 + $prefinal1_
   if($semester == "sem2"){
     if($final1_grade < 74){
       // echo "<small style='color:red;'>Pre&#8209;requisite</small>";
-      echo "<small style='color:red;'>Take the pre-requisite subject: IT 2 - Application Programming 1</small>";
+      echo "<small style='color:red;'>Pre-requisite subject: IT 2 - Application Programming 1</small>";
     }else{
       if($grading_period == "midterm"){
         if(!($check_prelim_grade >0)){

@@ -84,7 +84,7 @@ class myPDF extends FPDF{
           $get_semester = "Second Semester";
         }
 
-        $this->Cell(70,10,'Course Name: '.$get_course_name,0,0,'L');
+        $this->Cell(80,10,'Course Name: '.$get_course_name,0,0,'L');
         $this->Cell(25,10,'Year: '.$year,0,0,'L');
         $this->Cell(70,10,'Semester: '.$get_semester,0,0,'L');
         $this->Ln();
@@ -377,6 +377,7 @@ class myPDF extends FPDF{
           // }       
           $this->Ln();
           $this->Ln();
+          $this->SetFont('Times','',9);
           $this->Cell(80,5,'',0,0,'L');
           $this->Cell(80,5,'_______________________',0,0,'L');
           $this->Cell(80,5,'_______________________',0,0,'L');
