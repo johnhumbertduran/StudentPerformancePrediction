@@ -115,7 +115,7 @@ $predict = "<sup class='badge badge-warning'>Predict</sup>";
 ?>
 
 <div>
-<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php if(isset($_GET['s_'])){ if($_GET['s_'] == "1"){ echo "IT 2 - Application Programming 1"; }else if($_GET['s_'] == "2"){ echo "IT 5 - Application Programming 2"; }else{ echo "Empty"; } } ?></h6>
+<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php if(isset($_GET['s_'])){ if($_GET['s_'] == "1"){ echo "IT 2 - Application Programming 1"; }else if($_GET['s_'] == "2"){ echo "IT 5 - Application Programming 2"; } }else{ echo "IT 2 - Application Programming 1"; } ?></h6>
 <h6 class="ml-3 d-inline"><b>Year</b>: <?php echo $year; ?></h6>
 <h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['s_'])){ if($_GET['s_'] == "1" ){ echo "First Semester"; }else{ echo "Second Semester"; } }else{ echo "First Semester"; } ?></h6>
 </div>
