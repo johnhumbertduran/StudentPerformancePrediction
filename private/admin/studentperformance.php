@@ -100,6 +100,42 @@ include("../bins/admin_nav.php");
 
 </div>
 
+
+&nbsp;
+<?php
+if(isset($_GET["redir"])){
+  if($_GET["redir"] == "prelim"){
+?>
+<a href="pdf_files_prelim?redir=<?php echo $_GET["redir"]; ?>&_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>&_s_e_=<?php echo $_GET["_s_e_"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+<?php
+}else if($_GET["redir"] == "midterm"){
+?>
+<a href="pdf_files_midterm?redir=<?php echo $_GET["redir"]; ?>&_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>&_s_e_=<?php echo $_GET["_s_e_"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+<?php
+}else if($_GET["redir"] == "prefinal"){
+?>
+<a href="pdf_files_prefinal?redir=<?php echo $_GET["redir"]; ?>&_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>&_s_e_=<?php echo $_GET["_s_e_"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+<?php
+}else if($_GET["redir"] == "final"){
+?>
+<a href="pdf_files_final?redir=<?php echo $_GET["redir"]; ?>&_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>&_s_e_=<?php echo $_GET["_s_e_"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+<?php
+}
+}
+?>
+</div>
+
+
+<br>
+<br>
+
+<div>
+<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1"){ echo "IT 2 - Application Programming 1"; }else{ echo "IT 5 - Application Programming 2"; } } ?></h6>
+<h6 class="ml-3 d-inline"><b>Year</b>: <?php if(isset($_GET['_y'])){ echo $_GET['_y']; } ?></h6>
+<h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1" ){ echo "First Semester"; }else{ echo "Second Semester"; } } ?></h6>
+</div>
+
+
 <?php
 
 if(isset($_GET['redir'])){

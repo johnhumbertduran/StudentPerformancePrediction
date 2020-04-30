@@ -151,6 +151,35 @@ include("../bins/admin_nav.php");
 </div>
 
 
+&nbsp;
+<?php
+if(isset($_GET['_y']) && !isset($_GET['_c']) && !isset($_GET['_s_e_'])){
+?>
+  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+<?php
+}else if(isset($_GET['_y']) && isset($_GET['_c']) && !isset($_GET['_s_e_'])){
+?>
+  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+<?php
+}else if(isset($_GET['_y']) && isset($_GET['_c']) && isset($_GET['_s_e_'])){
+?>
+  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>&_s_e_=<?php echo $_GET["_s_e_"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+<?php
+}
+?>
+</div>
+
+<br>
+<br>
+
+<div>
+<h6 class="ml-3 d-inline"><b>Course Name</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1"){ echo "IT 2 - Application Programming 1"; }else if($_GET['_s_e_'] == "sem2"){ echo "IT 5 - Application Programming 2"; }else{ echo "Empty"; } } ?></h6>
+<h6 class="ml-3 d-inline"><b>Year</b>: <?php if(isset($_GET['_y'])){ if($_GET['_y'] == "select_year"){ echo "Empty"; }else{echo $_GET['_y']; } } ?></h6>
+<h6 class="ml-3 d-inline"><b>Semester</b>: <?php if(isset($_GET['_s_e_'])){ if($_GET['_s_e_'] == "sem1" ){ echo "First Semester"; }else if($_GET['_s_e_'] == "sem2" ){ echo "Second Semester"; }else{ echo "Empty"; } } ?></h6>
+</div>
+
+
+
 <!-- ######################################################################################### -->
 <!-- ################################### Table Starts Here ################################### -->
 <!-- ######################################################################################### -->
