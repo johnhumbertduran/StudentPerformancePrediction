@@ -159,6 +159,11 @@ if($_GET['redir'] == "final"){
 
 ?>
 
+<center>
+<?php
+include("grading_system.php");
+?>
+</center>
 
 <br>
 <br>
