@@ -6,6 +6,9 @@
 <button class="btn btn-success">Search</button>
 </div>
 </div> -->
+    <a class="navbar-brand" href="../admin">
+    <img src="../../logo2.png" width="300" class="d-inline-block align-top" alt="ACC Logo">
+    </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>

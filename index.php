@@ -157,23 +157,32 @@ if(isset($_POST["log_me_in"])){
 ?>
 </div> -->
 <br>
+
 <center>
-<div class="card" style="width:25%;">
+<div class="container col-lg-4">
+<div class="card">
+
   <div class="card-header bg-primary text-light">Log in</div>
   <div class="card-body">
-  <div class="form-group">
-
+  
+    <!-- <div class="float-left">
+    <img src="logo.png" width="100px" class="float-left" alt="">
+    </div> -->
   <form method="POST">
+  <table border="0">
     <tr>
-    <td><input class="form-control w-85" type="text" value="<?php echo $session_user; ?>" name="nameuser" id="" autocomplete="off" placeholder="User Name" required></td>
+    <td><img src="logo.png" width="100px" class="float-left" alt=""></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>
+    <div class="form-group"><input class="form-control w-85" type="text" value="<?php echo $session_user; ?>" name="nameuser" id="" autocomplete="off" placeholder="User Name" required></div>
+    
+    
+    <div class="form-group"><input class="form-control w-85" type="password" value="<?php echo $session_pass; ?>" name="wordpass" id="" autocomplete="off" placeholder="Password" required></div>
+    
+    
+    </td>
     </tr>
-    </div>
-
-    <div class="form-group">
-    <tr>
-    <td><input class="form-control w-85" type="password" value="<?php echo $session_pass; ?>" name="wordpass" id="" autocomplete="off" placeholder="Password" required></td>
-    </tr>
-    </div>
+    </table>
   </div>
 
 
@@ -182,6 +191,7 @@ if(isset($_POST["log_me_in"])){
   <input type="submit" class="btn btn-light float-right" name="log_me_in" value="Log me in">
   </form>
   </div>
+</div>
 </div>
 
 </center>

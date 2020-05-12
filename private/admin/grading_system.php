@@ -25,7 +25,7 @@ tr td:hover .remarks { color: #fff; } */
 
 
 </style>
-<div class="col-4">
+<div class="col-lg-4">
 <table border="1" class="table_hover">
 <thead>
 <tr>
