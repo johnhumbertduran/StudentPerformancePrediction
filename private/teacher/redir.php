@@ -45,7 +45,7 @@ function get_url_data(){
 
 
 <!-- <center> -->
-<div class="bg-dark pt-3" style="height:550px;">
+<div class="black p-5 fixed-top">
 
 <div class="card col-sm-5 mx-auto p-3">
 <button type="button" class="close ml-auto bg-info rounded-circle px-1" id="black1">&times;</button>

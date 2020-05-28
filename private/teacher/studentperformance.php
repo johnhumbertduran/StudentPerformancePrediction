@@ -25,6 +25,7 @@ if(isset($_SESSION["username"])){
   
   }
 
+  $year_qry = mysqli_query($connections, "SELECT DISTINCT year FROM _user_tbl_ WHERE account_type='2' ");
 
 ?>
 
@@ -38,6 +39,12 @@ if(isset($_SESSION["username"])){
   border: 1.5px solid white;
   border-radius: 6px;
 }
+
+.black{
+    background-color: #000000ef;
+    height: 100%;
+}
+
 </style>
 
 <?php
@@ -58,7 +65,7 @@ include("../bins/teacher_nav.php");
   <option value="final" <?php if(isset($_GET['redir'])){ if($_GET['redir'] == "final"){ echo "selected"; }}?> ><a class="btn btn-info ml-2 my-3" href="?redir=final">Final</a></option>
 </select>
 
-<select class="form-control col-2 ml-2 pt-1 pb-2 d-inline text-white text-white <?php if(!isset($_GET['redir'])){ echo 'bg-secondary'; }else{ if($_GET['redir'] == 'select_grading'){ echo 'bg-secondary'; }else{ echo 'bg-info'; }}?>" <?php if(!isset($_GET['redir'])){ echo 'disabled'; }else{ if($_GET['redir'] == 'select_grading'){ echo 'disabled'; }}?> id="year" onchange="year()">
+<!-- <select class="form-control col-2 ml-2 pt-1 pb-2 d-inline text-white text-white <?php if(!isset($_GET['redir'])){ echo 'bg-secondary'; }else{ if($_GET['redir'] == 'select_grading'){ echo 'bg-secondary'; }else{ echo 'bg-info'; }}?>" <?php if(!isset($_GET['redir'])){ echo 'disabled'; }else{ if($_GET['redir'] == 'select_grading'){ echo 'disabled'; }}?> id="year" onchange="year()">
   <option value="select_year">Select Year</option>
   <option value="2018" <?php if(isset($_GET['_y'])){ if($_GET['_y'] == "2018"){ echo "selected"; }}?> >2018</option>
   <option value="2017" <?php if(isset($_GET['_y'])){ if($_GET['_y'] == "2017"){ echo "selected"; }}?> >2017</option>
@@ -68,6 +75,21 @@ include("../bins/teacher_nav.php");
   <option value="2013" <?php if(isset($_GET['_y'])){ if($_GET['_y'] == "2013"){ echo "selected"; }}?> >2013</option>
   <option value="2012" <?php if(isset($_GET['_y'])){ if($_GET['_y'] == "2012"){ echo "selected"; }}?> >2012</option>
   <option value="2011" <?php if(isset($_GET['_y'])){ if($_GET['_y'] == "2011"){ echo "selected"; }}?> >2011</option>
+</select> -->
+
+<select class="form-control col-2 ml-2 pt-1 pb-2 d-inline text-white text-white <?php if(!isset($_GET['redir'])){ echo 'bg-secondary'; }else{ if($_GET['redir'] == 'select_grading'){ echo 'bg-secondary'; }else{ echo 'bg-info'; }}?>" <?php if(!isset($_GET['redir'])){ echo 'disabled'; }else{ if($_GET['redir'] == 'select_grading'){ echo 'disabled'; }}?> id="year" onchange="year()">
+<option value="select_year">Select Year</option>
+
+<?php
+while($row_year = mysqli_fetch_assoc($year_qry)){
+    $year = $row_year["year"]; 
+    ?>   
+    <option value='<?php echo $year; ?>' <?php if(isset($_GET['_y'])){ if($_GET['_y'] == $year){ echo "selected"; }}?>>
+    <?php
+    echo $year;
+}
+?>
+</option>
 </select>
 
 <select class="form-control col-2 ml-2 pt-1 pb-2 d-inline <?php if(!isset($_GET['_y'])){ echo "bg-secondary"; }else{ if($_GET['_y'] == "select_year"){ echo "bg-secondary"; }else{ echo "bg-info"; }}?> text-white" <?php if(!isset($_GET['_y'])){ echo "disabled"; }else{ if($_GET['_y'] == "select_year"){ echo "disabled"; }}?> id="course" onchange="course()">

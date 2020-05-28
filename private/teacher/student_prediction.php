@@ -1,6 +1,6 @@
 <style>
 .black{
-    background-color: #000000e4;
+    background-color: #000000ef;
     height: 100%;
 }
 
@@ -38,8 +38,8 @@ if(isset($_GET["s_"])){
 
 
 
-$final_prediction_qry = mysqli_query($connections, "SELECT * FROM $final_prediction_table_semester WHERE student_no='$student_no' ");
-$row_final_prediction = mysqli_fetch_assoc($final_prediction_qry);
+// $final_prediction_qry = mysqli_query($connections, "SELECT * FROM $final_prediction_table_semester WHERE student_no='$student_no' ");
+// $row_final_prediction = mysqli_fetch_assoc($final_prediction_qry);
 
 $student_qry = mysqli_query($connections, "SELECT * FROM _user_tbl_ WHERE student_no='$student_no' ");
 $row_student = mysqli_fetch_assoc($student_qry);
@@ -58,7 +58,7 @@ $student_name = $firstname . " " . $middlename[0] . ". " . $lastname;
 <div class="table-responsive table_table mt-3 col-10 container-fluid">
 <table border="1" class="table table-hover">
     <thead>
-    <tr><th class="px-3 text-center bg-info text-white" colspan="6">My Grade</th></tr><!-- Preliminary Here -->
+    <tr><th class="px-3 text-center bg-info text-white" colspan="6">Student Grade</th></tr><!-- Preliminary Here -->
 
     <tr class="text-center"><th class="px-3 bg-white">Student Name</th><th class="px-3 bg-success text-white">Prelim</th><th class="px-3 bg-primary text-white">Midterm</th><th class="px-3 bg-danger text-white" id="prefinal_student_predict">Prefinal</th><th class="px-3 bg-warning text-white" id="final_student_predict">Final</th><th class="px-3 bg-dark text-white" id="prediction">Prediction<sup class='badge badge-warning'>Prediction</sup></th></tr>
 
@@ -7301,7 +7301,26 @@ var xhr = new XMLHttpRequest();
 
 <div class="btn close_btn text-white bg-danger fixed-top col-1 ml-auto rounded-circle mt-3 mr-3 container-fluid" id="close_btn">
 <h3>
-<a href="prediction" class="text-white text-decoration-none">
+<?php
+
+
+if(isset($_GET['_y'])){
+$g_y = $_GET['_y'];
+}
+if(isset($_GET['_c'])){
+$g_c = $_GET['_c'];
+}
+if(isset($_GET['s_'])){
+$g_s = $_GET['s_'];
+}
+
+if(isset($_GET["_y"])&&!isset($_GET["_c"])){
+echo '<a href="prediction?_y='.$g_y.'" class="text-white text-decoration-none">';
+}elseif(isset($_GET["_y"])&&isset($_GET["_c"])){
+echo '<a href="prediction?_y='.$g_y.'&_c='.$g_c.'&_s_e_=sem'.$g_s.'" class="text-white text-decoration-none">';
+}
+?>
+<!-- <a href="prediction?" class="text-white text-decoration-none"> -->
 &times;
 </a>
 </h3>

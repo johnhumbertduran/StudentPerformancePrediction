@@ -31,7 +31,7 @@ if(isset($_SESSION["username"])){
 ?>
 
 <center>
-<h1 class="py-3 text-info px-1">Student Performance System</h1>
+<h1 class="py-3 text-info px-1">Student Performance Prediction System</h1>
 </center>
 
 

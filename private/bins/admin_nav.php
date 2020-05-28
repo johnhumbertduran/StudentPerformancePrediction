@@ -26,10 +26,12 @@
       </li>    
       <li class="nav-item">
         <a class="nav-link pl-2 chart_active" href="charts">View Charts</a>
-      </li>    
-      <li class="nav-item register_active">
+      </li>  
+        <!-- Gin remove ko anay da 05/28/20 -->
+      <!-- <li class="nav-item register_active">
         <a class="nav-link pl-2" href="register">Register</a>
-      </li>    
+      </li>     -->
+
       <!-- <li class="nav-item input_grade">
         <a class="nav-link pl-2" href="inputgrade">Input Grade</a>
       </li>     -->
