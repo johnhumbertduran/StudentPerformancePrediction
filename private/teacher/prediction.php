@@ -168,15 +168,15 @@ while($row_year = mysqli_fetch_assoc($year_qry)){
 <?php
 if(isset($_GET['_y']) && !isset($_GET['_c']) && !isset($_GET['_s_e_'])){
 ?>
-  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+  <a href="pdf_files_prediction.php?_y=<?php echo $_GET["_y"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
 <?php
 }else if(isset($_GET['_y']) && isset($_GET['_c']) && !isset($_GET['_s_e_'])){
 ?>
-  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+  <a href="pdf_files_prediction.php?_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
 <?php
 }else if(isset($_GET['_y']) && isset($_GET['_c']) && isset($_GET['_s_e_'])){
 ?>
-  <a href="pdf_files_prediction?_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>&_s_e_=<?php echo $_GET["_s_e_"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
+  <a href="pdf_files_prediction.php?_y=<?php echo $_GET["_y"]; ?>&_c=<?php echo $_GET["_c"]; ?>&_s_e_=<?php echo $_GET["_s_e_"]; ?>" target="_blank" class="btn btn-warning col-1">Print</a>
 <?php
 }
 ?>
@@ -411,8 +411,8 @@ $final_output_2 = $row_final["final_output_2"];
 $final_performance_1 = $row_final["final_performance_1"];
 $final_performance_2 = $row_final["final_performance_2"];
 $final_written_test = $row_final["final_written_test"];
-
 $final_prediction = $row_final["final_prediction"];
+
 
 
 if($final_output_1 <= 0 && $final_output_2 <= 0 &&

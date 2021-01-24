@@ -400,6 +400,6 @@ $pdf->AliasNbPages();
 $pdf->AddPage('L','A4',0);
 $pdf->headerTable();
 $pdf->viewTable($connections);
-$pdf->Output();
+$pdf->Output("I","prefinal_file");
 
 ?>
